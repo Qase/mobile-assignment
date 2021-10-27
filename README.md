@@ -2,7 +2,7 @@
 
 | Rocket list  | Rocket detail | Rocket before launch | Rocket after launch |
 | ------------- | ------------- | ------------- | ------------- |
-| ![Rocket List](./Screens/Rocket%20List.png?raw=true)  | ![Rocket detail](./Screens/Rocket%20Detail.png?raw=true)  | ![Rocket before launch](./Screens/Rocket%20Launch%20-%20After.png?raw=true) | ![Rocket after launch](./Screens/Rocket%20Launch%20-%20After.png?raw=true) |
+| ![Rocket List](./Screens/Rocket%20List.png?raw=true)  | ![Rocket detail](./Screens/Rocket%20Detail.png?raw=true)  | ![Rocket before launch](./Screens/Rocket%20Launch%20-%20Before.png?raw=true) | ![Rocket after launch](./Screens/Rocket%20Launch%20-%20After.png?raw=true) |
 
 
 ## 🇨🇿 Zadání mobilní aplikace

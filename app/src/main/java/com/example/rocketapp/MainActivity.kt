@@ -4,16 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), CoroutineScope {
+class MainActivity : AppCompatActivity() {
 
-    override val coroutineContext: CoroutineContext = Dispatchers.Main
 
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
             Log.d(TAG, "rocketsData reloaded")
             Log.d(TAG, it.toString())
         }
-        launch {
+        lifecycleScope.launch {
             mainViewModel.loadRockets()
         }
     }

@@ -2,7 +2,6 @@ package com.example.rocketapp.api.dto
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-typealias RocketListDto = List<RocketItemDto>
 
 @JsonClass(generateAdapter = true)
 data class RocketItemDto(

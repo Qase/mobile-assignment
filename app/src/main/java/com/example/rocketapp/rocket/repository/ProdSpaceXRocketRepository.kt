@@ -1,28 +1,33 @@
-package com.example.rocketapp.api
+package com.example.rocketapp.rocket.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.rocketapp.rocket.model.Rocket
+import com.example.rocketapp.api.SpaceXRocketApi
+import com.example.rocketapp.rocket.repository.model.Rocket
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
-class SpaceXRocketRepository @Inject constructor(
+interface SpaceXRocketRepository {
+    fun getRocketData(): LiveData<List<Rocket>>
+    suspend fun loadRocketData()
+}
+
+class SpaceXRocketRepositoryImpl @Inject constructor(
     private val api: SpaceXRocketApi
-) {
+) : SpaceXRocketRepository {
 
     private val rocketsData = MutableLiveData<List<Rocket>>()
 
-    fun getRocketData(): LiveData<List<Rocket>> {
+    override fun getRocketData(): LiveData<List<Rocket>> {
         return rocketsData
     }
 
-    suspend fun loadRocketData() {
+    override suspend fun loadRocketData() {
         withContext(Dispatchers.IO) {
             val data = api.getAll().toRocketList()
             rocketsData.postValue(data)
         }
     }
-
 }

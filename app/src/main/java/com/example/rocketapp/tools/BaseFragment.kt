@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
@@ -17,10 +19,6 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
     //TODO pozdeji prepisu na data binding
     abstract val bindingInflater: (LayoutInflater, ViewGroup?) -> VB
 
-    protected val navController by lazy {
-        findNavController()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +31,16 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    protected val navController by lazy {
+        findNavController()
+    }
+
+    protected fun setActionBar(block: ActionBar.() -> Unit) {
+        val activity = activity as AppCompatActivity
+        val actionBar = activity.supportActionBar
+        actionBar?.block()
     }
 
 }

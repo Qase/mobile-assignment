@@ -1,15 +1,15 @@
-package com.example.rocketapp.api
+package com.example.rocketapp.rocket.api
 
-import com.example.rocketapp.api.model.Rocket
-import com.example.rocketapp.api.model.info.RocketDiameter
-import com.example.rocketapp.api.model.info.RocketHeight
-import com.example.rocketapp.api.model.info.RocketMass
-import com.example.rocketapp.api.model.stages.RocketFirstStage
-import com.example.rocketapp.api.model.stages.RocketSecondStage
-import com.example.rocketapp.api.dto.FirstStageDto
-import com.example.rocketapp.api.dto.RocketItemDto
-import com.example.rocketapp.api.dto.RocketListDto
-import com.example.rocketapp.api.dto.SecondStageDto
+import com.example.rocketapp.rocket.api.model.Rocket
+import com.example.rocketapp.rocket.api.model.info.RocketDiameter
+import com.example.rocketapp.rocket.api.model.info.RocketHeight
+import com.example.rocketapp.rocket.api.model.info.RocketMass
+import com.example.rocketapp.rocket.api.model.stages.RocketFirstStage
+import com.example.rocketapp.rocket.api.model.stages.RocketSecondStage
+import com.example.rocketapp.rocket.api.dto.FirstStageDto
+import com.example.rocketapp.rocket.api.dto.RocketItemDto
+import com.example.rocketapp.rocket.api.dto.RocketListDto
+import com.example.rocketapp.rocket.api.dto.SecondStageDto
 
 fun RocketListDto.toRocketList() = map {
     it.toRocket()

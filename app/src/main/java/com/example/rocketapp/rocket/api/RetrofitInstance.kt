@@ -1,4 +1,4 @@
-package com.example.rocketapp.api
+package com.example.rocketapp.rocket.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

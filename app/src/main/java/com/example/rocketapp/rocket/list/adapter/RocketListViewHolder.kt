@@ -1,6 +1,5 @@
-package com.example.rocketapp.ui.adapter
+package com.example.rocketapp.rocket.list.adapter
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rocketapp.databinding.RowRocketItemBinding
 

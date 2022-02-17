@@ -1,20 +1,20 @@
-package com.example.rocketapp.ui.adapter
+package com.example.rocketapp.rocket.list.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rocketapp.databinding.RowRocketItemBinding
-import com.example.rocketapp.services.model.rocket.RocketDto
+import com.example.rocketapp.rocket.repository.model.Rocket
 import com.example.rocketapp.tools.date.toUiDate
 
 class RocketListAdapter(
     private val context: Context
     ): RecyclerView.Adapter<RocketListViewHolder>() {
 
-    private val list = mutableListOf<RocketDto>()
+    private val list = mutableListOf<Rocket>()
 
-    fun updateList(newList: List<RocketDto>) {
+    fun updateList(newList: List<Rocket>) {
         list.clear()
         list.addAll(newList)
         notifyDataSetChanged()
@@ -29,7 +29,7 @@ class RocketListAdapter(
     override fun onBindViewHolder(holder: RocketListViewHolder, position: Int) {
         val item = list[position]
         holder.apply {
-            txtRocketName.text = item.rocketName
+            txtRocketName.text = item.name
             txtFirstStart.text = item.firstFlight.toUiDate()
         }
     }

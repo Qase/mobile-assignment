@@ -19,11 +19,4 @@ class RocketLaunchFragment: BaseFragment<FragmentRocketLaunchBinding>() {
     override val bindingInflater = { layoutInflater: LayoutInflater, parent: ViewGroup? ->
         FragmentRocketLaunchBinding.inflate(layoutInflater, parent, false)
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setActionBar {
-            title = getString(R.string.launch)
-        }
-    }
 }

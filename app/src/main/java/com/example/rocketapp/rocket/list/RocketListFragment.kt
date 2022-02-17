@@ -27,13 +27,6 @@ class RocketListFragment: BaseFragment<FragmentRocketListBinding>() {
         FragmentRocketListBinding.inflate(layoutInflater, parent, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setActionBar {
-            title = getString(R.string.rockets)
-        }
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.txtTitle.setOnClickListener {

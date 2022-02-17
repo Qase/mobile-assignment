@@ -7,6 +7,7 @@
 
     <fragment
         android:id="@+id/rocket_list"
+        android:label="@string/rockets"
         android:name="com.example.rocketapp.rocket.list.RocketListFragment"
         tools:layout="@layout/fragment_rocket_list" >
         <action
@@ -16,6 +17,7 @@
 
     <fragment
         android:id="@+id/rocket_detail"
+        android:label="@string/detail"
         android:name="com.example.rocketapp.rocket.detail.RocketDetailFragment"
         tools:layout="@layout/fragment_rocket_list" >
         <action
@@ -25,6 +27,7 @@
 
     <fragment
         android:id="@+id/rocket_launch"
+        android:label="@string/launch"
         android:name="com.example.rocketapp.rocket.launch.RocketLaunchFragment"
         tools:layout="@layout/fragment_rocket_list" />
 

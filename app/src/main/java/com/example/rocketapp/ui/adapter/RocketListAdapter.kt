@@ -1,4 +1,4 @@
-package com.example.rocketapp.ui
+package com.example.rocketapp.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rocketapp.databinding.RowRocketItemBinding
 import com.example.rocketapp.services.model.rocket.RocketDto
-import com.example.rocketapp.ui.adapter.RocketListViewHolder
+import com.example.rocketapp.tools.date.toUiDate
 
 class RocketListAdapter(
     private val context: Context
@@ -29,8 +29,8 @@ class RocketListAdapter(
     override fun onBindViewHolder(holder: RocketListViewHolder, position: Int) {
         val item = list[position]
         holder.apply {
-            txtRocketName.text = item.name
-            txtFirstStart.text =
+            txtRocketName.text = item.rocketName
+            txtFirstStart.text = item.firstFlight.toUiDate()
         }
     }
 

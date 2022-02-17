@@ -11,6 +11,7 @@ import javax.inject.Inject
 
 interface SpaceXRocketRepository {
     fun getRocketData(): LiveData<List<Rocket>>
+    suspend fun getRocketById(rocketId: Int): Rocket?
     suspend fun loadRocketData()
 }
 
@@ -28,6 +29,13 @@ class ProdSpaceXRocketRepository @Inject constructor(
         withContext(Dispatchers.IO) {
             val data = api.getAll().toRocketList()
             rocketsData.postValue(data)
+        }
+    }
+
+    override suspend fun getRocketById(rocketId: Int): Rocket? {
+        return withContext(Dispatchers.Default) {
+            val rockets = rocketsData.value
+            rockets?.find { it.id == rocketId }
         }
     }
 }

@@ -1,8 +1,8 @@
-package com.example.rocketapp.rocket.api
+package com.example.rocketapp.rocket.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.rocketapp.rocket.api.model.Rocket
+import com.example.rocketapp.rocket.repository.model.Rocket
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

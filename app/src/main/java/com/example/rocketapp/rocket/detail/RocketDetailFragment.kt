@@ -29,6 +29,7 @@ class RocketDetailFragment: BaseFragment<FragmentRocketDetailBinding>() {
         FragmentRocketDetailBinding.inflate(layoutInflater, parent, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.txtTitle.setOnClickListener {

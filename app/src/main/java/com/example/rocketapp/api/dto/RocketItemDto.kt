@@ -1,4 +1,4 @@
-package com.example.rocketapp.services.dto
+package com.example.rocketapp.api.dto
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

@@ -1,9 +1,9 @@
-package com.example.rocketapp
+package com.example.rocketapp.rocket
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.rocketapp.services.SpaceXRocketRepository
-import com.example.rocketapp.model.rocket.Rocket
+import com.example.rocketapp.api.SpaceXRocketRepository
+import com.example.rocketapp.rocket.rocket.Rocket
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

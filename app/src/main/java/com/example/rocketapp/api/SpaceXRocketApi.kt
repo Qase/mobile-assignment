@@ -1,6 +1,6 @@
-package com.example.rocketapp.services
+package com.example.rocketapp.api
 
-import com.example.rocketapp.services.dto.RocketListDto
+import com.example.rocketapp.api.dto.RocketListDto
 import retrofit2.http.GET
 
 interface SpaceXRocketApi {

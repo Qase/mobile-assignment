@@ -14,7 +14,7 @@ interface SpaceXRocketRepository {
     suspend fun loadRocketData()
 }
 
-class SpaceXRocketRepositoryImpl @Inject constructor(
+class ProdSpaceXRocketRepository @Inject constructor(
     private val api: SpaceXRocketApi
 ) : SpaceXRocketRepository {
 

@@ -3,7 +3,7 @@ package com.example.rocketapp.di
 import com.example.rocketapp.api.getRetrofit
 import com.example.rocketapp.api.SpaceXRocketApi
 import com.example.rocketapp.rocket.repository.SpaceXRocketRepository
-import com.example.rocketapp.rocket.repository.SpaceXRocketRepositoryImpl
+import com.example.rocketapp.rocket.repository.ProdSpaceXRocketRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,7 @@ object AppModule {
 
     @Provides
     fun provideSpaceXRocketRepository(api: SpaceXRocketApi): SpaceXRocketRepository {
-        return SpaceXRocketRepositoryImpl(api)
+        return ProdSpaceXRocketRepository(api)
     }
 
     @Provides

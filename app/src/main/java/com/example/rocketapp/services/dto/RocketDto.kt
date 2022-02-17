@@ -1,6 +1,6 @@
 package com.example.rocketapp.services.dto
 
-class RocketListDto: ArrayList<RocketDto>()
+typealias RocketListDto = List<RocketDto>
 
 data class RocketDto(
     val active: Boolean,
@@ -29,8 +29,8 @@ data class RocketDto(
 )
 
 data class DiameterDto(
-    val feet: Int,
-    val meters: Int
+    val feet: Double,
+    val meters: Double
 )
 
 data class EnginesDto(
@@ -41,7 +41,7 @@ data class EnginesDto(
     val propellant_1: String,
     val propellant_2: String,
     val thrust_sea_level: ThrustSeaLevelDto,
-    val thrust_to_weight: Int,
+    val thrust_to_weight: Double,
     val thrust_vacuum: ThrustVacuumDto,
     val type: String,
     val version: String
@@ -50,15 +50,15 @@ data class EnginesDto(
 data class FirstStageDto(
     val burn_time_sec: Int?,
     val engines: Int,
-    val fuel_amount_tons: Int,
+    val fuel_amount_tons: Double,
     val reusable: Boolean,
     val thrust_sea_level: ThrustSeaLevelXDto,
     val thrust_vacuum: ThrustVacuumXDto
 )
 
 data class HeightDto(
-    val feet: Int,
-    val meters: Int
+    val feet: Double,
+    val meters: Double
 )
 
 data class LandingLegsDto(
@@ -67,8 +67,8 @@ data class LandingLegsDto(
 )
 
 data class MassDto(
-    val kg: Int,
-    val lb: Int
+    val kg: Double,
+    val lb: Double
 )
 
 data class PayloadWeightDto(
@@ -81,7 +81,7 @@ data class PayloadWeightDto(
 data class SecondStageDto(
     val burn_time_sec: Int?,
     val engines: Int,
-    val fuel_amount_tons: Int,
+    val fuel_amount_tons: Double,
     val payloads: PayloadsDto,
     val reusable: Boolean,
     val thrust: ThrustDto

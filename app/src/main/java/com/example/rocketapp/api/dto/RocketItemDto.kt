@@ -1,6 +1,8 @@
 package com.example.rocketapp.api.dto
+
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import java.util.*
 
 
 @JsonClass(generateAdapter = true)
@@ -22,7 +24,7 @@ data class RocketItemDto(
     @Json(name = "engines")
     val engines: Engines,
     @Json(name = "first_flight")
-    val firstFlight: String,
+    val firstFlight: Date,
     @Json(name = "first_stage")
     val firstStage: FirstStageDto,
     @Json(name = "flickr_images")

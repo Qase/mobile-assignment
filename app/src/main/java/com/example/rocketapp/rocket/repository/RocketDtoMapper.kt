@@ -16,6 +16,8 @@ fun List<RocketItemDto>.toRocketList() = map {
 
 fun RocketItemDto.toRocket() = Rocket(
     id,
+    rocketName,
+    firstFlight,
     description,
     RocketHeight(
         meters = height.meters,

@@ -30,6 +30,7 @@ class ProdSpaceXRocketRepository(
 
     override suspend fun loadRocketData() {
         withContext(Dispatchers.IO) {
+            val test = api.getAll().toRocketList()
             val result = Try.invokeCoroutines {
                 api.getAll().toRocketList()
             }.toResult()

@@ -51,6 +51,10 @@ class RocketListFragment: BaseFragment<FragmentRocketListBinding>() {
             adapter = rocketListAdapter
             setHasFixedSize(true)
         }
+        //TODO budu predavat argument
+        rocketListAdapter.setOnItemClickListener { _, rocket ->
+            navController.navigate(R.id.action_rocket_list_to_rocket_detail)
+        }
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.example.rocketapp.rocket.model.stages
+package com.example.rocketapp.api.model.stages
 
 data class RocketFirstStage(
     val reusable: Boolean,

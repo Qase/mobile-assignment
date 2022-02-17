@@ -1,4 +1,4 @@
-package com.example.rocketapp.rocket.model.info
+package com.example.rocketapp.api.model.info
 
 data class RocketMass(
     val kg: Double,

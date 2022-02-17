@@ -11,8 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RocketLaunchViewModel @Inject constructor(
-    @ApplicationContext application: Application
-) : BaseViewModel(application) {
+) : BaseViewModel() {
 
 
 }

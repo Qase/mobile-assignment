@@ -7,7 +7,9 @@ import com.example.rocketapp.databinding.FragmentRocketLaunchBinding
 import com.example.rocketapp.databinding.FragmentRocketListBinding
 import com.example.rocketapp.rocket.list.RocketListViewModel
 import com.example.rocketapp.tools.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RocketLaunchFragment: BaseFragment<FragmentRocketLaunchBinding>() {
 
     private val rocketLaunchViewModel: RocketLaunchViewModel by viewModels()

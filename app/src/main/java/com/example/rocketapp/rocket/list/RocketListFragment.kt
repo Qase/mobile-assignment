@@ -5,15 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.rocketapp.MainActivity
 import com.example.rocketapp.R
 import com.example.rocketapp.databinding.FragmentRocketListBinding
 import com.example.rocketapp.tools.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class RocketListFragment: BaseFragment<FragmentRocketListBinding>() {
 
     private val rocketListViewModel: RocketListViewModel by viewModels()

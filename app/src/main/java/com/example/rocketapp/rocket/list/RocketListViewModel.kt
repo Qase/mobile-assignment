@@ -11,9 +11,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RocketListViewModel @Inject constructor(
-    @ApplicationContext application: Application,
     private val spaceXRocketRepository: SpaceXRocketRepositoryImpl
-) : BaseViewModel(application) {
+) : BaseViewModel() {
 
     val rocketsData: LiveData<List<Rocket>> = spaceXRocketRepository.getRocketData()
 

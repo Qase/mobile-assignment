@@ -1,6 +1,5 @@
 package com.example.rocketapp.services
 
-import com.example.rocketapp.services.dto.RocketDto
 import com.example.rocketapp.services.dto.RocketListDto
 import retrofit2.http.GET
 

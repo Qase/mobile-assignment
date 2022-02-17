@@ -7,7 +7,7 @@ import com.example.rocketapp.model.rocket.info.RocketMass
 import com.example.rocketapp.model.rocket.stages.RocketFirstStage
 import com.example.rocketapp.model.rocket.stages.RocketSecondStage
 import com.example.rocketapp.services.dto.FirstStageDto
-import com.example.rocketapp.services.dto.RocketDto
+import com.example.rocketapp.services.dto.RocketItemDto
 import com.example.rocketapp.services.dto.RocketListDto
 import com.example.rocketapp.services.dto.SecondStageDto
 
@@ -15,7 +15,7 @@ fun RocketListDto.toRocketList() = map {
     it.toRocket()
 }
 
-fun RocketDto.toRocket() = Rocket(
+fun RocketItemDto.toRocket() = Rocket(
     id,
     description,
     RocketHeight(
@@ -30,21 +30,21 @@ fun RocketDto.toRocket() = Rocket(
         feet = diameter.feet,
         meters = diameter.meters
     ),
-    first_stage.toRocketStage(),
-    second_stage.toRocketStage(),
-    flickr_images
+    firstStage.toRocketStage(),
+    secondStage.toRocketStage(),
+    flickrImages
 )
 
 private fun FirstStageDto.toRocketStage() = RocketFirstStage(
     reusable,
     engines,
-    fuel_amount_tons,
-    burn_time_sec
+    fuelAmountTons,
+    burnTimeSec
 )
 
 private fun SecondStageDto.toRocketStage() = RocketSecondStage(
     reusable,
     engines,
-    fuel_amount_tons,
-    burn_time_sec
+    fuelAmountTons,
+    burnTimeSec
 )

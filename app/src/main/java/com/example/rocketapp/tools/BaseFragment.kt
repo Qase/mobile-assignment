@@ -5,20 +5,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.example.rocketapp.databinding.FragmentRocketListBinding
 
-abstract class BaseFragment<Binding: ViewBinding>: Fragment() {
+abstract class BaseFragment<VB: ViewBinding>: Fragment() {
 
-    private var _binding: Binding? = null
-    private val binding get() = _binding!!
+    private var _binding: VB? = null
+    protected val binding get() = _binding!!
+
+    //TODO pozdeji prepisu na data binding
+    abstract val bindingInflater: (LayoutInflater, ViewGroup?) -> VB
+
+    protected val navController by lazy {
+        findNavController()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = Binding.inflate(inflater, container, false)
+        _binding = bindingInflater(inflater, container)
         return binding.root
     }
 

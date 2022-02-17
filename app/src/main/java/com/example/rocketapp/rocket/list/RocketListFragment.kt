@@ -4,26 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.rocketapp.R
 import com.example.rocketapp.databinding.FragmentRocketListBinding
 import com.example.rocketapp.tools.BaseFragment
 
-class RocketListFragment: BaseFragment() {
+class RocketListFragment: BaseFragment<FragmentRocketListBinding>() {
 
-    private var _binding: FragmentRocketListBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val binding = FragmentRocketListBinding.inflate(inflater, container, false)
-        return binding.root
+    override val bindingInflater = { layoutInflater: LayoutInflater, parent: ViewGroup? ->
+        FragmentRocketListBinding.inflate(layoutInflater, parent, false)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.txtTitle.setOnClickListener {
+            navController.navigate(R.id.action_rocket_list_to_rocket_detail)
+        }
     }
 
 }

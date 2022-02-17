@@ -2,6 +2,7 @@ package com.example.rocketapp.rocket.list
 
 import android.app.Application
 import androidx.lifecycle.LiveData
+import com.example.rocketapp.rocket.repository.SpaceXRocketRepository
 import com.example.rocketapp.rocket.repository.SpaceXRocketRepositoryImpl
 import com.example.rocketapp.rocket.repository.model.Rocket
 import com.example.rocketapp.tools.BaseViewModel
@@ -11,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RocketListViewModel @Inject constructor(
-    private val spaceXRocketRepository: SpaceXRocketRepositoryImpl
+    private val spaceXRocketRepository: SpaceXRocketRepository
 ) : BaseViewModel() {
 
     val rocketsData: LiveData<List<Rocket>> = spaceXRocketRepository.getRocketData()

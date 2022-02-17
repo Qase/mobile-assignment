@@ -2,23 +2,19 @@ package com.example.rocketapp
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.rocketapp.services.SpaceXRocketService
+import com.example.rocketapp.services.SpaceXRocketRepository
 import com.example.rocketapp.services.model.rocket.RocketDto
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val spaceXRocketService: SpaceXRocketService
+    private val spaceXRocketRepository: SpaceXRocketRepository
 ): ViewModel() {
 
-    val rocketsData: LiveData<List<RocketDto>> = spaceXRocketService.getRocketData()
+    val rocketsData: LiveData<List<RocketDto>> = spaceXRocketRepository.getRocketData()
 
     suspend fun loadRockets() {
-        spaceXRocketService.loadRocketData()
+        spaceXRocketRepository.loadRocketData()
     }
 }

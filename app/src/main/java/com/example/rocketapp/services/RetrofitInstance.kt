@@ -5,16 +5,12 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RetrofitInstance {
 
-    private val retrofit by lazy {
+    val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.spacexdata.com/v3/")
             .addConverterFactory(
                 MoshiConverterFactory.create()
             ).build()
-    }
-
-    val spaceXRocketRepository: SpaceXRocketRepository by lazy {
-        retrofit.create(SpaceXRocketRepository::class.java)
     }
 
 }

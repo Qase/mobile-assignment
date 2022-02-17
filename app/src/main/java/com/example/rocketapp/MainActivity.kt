@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
             Log.d(TAG, "rocketsData reloaded")
             Log.d(TAG, it.toString())
         }
+        //TODO bude odstraneno
         launch {
             mainViewModel.loadRockets()
         }

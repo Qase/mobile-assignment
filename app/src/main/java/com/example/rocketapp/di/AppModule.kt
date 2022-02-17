@@ -15,7 +15,8 @@ object AppModule {
 
     @Provides
     fun provideSpaceXRocketApi(): SpaceXRocketApi {
-        return RetrofitInstance.retrofit.create(SpaceXRocketApi::class.java)
+        val retrofit = RetrofitInstance.getRetrofit()
+        return retrofit.create(SpaceXRocketApi::class.java)
     }
 
 }

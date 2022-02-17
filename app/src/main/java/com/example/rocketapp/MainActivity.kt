@@ -16,19 +16,9 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
     override val coroutineContext: CoroutineContext = Dispatchers.Main
 
-    private val mainViewModel: RocketListViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainViewModel.rocketsData.observe(this) {
-            Log.d(TAG, "rocketsData reloaded")
-            Log.d(TAG, it.toString())
-        }
-        //TODO bude odstraneno
-        launch {
-            mainViewModel.loadRockets()
-        }
     }
 
     companion object {

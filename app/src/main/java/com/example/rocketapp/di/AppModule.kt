@@ -1,6 +1,6 @@
 package com.example.rocketapp.di
 
-import com.example.rocketapp.rocket.repository.RetrofitInstance
+import com.example.rocketapp.api.getRetrofit
 import com.example.rocketapp.rocket.repository.SpaceXRocketApi
 import com.example.rocketapp.rocket.repository.SpaceXRocketRepository
 import com.example.rocketapp.rocket.repository.SpaceXRocketRepositoryImpl
@@ -20,7 +20,7 @@ object AppModule {
 
     @Provides
     fun provideSpaceXRocketApi(): SpaceXRocketApi {
-        val retrofit = RetrofitInstance.getRetrofit()
+        val retrofit = getRetrofit()
         return retrofit.create(SpaceXRocketApi::class.java)
     }
 

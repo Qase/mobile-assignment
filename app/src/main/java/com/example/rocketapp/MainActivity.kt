@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.rocketapp.rocket.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +26,9 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "rocketsData reloaded")
             Log.d(TAG, it.toString())
         }
+
         lifecycleScope.launch {
+        //TODO bude odstraneno
             mainViewModel.loadRockets()
         }
     }

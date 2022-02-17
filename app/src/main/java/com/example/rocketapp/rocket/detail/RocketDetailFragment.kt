@@ -1,4 +1,4 @@
-package com.example.rocketapp.ui.detail
+package com.example.rocketapp.rocket.detail
 
 import com.example.rocketapp.tools.BaseFragment
 

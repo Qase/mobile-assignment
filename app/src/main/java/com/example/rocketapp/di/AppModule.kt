@@ -1,7 +1,7 @@
 package com.example.rocketapp.di
 
 import com.example.rocketapp.api.getRetrofit
-import com.example.rocketapp.rocket.repository.SpaceXRocketApi
+import com.example.rocketapp.api.SpaceXRocketApi
 import com.example.rocketapp.rocket.repository.SpaceXRocketRepository
 import com.example.rocketapp.rocket.repository.SpaceXRocketRepositoryImpl
 import dagger.Module

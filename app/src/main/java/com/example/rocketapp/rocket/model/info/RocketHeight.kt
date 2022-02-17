@@ -1,4 +1,4 @@
-package com.example.rocketapp.rocket.rocket.info
+package com.example.rocketapp.rocket.model.info
 
 data class RocketHeight(
     val meters: Double,

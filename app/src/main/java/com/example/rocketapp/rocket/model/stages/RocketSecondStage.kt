@@ -1,6 +1,6 @@
-package com.example.rocketapp.rocket.rocket.stages
+package com.example.rocketapp.rocket.model.stages
 
-data class RocketFirstStage(
+data class RocketSecondStage(
     val reusable: Boolean,
     val engines: Int,
     val fuelAmountTons: Double,

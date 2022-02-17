@@ -1,11 +1,11 @@
 package com.example.rocketapp.api
 
-import com.example.rocketapp.rocket.rocket.Rocket
-import com.example.rocketapp.rocket.rocket.info.RocketDiameter
-import com.example.rocketapp.rocket.rocket.info.RocketHeight
-import com.example.rocketapp.rocket.rocket.info.RocketMass
-import com.example.rocketapp.rocket.rocket.stages.RocketFirstStage
-import com.example.rocketapp.rocket.rocket.stages.RocketSecondStage
+import com.example.rocketapp.rocket.model.Rocket
+import com.example.rocketapp.rocket.model.info.RocketDiameter
+import com.example.rocketapp.rocket.model.info.RocketHeight
+import com.example.rocketapp.rocket.model.info.RocketMass
+import com.example.rocketapp.rocket.model.stages.RocketFirstStage
+import com.example.rocketapp.rocket.model.stages.RocketSecondStage
 import com.example.rocketapp.api.dto.FirstStageDto
 import com.example.rocketapp.api.dto.RocketItemDto
 import com.example.rocketapp.api.dto.RocketListDto

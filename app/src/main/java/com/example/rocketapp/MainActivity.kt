@@ -24,8 +24,6 @@ import kotlin.coroutines.CoroutineContext
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), CoroutineScope {
 
-    private val rocketListViewModel: RocketListViewModel by viewModels()
-
     override val coroutineContext: CoroutineContext = Dispatchers.Main
 
     override fun onSupportNavigateUp(): Boolean {
@@ -36,9 +34,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            rocketListViewModel.loadRockets()
-        }
 
         val navController = getNavController()
         val mainFragmentIds = setOf(

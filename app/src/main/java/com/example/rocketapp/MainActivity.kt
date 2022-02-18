@@ -13,8 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val rocketListViewModel: RocketListViewModel by viewModels()
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = getNavController()
         return navController.navigateUp() || super.onSupportNavigateUp()
@@ -23,9 +21,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            rocketListViewModel.loadRockets()
-        }
 
         val navController = getNavController()
         val mainFragmentIds = setOf(

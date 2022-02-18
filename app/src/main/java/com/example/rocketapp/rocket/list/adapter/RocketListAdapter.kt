@@ -4,27 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rocketapp.databinding.RowRocketItemBinding
 import com.example.rocketapp.rocket.repository.model.Rocket
 import com.example.rocketapp.tools.date.toUiDate
 
 class RocketListAdapter(
-    private val context: Context
-    ): RecyclerView.Adapter<RocketListViewHolder>() {
+    private val context: Context,
+    diffCallback: DiffUtil.ItemCallback<RocketItem> = RocketItemDiffCallback()
+): ListAdapter<RocketItem, RocketListViewHolder>(diffCallback) {
 
-    private val list = mutableListOf<Rocket>()
+    private var itemClickListener: ((Int, RocketItem) -> Unit)? = null
 
-    private var itemClickListener: ((Int, Rocket) -> Unit)? = null
-
-    fun setOnItemClickListener(f : (Int, Rocket) -> Unit) {
+    fun setOnItemClickListener(f : (Int, RocketItem) -> Unit) {
         itemClickListener = f
-    }
-
-    fun updateList(newList: List<Rocket>) {
-        list.clear()
-        list.addAll(newList)
-        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RocketListViewHolder {
@@ -34,13 +29,13 @@ class RocketListAdapter(
     }
 
     override fun onBindViewHolder(holder: RocketListViewHolder, position: Int) {
-        val item = list[position]
+        val item = getItem(position)
         holder.apply {
             itemClickListener?.let {
                 mainView.setOnClickListener { _ ->
                     val currentPosition = holder.adapterPosition
                     if (currentPosition != RecyclerView.NO_POSITION) {
-                        val selectedItem = list[currentPosition]
+                        val selectedItem = getItem(currentPosition)
                         it(currentPosition, selectedItem)
                     }
                 }
@@ -48,10 +43,5 @@ class RocketListAdapter(
             txtRocketName.text = item.name
             txtFirstStart.text = item.firstFlight.toUiDate()
         }
-    }
-
-
-    override fun getItemCount(): Int {
-        return list.size
     }
 }

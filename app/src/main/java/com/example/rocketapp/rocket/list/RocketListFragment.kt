@@ -37,10 +37,9 @@ class RocketListFragment: BaseFragment<FragmentRocketListBinding>() {
         setRocketListRecyclerView()
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                rocketListViewModel.rocketsData.collect { result ->
-                    Log.d(TAG, "onViewCreated: result: $result")
-                    val list = result?.getOrNull() ?: emptyList()
-                    rocketListAdapter.updateList(list)
+                rocketListViewModel.rocketItemsData.collect { list ->
+                    Log.d(TAG, "onViewCreated: result: $list")
+                    rocketListAdapter.submitList(list)
                 }
             }
         }

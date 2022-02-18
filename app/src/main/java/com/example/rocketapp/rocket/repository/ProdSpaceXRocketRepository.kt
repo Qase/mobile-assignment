@@ -16,6 +16,7 @@ interface SpaceXRocketRepository {
     fun getRocketData(): StateFlow<Result<List<Rocket>>?>
     suspend fun getRocketById(rocketId: Int): Rocket?
     suspend fun loadRocketData()
+    suspend fun clearCache()
 }
 
 class ProdSpaceXRocketRepository(
@@ -28,15 +29,19 @@ class ProdSpaceXRocketRepository(
         return rocketsData
     }
 
+    override suspend fun clearCache() {
+        rocketsData.value = Result.success(emptyList())
+    }
+
     override suspend fun loadRocketData() {
         withContext(Dispatchers.IO) {
-            val test = api.getAll().toRocketList()
             val result = Try.invokeCoroutines {
                 api.getAll().toRocketList()
             }.toResult()
             rocketsData.value = result
         }
     }
+
 
     override suspend fun getRocketById(rocketId: Int): Rocket? {
         return withContext(Dispatchers.Default) {

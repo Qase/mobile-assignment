@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  RocketListViewModel.swift
 //  rocketLaunch
 //
 //  Created by Lucie Havrdová on 18.02.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public final class ContentViewModel: ObservableObject {
+public final class RocketListViewModel: ObservableObject {
     private static let decoder = JSONDecoder()
     
     private let rocketsService: APIServiceDataPublisher
@@ -28,8 +28,6 @@ public final class ContentViewModel: ObservableObject {
             .map{ _ in false }
             .assign(to: \.fetching, on: self)
             .store(in: &subscriptions)
-        
-        //TODO: remove
     }
     
     public func fetchRockets() {
@@ -43,19 +41,5 @@ public final class ContentViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: \.rockets, on: self)
             .store(in: &rocketsSubscriptions)
-        
-        /*
-            .retry(1)
-            .decode(type: [Rocket].self, decoder: Self.decoder)
-            .receive(on: DispatchQueue.main)
-            .handleEvents(receiveOutput: { [unowned self] in
-                self.rockets = $0
-            })
-            .flatMap{ [unowned self] rockets in
-                self.fetchRockets()
-            }
-            //.store(in: &rocketsSubscriptions)
-         */
-            
     }
 }

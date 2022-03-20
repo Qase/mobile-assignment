@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RocketListView.swift
 //  rocketLaunch
 //
 //  Created by Lucie Havrdová on 25.01.2022.
@@ -8,11 +8,11 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
-    @ObservedObject var viewModel = ContentViewModel()
+// MARK: - RocketListView
+struct RocketListView: View {
+    @ObservedObject var viewModel = RocketListViewModel()
     
-    //TODO: při každém zobrazení této stránky by se mělo znovu fetchnout
-    init(){
+    init() {
         viewModel.fetchRockets()
     }
     
@@ -21,7 +21,7 @@ struct ContentView: View {
             if viewModel.rockets.count > 0 {
                 List {
                     ForEach(viewModel.rockets) { rocket in
-                        NavigationLink(destination: RocketView(viewModel: RocketViewModel(rocket: rocket))
+                        NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
                         ) {
                             cellView(rocket: rocket)
                         }
@@ -48,8 +48,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+// MARK: - RocketListView Preview
+struct RocketListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RocketListView()
     }
 }

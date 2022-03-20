@@ -8,36 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		A071444327D25B6300B2B352 /* RocketLaunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071444227D25B6300B2B352 /* RocketLaunchApp.swift */; };
-		A071444527D25B6300B2B352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071444427D25B6300B2B352 /* ContentView.swift */; };
+		A071444527D25B6300B2B352 /* RocketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071444427D25B6300B2B352 /* RocketListView.swift */; };
 		A071444727D25B6500B2B352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A071444627D25B6500B2B352 /* Assets.xcassets */; };
 		A071444A27D25B6500B2B352 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A071444927D25B6500B2B352 /* Preview Assets.xcassets */; };
 		A071445127D25BAE00B2B352 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071445027D25BAE00B2B352 /* ViewModifiers.swift */; };
 		A071445427D25BF100B2B352 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071445327D25BF100B2B352 /* Rocket.swift */; };
 		A071445727D25C5A00B2B352 /* APIServiceDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071445627D25C5A00B2B352 /* APIServiceDataPublisher.swift */; };
-		A071445C27D25DA200B2B352 /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071445B27D25DA200B2B352 /* RocketView.swift */; };
+		A071445C27D25DA200B2B352 /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071445B27D25DA200B2B352 /* RocketDetailView.swift */; };
 		A071445E27D25DDD00B2B352 /* RocketLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071445D27D25DDD00B2B352 /* RocketLaunchView.swift */; };
-		A071446227D25E5300B2B352 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446127D25E5300B2B352 /* ContentViewModel.swift */; };
+		A071446227D25E5300B2B352 /* RocketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446127D25E5300B2B352 /* RocketListViewModel.swift */; };
 		A071446427D25E7900B2B352 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446327D25E7900B2B352 /* RocketViewModel.swift */; };
 		A071446627D25EAE00B2B352 /* RocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446527D25EAE00B2B352 /* RocketService.swift */; };
 		A071446827D25EE900B2B352 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446727D25EE900B2B352 /* MotionManager.swift */; };
+		A086478727E37397004C8037 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A086478627E37397004C8037 /* UIScreenExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A06EF2E327DA273800A9DC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A071443F27D25B6300B2B352 /* RocketLaunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketLaunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A071444227D25B6300B2B352 /* RocketLaunchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchApp.swift; sourceTree = "<group>"; };
-		A071444427D25B6300B2B352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../ContentView.swift; sourceTree = "<group>"; };
+		A071444427D25B6300B2B352 /* RocketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RocketListView.swift; path = ../RocketListView.swift; sourceTree = "<group>"; };
 		A071444627D25B6500B2B352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A071444927D25B6500B2B352 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A071445027D25BAE00B2B352 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		A071445327D25BF100B2B352 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		A071445627D25C5A00B2B352 /* APIServiceDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceDataPublisher.swift; sourceTree = "<group>"; };
-		A071445B27D25DA200B2B352 /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
+		A071445B27D25DA200B2B352 /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
 		A071445D27D25DDD00B2B352 /* RocketLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchView.swift; sourceTree = "<group>"; };
-		A071446127D25E5300B2B352 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		A071446127D25E5300B2B352 /* RocketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListViewModel.swift; sourceTree = "<group>"; };
 		A071446327D25E7900B2B352 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		A071446527D25EAE00B2B352 /* RocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketService.swift; sourceTree = "<group>"; };
 		A071446727D25EE900B2B352 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		A086478627E37397004C8037 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,14 +73,14 @@
 			isa = PBXGroup;
 			children = (
 				A06EF2E327DA273800A9DC6B /* Info.plist */,
+				A071444227D25B6300B2B352 /* RocketLaunchApp.swift */,
 				A071445F27D25E1100B2B352 /* ViewModels */,
 				A071445927D25CD500B2B352 /* Services */,
+				A071445527D25C3D00B2B352 /* Protocols */,
 				A071445027D25BAE00B2B352 /* ViewModifiers.swift */,
+				A086478627E37397004C8037 /* UIScreenExtension.swift */,
 				A071445227D25BDF00B2B352 /* Models */,
 				A071445827D25CA200B2B352 /* Views */,
-				A071445527D25C3D00B2B352 /* Protocols */,
-				A071444227D25B6300B2B352 /* RocketLaunchApp.swift */,
-				A071444627D25B6500B2B352 /* Assets.xcassets */,
 				A071444827D25B6500B2B352 /* Preview Content */,
 			);
 			path = RocketLaunch;
@@ -87,6 +89,7 @@
 		A071444827D25B6500B2B352 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A071444627D25B6500B2B352 /* Assets.xcassets */,
 				A071444927D25B6500B2B352 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -111,8 +114,8 @@
 		A071445827D25CA200B2B352 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A071444427D25B6300B2B352 /* ContentView.swift */,
-				A071445B27D25DA200B2B352 /* RocketView.swift */,
+				A071444427D25B6300B2B352 /* RocketListView.swift */,
+				A071445B27D25DA200B2B352 /* RocketDetailView.swift */,
 				A071445D27D25DDD00B2B352 /* RocketLaunchView.swift */,
 			);
 			path = Views;
@@ -130,7 +133,7 @@
 		A071445F27D25E1100B2B352 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A071446127D25E5300B2B352 /* ContentViewModel.swift */,
+				A071446127D25E5300B2B352 /* RocketListViewModel.swift */,
 				A071446327D25E7900B2B352 /* RocketViewModel.swift */,
 			);
 			path = ViewModels;
@@ -206,14 +209,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A071446227D25E5300B2B352 /* ContentViewModel.swift in Sources */,
-				A071445C27D25DA200B2B352 /* RocketView.swift in Sources */,
+				A071446227D25E5300B2B352 /* RocketListViewModel.swift in Sources */,
+				A086478727E37397004C8037 /* UIScreenExtension.swift in Sources */,
+				A071445C27D25DA200B2B352 /* RocketDetailView.swift in Sources */,
 				A071445127D25BAE00B2B352 /* ViewModifiers.swift in Sources */,
 				A071445727D25C5A00B2B352 /* APIServiceDataPublisher.swift in Sources */,
 				A071446427D25E7900B2B352 /* RocketViewModel.swift in Sources */,
 				A071446827D25EE900B2B352 /* MotionManager.swift in Sources */,
 				A071446627D25EAE00B2B352 /* RocketService.swift in Sources */,
-				A071444527D25B6300B2B352 /* ContentView.swift in Sources */,
+				A071444527D25B6300B2B352 /* RocketListView.swift in Sources */,
 				A071444327D25B6300B2B352 /* RocketLaunchApp.swift in Sources */,
 				A071445E27D25DDD00B2B352 /* RocketLaunchView.swift in Sources */,
 				A071445427D25BF100B2B352 /* Rocket.swift in Sources */,
@@ -356,7 +360,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,7 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

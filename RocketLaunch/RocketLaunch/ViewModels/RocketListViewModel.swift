@@ -10,36 +10,36 @@ import Combine
 
 public final class RocketListViewModel: ObservableObject {
     private static let decoder = JSONDecoder()
-    
     private let rocketsService: APIServiceDataPublisher
+    private var cancellable: AnyCancellable?
     
-    private var subscriptions = Set<AnyCancellable>()
-    private var rocketsSubscriptions = Set<AnyCancellable>()
-    
+    @Published private(set) var state = LoadingState.idle
     @Published public var fetching: Bool = false
-    @Published public var rockets: [Rocket] = []
     
     init(
         rocketsService: APIServiceDataPublisher = RocketsService()
     ) {
         self.rocketsService = rocketsService
-        
-        $rockets
-            .map{ _ in false }
-            .assign(to: \.fetching, on: self)
-            .store(in: &subscriptions)
     }
     
     public func fetchRockets() {
-        fetching = true
-        
-        print("FETCH ROCKETS")
-        rocketsService.publisher()
-            .retry(1)
+        state = .loading
+
+        cancellable = rocketsService.publisher()
             .decode(type: [Rocket].self, decoder: Self.decoder)
-            .replaceError(with: [])
             .receive(on: DispatchQueue.main)
-            .assign(to: \.rockets, on: self)
-            .store(in: &rocketsSubscriptions)
+            .map(LoadingState.loaded)
+            .catch { Just(LoadingState.failed($0)) }
+            .sink { [weak self] state in
+                self?.state = state
+            }
+    }
+    
+    enum LoadingState {
+        case idle
+        case loading
+        case failed(Error)
+        case loaded([Rocket])
     }
 }
+

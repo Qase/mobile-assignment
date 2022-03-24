@@ -11,7 +11,7 @@ import SwiftUI
 struct rocketLaunchApp: App {
     var body: some Scene {
         WindowGroup {
-            RocketListView()
+            RocketListView(viewModel: RocketListViewModel())
         }
     }
 }

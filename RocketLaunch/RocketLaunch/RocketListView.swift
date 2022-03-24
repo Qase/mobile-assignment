@@ -10,26 +10,34 @@ import Combine
 
 // MARK: - RocketListView
 struct RocketListView: View {
-    @ObservedObject var viewModel = RocketListViewModel()
-    
-    init() {
-        viewModel.fetchRockets()
-    }
+    @ObservedObject var viewModel: RocketListViewModel
     
     var body: some View {
         NavigationView {
-            if viewModel.rockets.count > 0 {
-                List {
-                    ForEach(viewModel.rockets) { rocket in
-                        NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
-                        ) {
-                            cellView(rocket: rocket)
-                        }
-                    }
+            VStack {
+                switch viewModel.state {
+                case .idle, .loading:
+                    ProgressView()
+                        .foregroundColor(.red)
+                case .failed(let error):
+                    Text(error.localizedDescription)
+                case .loaded(let rockets):
+                    LoadedView(rockets: rockets)
                 }
-                .navigationTitle("Rockets")
-            } else {
-                Text("No rockets in DB")
+            }.navigationTitle("Rockets")
+        }
+        .onAppear {
+            viewModel.fetchRockets()
+        }
+    }
+    
+    private func LoadedView(rockets: [Rocket]) -> some View {
+        List {
+            ForEach(rockets) { rocket in
+                NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
+                ) {
+                    cellView(rocket: rocket)
+                }
             }
         }
     }
@@ -51,6 +59,7 @@ struct RocketListView: View {
 // MARK: - RocketListView Preview
 struct RocketListView_Previews: PreviewProvider {
     static var previews: some View {
-        RocketListView()
+        RocketListView(viewModel: RocketListViewModel())
     }
 }
+

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6B27EC835200470AFC /* LoadingState.swift */; };
+		A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */; };
 		A071444327D25B6300B2B352 /* RocketLaunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071444227D25B6300B2B352 /* RocketLaunchApp.swift */; };
 		A071444527D25B6300B2B352 /* RocketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071444427D25B6300B2B352 /* RocketListView.swift */; };
 		A071444727D25B6500B2B352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A071444627D25B6500B2B352 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A04C5C6B27EC835200470AFC /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		A06EF2E327DA273800A9DC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A071443F27D25B6300B2B352 /* RocketLaunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketLaunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A071444227D25B6300B2B352 /* RocketLaunchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchApp.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 				A071445227D25BDF00B2B352 /* Models */,
 				A071445827D25CA200B2B352 /* Views */,
 				A071444827D25B6500B2B352 /* Preview Content */,
+				A04C5C6B27EC835200470AFC /* LoadingState.swift */,
+				A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */,
 			);
 			path = RocketLaunch;
 			sourceTree = "<group>";
@@ -214,9 +220,11 @@
 				A071445C27D25DA200B2B352 /* RocketDetailView.swift in Sources */,
 				A071445127D25BAE00B2B352 /* ViewModifiers.swift in Sources */,
 				A071445727D25C5A00B2B352 /* APIServiceDataPublisher.swift in Sources */,
+				A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */,
 				A071446427D25E7900B2B352 /* RocketViewModel.swift in Sources */,
 				A071446827D25EE900B2B352 /* MotionManager.swift in Sources */,
 				A071446627D25EAE00B2B352 /* RocketService.swift in Sources */,
+				A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */,
 				A071444527D25B6300B2B352 /* RocketListView.swift in Sources */,
 				A071444327D25B6300B2B352 /* RocketLaunchApp.swift in Sources */,
 				A071445E27D25DDD00B2B352 /* RocketLaunchView.swift in Sources */,

@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 
-public final class RocketListViewModel: ObservableObject {
+public final class RocketListViewModel: ObservableObject, LoadableObject {
     private static let decoder = JSONDecoder()
     private let rocketsService: APIServiceDataPublisher
     private var cancellable: AnyCancellable?
     
-    @Published private(set) var state = LoadingState.idle
+    @Published private(set) var state = LoadingState<[Rocket]>.idle
     @Published public var fetching: Bool = false
     
     init(
@@ -22,24 +22,20 @@ public final class RocketListViewModel: ObservableObject {
         self.rocketsService = rocketsService
     }
     
+    func load() {
+        fetchRockets()
+    }
+    
     public func fetchRockets() {
         state = .loading
 
         cancellable = rocketsService.publisher()
             .decode(type: [Rocket].self, decoder: Self.decoder)
             .receive(on: DispatchQueue.main)
-            .map(LoadingState.loaded)
+            .map(LoadingState<[Rocket]>.loaded)
             .catch { Just(LoadingState.failed($0)) }
             .sink { [weak self] state in
                 self?.state = state
             }
     }
-    
-    enum LoadingState {
-        case idle
-        case loading
-        case failed(Error)
-        case loaded([Rocket])
-    }
 }
-

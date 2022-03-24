@@ -14,17 +14,10 @@ struct RocketListView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                switch viewModel.state {
-                case .idle, .loading:
-                    ProgressView()
-                        .foregroundColor(.red)
-                case .failed(let error):
-                    Text(error.localizedDescription)
-                case .loaded(let rockets):
-                    LoadedView(rockets: rockets)
-                }
-            }.navigationTitle("Rockets")
+            AsyncContentView(source: viewModel) { rockets in
+                LoadedView(rockets: rockets)
+            }
+            .navigationTitle("Rockets")
         }
         .onAppear {
             viewModel.fetchRockets()

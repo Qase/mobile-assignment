@@ -13,14 +13,3 @@ enum LoadingState<Value> {
     case failed(Error)
     case loaded(Value)
 }
-
-extension LoadingState {
-    
-}
-
-// MARK: - Loadable
-protocol LoadableObject: ObservableObject {
-    associatedtype Output
-    var state: LoadingState<Output> { get }
-    func load()
-}

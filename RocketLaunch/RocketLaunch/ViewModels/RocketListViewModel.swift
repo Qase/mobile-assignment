@@ -13,13 +13,15 @@ public final class RocketListViewModel: ObservableObject, LoadableObject {
     private let rocketsService: APIServiceDataPublisher
     private var cancellable: AnyCancellable?
     
-    @Published private(set) var state = LoadingState<[Rocket]>.idle
+    @Published private(set) var state: LoadingState<[Rocket]>
     @Published public var fetching: Bool = false
     
     init(
-        rocketsService: APIServiceDataPublisher = RocketsService()
+        rocketsService: APIServiceDataPublisher = RocketsService(),
+        state: LoadingState<[Rocket]> = .idle
     ) {
         self.rocketsService = rocketsService
+        self.state = state
     }
     
     func load() {

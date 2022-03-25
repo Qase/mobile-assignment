@@ -18,32 +18,53 @@ struct RocketListView: View {
                 LoadedView(rockets: rockets)
             }
             .navigationTitle("Rockets")
+            
+            /*
+            AsyncContentView(source: viewModel) {
+                ProgressView()
+            } errorView: { error in
+                CustomErrorView(title: error.localizedDescription)
+            } content: { rockets in
+                LoadedView(rockets: rockets)
+            }
+             .navigationTitle("Rockets")
+             */
         }
         .onAppear {
             viewModel.fetchRockets()
         }
     }
-    
-    private func LoadedView(rockets: [Rocket]) -> some View {
-        List {
-            ForEach(rockets) { rocket in
-                NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
-                ) {
-                    cellView(rocket: rocket)
+}
+
+extension RocketListView {
+    private struct LoadedView: View {
+        let rockets: [Rocket]
+        
+        var body: some View {
+            List {
+                ForEach(rockets) { rocket in
+                    NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
+                    ) {
+                        CellView(rocket: rocket)
+                    }
                 }
             }
         }
     }
     
-    private func cellView(rocket: Rocket) -> some View {
-        HStack {
-            Image("Rocket")
-            VStack(alignment: .leading) {
-                Text(rocket.name)
-                    .font(.headline)
-                Text("First flight: \(rocket.first_flight)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
+    private struct CellView: View {
+        let rocket: Rocket
+        
+        var body: some View {
+            HStack {
+                Image("Rocket")
+                VStack(alignment: .leading) {
+                    Text(rocket.name)
+                        .font(.headline)
+                    Text("First flight: \(rocket.first_flight)")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
             }
         }
     }

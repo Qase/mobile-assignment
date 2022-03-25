@@ -11,7 +11,9 @@ import SwiftUI
 struct rocketLaunchApp: App {
     var body: some Scene {
         WindowGroup {
-            RocketListView(viewModel: RocketListViewModel())
+            RocketListView(viewModel: mock)
         }
     }
 }
+
+let mock = RocketListViewModel(state: LoadingState<[Rocket]>.loaded([]))

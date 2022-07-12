@@ -3,7 +3,9 @@ package com.veprek.honza.rocketlaunch.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -17,11 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RocketLaunchTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
+
             }
         }
     }
@@ -29,13 +27,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Text(text = name)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     RocketLaunchTheme {
-        Greeting("Android")
+        Greeting("Rockets")
     }
 }

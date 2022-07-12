@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
 
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.veprek.honza.rocketlaunch.ui.MainActivity"
+        android:label="MainActivity" />
+    <fragment
+        android:id="@+id/rocketListFragment"
+        android:name="com.veprek.honza.rocketlaunch.list.RocketListFragment"
+        android:label="fragment_rocket_list"
+        tools:layout="@layout/fragment_rocket_list" />
 </navigation>

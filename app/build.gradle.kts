@@ -16,10 +16,8 @@ val ktlint: Configuration by configurations.creating
 
 // library version
 val composeVersion = "1.1.1"
-val compilerVersion = "1.6.10"
 val navVersion = "2.5.0"
 val hiltVersion = "2.42"
-
 
 // ****************** CONFIGURATION ************************ ////
 
@@ -56,8 +54,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = composeVersion
-        kotlinCompilerVersion = compilerVersion
+        kotlinCompilerExtensionVersion = "1.2.0"
     }
 }
 
@@ -84,4 +81,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+
+//     Logger
+    implementation("com.github.Qase:KotlinLogger:2.2.10")
 }

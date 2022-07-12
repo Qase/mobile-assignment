@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.list
+package com.veprek.honza.rocketlaunch.main.list
 
 import android.os.Bundle
 import android.view.LayoutInflater

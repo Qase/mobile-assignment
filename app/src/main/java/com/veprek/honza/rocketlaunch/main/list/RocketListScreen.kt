@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.list
+package com.veprek.honza.rocketlaunch.main.list
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.rememberScrollState

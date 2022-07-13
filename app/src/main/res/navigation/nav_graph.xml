@@ -11,7 +11,7 @@
         android:label="MainActivity" />
     <fragment
         android:id="@+id/rocketListFragment"
-        android:name="com.veprek.honza.rocketlaunch.main.list.RocketListFragment"
+        android:name="com.veprek.honza.rocketlaunch.system.list.RocketListFragment"
         android:label="fragment_rocket_list"
         tools:layout="@layout/fragment_rocket_list" >
         <action
@@ -20,6 +20,6 @@
     </fragment>
     <fragment
         android:id="@+id/rocketDetailFragment"
-        android:name="com.veprek.honza.rocketlaunch.main.detail.RocketDetailFragment"
+        android:name="com.veprek.honza.rocketlaunch.system.detail.RocketDetailFragment"
         android:label="RocketDetailFragment" />
 </navigation>

@@ -47,6 +47,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    configurations {
+        ktlint
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -74,6 +77,9 @@ dependencies {
     testImplementation("com.google.dagger:hilt-android-testing:$hiltVersion")
     kaptTest("com.google.dagger:hilt-android-compiler:$hiltVersion")
 
+    // Ktlint
+    ktlint("com.pinterest:ktlint:0.46.1")
+
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
@@ -84,4 +90,24 @@ dependencies {
 
 //     Logger
     implementation("com.github.Qase:KotlinLogger:2.2.10")
+}
+
+tasks.register<JavaExec>("ktlint") {
+    group = "verification"
+    description = "Check Kotlin BUNDLE_CODE style."
+    classpath = ktlint
+    mainClass.set("com.pinterest.ktlint.Main")
+    args("src/**/*.kt")
+}
+
+tasks.named("check") {
+    dependsOn(ktlint)
+}
+
+tasks.register<JavaExec>("ktlintFormat") {
+    group = "formatting"
+    description = "Fix Kotlin BUNDLE_CODE style deviations."
+    classpath = ktlint
+    mainClass.set("com.pinterest.ktlint.Main")
+    args("-F", "src/**/*.kt")
 }

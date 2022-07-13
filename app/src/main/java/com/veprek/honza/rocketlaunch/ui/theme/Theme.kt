@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.ui.theme
+package com.veprek.honza.rocketlaunch.ui.theme // ktlint-disable filename
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -37,7 +37,7 @@ fun RocketLaunchTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Comp
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = DMSansTypography,
         shapes = Shapes,
         content = content
     )

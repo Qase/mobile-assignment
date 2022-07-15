@@ -1,5 +1,8 @@
 package com.veprek.honza.rocketlaunch.system.list
 
+import androidx.lifecycle.ViewModel
+
 sealed class RocketUiState
 
-class RocketListViewModel
+// @HiltViewModel
+class RocketListViewModel : ViewModel()

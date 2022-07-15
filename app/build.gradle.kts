@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs")
 }
 
 // ****************** VARIABLES ************************ ////
@@ -63,6 +64,7 @@ android {
 
 dependencies {
 
+    implementation("androidx.appcompat:appcompat:1.4.2")
     implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
@@ -77,6 +79,10 @@ dependencies {
     testImplementation("com.google.dagger:hilt-android-testing:$hiltVersion")
     kaptTest("com.google.dagger:hilt-android-compiler:$hiltVersion")
 
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
     // Ktlint
     ktlint("com.pinterest:ktlint:0.46.1")
 
@@ -88,8 +94,11 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
-//     Logger
+    // Logger
     implementation("com.github.Qase:KotlinLogger:2.2.10")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.1.0")
 }
 
 tasks.register<JavaExec>("ktlint") {

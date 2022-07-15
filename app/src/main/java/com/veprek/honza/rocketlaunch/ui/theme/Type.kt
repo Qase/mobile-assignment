@@ -1,6 +1,7 @@
 package com.veprek.honza.rocketlaunch.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -17,17 +18,36 @@ val fonts = FontFamily(
 )
 
 val DMSansTypography = Typography(
-    fonts
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+    fonts,
+    h1 = TextStyle(
+        fontFamily = fonts,
+        fontWeight = FontWeight.Bold,
+        fontSize = textH1
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+    h2 = TextStyle(
+        fontFamily = fonts,
+        fontWeight = FontWeight.Bold,
+        fontSize = textH2
+    ),
+    h4 = TextStyle(
+        fontFamily = fonts,
+        fontWeight = FontWeight.Bold,
+        fontSize = textH4
+    ),
+    body1 = TextStyle(
+        fontFamily = fonts,
+        fontSize = textBody1
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = fonts,
+        fontSize = textSubtitle1
     )
-    */
+// /* Other default text styles to override
+
+// caption = TextStyle(
+//    fontFamily = FontFamily.Default,
+//    fontWeight = FontWeight.Normal,
+//    fontSize = 12.sp
+// )
+// */
 )

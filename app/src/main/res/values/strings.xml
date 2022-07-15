@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">RocketLaunch</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="parameter_height">height</string>
+    <string name="parameter_diameter">diameter</string>
+    <string name="parameter_mass">mass</string>
+    <string name="arrow_back">Back</string>
+    <string name="rockets">Rockets</string>
+
+    <string name="icon_rocket">Rocket icon</string>
+    <string name="icon_next">Next icon</string>
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/rocketListFragment">
 
@@ -13,8 +12,7 @@
     <fragment
         android:id="@+id/rocketListFragment"
         android:name="com.veprek.honza.rocketlaunch.system.list.RocketListFragment"
-        android:label="fragment_rocket_list"
-        tools:layout="@layout/fragment_rocket_list" >
+        android:label="fragment_rocket_list">
         <action
             android:id="@+id/action_rocketListFragment_to_rocketDetailFragment"
             app:destination="@id/rocketDetailFragment" />
@@ -23,18 +21,25 @@
     <fragment
         android:id="@+id/rocketDetailFragment"
         android:name="com.veprek.honza.rocketlaunch.system.detail.RocketDetailFragment"
-        android:label="RocketDetailFragment" >
+        android:label="RocketDetailFragment">
         <action
             android:id="@+id/action_rocketDetailFragment_to_rocketLaunchFragment"
             app:destination="@id/rocketLaunchFragment" />
         <argument
             android:name="id"
             android:defaultValue="@null"
-            app:nullable="true"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
+
     <fragment
         android:id="@+id/rocketLaunchFragment"
         android:name="com.veprek.honza.rocketlaunch.system.launch.RocketLaunchFragment"
-        android:label="RocketLaunchFragment" />
+        android:label="RocketLaunchFragment">
+        <argument
+            android:name="id"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

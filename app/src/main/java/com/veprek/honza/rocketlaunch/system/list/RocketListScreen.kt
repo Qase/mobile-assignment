@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,16 +22,18 @@ fun RocketListScreen(
     rockets: List<Rocket>,
     toDetailAction: (String) -> Unit = {}
 ) {
-    Column(
-        Modifier.fillMaxSize().padding(horizontal = horizontalPadding),
-        verticalArrangement = Arrangement.spacedBy(verticalPadding)
-    ) {
-        Text(
-            stringResource(R.string.rockets),
-            modifier = Modifier.padding(top = verticalPadding),
-            style = MaterialTheme.typography.h1
-        )
-        RocketList(rockets = rockets, toDetailAction = toDetailAction)
+    Surface {
+        Column(
+            Modifier.fillMaxSize().padding(horizontal = horizontalPadding),
+            verticalArrangement = Arrangement.spacedBy(verticalPadding)
+        ) {
+            Text(
+                stringResource(R.string.rockets),
+                modifier = Modifier.padding(top = verticalPadding),
+                style = MaterialTheme.typography.h1
+            )
+            RocketList(rockets = rockets, toDetailAction = toDetailAction)
+        }
     }
 }
 

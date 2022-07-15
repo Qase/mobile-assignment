@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 
 class RocketDetailFragment : Fragment() {
@@ -18,9 +18,15 @@ class RocketDetailFragment : Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 RocketLaunchTheme {
-                    RocketDetailScreen(backAction = {
-                        findNavController().popBackStack()
-                    })
+                    RocketDetailScreen(
+                        backAction = {
+                            findNavController().popBackStack()
+                        },
+                        launchAction = {
+                            val action = RocketDetailFragmentDirections.actionRocketDetailFragmentToRocketLaunchFragment()
+                            findNavController().navigate(action)
+                        }
+                    )
                 }
             }
         }

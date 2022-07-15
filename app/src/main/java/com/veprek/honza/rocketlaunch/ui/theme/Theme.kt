@@ -1,6 +1,4 @@
-package com.veprek.honza.rocketlaunch.ui.theme // ktlint-disable filename
-
-import androidx.compose.foundation.background
+package com.veprek.honza.rocketlaunch.ui.theme import androidx.compose.foundation.background // ktlint-disable filename
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,20 +7,23 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.White
 
 private val DarkColorPalette = darkColors(
     primary = Orange,
     primaryVariant = Pink,
     secondary = Teal200,
-    background = backgroundDark
+    background = Black,
+    surface = surfaceDark
 )
 
 private val LightColorPalette = lightColors(
     primary = Purple500,
     primaryVariant = Purple700,
     secondary = Teal200,
-    background = backgroundLight,
-    surface = backgroundLight
+    background = White,
+    surface = surfaceLight
 )
 
 @Composable

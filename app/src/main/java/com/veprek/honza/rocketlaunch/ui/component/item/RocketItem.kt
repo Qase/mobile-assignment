@@ -30,7 +30,7 @@ import com.veprek.honza.rocketlaunch.ui.theme.smallPadding
 @Composable
 fun RocketItem(rocket: Rocket, iconColor: Color = Pink, toDetailAction: (String) -> Unit = {}) {
     ListItem(
-        Modifier.fillMaxWidth().background(Color.White).clickable { toDetailAction(rocket.id) },
+        Modifier.fillMaxWidth().background(MaterialTheme.colors.background).clickable { toDetailAction(rocket.id) },
         trailing = {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,

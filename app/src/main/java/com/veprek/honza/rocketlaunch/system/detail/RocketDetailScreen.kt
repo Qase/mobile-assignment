@@ -18,8 +18,10 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
@@ -32,7 +34,7 @@ import com.veprek.honza.rocketlaunch.ui.theme.verticalPadding
 
 @Preview(showBackground = true)
 @Composable
-fun RocketDetailScreen(modifier: Modifier = Modifier, backAction: () -> Unit = {}) {
+fun RocketDetailScreen(modifier: Modifier = Modifier, backAction: () -> Unit = {}, launchAction: () -> Unit = {}) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -43,7 +45,17 @@ fun RocketDetailScreen(modifier: Modifier = Modifier, backAction: () -> Unit = {
                     }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.arrow_back)
+                            contentDescription = stringResource(R.string.icon_back)
+                        )
+                    }
+                },
+                actions = {
+                    IconButton(onClick = {
+                        launchAction()
+                    }) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_rocket),
+                            contentDescription = stringResource(R.string.icon_launch)
                         )
                     }
                 }
@@ -56,16 +68,16 @@ fun RocketDetailScreen(modifier: Modifier = Modifier, backAction: () -> Unit = {
                 verticalArrangement = Arrangement.spacedBy(verticalPadding)
             ) {
                 Text(
-                    "Overview",
+                    stringResource(R.string.overview),
                     modifier = Modifier.padding(top = verticalPadding),
                     style = MaterialTheme.typography.h4
                 )
                 Text(
-                    "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of the satellites and the Dragon spacecraft into orbit.",
+                    stringResource(R.string.dummy_description),
                     style = MaterialTheme.typography.body1
                 )
                 Text(
-                    "Parameters",
+                    stringResource(R.string.parameters),
                     style = MaterialTheme.typography.h4
                 )
                 Row(
@@ -77,21 +89,21 @@ fun RocketDetailScreen(modifier: Modifier = Modifier, backAction: () -> Unit = {
                     Parameter(title = "40m", subtitle = stringResource(R.string.parameter_diameter))
                     Parameter(title = "500t", subtitle = stringResource(R.string.parameter_mass))
                 }
-                Stage(name = "First Stage")
-                Stage(name = "Second Stage")
+                Stage(name = stringResource(R.string.dummy_first_stage))
+                Stage(name = stringResource(R.string.dummy_second_stage))
                 Text(
-                    "Photos",
+                    stringResource(R.string.photos),
                     style = MaterialTheme.typography.h4
                 )
                 AsyncImage(
                     model = "https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg",
                     contentDescription = null,
-                    modifier = Modifier.clip(RoundedCornerShape(cornerRadius))
+                    modifier = Modifier.clip(RoundedCornerShape(cornerRadius)).align(Alignment.CenterHorizontally)
                 )
                 AsyncImage(
                     model = "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg",
                     contentDescription = null,
-                    modifier = Modifier.clip(RoundedCornerShape(cornerRadius))
+                    modifier = Modifier.clip(RoundedCornerShape(cornerRadius)).align(Alignment.CenterHorizontally)
                 )
             }
         }

@@ -13,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RocketListFragment : Fragment() {
-//    private val viewModel by hiltNavGraphViewModels<RocketListViewModel>(R.id.rocketListFragment)
+//    private val viewModel by viewModels<RocketListViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,6 +21,7 @@ class RocketListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return ComposeView(requireContext()).apply {
+            // TODO: From repository, in viewModel
             val rocket1 =
                 Rocket("1", true, "Falcon 1", "24. 3. 2006", "Desc", 12, 40, 55, true, 2, 12, 300)
             val rocket2 =
@@ -41,6 +42,7 @@ class RocketListFragment : Fragment() {
             val rocket3 =
                 Rocket("3", true, "Falcon Heavy", "24. 3. 2006", "Desc", 12, 40, 55, true, 2, 12, 300)
             val rockets = listOf(rocket1, rocket2, rocket3)
+
             setContent {
                 RocketLaunchTheme() {
                     RocketListScreen(

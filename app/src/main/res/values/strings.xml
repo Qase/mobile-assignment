@@ -4,6 +4,9 @@
     <string name="parameter_diameter">diameter</string>
     <string name="parameter_mass">mass</string>
     <string name="rockets">Rockets</string>
+    <string name="overview">Overview</string>
+    <string name="photos">Photos</string>
+    <string name="parameters">Parameters</string>
 
     <!-- Launch -->
     <string name="launch">Launch!</string>
@@ -16,5 +19,8 @@
     <string name="icon_launch">Launch</string>
     <string name="icon_rocket">Rocket icon</string>
     <string name="icon_next">Next icon</string>
-    <string name="overview">Overview</string>
+
+    <string name="dummy_description">Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of the satellites and the Dragon spacecraft into orbit.</string>
+    <string name="dummy_first_stage">First Stage</string>
+    <string name="dummy_second_stage">Second Stage</string>
 </resources>

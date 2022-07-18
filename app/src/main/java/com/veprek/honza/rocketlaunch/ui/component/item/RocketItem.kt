@@ -52,7 +52,7 @@ fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String)
             Column() {
                 Text(rocket.name, style = MaterialTheme.typography.h4)
                 Text(
-                    "First flight: " + rocket.firstFlight,
+                    stringResource(R.string.rocket_first_flight, rocket.firstFlight),
                     style = MaterialTheme.typography.caption
                 )
             }

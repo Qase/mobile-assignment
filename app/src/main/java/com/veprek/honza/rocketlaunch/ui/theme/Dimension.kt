@@ -10,6 +10,9 @@ val textH4 = 20.sp
 val textBody1 = 18.sp
 val textSubtitle1 = 16.sp
 
+// Surface sizes
+val surfaceParameter = 100.dp
+
 // Padding
 val verticalPadding = 24.dp
 val horizontalPadding = 18.dp

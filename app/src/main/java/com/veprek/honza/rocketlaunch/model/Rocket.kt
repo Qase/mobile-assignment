@@ -1,16 +1,25 @@
 package com.veprek.honza.rocketlaunch.model
 
-class Rocket(
+data class Rocket(
     val id: String,
     val active: Boolean,
     val name: String,
     val firstFlight: String,
     val description: String,
-    val height: Int,
-    val diameter: Int,
-    val mass: Int,
-    val reusable: Boolean,
-    val engines: Int,
-    val FuelAmountTons: Int,
-    val BurnTImeSec: Int
+    val height: Height,
+    val diameter: Height,
+    val mass: Mass,
+    val firstStage: Stage,
+    val secondStage: Stage,
+    val images: List<String>
+)
+
+data class Height(
+    val feet: Double,
+    val meters: Double
+)
+
+data class Mass(
+    val kg: Int,
+    val lb: Int
 )

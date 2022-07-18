@@ -59,7 +59,7 @@ fun RocketLaunchScreen(modifier: Modifier = Modifier, backAction: () -> Unit = {
                 AnimatedVisibility(
                     visible = visible,
                     exit = slideOutVertically(
-                        targetOffsetY = { -1200 },
+                        targetOffsetY = { -1500 },
                         animationSpec = tween(
                             durationMillis = 1000,
                             easing = FastOutLinearInEasing

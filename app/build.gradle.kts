@@ -10,7 +10,9 @@ plugins {
 
 // application version
 val VERSION_CODE = 1
-val VERSION_NAME = "0.0.95"
+val VERSION_MAJOR = "0"
+val VERSION_MINOR = "0"
+val VERSION_PATCH = "95"
 
 // ktlint configuration
 val ktlint: Configuration by configurations.creating
@@ -28,9 +30,9 @@ android {
     defaultConfig {
         applicationId = "com.veprek.honza.rocketlaunch"
         minSdk = 24
+        versionCode = VERSION_CODE
         targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        versionName = "$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.ContentAlpha
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.ListItem
@@ -26,14 +28,16 @@ import com.veprek.honza.rocketlaunch.model.Mass
 import com.veprek.honza.rocketlaunch.model.Rocket
 import com.veprek.honza.rocketlaunch.model.Stage
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
+import com.veprek.honza.rocketlaunch.ui.theme.iconPadding
+import com.veprek.honza.rocketlaunch.ui.theme.iconSize
 import com.veprek.honza.rocketlaunch.ui.theme.pink
-import com.veprek.honza.rocketlaunch.ui.theme.smallPadding
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String) -> Unit = {}) {
     ListItem(
-        Modifier.fillMaxWidth().background(MaterialTheme.colors.background).clickable { toDetailAction(rocket.id) },
+        Modifier.fillMaxWidth().background(MaterialTheme.colors.background)
+            .clickable { toDetailAction(rocket.id) },
         trailing = {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,
@@ -46,14 +50,18 @@ fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String)
             Icon(
                 painter = painterResource(R.drawable.ic_rocket),
                 tint = iconColor,
-                modifier = Modifier.padding(end = smallPadding),
+                modifier = Modifier.padding(top = iconPadding, bottom = iconPadding, end = iconPadding).size(iconSize),
                 contentDescription = stringResource(R.string.icon_rocket)
             )
             Column() {
-                Text(rocket.name, style = MaterialTheme.typography.h4)
+                Text(
+                    rocket.name,
+                    style = MaterialTheme.typography.h4
+                )
                 Text(
                     stringResource(R.string.rocket_first_flight, rocket.firstFlight),
-                    style = MaterialTheme.typography.caption
+                    style = MaterialTheme.typography.caption,
+                    color = MaterialTheme.typography.caption.color.copy(alpha = ContentAlpha.medium)
                 )
             }
         }
@@ -63,7 +71,22 @@ fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String)
 @Preview(showBackground = true)
 @Composable
 fun RocketItemPreview() {
-    val rocket = Rocket("1", true, "Falcon 1", "24. 3. 2006", "Desc", Height(12.0, 12.0), Height(40.0, 40.0), Mass(55, 55), Stage(true, 27, 1155, 162), Stage(false, 1, 90, 397), listOf("https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg", "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg"))
+    val rocket = Rocket(
+        "1",
+        true,
+        "Falcon 1",
+        "24. 3. 2006",
+        "Desc",
+        Height(12.0, 12.0),
+        Height(40.0, 40.0),
+        Mass(55, 55),
+        Stage(true, 27, 1155.0, 162.0),
+        Stage(false, 1, 90.0, 397.0),
+        listOf(
+            "https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg",
+            "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg"
+        )
+    )
     RocketLaunchTheme {
         RocketItem(rocket)
     }

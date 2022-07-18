@@ -10,6 +10,10 @@ val textH4 = 20.sp
 val textBody1 = 18.sp
 val textSubtitle1 = 16.sp
 
+// RocketItem
+val iconSize = 24.dp
+val iconPadding = 12.dp
+
 // Surface sizes
 val surfaceParameter = 100.dp
 

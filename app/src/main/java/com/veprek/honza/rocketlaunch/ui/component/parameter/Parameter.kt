@@ -13,9 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.veprek.honza.rocketlaunch.ui.theme.Pink
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import com.veprek.honza.rocketlaunch.ui.theme.cornerRadius
+import com.veprek.honza.rocketlaunch.ui.theme.pink
 
 @Composable
 fun Parameter(
@@ -26,7 +26,7 @@ fun Parameter(
     Surface(
         modifier = modifier.size(100.dp),
         shape = RoundedCornerShape(cornerRadius),
-        color = Pink,
+        color = pink,
         contentColor = Color.White
     ) {
         Column(

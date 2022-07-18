@@ -13,12 +13,12 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.veprek.honza.rocketlaunch.R
-import com.veprek.honza.rocketlaunch.ui.theme.Pink
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
+import com.veprek.honza.rocketlaunch.ui.theme.pink
 import com.veprek.honza.rocketlaunch.ui.theme.smallPadding
 
 @Composable
-fun StageItem(icon: Painter, iconColor: Color = Pink, name: String) {
+fun StageItem(icon: Painter, iconColor: Color = pink, name: String) {
     Row(
         Modifier.fillMaxWidth().padding(smallPadding)
     ) {

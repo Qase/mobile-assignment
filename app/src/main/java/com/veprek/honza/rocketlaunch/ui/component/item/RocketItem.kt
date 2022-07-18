@@ -25,13 +25,13 @@ import com.veprek.honza.rocketlaunch.model.Height
 import com.veprek.honza.rocketlaunch.model.Mass
 import com.veprek.honza.rocketlaunch.model.Rocket
 import com.veprek.honza.rocketlaunch.model.Stage
-import com.veprek.honza.rocketlaunch.ui.theme.Pink
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
+import com.veprek.honza.rocketlaunch.ui.theme.pink
 import com.veprek.honza.rocketlaunch.ui.theme.smallPadding
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun RocketItem(rocket: Rocket, iconColor: Color = Pink, toDetailAction: (String) -> Unit = {}) {
+fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String) -> Unit = {}) {
     ListItem(
         Modifier.fillMaxWidth().background(MaterialTheme.colors.background).clickable { toDetailAction(rocket.id) },
         trailing = {

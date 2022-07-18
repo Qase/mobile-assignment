@@ -11,17 +11,17 @@ import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.White
 
 private val DarkColorPalette = darkColors(
-    primary = Orange,
-    primaryVariant = Pink,
-    secondary = Teal200,
+    primary = purple500,
+    primaryVariant = pink,
+    secondary = teal200,
     background = Black,
     surface = surfaceDark
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200,
+    primary = purple500,
+    primaryVariant = purple700,
+    secondary = teal200,
     background = White,
     surface = surfaceLight
 )

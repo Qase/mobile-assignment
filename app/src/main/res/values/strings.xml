@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">RocketLaunch</string>
+    <string name="error">Sorry, something went wrong</string>
+
+    <!-- List -->
+    <string name="rockets">Rockets</string>
+
+    <!-- Detail -->
     <string name="parameter_height">height</string>
     <string name="parameter_diameter">diameter</string>
     <string name="parameter_mass">mass</string>
-    <string name="rockets">Rockets</string>
     <string name="overview">Overview</string>
     <string name="photos">Photos</string>
     <string name="parameters">Parameters</string>

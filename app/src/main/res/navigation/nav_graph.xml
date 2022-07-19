@@ -31,9 +31,7 @@
             app:destination="@id/rocketLaunchFragment" />
         <argument
             android:name="id"
-            android:defaultValue="@null"
-            app:argType="string"
-            app:nullable="true" />
+            app:argType="string" />
     </fragment>
 
     <fragment

@@ -13,13 +13,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.veprek.honza.rocketlaunch.R
 import com.veprek.honza.rocketlaunch.model.Rocket
+import com.veprek.honza.rocketlaunch.model.State
+import com.veprek.honza.rocketlaunch.ui.component.loading.Loading
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import com.veprek.honza.rocketlaunch.ui.theme.horizontalPadding
 import com.veprek.honza.rocketlaunch.ui.theme.verticalPadding
 
 @Composable
 fun RocketListScreen(
-    rockets: List<Rocket>,
+    rockets: List<Rocket>?,
+    state: State,
     toDetailAction: (String) -> Unit = {}
 ) {
     Surface {
@@ -27,20 +30,30 @@ fun RocketListScreen(
             Modifier.fillMaxSize().padding(horizontal = horizontalPadding),
             verticalArrangement = Arrangement.spacedBy(verticalPadding)
         ) {
-            Text(
-                stringResource(R.string.rockets),
-                modifier = Modifier.padding(top = verticalPadding),
-                style = MaterialTheme.typography.h1
-            )
-            RocketList(rockets = rockets, toDetailAction = toDetailAction)
+            when (state) {
+                State.LOADING -> {
+                    Loading()
+                }
+                State.SUCCESS -> {
+                    Text(
+                        stringResource(R.string.rockets),
+                        modifier = Modifier.padding(top = verticalPadding),
+                        style = MaterialTheme.typography.h1
+                    )
+                    RocketList(rockets = rockets ?: listOf(), toDetailAction = toDetailAction)
+                }
+                else -> {
+                    Text(stringResource(R.string.error))
+                }
+            }
         }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun RocketListScreenPreview(modifier: Modifier = Modifier, rockets: List<Rocket> = listOf()) {
+fun RocketListScreenPreview(modifier: Modifier = Modifier, rockets: List<Rocket> = listOf(), state: State = State.LOADING) {
     RocketLaunchTheme {
-        RocketListScreen(rockets = rockets)
+        RocketListScreen(rockets = rockets, state = state)
     }
 }

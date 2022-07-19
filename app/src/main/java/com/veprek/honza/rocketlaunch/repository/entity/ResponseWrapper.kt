@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.repository
+package com.veprek.honza.rocketlaunch.repository.entity
 
 import com.veprek.honza.rocketlaunch.model.State
 

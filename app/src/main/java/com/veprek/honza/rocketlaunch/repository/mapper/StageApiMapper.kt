@@ -9,8 +9,8 @@ class StageApiMapper @Inject constructor() : ApiMapper<StageApi, Stage> {
         return Stage(
             reusable = apiEntity.reusable,
             engines = apiEntity.engines ?: 0,
-            fuelAmountTons = apiEntity.fuelAmountTons ?: 0.0,
-            burnTimeSec = apiEntity.burnTimeSec ?: 0.0
+            fuelAmountTons = apiEntity.fuelAmountTons?.toInt() ?: 0,
+            burnTimeSec = apiEntity.burnTimeSec?.toInt() ?: 0
         )
     }
 }

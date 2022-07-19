@@ -7,8 +7,8 @@ import javax.inject.Inject
 class HeightApiMapper @Inject constructor() : ApiMapper<HeightApi, Height> {
     override fun mapToDomain(apiEntity: HeightApi): Height {
         return Height(
-            feet = apiEntity.feet,
-            meters = apiEntity.meters
+            feet = apiEntity.feet.toInt(),
+            meters = apiEntity.meters.toInt()
         )
     }
 }

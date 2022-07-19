@@ -3,6 +3,6 @@ package com.veprek.honza.rocketlaunch.model
 data class Stage(
     val reusable: Boolean,
     val engines: Int,
-    val fuelAmountTons: Double,
-    val burnTimeSec: Double
+    val fuelAmountTons: Int,
+    val burnTimeSec: Int
 )

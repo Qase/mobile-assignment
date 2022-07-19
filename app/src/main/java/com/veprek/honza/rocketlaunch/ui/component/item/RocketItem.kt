@@ -77,11 +77,11 @@ fun RocketItemPreview() {
         "Falcon 1",
         "24. 3. 2006",
         "Desc",
-        Height(12.0, 12.0),
-        Height(40.0, 40.0),
+        Height(12, 12),
+        Height(40, 40),
         Mass(55, 55),
-        Stage(true, 27, 1155.0, 162.0),
-        Stage(false, 1, 90.0, 397.0),
+        Stage(true, 27, 1155, 162),
+        Stage(false, 1, 90, 397),
         listOf(
             "https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg",
             "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg"

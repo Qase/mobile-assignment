@@ -15,8 +15,8 @@ data class Rocket(
 )
 
 data class Height(
-    val feet: Double,
-    val meters: Double
+    val feet: Int,
+    val meters: Int
 )
 
 data class Mass(

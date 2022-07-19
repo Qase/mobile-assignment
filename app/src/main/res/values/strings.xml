@@ -19,6 +19,17 @@
     <string name="param_diameter_m">%dm</string>
     <string name="param_mass_t">%dt</string>
 
+    <plurals name="stage_engines">
+        <item quantity="one">%d engines</item>
+        <item quantity="other">%d engines</item>
+    </plurals>
+    <string name="stage_engine">%d engines</string>
+    <string name="stage_fuel">%d tons of fuel</string>
+    <string name="stage_burn_time">%d seconds burn time</string>
+    <string name="stage_reusable">reusable</string>
+    <string name="stage_not_reusable">not reusable</string>
+
+
     <!-- Launch -->
     <string name="launch">Launch!</string>
     <string name="launch_successful">Launch successful!</string>

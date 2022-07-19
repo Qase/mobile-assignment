@@ -15,7 +15,11 @@
         android:label="fragment_rocket_list">
         <action
             android:id="@+id/action_rocketListFragment_to_rocketDetailFragment"
-            app:destination="@id/rocketDetailFragment" />
+            app:destination="@id/rocketDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 
     <fragment

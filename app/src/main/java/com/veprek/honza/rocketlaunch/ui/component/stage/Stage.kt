@@ -9,8 +9,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.veprek.honza.rocketlaunch.R
+import com.veprek.honza.rocketlaunch.model.Stage
 import com.veprek.honza.rocketlaunch.ui.component.item.StageItem
 import com.veprek.honza.rocketlaunch.ui.theme.LightGray
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
@@ -21,7 +23,8 @@ import com.veprek.honza.rocketlaunch.ui.theme.smallPadding
 @Composable
 fun Stage(
     modifier: Modifier = Modifier,
-    name: String
+    name: String,
+    stage: Stage
 ) {
     Surface(
         shape = RoundedCornerShape(cornerRadius),
@@ -33,10 +36,20 @@ fun Stage(
                 modifier = Modifier.padding(smallPadding),
                 style = MaterialTheme.typography.h4
             )
-            StageItem(icon = painterResource(R.drawable.reusable), name = "reusable")
-            StageItem(icon = painterResource(R.drawable.engine), name = "9 engines")
-            StageItem(icon = painterResource(R.drawable.fuel), name = "385 tons of fuel")
-            StageItem(icon = painterResource(R.drawable.burn), name = "162 seconds burn time")
+            if (stage.reusable) {
+                StageItem(
+                    icon = painterResource(R.drawable.reusable),
+                    name = stringResource(R.string.stage_reusable)
+                )
+            } else {
+                StageItem(
+                    icon = painterResource(R.drawable.reusable),
+                    name = stringResource(R.string.stage_not_reusable)
+                )
+            }
+            StageItem(icon = painterResource(R.drawable.engine), name = stringResource(R.string.stage_engine, stage.engines))
+            StageItem(icon = painterResource(R.drawable.fuel), name = stringResource(R.string.stage_fuel, stage.fuelAmountTons))
+            StageItem(icon = painterResource(R.drawable.burn), name = stringResource(R.string.stage_burn_time, stage.burnTimeSec))
         }
     }
 }
@@ -45,9 +58,10 @@ fun Stage(
 @Composable
 fun StagePreview(
     modifier: Modifier = Modifier,
-    name: String = "First Stage"
+    name: String = "First Stage",
+    stage: Stage = Stage(true, 2, 193, 42)
 ) {
     RocketLaunchTheme {
-        Stage(modifier, name)
+        Stage(modifier, name, stage)
     }
 }

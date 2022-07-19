@@ -112,8 +112,8 @@ fun RocketDetailScreen(
                                     subtitle = stringResource(R.string.parameter_mass)
                                 )
                             }
-                            Stage(name = stringResource(R.string.first_stage))
-                            Stage(name = stringResource(R.string.second_stage))
+                            Stage(name = stringResource(R.string.first_stage), stage = rocket.firstStage)
+                            Stage(name = stringResource(R.string.second_stage), stage = rocket.secondStage)
                             Text(
                                 stringResource(R.string.photos),
                                 style = MaterialTheme.typography.h4

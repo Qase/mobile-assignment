@@ -24,10 +24,13 @@ class RocketListFragment : Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 val rockets = viewModel.rockets.collectAsState()
+                val isRefreshing = viewModel.isRefreshing.collectAsState()
                 RocketLaunchTheme() {
                     RocketListScreen(
                         rockets = rockets.value.data,
                         state = rockets.value.state,
+                        refreshing = isRefreshing.value,
+                        onRefresh = { viewModel.refresh() },
                         toDetailAction = {
                                 id ->
                             val action =

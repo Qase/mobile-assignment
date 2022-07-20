@@ -113,6 +113,9 @@ dependencies {
 
     // Coil
     implementation("io.coil-kt:coil-compose:2.1.0")
+
+    // SwipeRefresh
+    implementation("com.google.accompanist:accompanist-swiperefresh:0.24.13-rc")
 }
 
 tasks.register<JavaExec>("ktlint") {

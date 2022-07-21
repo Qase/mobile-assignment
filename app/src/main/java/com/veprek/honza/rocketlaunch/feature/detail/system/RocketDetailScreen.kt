@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.system.detail
+package com.veprek.honza.rocketlaunch.feature.detail
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,8 +25,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import coil.compose.AsyncImage
 import com.veprek.honza.rocketlaunch.R
-import com.veprek.honza.rocketlaunch.model.Rocket
-import com.veprek.honza.rocketlaunch.model.State
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
+import com.veprek.honza.rocketlaunch.repository.model.State
 import com.veprek.honza.rocketlaunch.ui.component.loading.Loading
 import com.veprek.honza.rocketlaunch.ui.component.parameter.Parameter
 import com.veprek.honza.rocketlaunch.ui.component.stage.Stage

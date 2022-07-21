@@ -1,7 +1,7 @@
 package com.veprek.honza.rocketlaunch.repository.mapper
 
-import com.veprek.honza.rocketlaunch.model.Rocket
 import com.veprek.honza.rocketlaunch.repository.entity.RocketApi
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject

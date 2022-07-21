@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.model
+package com.veprek.honza.rocketlaunch.repository.model
 
 enum class State {
     LOADING,

@@ -1,10 +1,10 @@
-package com.veprek.honza.rocketlaunch.data
+package com.veprek.honza.rocketlaunch.repository.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.veprek.honza.rocketlaunch.data.rocket.RocketDao
-import com.veprek.honza.rocketlaunch.model.Rocket
+import com.veprek.honza.rocketlaunch.repository.db.dao.RocketDao
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
 
 @TypeConverters(Converters::class)
 @Database(entities = [Rocket::class], version = 1)

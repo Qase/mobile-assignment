@@ -1,10 +1,10 @@
-package com.veprek.honza.rocketlaunch.data.rocket
+package com.veprek.honza.rocketlaunch.repository.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.veprek.honza.rocketlaunch.model.Rocket
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
 
 @Dao
 interface RocketDao {

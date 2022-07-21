@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.model
+package com.veprek.honza.rocketlaunch.repository.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

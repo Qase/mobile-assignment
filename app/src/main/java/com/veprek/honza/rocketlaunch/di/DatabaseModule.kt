@@ -1,9 +1,9 @@
-package com.veprek.honza.rocketlaunch.data.module
+package com.veprek.honza.rocketlaunch.di
 
 import android.content.Context
 import androidx.room.Room
-import com.veprek.honza.rocketlaunch.data.AppDatabase
-import com.veprek.honza.rocketlaunch.data.rocket.RocketDao
+import com.veprek.honza.rocketlaunch.repository.db.AppDatabase
+import com.veprek.honza.rocketlaunch.repository.db.dao.RocketDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.system.detail
+package com.veprek.honza.rocketlaunch.feature.detail.system
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.veprek.honza.rocketlaunch.feature.detail.RocketDetailScreen
+import com.veprek.honza.rocketlaunch.feature.detail.presentation.RocketDetailViewModel
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import dagger.hilt.android.AndroidEntryPoint
 import quanti.com.kotlinlog.Log

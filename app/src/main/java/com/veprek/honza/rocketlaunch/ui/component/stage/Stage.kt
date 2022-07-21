@@ -12,7 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.veprek.honza.rocketlaunch.R
-import com.veprek.honza.rocketlaunch.model.Stage
+import com.veprek.honza.rocketlaunch.repository.model.Stage
 import com.veprek.honza.rocketlaunch.ui.component.item.StageItem
 import com.veprek.honza.rocketlaunch.ui.theme.LightGray
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme

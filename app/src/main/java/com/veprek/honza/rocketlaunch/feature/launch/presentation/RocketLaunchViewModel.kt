@@ -1,8 +1,8 @@
-package com.veprek.honza.rocketlaunch.system.launch
+package com.veprek.honza.rocketlaunch.feature.launch.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.veprek.honza.rocketlaunch.model.RocketState
+import com.veprek.honza.rocketlaunch.repository.model.RocketState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

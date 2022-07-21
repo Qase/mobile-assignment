@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.system.launch
+package com.veprek.honza.rocketlaunch.feature.launch.system
 
 import android.content.Context
 import android.hardware.Sensor
@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import com.veprek.honza.rocketlaunch.feature.launch.presentation.RocketLaunchViewModel
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import dagger.hilt.android.AndroidEntryPoint
 import quanti.com.kotlinlog.Log
@@ -51,9 +52,7 @@ class RocketLaunchFragment : Fragment(), SensorEventListener {
                 RocketLaunchTheme {
                     RocketLaunchScreen(
                         state = state.value,
-                        launched = isLaunched.value,
-                        onLaunch = { viewModel.launch() },
-                        onFail = { viewModel.fail() }
+                        launched = isLaunched.value
                     ) {
                         findNavController().popBackStack()
                     }

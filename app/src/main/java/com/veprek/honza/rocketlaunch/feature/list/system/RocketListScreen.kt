@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.system.list
+package com.veprek.honza.rocketlaunch.feature.list.system
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,8 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.veprek.honza.rocketlaunch.R
-import com.veprek.honza.rocketlaunch.model.Rocket
-import com.veprek.honza.rocketlaunch.model.State
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
+import com.veprek.honza.rocketlaunch.repository.model.State
 import com.veprek.honza.rocketlaunch.ui.component.error.Error
 import com.veprek.honza.rocketlaunch.ui.component.loading.Loading
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme

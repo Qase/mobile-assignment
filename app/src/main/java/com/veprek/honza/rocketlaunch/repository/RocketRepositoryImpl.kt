@@ -1,12 +1,12 @@
 package com.veprek.honza.rocketlaunch.repository
 
-import com.veprek.honza.rocketlaunch.data.rocket.RocketDao
-import com.veprek.honza.rocketlaunch.model.Rocket
-import com.veprek.honza.rocketlaunch.model.State
 import com.veprek.honza.rocketlaunch.repository.api.ApiImpl
+import com.veprek.honza.rocketlaunch.repository.db.dao.RocketDao
 import com.veprek.honza.rocketlaunch.repository.entity.NoConnectionException
 import com.veprek.honza.rocketlaunch.repository.entity.ResponseWrapper
 import com.veprek.honza.rocketlaunch.repository.mapper.RocketApiMapper
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
+import com.veprek.honza.rocketlaunch.repository.model.State
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import quanti.com.kotlinlog.Log

@@ -1,7 +1,7 @@
 package com.veprek.honza.rocketlaunch.repository.mapper
 
-import com.veprek.honza.rocketlaunch.model.Stage
 import com.veprek.honza.rocketlaunch.repository.entity.StageApi
+import com.veprek.honza.rocketlaunch.repository.model.Stage
 import javax.inject.Inject
 
 class StageApiMapper @Inject constructor() : ApiMapper<StageApi, Stage> {

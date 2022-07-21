@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.system.launch
+package com.veprek.honza.rocketlaunch.feature.launch.system
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutLinearInEasing
@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import com.veprek.honza.rocketlaunch.R
-import com.veprek.honza.rocketlaunch.model.RocketState
+import com.veprek.honza.rocketlaunch.repository.model.RocketState
 import com.veprek.honza.rocketlaunch.ui.theme.verticalPadding
 
 @Composable
@@ -36,8 +36,6 @@ fun RocketLaunchScreen(
     modifier: Modifier = Modifier,
     state: RocketState,
     launched: Boolean = true,
-    onLaunch: () -> Unit = {},
-    onFail: () -> Unit = {},
     backAction: () -> Unit = {}
 ) {
     Scaffold(

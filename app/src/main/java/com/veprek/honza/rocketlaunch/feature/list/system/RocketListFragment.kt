@@ -1,4 +1,4 @@
-package com.veprek.honza.rocketlaunch.system.list
+package com.veprek.honza.rocketlaunch.feature.list.system
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import com.veprek.honza.rocketlaunch.feature.list.presentation.RocketListViewModel
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -23,10 +23,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.veprek.honza.rocketlaunch.R
-import com.veprek.honza.rocketlaunch.model.Height
-import com.veprek.honza.rocketlaunch.model.Mass
-import com.veprek.honza.rocketlaunch.model.Rocket
-import com.veprek.honza.rocketlaunch.model.Stage
+import com.veprek.honza.rocketlaunch.repository.model.Height
+import com.veprek.honza.rocketlaunch.repository.model.Mass
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
+import com.veprek.honza.rocketlaunch.repository.model.Stage
 import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import com.veprek.honza.rocketlaunch.ui.theme.iconPadding
 import com.veprek.honza.rocketlaunch.ui.theme.iconSize

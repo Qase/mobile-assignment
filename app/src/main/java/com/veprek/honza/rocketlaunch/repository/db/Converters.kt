@@ -1,13 +1,13 @@
-package com.veprek.honza.rocketlaunch.data
+package com.veprek.honza.rocketlaunch.repository.db
 
 import androidx.room.TypeConverter
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.veprek.honza.rocketlaunch.model.Height
-import com.veprek.honza.rocketlaunch.model.Mass
-import com.veprek.honza.rocketlaunch.model.Stage
+import com.veprek.honza.rocketlaunch.repository.model.Height
+import com.veprek.honza.rocketlaunch.repository.model.Mass
+import com.veprek.honza.rocketlaunch.repository.model.Stage
 import java.lang.reflect.Type
 
 class Converters {

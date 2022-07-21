@@ -1,7 +1,7 @@
 package com.veprek.honza.rocketlaunch.repository
 
-import com.veprek.honza.rocketlaunch.model.Rocket
 import com.veprek.honza.rocketlaunch.repository.entity.ResponseWrapper
+import com.veprek.honza.rocketlaunch.repository.model.Rocket
 import kotlinx.coroutines.flow.Flow
 
 interface RocketRepository {

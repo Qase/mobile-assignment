@@ -3,7 +3,7 @@ package com.veprek.honza.rocketlaunch.data
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.veprek.honza.rocketlaunch.data.rockets.RocketDao
+import com.veprek.honza.rocketlaunch.data.rocket.RocketDao
 import com.veprek.honza.rocketlaunch.model.Rocket
 
 @TypeConverters(Converters::class)

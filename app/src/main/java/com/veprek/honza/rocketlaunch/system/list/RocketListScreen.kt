@@ -37,28 +37,31 @@ fun RocketListScreen(
             state = rememberSwipeRefreshState(isRefreshing = refreshing),
             onRefresh = { onRefresh() }
         ) {
-            Column(
-                Modifier
-                    .fillMaxSize()
-                    .verticalScroll(rememberScrollState())
-                    .padding(horizontal = horizontalPadding),
-                verticalArrangement = Arrangement.spacedBy(verticalPadding)
-            ) {
-                when (state) {
-                    State.LOADING -> {
-                        Loading()
-                    }
-                    State.SUCCESS -> {
+            when (state) {
+                State.LOADING -> {
+                    Loading()
+                }
+                State.SUCCESS -> {
+                    Column(
+                        Modifier
+                            .fillMaxSize()
+                            .verticalScroll(rememberScrollState())
+                            .padding(horizontal = horizontalPadding),
+                        verticalArrangement = Arrangement.spacedBy(verticalPadding)
+                    ) {
                         Text(
                             stringResource(R.string.rockets),
                             modifier = Modifier.padding(top = verticalPadding),
                             style = MaterialTheme.typography.h1
                         )
-                        RocketList(rockets = rockets ?: listOf(), toDetailAction = toDetailAction)
+                        RocketList(
+                            rockets = rockets ?: listOf(),
+                            toDetailAction = toDetailAction
+                        )
                     }
-                    else -> {
-                        Error()
-                    }
+                }
+                else -> {
+                    Error()
                 }
             }
         }

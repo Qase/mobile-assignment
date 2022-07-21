@@ -32,6 +32,7 @@
 
     <!-- Launch -->
     <string name="launch">Launch!</string>
+    <string name="fail">Fail!</string>
     <string name="launch_successful">Launch successful!</string>
     <string name="launch_failed">Launch failed!</string>
     <string name="launch_initial">Move your phone up to launch the rocket</string>

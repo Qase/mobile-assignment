@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.veprek.honza.rocketlaunch.feature.detail.system.RocketDetailScreen
+import com.veprek.honza.rocketlaunch.feature.launch.system.RocketLaunchScreen
 import com.veprek.honza.rocketlaunch.feature.list.system.RocketListScreen
 
 @Composable
@@ -35,12 +36,12 @@ fun Navigation() {
             )
         }
 
-//        composable(
-//            route = NavigationScreens.RocketLaunchScreen.route
-//        ) { entry ->
-//            RocketLaunchScreen(
-//                navController
-//            )
-//        }
+        composable(
+            route = NavigationScreens.RocketLaunchScreen.route
+        ) {
+            RocketLaunchScreen(
+                navController = navController
+            )
+        }
     }
 }

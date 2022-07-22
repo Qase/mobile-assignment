@@ -39,7 +39,8 @@ import quanti.com.kotlinlog.Log
 @Composable
 fun RocketDetailScreenImpl(
     rocketState: ResponseWrapper<Rocket?>,
-    backAction: () -> Unit = {}
+    backAction: () -> Unit = {},
+    launchAction: () -> Unit = {}
 ) {
     Log.d("Data: ${rocketState.data}")
     Log.d("Created Impl")
@@ -68,6 +69,7 @@ fun RocketDetailScreenImpl(
                             },
                             actions = {
                                 IconButton(onClick = {
+                                    launchAction()
                                 }) {
                                     Icon(
                                         painter = painterResource(id = R.drawable.ic_rocket),

@@ -6,6 +6,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.veprek.honza.rocketlaunch.feature.detail.presentation.RocketDetailViewModel
+import com.veprek.honza.rocketlaunch.navigation.NavigationScreens
 import quanti.com.kotlinlog.Log
 
 @Composable
@@ -28,6 +29,7 @@ fun RocketDetailScreen(
 
     RocketDetailScreenImpl(
         rocketState = rocketFlow.value,
-        backAction = { navController.popBackStack() }
+        backAction = { navController.popBackStack() },
+        launchAction = { navController.navigate(NavigationScreens.RocketLaunchScreen.route) }
     )
 }

@@ -46,6 +46,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            isMinifyEnabled = false
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -72,8 +75,11 @@ dependencies {
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
+    implementation("androidx.navigation:navigation-compose:2.5.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.0")
     implementation("androidx.activity:activity-compose:1.5.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
 
     // Hilt
     implementation("com.google.dagger:hilt-android:$hiltVersion")

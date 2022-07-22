@@ -22,7 +22,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.veprek.honza.rocketlaunch.R
+import com.veprek.honza.rocketlaunch.navigation.NavigationScreens
 import com.veprek.honza.rocketlaunch.repository.model.Height
 import com.veprek.honza.rocketlaunch.repository.model.Mass
 import com.veprek.honza.rocketlaunch.repository.model.Rocket
@@ -31,13 +33,17 @@ import com.veprek.honza.rocketlaunch.ui.theme.RocketLaunchTheme
 import com.veprek.honza.rocketlaunch.ui.theme.iconPadding
 import com.veprek.honza.rocketlaunch.ui.theme.iconSize
 import com.veprek.honza.rocketlaunch.ui.theme.pink
+import quanti.com.kotlinlog.Log
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String) -> Unit = {}) {
+fun RocketItem(rocket: Rocket, iconColor: Color = pink, navController: NavController) {
     ListItem(
         Modifier.fillMaxWidth().background(MaterialTheme.colors.background)
-            .clickable { toDetailAction(rocket.id) },
+            .clickable {
+                Log.d("Clicked")
+                navController.navigate(NavigationScreens.RocketDetailScreen.route + "/${rocket.id}")
+            },
         trailing = {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,
@@ -50,7 +56,11 @@ fun RocketItem(rocket: Rocket, iconColor: Color = pink, toDetailAction: (String)
             Icon(
                 painter = painterResource(R.drawable.ic_rocket),
                 tint = iconColor,
-                modifier = Modifier.padding(top = iconPadding, bottom = iconPadding, end = iconPadding).size(iconSize),
+                modifier = Modifier.padding(
+                    top = iconPadding,
+                    bottom = iconPadding,
+                    end = iconPadding
+                ).size(iconSize),
                 contentDescription = stringResource(R.string.icon_rocket)
             )
             Column() {
@@ -88,6 +98,6 @@ fun RocketItemPreview() {
         )
     )
     RocketLaunchTheme {
-        RocketItem(rocket)
+//        RocketItem(rocket)
     }
 }

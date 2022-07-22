@@ -5,6 +5,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import com.veprek.honza.rocketlaunch.repository.model.Rocket
 import com.veprek.honza.rocketlaunch.ui.component.item.RocketItem
 import com.veprek.honza.rocketlaunch.ui.theme.cornerRadius
@@ -13,12 +14,12 @@ import com.veprek.honza.rocketlaunch.ui.theme.cornerRadius
 fun ShowRocketsList(
     modifier: Modifier = Modifier,
     rockets: List<Rocket>,
-    toDetailAction: (String) -> Unit = {}
+    navController: NavController
 ) {
     Surface(modifier = modifier, shape = RoundedCornerShape(cornerRadius)) {
         Column() {
             rockets.forEach {
-                RocketItem(it, toDetailAction = toDetailAction)
+                RocketItem(it, navController = navController)
             }
         }
     }

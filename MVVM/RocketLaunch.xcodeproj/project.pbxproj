@@ -13,7 +13,6 @@
 		A01BE6AD28AFCE60000567C4 /* RocketDetail+instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6AC28AFCE60000567C4 /* RocketDetail+instances.swift */; };
 		A01BE6B028AFCECF000567C4 /* RocketDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6AF28AFCECF000567C4 /* RocketDTO.swift */; };
 		A01BE6B228AFD0E3000567C4 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6B128AFD0E3000567C4 /* Rocket.swift */; };
-		A01BE6B428AFD1DD000567C4 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6B328AFD1DD000567C4 /* Date+.swift */; };
 		A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6B27EC835200470AFC /* LoadingState.swift */; };
 		A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */; };
 		A04C5C7027EC9B0000470AFC /* ObservableObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */; };
@@ -42,7 +41,6 @@
 		A01BE6AC28AFCE60000567C4 /* RocketDetail+instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketDetail+instances.swift"; sourceTree = "<group>"; };
 		A01BE6AF28AFCECF000567C4 /* RocketDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDTO.swift; sourceTree = "<group>"; };
 		A01BE6B128AFD0E3000567C4 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
-		A01BE6B328AFD1DD000567C4 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A04C5C6B27EC835200470AFC /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectExtension.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				A086478627E37397004C8037 /* UIScreen+.swift */,
 				A01BE6A028AFCA25000567C4 /* LocalizedStringKey+.swift */,
-				A01BE6B328AFD1DD000567C4 /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 				A071445727D25C5A00B2B352 /* APIServiceDataPublisher.swift in Sources */,
 				A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */,
 				A071446427D25E7900B2B352 /* RocketViewModel.swift in Sources */,
-				A01BE6B428AFD1DD000567C4 /* Date+.swift in Sources */,
 				A071446827D25EE900B2B352 /* MotionManager.swift in Sources */,
 				A071446627D25EAE00B2B352 /* RocketService.swift in Sources */,
 				A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */,

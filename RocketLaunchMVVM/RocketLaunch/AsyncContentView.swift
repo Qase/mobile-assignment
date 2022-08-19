@@ -8,7 +8,8 @@
 import SwiftUI
 import Combine
 
-struct AsyncContentView<Source: LoadableObject,
+struct AsyncContentView<
+    Source: LoadableObject,
                         ErrorView: View,
                         LoadingView: View,
                         Content: View>: View {

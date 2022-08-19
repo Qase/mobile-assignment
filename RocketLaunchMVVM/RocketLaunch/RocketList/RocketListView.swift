@@ -18,17 +18,6 @@ struct RocketListView: View {
                 LoadedView(rockets: rockets)
             }
             .navigationTitle("Rockets")
-            
-            /*
-            AsyncContentView(source: viewModel) {
-                ProgressView()
-            } errorView: { error in
-                CustomErrorView(title: error.localizedDescription)
-            } content: { rockets in
-                LoadedView(rockets: rockets)
-            }
-             .navigationTitle("Rockets")
-             */
         }
         .onAppear {
             viewModel.fetchRockets()

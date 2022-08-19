@@ -8,6 +8,7 @@
 import Foundation
 
 //MARK: - Rocket
+
 public struct Rocket: Decodable, Identifiable {
     public let id: String
     let name: String
@@ -54,6 +55,7 @@ public struct Rocket: Decodable, Identifiable {
 }
 
 //MARK: - Stage
+
 struct Stage: Decodable {
     let reusable: Bool
     let engines: Int
@@ -74,6 +76,7 @@ struct Stage: Decodable {
 }
 
 // MARK: - Parameters
+
 struct Length: Decodable {
     enum LengthType { case meters, feet }
     let meters: Double
@@ -108,7 +111,6 @@ struct Weight: Decodable {
         if type == .lb {
             return "\(lb)lb"
         }
-        //TODO: throw error
         return "nil"
     }
 }

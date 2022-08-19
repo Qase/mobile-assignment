@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public final class RocketListViewModel: ObservableObject {
+class RocketListViewModel: ObservableObject {
     private static let decoder = JSONDecoder()
     private let rocketsService: APIServiceDataPublisher
     private var cancellable: AnyCancellable?

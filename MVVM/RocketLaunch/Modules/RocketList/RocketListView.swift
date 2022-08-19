@@ -9,54 +9,33 @@ import SwiftUI
 import Combine
 
 // MARK: - RocketListView
+
 struct RocketListView: View {
     @ObservedObject var viewModel: RocketListViewModel
     
     var body: some View {
         NavigationView {
             AsyncContentView(source: viewModel) { rockets in
-                LoadedView(rockets: rockets)
+                loadedView(rockets: rockets)
             }
-            .navigationTitle(.rocketList_title)//("Rockets")
+            .navigationTitle(.rocketList_title)
         }
         .onAppear {
             viewModel.fetchRockets()
         }
     }
-}
 
-extension RocketListView {
-    private struct LoadedView: View {
-        let rockets: [Rocket]
-        
-        var body: some View {
-            List {
-                ForEach(rockets) { rocket in
-                    NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
-                    ) {
-                        CellView(rocket: rocket)
-                    }
+    func loadedView(rockets: [Rocket]) -> some View {
+        List {
+            ForEach(rockets) { rocket in
+                NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
+                ) {
+                    RocketCell(rocket: rocket)
                 }
             }
         }
     }
-    
-    private struct CellView: View {
-        let rocket: Rocket
-        
-        var body: some View {
-            HStack {
-                Image("Rocket")
-                VStack(alignment: .leading) {
-                    Text(rocket.name)
-                        .font(.headline)
-                    Text("First flight: \(rocket.first_flight)")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-            }
-        }
-    }
+
 }
 
 // MARK: - RocketListView Preview

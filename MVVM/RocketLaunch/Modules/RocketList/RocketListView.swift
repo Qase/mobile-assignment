@@ -17,7 +17,7 @@ struct RocketListView: View {
             AsyncContentView(source: viewModel) { rockets in
                 LoadedView(rockets: rockets)
             }
-            .navigationTitle("Rockets")
+            .navigationTitle(.rocketList_title)//("Rockets")
         }
         .onAppear {
             viewModel.fetchRockets()

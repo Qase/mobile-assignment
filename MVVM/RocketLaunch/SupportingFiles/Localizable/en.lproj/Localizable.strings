@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  RocketLaunch
+
+  Created by Lucie Havrdová on 19.08.2022.
+  
+*/
+
+// Rocket List
+"rocketList_title" = "Rockets";

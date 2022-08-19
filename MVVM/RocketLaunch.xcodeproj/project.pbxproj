@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A01BE6A128AFCA25000567C4 /* LocalizedStringKey+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6A028AFCA25000567C4 /* LocalizedStringKey+.swift */; };
+		A01BE6A528AFCB12000567C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01BE6A728AFCB12000567C4 /* Localizable.strings */; };
 		A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6B27EC835200470AFC /* LoadingState.swift */; };
 		A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */; };
 		A04C5C7027EC9B0000470AFC /* ObservableObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */; };
@@ -28,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A01BE6A028AFCA25000567C4 /* LocalizedStringKey+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringKey+.swift"; sourceTree = "<group>"; };
+		A01BE6A628AFCB12000567C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01BE6A828AFCB2F000567C4 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04C5C6B27EC835200470AFC /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectExtension.swift; sourceTree = "<group>"; };
@@ -64,8 +69,8 @@
 		A01BE65828AFAAA5000567C4 /* RocketList */ = {
 			isa = PBXGroup;
 			children = (
-				A071446127D25E5300B2B352 /* RocketListViewModel.swift */,
 				A071444427D25B6300B2B352 /* RocketListView.swift */,
+				A071446127D25E5300B2B352 /* RocketListViewModel.swift */,
 			);
 			path = RocketList;
 			sourceTree = "<group>";
@@ -111,12 +116,30 @@
 			children = (
 				A071444627D25B6500B2B352 /* Assets.xcassets */,
 				A071444927D25B6500B2B352 /* Preview Assets.xcassets */,
+				A01BE69F28AFC9A8000567C4 /* Extensions */,
+				A01BE6A428AFCAF3000567C4 /* Localizable */,
 				A071445027D25BAE00B2B352 /* ViewModifiers.swift */,
-				A086478627E37397004C8037 /* UIScreen+.swift */,
 				A04C5C6B27EC835200470AFC /* LoadingState.swift */,
 				A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A01BE69F28AFC9A8000567C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A086478627E37397004C8037 /* UIScreen+.swift */,
+				A01BE6A028AFCA25000567C4 /* LocalizedStringKey+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A01BE6A428AFCAF3000567C4 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				A01BE6A728AFCB12000567C4 /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		A071443627D25B6300B2B352 = {
@@ -209,6 +232,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = A071443627D25B6300B2B352;
 			productRefGroup = A071444027D25B6300B2B352 /* Products */;
@@ -226,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A071444A27D25B6500B2B352 /* Preview Assets.xcassets in Resources */,
+				A01BE6A528AFCB12000567C4 /* Localizable.strings in Resources */,
 				A071444727D25B6500B2B352 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +273,7 @@
 				A071446827D25EE900B2B352 /* MotionManager.swift in Sources */,
 				A071446627D25EAE00B2B352 /* RocketService.swift in Sources */,
 				A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */,
+				A01BE6A128AFCA25000567C4 /* LocalizedStringKey+.swift in Sources */,
 				A071444527D25B6300B2B352 /* RocketListView.swift in Sources */,
 				A04C5C7027EC9B0000470AFC /* ObservableObjectExtension.swift in Sources */,
 				A071444327D25B6300B2B352 /* RocketLaunchApp.swift in Sources */,
@@ -258,11 +284,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		A01BE6A728AFCB12000567C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A01BE6A628AFCB12000567C4 /* en */,
+				A01BE6A828AFCB2F000567C4 /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		A071444B27D25B6500B2B352 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -324,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -33,6 +33,11 @@
 		A071446627D25EAE00B2B352 /* RocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446527D25EAE00B2B352 /* RocketService.swift */; };
 		A071446827D25EE900B2B352 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446727D25EE900B2B352 /* MotionManager.swift */; };
 		A086478727E37397004C8037 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A086478627E37397004C8037 /* UIScreen+.swift */; };
+		A0F3BE1F28B4CA9600AE5039 /* LocalizableDictionary.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = A0F3BE1E28B4CA9600AE5039 /* LocalizableDictionary.stringsdict */; };
+		A0F3BE2128B4D19000AE5039 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2028B4D19000AE5039 /* RectangleView.swift */; };
+		A0F3BE2328B4EA5B00AE5039 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2228B4EA5B00AE5039 /* Constants.swift */; };
+		A0F3BE2528B4EB2F00AE5039 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */; };
+		A0F3BE2728B4F06B00AE5039 /* StageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,11 @@
 		A071446527D25EAE00B2B352 /* RocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketService.swift; sourceTree = "<group>"; };
 		A071446727D25EE900B2B352 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		A086478627E37397004C8037 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
+		A0F3BE1E28B4CA9600AE5039 /* LocalizableDictionary.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = LocalizableDictionary.stringsdict; sourceTree = "<group>"; };
+		A0F3BE2028B4D19000AE5039 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		A0F3BE2228B4EA5B00AE5039 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,9 @@
 			children = (
 				A071445B27D25DA200B2B352 /* RocketDetailView.swift */,
 				A071446327D25E7900B2B352 /* RocketViewModel.swift */,
+				A0F3BE2028B4D19000AE5039 /* RectangleView.swift */,
+				A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */,
+				A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */,
 			);
 			path = RocketDetail;
 			sourceTree = "<group>";
@@ -136,6 +149,7 @@
 				A01BE6A428AFCAF3000567C4 /* Localizable */,
 				A01BE6A928AFCD6D000567C4 /* Mock */,
 				A01BE6B528AFE3F9000567C4 /* Providers */,
+				A0F3BE2228B4EA5B00AE5039 /* Constants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -153,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A01BE6A728AFCB12000567C4 /* Localizable.strings */,
+				A0F3BE1E28B4CA9600AE5039 /* LocalizableDictionary.stringsdict */,
 			);
 			path = Localizable;
 			sourceTree = "<group>";
@@ -294,6 +309,7 @@
 				A071444A27D25B6500B2B352 /* Preview Assets.xcassets in Resources */,
 				A01BE6A528AFCB12000567C4 /* Localizable.strings in Resources */,
 				A071444727D25B6500B2B352 /* Assets.xcassets in Resources */,
+				A0F3BE1F28B4CA9600AE5039 /* LocalizableDictionary.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,9 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F3BE2328B4EA5B00AE5039 /* Constants.swift in Sources */,
 				A01BE6B228AFD0E3000567C4 /* Rocket.swift in Sources */,
 				A071446227D25E5300B2B352 /* RocketListViewModel.swift in Sources */,
 				A086478727E37397004C8037 /* UIScreen+.swift in Sources */,
+				A0F3BE2528B4EB2F00AE5039 /* ImageView.swift in Sources */,
 				A071445C27D25DA200B2B352 /* RocketDetailView.swift in Sources */,
 				A071445127D25BAE00B2B352 /* ViewModifiers.swift in Sources */,
 				A01BE6AB28AFCE37000567C4 /* Rocket+instances.swift in Sources */,
@@ -318,11 +336,13 @@
 				A071446827D25EE900B2B352 /* MotionManager.swift in Sources */,
 				A071446627D25EAE00B2B352 /* RocketService.swift in Sources */,
 				A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */,
+				A0F3BE2128B4D19000AE5039 /* RectangleView.swift in Sources */,
 				A01BE6A128AFCA25000567C4 /* LocalizedStringKey+.swift in Sources */,
 				A071444527D25B6300B2B352 /* RocketListView.swift in Sources */,
 				A01BE6B728AFE41F000567C4 /* Icons.swift in Sources */,
 				A04C5C7027EC9B0000470AFC /* ObservableObjectExtension.swift in Sources */,
 				A01BE6AD28AFCE60000567C4 /* RocketDetail+instances.swift in Sources */,
+				A0F3BE2728B4F06B00AE5039 /* StageItemView.swift in Sources */,
 				A071444327D25B6300B2B352 /* RocketLaunchApp.swift in Sources */,
 				A071445E27D25DDD00B2B352 /* RocketLaunchView.swift in Sources */,
 				A01BE6B928AFE550000567C4 /* RocketCell.swift in Sources */,

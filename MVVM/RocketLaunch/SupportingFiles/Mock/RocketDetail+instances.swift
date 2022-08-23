@@ -15,13 +15,13 @@ extension RocketDetail {
         description: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
         parameters: [
             Parameter(
-                type: .length,
+                type: .height,
                 name: "height",
                 metric: 70,
                 imperial: 229.6
             ),
             Parameter(
-                type: .length,
+                type: .diameter,
                 name: "diameter",
                 metric: 3.7,
                 imperial: 12

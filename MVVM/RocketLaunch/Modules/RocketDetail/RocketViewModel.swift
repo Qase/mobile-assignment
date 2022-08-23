@@ -7,10 +7,19 @@
 
 import Foundation
 
-public final class RocketViewModel {
-    let rocket: Rocket
+class RocketViewModel: ObservableObject, LoadableObject {
+    @Published private(set) var state: LoadingState<RocketDetail>
+    let rocketID: String
     
-    init(rocket: Rocket) {
-        self.rocket = rocket
+    init(
+        rocketID: String,
+        state: LoadingState<RocketDetail> = .idle
+    ) {
+        self.rocketID = rocketID
+        self.state = state
+    }
+
+    func load() {
+
     }
 }

@@ -15,6 +15,7 @@ enum Icons: String {
     case flyingRocket = "Rocket Flying"
     case idleRocket = "Rocket Idle"
     case rocket = "Rocket"
+    case placeholder = "Placeholder"
 
     var image: Image {
         Image(self.rawValue)

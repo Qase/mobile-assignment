@@ -28,7 +28,7 @@ struct RocketListView: View {
     func loadedView(rockets: [Rocket]) -> some View {
         List {
             ForEach(rockets) { rocket in
-                NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocket: rocket))
+                NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocketID: rocket.id))
                 ) {
                     RocketCell(rocket: rocket)
                 }
@@ -38,10 +38,10 @@ struct RocketListView: View {
 
 }
 
-// MARK: - RocketListView Preview
+// MARK: RocketListView Preview
+
 struct RocketListView_Previews: PreviewProvider {
     static var previews: some View {
         RocketListView(viewModel: RocketListViewModel())
     }
 }
-

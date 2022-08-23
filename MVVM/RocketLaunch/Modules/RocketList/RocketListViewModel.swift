@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// MARK: - Rocket List View Model
+
 class RocketListViewModel: ObservableObject, LoadableObject {
     private static let decoder = JSONDecoder()
     private let rocketsService: APIServiceDataPublisher

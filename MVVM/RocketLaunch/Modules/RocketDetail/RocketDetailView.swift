@@ -8,46 +8,126 @@
 import SwiftUI
 
 // MARK: - Rocket View
+
 struct RocketDetailView: View {
-    private var viewModel: RocketViewModel
-    private var spacingInParts: CGFloat = 10
-    private var spacingBetweenParts: CGFloat = 20
-    private var cornerRadius: CGFloat = 10
-    
-    init(viewModel: RocketViewModel) {
-        self.viewModel = viewModel
-    }
-    
+    let viewModel: RocketViewModel
+//    let rocket: RocketDetail
+
+    var spacingInParts: CGFloat = 10
+    var spacingBetweenParts: CGFloat = 20
+
     var body: some View {
-            ScrollView {
-                VStack(alignment: .leading, spacing: spacingBetweenParts) {
-                    OverviewPart
-                    ParametersPart
-                    StagePart(
-                        reusable: viewModel.rocket.first_stage.reusable,
-                        engines: viewModel.rocket.first_stage.engines,
-                        fuel: viewModel.rocket.first_stage.fuel_amount_tons,
-                        burn: viewModel.rocket.first_stage.burn_time_sec ?? 0
-                    )
-                    StagePart(
-                        reusable: viewModel.rocket.second_stage.reusable,
-                        engines: viewModel.rocket.second_stage.engines,
-                        fuel: viewModel.rocket.second_stage.fuel_amount_tons,
-                        burn: viewModel.rocket.second_stage.burn_time_sec ?? 0
-                    )
-                    ImagesPart()
-                }
-                .padding(.horizontal)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: RocketLaunchViewBuilder.make() ) {
-                            Text("Launch")
-                        }
+        AsyncContentView(source: viewModel) { rocketDetail in
+            loadedView(rocket: rocketDetail)
+        }
+    }
+
+    func loadedView(rocket: RocketDetail) -> some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: spacingBetweenParts) {
+                overviewPart(rocket: rocket)
+                parametersPart(rocket: rocket)
+                stagePart(title: .RocketDetail.Stage.title1, stage: rocket.firstStage)
+                stagePart(title: .RocketDetail.Stage.title2, stage: rocket.secondStage)
+                imagesPart(rocket: rocket)
+            }
+            .padding(.horizontal)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: RocketLaunchViewBuilder.make() ) {
+                        Text(.RocketDetail.launch)
                     }
                 }
-            .navigationBarTitle(viewModel.rocket.name)
+            }
+            .navigationBarTitle(rocket.name)
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+
+    // MARK: Subviews
+
+    func overviewPart(rocket: RocketDetail) -> some View {
+        VStack(alignment: .leading, spacing: spacingInParts) {
+            Text(.RocketDetail.overviewTitle)
+                .modifier(subsectionHeddingStyle())
+            Text(rocket.description)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .multilineTextAlignment(.leading)
+    }
+
+    func parametersPart(rocket: RocketDetail) -> some View {
+        VStack(alignment: .leading, spacing: spacingInParts) {
+            Text(.RocketDetail.Parameters.title)
+                .modifier(subsectionHeddingStyle())
+
+            HStack {
+                RectangleView(
+                    textTop: rocket.getParameter(type: .height)?.name ?? "nil",
+                    textBottom: .RocketDetail.Parameters.height
+                )
+                RectangleView(
+                    textTop: rocket.getParameter(type: .diameter)?.name ?? "nil",
+                    textBottom: .RocketDetail.Parameters.diameter
+                )
+                RectangleView(
+                    textTop: rocket.getParameter(type: .mass)?.name ?? "nil",
+                    textBottom: .RocketDetail.Parameters.mass
+                )
+            }
+        }
+    }
+
+    func stagePart(title: LocalizedStringKey, stage: Stage) -> some View {
+        // TODO: Add plurals to localizable
+
+        VStack(alignment: .leading, spacing: spacingInParts) {
+            Text(title)
+                .modifier(subsectionHeddingStyle())
+
+            VStack(alignment: .leading, spacing: spacingInParts) {
+                StageItemView(
+                    image: Icons.reusable,
+                    text: stage.reusable ? "reusable" : "not reusable"
+                )
+                StageItemView(
+                    image: Icons.engine,
+                    text: stage.engines > 1 ? "\(stage.engines) engine" : "\(stage.engines) engines"
+                )
+                StageItemView(
+                    image: Icons.fuel,
+                    text: stage.fuelAmount == 1 ? "\(stage.fuelAmount) ton of fuel" : "\(stage.fuelAmount) tons of fuel"
+                )
+                StageItemView(
+                    image: Icons.burn,
+                    text: stage.burnTime > 1 ? "\(stage.burnTime) seconds burn time" : "\(stage.burnTime) second burn time"
+                )
+            }
+            .padding(.horizontal, 20)
+        }
+    }
+
+
+    func imagesPart(rocket: RocketDetail) -> some View {
+        VStack {
+            Text(.RocketDetail.photosTitle)
+                .modifier(subsectionHeddingStyle())
+
+            ForEach(rocket.photos, id: \.self) {
+                if let url = URL(string: $0.stringURL) {
+                    ImageView(url: url)
+                }
+            }
+        }
+    }
+}
+
+
+// MARK: - RocketDetailView Preview
+
+struct RocketDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        return RocketDetailView(viewModel: RocketViewModel(rocketID: RocketDetail.falcon9.id))
     }
 }
 
@@ -71,141 +151,5 @@ struct DeferView<Content: View>: View {
     
     var body: some View {
         content()
-    }
-}
-
-// MARK: - Subviews
-extension RocketDetailView {
-    
-    private var OverviewPart: some View {
-        VStack(alignment: .leading, spacing: spacingInParts) {
-            Text("Overview")
-                .modifier(subsectionHeddingStyle())
-            Text(viewModel.rocket.description)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .multilineTextAlignment(.leading)
-    }
-    
-    
-    private var ParametersPart: some View {
-        let square_size: CGFloat = 100
-        
-        func rectangleView(upper: String, bottom: String) -> some View {
-            Rectangle()
-                .fill(.pink)
-                .overlay(
-                    VStack {
-                        Text(upper)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                        Text(bottom)
-                            .font(.caption)
-                            .foregroundColor(.white)
-                    }
-                )
-                .frame(height: square_size, alignment: .center)
-                .cornerRadius(cornerRadius)
-        }
-
-        return VStack(alignment: .leading, spacing: spacingInParts) {
-            Text("Parameters")
-                .modifier(subsectionHeddingStyle())
-            HStack {
-                rectangleView(upper: viewModel.rocket.height.getLengthString(type: .meters), bottom: "heigh")
-                rectangleView(upper: viewModel.rocket.diameter.getLengthString(type: .meters), bottom: "diameter")
-                rectangleView(upper: viewModel.rocket.mass.getWeightString(type: .kg), bottom: "mass")
-            }
-        }
-    }
-    
-    
-    private func StagePart(reusable: Bool, engines: Int, fuel: Double, burn: Int = 0) -> some View {
-        let reusableString: String = reusable ? "reusable" : "not reusable"
-        let enginesString: String = engines > 1 ? "\(engines) engine" : "\(engines) engines"
-        let fuelString: String = fuel == 1 ? "\(fuel) ton of fuel" : "\(fuel) tons of fuel"
-        let burnString: String = burn > 1 ? "\(burn) seconds burn time" : "\(burn) second burn time"
-        
-        func StageItem(image: String, text: String) -> some View {
-            HStack(spacing: spacingInParts) {
-                Image(image)
-                Text(text)
-            }
-        }
-        
-        return VStack(alignment: .leading, spacing: spacingInParts) {
-            Text("First stage")
-                .modifier(subsectionHeddingStyle())
-            VStack(alignment: .leading, spacing: spacingInParts) {
-                StageItem(image: "Reusable", text: reusableString)
-                StageItem(image: "Engine", text: enginesString)
-                StageItem(image: "Fuel", text: fuelString)
-                StageItem(image: "Burn", text: burnString)
-            }
-            .padding(.horizontal, 20)
-        }
-    }
-    
-    
-    private func ImagesPart() -> some View {
-        @ViewBuilder
-        func Image(url: String) -> some View {
-            if let url = URL(string: url) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .empty: ProgressView()
-                    case let .success(image):
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(cornerRadius)
-                    case let .failure(error):
-                        Text(error.localizedDescription)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-                
-            } else {
-                EmptyView()
-            }
-        }
-        
-        return VStack {
-            Text("Photos")
-                .modifier(subsectionHeddingStyle())
-            
-            ForEach(viewModel.rocket.flickr_images, id: \.self) {
-                Image(url: $0)
-            }
-        }
-    }
-}
-
-// MARK: - Preview
-struct RocketDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        let rocket = Rocket(
-            Id: "1234",
-            name: "My awsome rocket",
-            first_flight: "20.2.1996",
-            description: "There is no way to express how awsome this rocket is.",
-            height: Length(meters: 200, feet: 200),
-            diameter: Length(meters: 200, feet: 200),
-            mass: Weight(kg: 1500, lb: 1500),
-            first_stage: Stage(reusable: true,
-                               engines: 2,
-                               fuel_amount_tons: 0,
-                               burn_time_sec: nil),
-            second_stage: Stage(reusable: false,
-                                engines: 1,
-                                fuel_amount_tons: 0,
-                                burn_time_sec: 2),
-            flickr_images: []
-        )
-        let viewModel = RocketViewModel(rocket: rocket)
-        
-        return RocketDetailView(viewModel: viewModel)
-            .previewLayout(.sizeThatFits)
     }
 }

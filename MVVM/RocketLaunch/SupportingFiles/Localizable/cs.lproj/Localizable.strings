@@ -8,3 +8,29 @@
 
 // Rocket List
 "rocketList_title" = "Raketky";
+
+// Rocket detail
+"rocketDetail_launch" = "Odpálit";
+
+// Rocket detail - Overview
+"rocketDetail_overview_title" = "Přehled";
+
+// Rocket detail - Parameters
+"rocketDetail_parameters_title" = "Parametry";
+"rocketDetail_parameters_height" = "výška";
+"rocketDetail_parameters_diameter" = "průměr";
+"rocketDetail_parameters_mass" = "hmotnost";
+
+// Rocket detail - Stages
+"rocketDetail_stage_title1" = "První Stage";
+"rocketDetail_stage_title2" = "Druhá Stage";
+"rocketDetail_stage_reusable" = "znovu použitelný";
+"rocketDetail_stage_notReusable" = "není znovu použitelný";
+
+// Rocket detail - Photos
+"rocketDetail_photosTitle" = "Fotografie";
+
+// Rocket Launch
+"rocketLaunch_title" = "Odpálení";
+"rocketLaunch_notLaunched" = "Pohni telefonem nahoru pro odpálení raketky.";
+"rocketLaunch_launched" = "Odpál proběhl úspěšně!!!";

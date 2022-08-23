@@ -24,7 +24,8 @@ struct RocketDetail {
 // MARK: Parameter
 
 enum ParameterType {
-    case length
+    case diameter
+    case height
     case mass
 }
 
@@ -46,6 +47,18 @@ struct Stage {
 
 // MARK: Photo
 
-struct Photo {
+struct Photo: Hashable {
     let stringURL: String
+}
+
+// MARK: - Models extensions
+
+extension RocketDetail {
+    func getParameter(type: ParameterType) -> Parameter? {
+        return parameters
+            .filter { instance in
+                instance.type == type
+            }
+            .first
+    }
 }

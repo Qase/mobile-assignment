@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Rocket: Identifiable {
+struct Rocket: Identifiable, Codable {
     let id: String
     let name: String
     let firstFlight: Date

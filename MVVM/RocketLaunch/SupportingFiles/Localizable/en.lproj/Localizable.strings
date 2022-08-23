@@ -8,3 +8,29 @@
 
 // Rocket List
 "rocketList_title" = "Rockets";
+
+// Rocket detail
+"rocketDetail_launch" = "Launch";
+
+// Rocket detail - Overview
+"rocketDetail_overview_title" = "Overview";
+
+// Rocket detail - Parameters
+"rocketDetail_parameters_title" = "Parameters";
+"rocketDetail_parameters_height" = "height";
+"rocketDetail_parameters_diameter" = "diameter";
+"rocketDetail_parameters_mass" = "mass";
+
+// Rocket detail - Stages
+"rocketDetail_stage_title1" = "First Stage";
+"rocketDetail_stage_title2" = "Second Stage";
+"rocketDetail_stage_reusable" = "reusable";
+"rocketDetail_stage_notReusable" = "not reusable";
+
+// Rocket detail - Photos
+"rocketDetail_photosTitle" = "Photos";
+
+// Rocket Launch
+"rocketLaunch_title" = "Launch";
+"rocketLaunch_notLaunched" = "Move your phone up to launch the rocket.";
+"rocketLaunch_launched" = "Launch successfull!!!";

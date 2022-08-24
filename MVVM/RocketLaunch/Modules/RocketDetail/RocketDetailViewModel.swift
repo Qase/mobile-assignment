@@ -1,5 +1,5 @@
 //
-//  RocketViewModel.swift
+//  RocketDetailViewModel.swift
 //  rocketLaunch
 //
 //  Created by Lucie Havrdová on 24.02.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RocketViewModel: ObservableObject, LoadableObject {
+class RocketDetailViewModel: ObservableObject, LoadableObject {
     @Published private(set) var state: LoadingState<RocketDetail>
 
     let rocketID: String
@@ -24,12 +24,13 @@ class RocketViewModel: ObservableObject, LoadableObject {
         self.service = service
     }
 
-    func load() {
-        if let result = service.getRocketDetail(id: rocketID) {
-            state = .loaded(result)
-        } else {
-            state = .failed(APIError.rocketNotFound)
+    func load() async {
+        do {
+            let rocketDetail = try await service.getRocketDetail(id: rocketID)
+            self.state = .loaded(rocketDetail)
+        } catch {
+            self.state = .failed(error)
         }
-
     }
+
 }

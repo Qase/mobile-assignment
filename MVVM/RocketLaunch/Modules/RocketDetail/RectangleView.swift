@@ -29,7 +29,7 @@ struct RectangleView: View {
                 }
             )
             .frame(height: squareSize, alignment: .center)
-            .cornerRadius(Constants.cornerRadius)
+            .cornerRadius(Constants.View.cornerRadius)
     }
 }
 

@@ -20,15 +20,15 @@ struct RocketListView: View {
             }
             .navigationTitle(.rocketList_title)
         }
-        .onAppear {
-            viewModel.load()
+        .task {
+            await viewModel.load()
         }
     }
 
     func loadedView(rockets: [Rocket]) -> some View {
         List {
             ForEach(rockets) { rocket in
-                NavigationLink(destination: RocketDetailView(viewModel: RocketViewModel(rocketID: rocket.id))
+                NavigationLink(destination: RocketDetailView(viewModel: RocketDetailViewModel(rocketID: rocket.id))
                 ) {
                     RocketCell(rocket: rocket)
                 }

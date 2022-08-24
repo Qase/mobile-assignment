@@ -8,7 +8,7 @@
 import Foundation
 
 protocol APIDataServiceProviderProtocol {
-    func getRocketList() -> [Rocket]
+    func getRocketList() async throws -> [Rocket]
 
-    func getRocketDetail(id: String) -> RocketDetail?
+    func getRocketDetail(id: String) async throws -> RocketDetail
 }

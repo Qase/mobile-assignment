@@ -14,6 +14,7 @@ extension Rocket {
         .falcon9,
         .falconHeavy,
         .falconHeavy,
+        .falconHeavy,
         .starship
     ]
 
@@ -42,7 +43,7 @@ extension Rocket {
     )
 }
 
-fileprivate func createDate(
+func createDate(
     _ date: String,
     stringFormat: String
 ) -> Date {

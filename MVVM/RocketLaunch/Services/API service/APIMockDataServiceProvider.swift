@@ -10,18 +10,19 @@ import Foundation
 // MARK: - API Mock Data Provider Service
 
 struct MockAPIDataServiceProvider: APIDataServiceProviderProtocol {
-    func getRocketList() -> [Rocket] {
+    func getRocketList() async throws -> [Rocket] {
         return Rocket.all
     }
 
-    func getRocketDetail(id: String) -> RocketDetail? {
+    func getRocketDetail(id: String) async throws -> RocketDetail {
         let result = RocketDetail.all
             .filter { rocket in
                 rocket.id == id
             }
-        if !result.isEmpty {
-            return result.first
+        if let firstElement = result.first{
+            return firstElement
         }
-        return nil
+
+        throw APIError.rocketNotFound
     }
 }

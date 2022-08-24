@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - Rocket View
 
 struct RocketDetailView: View {
-    let viewModel: RocketViewModel
+    let viewModel: RocketDetailViewModel
 
     var spacingInParts: CGFloat = 10
     var spacingBetweenParts: CGFloat = 20
@@ -19,8 +19,8 @@ struct RocketDetailView: View {
         AsyncContentView(source: viewModel) { rocketDetail in
             loadedView(rocket: rocketDetail)
         }
-        .onAppear {
-            viewModel.load()
+        .task {
+            await viewModel.load()
         }
     }
 
@@ -128,7 +128,7 @@ struct RocketDetailView: View {
 
 struct RocketDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        return RocketDetailView(viewModel: RocketViewModel(rocketID: RocketDetail.falcon9.id))
+        return RocketDetailView(viewModel: RocketDetailViewModel(rocketID: RocketDetail.falcon9.id))
     }
 }
 

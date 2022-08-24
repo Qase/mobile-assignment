@@ -43,9 +43,10 @@ struct LenghtParameterDTO {
 
 extension RocketDetailDTO {
     var toRocketDetail: RocketDetail {
-        let photos: [Photo]
+        var photos: [Photo] = []
         for photoURL in self.flickr_images{
-            photos.append(Photo(stringURL: photoURL))
+            let photo = Photo(stringURL: photoURL)
+            photos.append(photo)
         }
 
         let massParameter = Parameter(

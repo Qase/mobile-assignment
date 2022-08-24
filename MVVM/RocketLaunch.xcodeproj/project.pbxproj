@@ -15,6 +15,7 @@
 		A01BE6B228AFD0E3000567C4 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6B128AFD0E3000567C4 /* Rocket.swift */; };
 		A01BE6B728AFE41F000567C4 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6B628AFE41F000567C4 /* Icons.swift */; };
 		A01BE6B928AFE550000567C4 /* RocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6B828AFE550000567C4 /* RocketCell.swift */; };
+		A0288B8E28B6108100CCA050 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0288B8D28B6108100CCA050 /* APIError.swift */; };
 		A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6B27EC835200470AFC /* LoadingState.swift */; };
 		A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */; };
 		A04C5C7027EC9B0000470AFC /* ObservableObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */; };
@@ -38,6 +39,10 @@
 		A0F3BE2328B4EA5B00AE5039 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2228B4EA5B00AE5039 /* Constants.swift */; };
 		A0F3BE2528B4EB2F00AE5039 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */; };
 		A0F3BE2728B4F06B00AE5039 /* StageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */; };
+		A0F3BE2928B50D0B00AE5039 /* APIDataServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2828B50D0B00AE5039 /* APIDataServiceProvider.swift */; };
+		A0F3BE2B28B50D5F00AE5039 /* APIDataServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2A28B50D5F00AE5039 /* APIDataServiceProviderProtocol.swift */; };
+		A0F3BE2D28B50F0400AE5039 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2C28B50F0400AE5039 /* DIContainer.swift */; };
+		A0F3BE3028B5135400AE5039 /* APIMockDataServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2F28B5135400AE5039 /* APIMockDataServiceProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,7 @@
 		A01BE6B128AFD0E3000567C4 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		A01BE6B628AFE41F000567C4 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		A01BE6B828AFE550000567C4 /* RocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCell.swift; sourceTree = "<group>"; };
+		A0288B8D28B6108100CCA050 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A04C5C6B27EC835200470AFC /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectExtension.swift; sourceTree = "<group>"; };
@@ -75,6 +81,10 @@
 		A0F3BE2228B4EA5B00AE5039 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageItemView.swift; sourceTree = "<group>"; };
+		A0F3BE2828B50D0B00AE5039 /* APIDataServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataServiceProvider.swift; sourceTree = "<group>"; };
+		A0F3BE2A28B50D5F00AE5039 /* APIDataServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataServiceProviderProtocol.swift; sourceTree = "<group>"; };
+		A0F3BE2C28B50F0400AE5039 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		A0F3BE2F28B5135400AE5039 /* APIMockDataServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockDataServiceProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +111,10 @@
 		A01BE65928AFAAC4000567C4 /* RocketDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */,
+				A0F3BE2028B4D19000AE5039 /* RectangleView.swift */,
 				A071445B27D25DA200B2B352 /* RocketDetailView.swift */,
 				A071446327D25E7900B2B352 /* RocketViewModel.swift */,
-				A0F3BE2028B4D19000AE5039 /* RectangleView.swift */,
-				A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */,
 				A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */,
 			);
 			path = RocketDetail;
@@ -133,6 +143,7 @@
 			children = (
 				A04C5C7327EDA7DA00470AFC /* ErrorView.swift */,
 				A04C5C6D27EC872B00470AFC /* AsyncContentView.swift */,
+				A0F3BE2C28B50F0400AE5039 /* DIContainer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -140,6 +151,7 @@
 		A01BE69628AFC1E0000567C4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A0F3BE2228B4EA5B00AE5039 /* Constants.swift */,
 				A04C5C6B27EC835200470AFC /* LoadingState.swift */,
 				A04C5C6F27EC9B0000470AFC /* ObservableObjectExtension.swift */,
 				A071445027D25BAE00B2B352 /* ViewModifiers.swift */,
@@ -149,7 +161,6 @@
 				A01BE6A428AFCAF3000567C4 /* Localizable */,
 				A01BE6A928AFCD6D000567C4 /* Mock */,
 				A01BE6B528AFE3F9000567C4 /* Providers */,
-				A0F3BE2228B4EA5B00AE5039 /* Constants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -240,11 +251,23 @@
 		A071445927D25CD500B2B352 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A0F3BE2E28B5130C00AE5039 /* API service */,
 				A071445627D25C5A00B2B352 /* APIServiceDataPublisher.swift */,
 				A071446527D25EAE00B2B352 /* RocketService.swift */,
 				A071446727D25EE900B2B352 /* MotionManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A0F3BE2E28B5130C00AE5039 /* API service */ = {
+			isa = PBXGroup;
+			children = (
+				A0F3BE2A28B50D5F00AE5039 /* APIDataServiceProviderProtocol.swift */,
+				A0F3BE2828B50D0B00AE5039 /* APIDataServiceProvider.swift */,
+				A0F3BE2F28B5135400AE5039 /* APIMockDataServiceProvider.swift */,
+				A0288B8D28B6108100CCA050 /* APIError.swift */,
+			);
+			path = "API service";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +346,7 @@
 				A0F3BE2328B4EA5B00AE5039 /* Constants.swift in Sources */,
 				A01BE6B228AFD0E3000567C4 /* Rocket.swift in Sources */,
 				A071446227D25E5300B2B352 /* RocketListViewModel.swift in Sources */,
+				A0F3BE2928B50D0B00AE5039 /* APIDataServiceProvider.swift in Sources */,
 				A086478727E37397004C8037 /* UIScreen+.swift in Sources */,
 				A0F3BE2528B4EB2F00AE5039 /* ImageView.swift in Sources */,
 				A071445C27D25DA200B2B352 /* RocketDetailView.swift in Sources */,
@@ -332,14 +356,18 @@
 				A04C5C7427EDA7DA00470AFC /* ErrorView.swift in Sources */,
 				A071445727D25C5A00B2B352 /* APIServiceDataPublisher.swift in Sources */,
 				A04C5C6C27EC835200470AFC /* LoadingState.swift in Sources */,
+				A0288B8E28B6108100CCA050 /* APIError.swift in Sources */,
 				A071446427D25E7900B2B352 /* RocketViewModel.swift in Sources */,
 				A071446827D25EE900B2B352 /* MotionManager.swift in Sources */,
 				A071446627D25EAE00B2B352 /* RocketService.swift in Sources */,
 				A04C5C6E27EC872B00470AFC /* AsyncContentView.swift in Sources */,
+				A0F3BE2B28B50D5F00AE5039 /* APIDataServiceProviderProtocol.swift in Sources */,
 				A0F3BE2128B4D19000AE5039 /* RectangleView.swift in Sources */,
 				A01BE6A128AFCA25000567C4 /* LocalizedStringKey+.swift in Sources */,
+				A0F3BE3028B5135400AE5039 /* APIMockDataServiceProvider.swift in Sources */,
 				A071444527D25B6300B2B352 /* RocketListView.swift in Sources */,
 				A01BE6B728AFE41F000567C4 /* Icons.swift in Sources */,
+				A0F3BE2D28B50F0400AE5039 /* DIContainer.swift in Sources */,
 				A04C5C7027EC9B0000470AFC /* ObservableObjectExtension.swift in Sources */,
 				A01BE6AD28AFCE60000567C4 /* RocketDetail+instances.swift in Sources */,
 				A0F3BE2728B4F06B00AE5039 /* StageItemView.swift in Sources */,

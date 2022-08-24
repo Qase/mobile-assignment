@@ -9,6 +9,10 @@ import Foundation
 
 extension RocketDetail {
 
+    static let all = [
+        falcon9
+    ]
+
     static let falcon9 = RocketDetail(
         id: "falcon9",
         name: "Falcon 9",

@@ -11,7 +11,6 @@ import SwiftUI
 
 struct RocketDetailView: View {
     let viewModel: RocketViewModel
-//    let rocket: RocketDetail
 
     var spacingInParts: CGFloat = 10
     var spacingBetweenParts: CGFloat = 20
@@ -19,6 +18,9 @@ struct RocketDetailView: View {
     var body: some View {
         AsyncContentView(source: viewModel) { rocketDetail in
             loadedView(rocket: rocketDetail)
+        }
+        .onAppear {
+            viewModel.load()
         }
     }
 
@@ -106,7 +108,6 @@ struct RocketDetailView: View {
             .padding(.horizontal, 20)
         }
     }
-
 
     func imagesPart(rocket: RocketDetail) -> some View {
         VStack {

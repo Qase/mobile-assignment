@@ -24,7 +24,7 @@ extension Rocket {
     )
 
     static let falcon9 = Rocket(
-        id: "2",
+        id: "falcon9",
         name: "Falcon 9",
         firstFlight: createDate("6.4.2010", stringFormat: "dd.MM.yyy")
     )

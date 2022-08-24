@@ -21,7 +21,7 @@ struct RocketListView: View {
             .navigationTitle(.rocketList_title)
         }
         .onAppear {
-            viewModel.fetchRockets()
+            viewModel.load()
         }
     }
 

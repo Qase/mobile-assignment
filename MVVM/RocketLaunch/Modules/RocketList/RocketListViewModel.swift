@@ -17,17 +17,22 @@ class RocketListViewModel: ObservableObject, LoadableObject {
     
     @Published private(set) var state: LoadingState<[Rocket]>
     @Published public var fetching: Bool = false
-    
+
+    private let service: APIDataServiceProviderProtocol
+
     init(
         rocketsService: APIServiceDataPublisher = RocketsService(),
-        state: LoadingState<[Rocket]> = .idle
+        state: LoadingState<[Rocket]> = .idle,
+        service: APIDataServiceProviderProtocol = DIContainer.shared.apiDataMockProviderService
     ) {
         self.rocketsService = rocketsService
         self.state = state
+        self.service = service
     }
     
     func load() {
-        fetchRockets()
+        state = .loaded(service.getRocketList())
+//        fetchRockets()
     }
     
     public func fetchRockets() {

@@ -7,6 +7,22 @@
 
 import Foundation
 
+// MARK: - Rocket DTO Model
+
 struct RocketDTO {
-    // TODO: implement
+    let id: String
+    let name: String
+    let first_flight: String
+}
+
+// MARK: toRocket (DTO into Model)
+
+extension RocketDTO {
+    var toRocket: Rocket {
+        Rocket(
+            id: self.id,
+            name: self.name,
+            firstFlight: createDate(self.first_flight, stringFormat: "yyyy-MM-dd")
+        )
+    }
 }

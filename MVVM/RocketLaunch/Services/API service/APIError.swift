@@ -10,6 +10,7 @@ import Foundation
 enum APIError: Error {
     case downloadError
     case decodingError
+    case invalidStatusCode
     case rocketNotFound
 
     case invalidURL
@@ -26,6 +27,8 @@ extension APIError: LocalizedError {
             return NSLocalizedString("Description of not found rocket.", comment: "Rocket was not found.")
         case .invalidURL:
             return NSLocalizedString("Description of invalid URL.", comment: "Invalid API endpoint.")
+        case .invalidStatusCode:
+            return NSLocalizedString("Invalid status code.", comment: "Invalid status code.")
         }
     }
 }

@@ -14,7 +14,7 @@ final class DIContainer {
         MockAPIDataServiceProvider()
     }()
 
-//    lazy var apiDataProviderService: APIDataProvicerServiceProtocol = {
-//        // TBA
-//    }()
+    lazy var apiDataServiceProvider: APIDataServiceProviderProtocol = {
+        APIDataServiceProvider()
+    }()
 }

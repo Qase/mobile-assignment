@@ -22,7 +22,7 @@ class RocketListViewModel: ObservableObject, LoadableObject {
 
     init(
         state: LoadingState<[Rocket]> = .idle,
-        service: APIDataServiceProviderProtocol = DIContainer.shared.apiDataMockProviderService
+        service: APIDataServiceProviderProtocol = DIContainer.shared.apiDataServiceProvider
     ) {
         self.state = state
         self.service = service

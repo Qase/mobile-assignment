@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Rocket DTO Model
 
-struct RocketDTO {
+struct RocketDTO: Codable {
     let id: String
     let name: String
     let first_flight: String

@@ -104,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A00BFD9E28BCD6990064C415 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */,
+				A0F3BE2028B4D19000AE5039 /* RectangleView.swift */,
+				A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		A01BE65828AFAAA5000567C4 /* RocketList */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +127,9 @@
 		A01BE65928AFAAC4000567C4 /* RocketDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */,
-				A0F3BE2028B4D19000AE5039 /* RectangleView.swift */,
+				A00BFD9E28BCD6990064C415 /* ViewComponents */,
 				A071445B27D25DA200B2B352 /* RocketDetailView.swift */,
 				A071446327D25E7900B2B352 /* RocketDetailViewModel.swift */,
-				A0F3BE2628B4F06B00AE5039 /* StageItemView.swift */,
 			);
 			path = RocketDetail;
 			sourceTree = "<group>";

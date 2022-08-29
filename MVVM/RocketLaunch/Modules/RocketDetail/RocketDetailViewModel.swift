@@ -17,7 +17,7 @@ class RocketDetailViewModel: ObservableObject, LoadableObject {
     init(
         rocketID: String,
         state: LoadingState<RocketDetail> = .idle,
-        service: APIDataServiceProviderProtocol = DIContainer.shared.apiDataMockProviderService
+        service: APIDataServiceProviderProtocol = DIContainer.shared.apiDataServiceProvider
     ) {
         self.rocketID = rocketID
         self.state = state

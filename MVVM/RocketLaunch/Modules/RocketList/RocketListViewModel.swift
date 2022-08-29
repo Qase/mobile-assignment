@@ -10,12 +10,7 @@ import Combine
 
 // MARK: - Rocket List View Model
 
-//@MainActor
 class RocketListViewModel: ObservableObject, LoadableObject {
-//    private static let decoder = JSONDecoder()
-//    private let rocketsService: APIServiceDataPublisher
-//    private var cancellable: AnyCancellable?
-    
     @Published private(set) var state: LoadingState<[Rocket]>
 
     private let service: APIDataServiceProviderProtocol
@@ -38,17 +33,4 @@ class RocketListViewModel: ObservableObject, LoadableObject {
             self.state = .failed(error)
         }
     }
-    
-//    public func fetchRockets() {
-//        state = .loading
-//
-//        cancellable = rocketsService.publisher()
-//            .decode(type: [Rocket].self, decoder: Self.decoder)
-//            .receive(on: DispatchQueue.main)
-//            .map(LoadingState<[Rocket]>.loaded)
-//            .catch { Just(LoadingState.failed($0)) }
-//            .sink { [weak self] state in
-//                self?.state = state
-//            }
-//    }
 }

@@ -33,7 +33,7 @@ struct RocketDetailView: View {
                 stagePart(title: .RocketDetail.Stage.title2, stage: rocket.secondStage)
                 imagesPart(rocket: rocket)
             }
-            .padding(.horizontal)
+            .padding()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: RocketLaunchViewBuilder.make() ) {
@@ -100,17 +100,20 @@ struct RocketDetailView: View {
                     image: Icons.fuel,
                     text: stage.fuelAmount == 1 ? "\(stage.fuelAmount) ton of fuel" : "\(stage.fuelAmount) tons of fuel"
                 )
-                StageItemView(
-                    image: Icons.burn,
-                    text: stage.burnTime > 1 ? "\(stage.burnTime) seconds burn time" : "\(stage.burnTime) second burn time"
-                )
+                if let time = stage.burnTime {
+                    StageItemView(
+                        image: Icons.burn,
+                        text: time > 1 ? "\(time) seconds burn time" : "\(time) second burn time"
+                    )
+                }
+
             }
             .padding(.horizontal, 20)
         }
     }
 
     func imagesPart(rocket: RocketDetail) -> some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(.RocketDetail.photosTitle)
                 .modifier(subsectionHeddingStyle())
 

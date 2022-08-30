@@ -25,8 +25,8 @@ struct RocketDetailDTO: Codable {
 struct StageDTO: Codable {
     let reusable: Bool
     let engines: Int
-    let fuelAmountTons: Int
-    let burnTimeSEC: Int
+    let fuel_amount_tons: Double
+    let burn_time_sec: Double?
 }
 
 struct MassParameterDTO: Codable {
@@ -82,14 +82,14 @@ extension RocketDetailDTO: DTOModelProtocol {
             firstStage: Stage(
                 engines: self.first_stage.engines,
                 reusable: self.first_stage.reusable,
-                fuelAmount: self.first_stage.fuelAmountTons,
-                burnTime: self.first_stage.burnTimeSEC
+                fuelAmount: Int(self.first_stage.fuel_amount_tons),
+                burnTime: (self.first_stage.burn_time_sec != nil) ? Int(self.first_stage.burn_time_sec!) : nil
             ),
             secondStage: Stage(
                 engines: self.second_stage.engines,
                 reusable: self.second_stage.reusable,
-                fuelAmount: self.second_stage.fuelAmountTons,
-                burnTime: self.second_stage.burnTimeSEC
+                fuelAmount: Int(self.second_stage.fuel_amount_tons),
+                burnTime: (self.second_stage.burn_time_sec != nil) ? Int(self.second_stage.burn_time_sec!) : nil
             ),
             photos: photos
         ) 

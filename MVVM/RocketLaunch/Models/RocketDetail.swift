@@ -42,7 +42,7 @@ struct Stage: Codable {
     let engines: Int
     let reusable: Bool
     let fuelAmount: Int
-    let burnTime: Int
+    let burnTime: Int?
 }
 
 // MARK: Photo

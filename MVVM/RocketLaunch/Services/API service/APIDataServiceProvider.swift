@@ -21,6 +21,7 @@ struct APIDataServiceProvider: APIDataServiceProviderProtocol {
     func getRocketDetail(id: String) async throws -> RocketDetail {
         let networkManager = NetworkManager()
         let request = RocketEndpoints.rocketDetail(id: id).request
-        return try await networkManager.getDataFromRequest(request)
+        let dto: RocketDetailDTO = try await networkManager.getDataFromRequest(request) 
+        return dto.toModel
     }
 }

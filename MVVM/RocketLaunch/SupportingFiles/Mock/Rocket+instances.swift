@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Rocket 
+
 extension Rocket {
 
     static let all: [Rocket] = [
@@ -41,18 +43,4 @@ extension Rocket {
         name: "Starship",
         firstFlight: createDate("12.1.2021", stringFormat: "dd.MM.yyy")
     )
-}
-
-func createDate(
-    _ date: String,
-    stringFormat: String
-) -> Date {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = stringFormat
-
-    guard let createdDate = dateFormatter.date(from: date) else {
-        fatalError("Cannot convert date")
-    }
-
-    return createdDate
 }

@@ -30,6 +30,7 @@ struct AsyncContentView<
     }
 }
 // MARK: - Async Content View
+
 typealias DefaultProgressView = ProgressView<EmptyView, EmptyView>
 typealias DefaultErrorView = CustomErrorView
 

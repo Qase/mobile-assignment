@@ -8,6 +8,8 @@
 import Combine
 import CoreMotion
 
+// MARK: - Motion Manager Service
+
 class MotionManager: ObservableObject {
     private var motionManager: CMMotionManager 
     

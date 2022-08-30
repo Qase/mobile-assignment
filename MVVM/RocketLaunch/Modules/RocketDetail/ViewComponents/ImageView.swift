@@ -24,28 +24,6 @@ struct ImageView: View {
                 .scaledToFit()
                 .cornerRadius(Constants.View.cornerRadius)
         }
-
-
-//        AsyncImage(url: url) { phase in
-//            switch phase {
-//            case .empty:
-//                Icons.placeholder.image
-//                    .resizable()
-//                    .scaledToFit()
-//                    .cornerRadius(Constants.cornerRadius)
-//
-//            case let .failure(err):
-//                Text(err.localizedDescription)
-//
-//            case let .success(image):
-//                image
-//                    .resizable()
-//                    .scaledToFit()
-//                    .cornerRadius(Constants.cornerRadius)
-//            @unknown default:
-//                EmptyView()
-//            }
-//        }
     }
 }
 

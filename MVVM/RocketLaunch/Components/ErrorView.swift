@@ -8,6 +8,7 @@
 import SwiftUI
 
 // MARK: - Error View
+
 struct CustomErrorView: View {
     var title: String = "Error"
     var description: String? = "Something went wrong.."
@@ -31,6 +32,7 @@ struct CustomErrorView: View {
 }
 
 // MARK: - Error View Preview
+
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         CustomErrorView(title: "Error title")

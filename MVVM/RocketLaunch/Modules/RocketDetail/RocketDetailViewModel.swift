@@ -32,5 +32,4 @@ class RocketDetailViewModel: ObservableObject, LoadableObject {
             self.state = .failed(error)
         }
     }
-
 }

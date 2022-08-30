@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - Icons Provider
+
 enum Icons: String {
     case burn = "Burn"
     case engine = "Engine"

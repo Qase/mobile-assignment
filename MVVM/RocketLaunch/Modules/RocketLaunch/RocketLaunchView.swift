@@ -8,9 +8,10 @@
 import SwiftUI
 import CoreMotion
 
+// MARK: - Rocket Launch View
+
 struct RocketLaunchView: View {
     @ObservedObject var motionManager: MotionManager
-    
     @State private var position: CGPoint = .init(x: UIScreen.screenWidth/2,
                                                  y: UIScreen.screenHeight - 230)
     private var endPosition: CGPoint = .init(x: UIScreen.screenWidth/2,
@@ -47,9 +48,9 @@ struct RocketLaunchView: View {
 }
 
 // MARK: - RocketLaunchView Preview
+
 struct RocketLaunchView_Previews: PreviewProvider {
     let iphone12 = "iPhone 12"
-    let iphoneSE = "iPhone SE"
     let iphone7  = "iPhone 7"
     
     static var previews: some View {

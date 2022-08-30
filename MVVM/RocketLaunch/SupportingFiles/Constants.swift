@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Constants
+
 struct Constants {
     enum View {
         static let cornerRadius: CGFloat = 10

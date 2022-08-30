@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - Localized String Key
+
 extension LocalizedStringKey {
     static let rocketList_title: LocalizedStringKey = "rocketList_title"
 

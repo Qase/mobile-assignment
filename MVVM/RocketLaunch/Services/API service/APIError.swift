@@ -13,6 +13,14 @@ enum APIError: Error {
     case invalidStatusCode
     case rocketNotFound
 
+    // HTTP errors
+    case informationalResponse
+    case redirectionResponse
+    case clientErrorResponse
+    case serverErrorResponse
+    case other
+
+
     case invalidURL
 }
 
@@ -29,6 +37,17 @@ extension APIError: LocalizedError {
             return NSLocalizedString("Description of invalid URL.", comment: "Invalid API endpoint.")
         case .invalidStatusCode:
             return NSLocalizedString("Invalid status code.", comment: "Invalid status code.")
+
+        case .informationalResponse:
+            return NSLocalizedString("Description of informational response.", comment: "http 100-199")
+        case .redirectionResponse:
+            return NSLocalizedString("Description of redirection status code.", comment: "http 300-399")
+        case .clientErrorResponse:
+            return NSLocalizedString("Description of client error response status code.", comment: "http 400-499")
+        case .serverErrorResponse:
+            return NSLocalizedString("Description of server error status code.", comment: "http 500-599")
+        case .other:
+            return NSLocalizedString("Description of some other error message.", comment: "No comment..")
         }
     }
 }

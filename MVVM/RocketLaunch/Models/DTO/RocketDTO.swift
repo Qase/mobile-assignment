@@ -17,8 +17,8 @@ struct RocketDTO: Codable {
 
 // MARK: toRocket (DTO into Model)
 
-extension RocketDTO {
-    var toRocket: Rocket {
+extension RocketDTO: DTOModelProtocol {
+    var toModel: Rocket {
         Rocket(
             id: self.id,
             name: self.name,

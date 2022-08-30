@@ -10,7 +10,7 @@ import Metal
 
 // MARK: - Rocket Detail Model
 
-struct RocketDetail {
+struct RocketDetail: Codable {
     let id: String
     let name: String
     let description: String
@@ -23,13 +23,13 @@ struct RocketDetail {
 
 // MARK: Parameter
 
-enum ParameterType {
+enum ParameterType: Codable {
     case diameter
     case height
     case mass
 }
 
-struct Parameter {
+struct Parameter: Codable {
     let type: ParameterType
     let name: String
     let metric: Double
@@ -38,7 +38,7 @@ struct Parameter {
 
 // MARK: Stage
 
-struct Stage {
+struct Stage: Codable {
     let engines: Int
     let reusable: Bool
     let fuelAmount: Int
@@ -47,7 +47,7 @@ struct Stage {
 
 // MARK: Photo
 
-struct Photo: Hashable {
+struct Photo: Hashable, Codable {
     let stringURL: String
 }
 

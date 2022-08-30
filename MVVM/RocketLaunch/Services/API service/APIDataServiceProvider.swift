@@ -7,40 +7,20 @@
 
 import Foundation
 
+
 // MARK: - API Data Service Provider
 
 struct APIDataServiceProvider: APIDataServiceProviderProtocol {
-    enum APIDataServiceError: Error {
-        case rocketNorFound
-    }
-
     func getRocketList() async throws -> [Rocket] {
-        let (data, _) = try await URLSession.shared.data(for: RocketEndpoints.rocketList.request)
-        let decodedDTORockets = try decode(data: data)
-        let rockets = convertToModel(DTOData: decodedDTORockets)
-
-        return rockets
+        let networkManager = NetworkManager()
+        let request = RocketEndpoints.rocketList.request
+        let dto: [RocketDTO] = try await networkManager.getDataFromRequest(request)
+        return dto.map { $0.toModel }
     }
 
     func getRocketDetail(id: String) async throws -> RocketDetail {
-        return RocketDetail.falcon9 // TODO: revrite
-    }
-}
-
-// MARK: APIDataServiceProvider helpers
-
-extension APIDataServiceProvider {
-    func decode(data: Data) throws -> [RocketDTO] {
-        let decoder = JSONDecoder()
-        let decodedData = try decoder.decode([RocketDTO].self, from: data)
-        return decodedData
-    }
-
-    func convertToModel(DTOData: [RocketDTO]) -> [Rocket] {
-        var result: [Rocket] = []
-        for dtoModel in DTOData {
-            result.append(dtoModel.toRocket)
-        }
-        return result
+        let networkManager = NetworkManager()
+        let request = RocketEndpoints.rocketDetail(id: id).request
+        return try await networkManager.getDataFromRequest(request)
     }
 }

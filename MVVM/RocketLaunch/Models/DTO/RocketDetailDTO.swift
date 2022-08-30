@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - Rocket Detail DTO Model
 
-struct RocketDetailDTO {
+struct RocketDetailDTO: Codable {
     let id: String
     let name: String
     let description: String
@@ -22,27 +22,27 @@ struct RocketDetailDTO {
     let height: LenghtParameterDTO
 }
 
-struct StageDTO {
+struct StageDTO: Codable {
     let reusable: Bool
     let engines: Int
     let fuelAmountTons: Int
     let burnTimeSEC: Int
 }
 
-struct MassParameterDTO {
+struct MassParameterDTO: Codable {
     let kg: Double
     let lb: Double
 }
 
-struct LenghtParameterDTO {
+struct LenghtParameterDTO: Codable {
     let meters: Double
     let feet: Double
 }
 
 // MARK: toRocketDetail (DTO into Model)
 
-extension RocketDetailDTO {
-    var toRocketDetail: RocketDetail {
+extension RocketDetailDTO: DTOModelProtocol {
+    var toModel: RocketDetail {
         var photos: [Photo] = []
         for photoURL in self.flickr_images{
             let photo = Photo(stringURL: photoURL)
@@ -92,6 +92,6 @@ extension RocketDetailDTO {
                 burnTime: self.second_stage.burnTimeSEC
             ),
             photos: photos
-        )
+        ) 
     }
 }

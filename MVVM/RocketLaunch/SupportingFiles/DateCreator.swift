@@ -20,3 +20,9 @@ func createDate(
 
     return createdDate
 }
+
+func dateToString(_ date: Date) -> String {
+    let dateFormater = DateFormatter()
+    dateFormater.dateFormat = "d.M.yyyy"
+    return dateFormater.string(from: date)
+}

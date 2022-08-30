@@ -8,6 +8,7 @@
 
 // Rocket List
 "rocketList_title" = "Rockets";
+"rocketList_firstFlight %@" = "First flight: %@";
 
 // Rocket detail
 "rocketDetail_launch" = "Launch";

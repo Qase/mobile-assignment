@@ -8,6 +8,7 @@
 
 // Rocket List
 "rocketList_title" = "Raketky";
+"rocketList_firstFlight %@" = "První vzlétnutí: %@";
 
 // Rocket detail
 "rocketDetail_launch" = "Odpálit";
@@ -31,6 +32,6 @@
 "rocketDetail_photosTitle" = "Fotografie";
 
 // Rocket Launch
-"rocketLaunch_title" = "Odpálení";
-"rocketLaunch_notLaunched" = "Pohni telefonem nahoru pro odpálení raketky.";
+"rocketLaunch_title" = "Start";
+"rocketLaunch_notLaunched" = "Nakloň telefon nahoru pro odpálení raketky.";
 "rocketLaunch_launched" = "Odpál proběhl úspěšně!!!";

@@ -19,7 +19,7 @@ struct RocketCell: View {
             VStack(alignment: .leading) {
                 Text(rocket.name)
                     .font(.headline)
-                Text("First flight: \(rocket.firstFlight)")
+                Text(.RocketList.firstFlight(date: rocket.firstFlight))
                     .font(.caption)
                     .foregroundColor(.gray)
             }

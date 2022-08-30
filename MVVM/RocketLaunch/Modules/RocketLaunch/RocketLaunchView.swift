@@ -25,7 +25,7 @@ struct RocketLaunchView: View {
     var body: some View {
         VStack {
             if ( movingBackward == true ) {
-                Image("Rocket Flying")
+                Icons.flyingRocket.image
                     .position(position)
                     .animation(.easeOut.speed(0.15))
                     .onAppear {
@@ -34,15 +34,15 @@ struct RocketLaunchView: View {
                         }
                     }
             } else {
-                Image("Rocket Idle")
+                Icons.idleRocket.image
                     .frame(width: 30, height: 30)
                     .position(position)
             }
             
-            Text("Move your phone up to launch the rocket")
+            Text(.RocketLaunch.notLaunched) 
                 .padding()
         }
-        .navigationBarTitle("Launch")
+        .navigationBarTitle(.RocketLaunch.title)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

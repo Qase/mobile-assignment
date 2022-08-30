@@ -10,7 +10,13 @@ import SwiftUI
 // MARK: - Localized String Key
 
 extension LocalizedStringKey {
-    static let rocketList_title: LocalizedStringKey = "rocketList_title"
+    enum RocketList {
+        static let title: LocalizedStringKey = "rocketList_title"
+
+        static func firstFlight(date: Date) -> LocalizedStringKey {
+            return "rocketList_firstFlight \(dateToString(date))"
+        }
+    }
 
     enum RocketDetail {
         static let launch: LocalizedStringKey = "rocketDetail_launch"

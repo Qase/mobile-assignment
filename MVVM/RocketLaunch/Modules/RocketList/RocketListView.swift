@@ -18,7 +18,7 @@ struct RocketListView: View {
             AsyncContentView(source: viewModel) { rockets in
                 loadedView(rockets: rockets)
             }
-            .navigationTitle(.rocketList_title)
+            .navigationTitle(.RocketList.title)
         }
         .task {
             await viewModel.load()

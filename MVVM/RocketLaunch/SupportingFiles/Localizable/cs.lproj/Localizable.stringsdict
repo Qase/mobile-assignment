@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>engines_count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@engines_count@</string>
+		<key>engines_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>0 motorů</string>
+			<key>one</key>
+			<string>1 motor</string>
+			<key>two</key>
+			<string>2 motory</string>
+			<key>three</key>
+			<string>3 motory</string>
+			<key>four</key>
+			<string>4 motory</string>
+			<key>other</key>
+			<string>%u motorů</string>
+		</dict>
+	</dict>
+	<key>fuel_amount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@fuel_amount@</string>
+		<key>fuel_amount</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>0 tun paliva</string>
+			<key>one</key>
+			<string>1 tuna paliva</string>
+			<key>other</key>
+			<string>%u tun paliva</string>
+		</dict>
+	</dict>
+	<key>burn_time</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@burn_time@</string>
+		<key>burn_time</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>0 sekund čas vzletu</string>
+			<key>one</key>
+			<string>1 sekunda čas vzletu</string>
+			<key>other</key>
+			<string>%u sekund čas vzletu</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

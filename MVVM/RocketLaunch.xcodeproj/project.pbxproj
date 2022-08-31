@@ -10,6 +10,7 @@
 		A00BFDA028BCE33B0064C415 /* DTOModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00BFD9F28BCE33B0064C415 /* DTOModelProtocol.swift */; };
 		A00BFDA228BE453F0064C415 /* DateCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00BFDA128BE453F0064C415 /* DateCreator.swift */; };
 		A00BFDA428BF4E840064C415 /* pluralsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00BFDA328BF4E840064C415 /* pluralsProvider.swift */; };
+		A00BFDA528BF611D0064C415 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = A00BFDA728BF611D0064C415 /* Localizable.stringsdict */; };
 		A01BE6A128AFCA25000567C4 /* LocalizedStringKey+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6A028AFCA25000567C4 /* LocalizedStringKey+.swift */; };
 		A01BE6A528AFCB12000567C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01BE6A728AFCB12000567C4 /* Localizable.strings */; };
 		A01BE6AB28AFCE37000567C4 /* Rocket+instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BE6AA28AFCE37000567C4 /* Rocket+instances.swift */; };
@@ -38,7 +39,6 @@
 		A071446427D25E7900B2B352 /* RocketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446327D25E7900B2B352 /* RocketDetailViewModel.swift */; };
 		A071446827D25EE900B2B352 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071446727D25EE900B2B352 /* MotionManager.swift */; };
 		A086478727E37397004C8037 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A086478627E37397004C8037 /* UIScreen+.swift */; };
-		A0F3BE1F28B4CA9600AE5039 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = A0F3BE1E28B4CA9600AE5039 /* Localizable.stringsdict */; };
 		A0F3BE2128B4D19000AE5039 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2028B4D19000AE5039 /* RectangleView.swift */; };
 		A0F3BE2328B4EA5B00AE5039 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2228B4EA5B00AE5039 /* Constants.swift */; };
 		A0F3BE2528B4EB2F00AE5039 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */; };
@@ -53,6 +53,8 @@
 		A00BFD9F28BCE33B0064C415 /* DTOModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOModelProtocol.swift; sourceTree = "<group>"; };
 		A00BFDA128BE453F0064C415 /* DateCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCreator.swift; sourceTree = "<group>"; };
 		A00BFDA328BF4E840064C415 /* pluralsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pluralsProvider.swift; sourceTree = "<group>"; };
+		A00BFDA628BF611D0064C415 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		A00BFDA828BF61260064C415 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = cs; path = cs.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A01BE6A028AFCA25000567C4 /* LocalizedStringKey+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringKey+.swift"; sourceTree = "<group>"; };
 		A01BE6A628AFCB12000567C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A01BE6A828AFCB2F000567C4 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -84,7 +86,6 @@
 		A071446327D25E7900B2B352 /* RocketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewModel.swift; sourceTree = "<group>"; };
 		A071446727D25EE900B2B352 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		A086478627E37397004C8037 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
-		A0F3BE1E28B4CA9600AE5039 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		A0F3BE2028B4D19000AE5039 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		A0F3BE2228B4EA5B00AE5039 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0F3BE2428B4EB2F00AE5039 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -195,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				A01BE6A728AFCB12000567C4 /* Localizable.strings */,
-				A0F3BE1E28B4CA9600AE5039 /* Localizable.stringsdict */,
+				A00BFDA728BF611D0064C415 /* Localizable.stringsdict */,
 				A00BFDA328BF4E840064C415 /* pluralsProvider.swift */,
 			);
 			path = Localizable;
@@ -360,7 +361,7 @@
 				A071444A27D25B6500B2B352 /* Preview Assets.xcassets in Resources */,
 				A01BE6A528AFCB12000567C4 /* Localizable.strings in Resources */,
 				A071444727D25B6500B2B352 /* Assets.xcassets in Resources */,
-				A0F3BE1F28B4CA9600AE5039 /* Localizable.stringsdict in Resources */,
+				A00BFDA528BF611D0064C415 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +414,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A00BFDA728BF611D0064C415 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A00BFDA628BF611D0064C415 /* en */,
+				A00BFDA828BF61260064C415 /* cs */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		A01BE6A728AFCB12000567C4 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

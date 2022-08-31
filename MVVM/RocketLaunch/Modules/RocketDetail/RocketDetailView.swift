@@ -81,8 +81,6 @@ struct RocketDetailView: View {
     }
 
     func stagePart(title: LocalizedStringKey, stage: Stage) -> some View {
-        // TODO: Add plurals to localizable
-
         VStack(alignment: .leading, spacing: spacingInParts) {
             Text(title)
                 .modifier(subsectionHeddingStyle())

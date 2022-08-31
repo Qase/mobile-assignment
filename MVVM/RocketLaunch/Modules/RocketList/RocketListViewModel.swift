@@ -27,7 +27,7 @@ class RocketListViewModel: ObservableObject, LoadableObject {
         self.state = .loading
 
         do {
-            let rockets = try await service.getRocketList() // TODO: verify whether there is
+            let rockets = try await service.getRocketList()
             self.state = .loaded(rockets)
         } catch {
             self.state = .failed(error)

@@ -16,7 +16,11 @@ func pluralString(name: String, count: UInt) -> String {
 func boolString(name: String, value: Bool) -> String {
     // TODO: add to .stringsdict file
     if name == "reusable" {
-        return value ? "reusable" : "not reusable"
+        let langStr = Locale.current.languageCode
+        if langStr == "en" {
+            return value ? "reusable" : "not reusable"
+        }
+        return value ? "znovu použitelný" : "znovu nepoužitelný"
     }
     return "value does not exist"
 }

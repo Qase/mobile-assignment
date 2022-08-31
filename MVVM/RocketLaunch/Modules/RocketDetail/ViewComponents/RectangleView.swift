@@ -21,10 +21,10 @@ struct RectangleView: View {
             .overlay(
                 VStack {
                     Text(textTop)
-                        .font(.headline)
+                        .font(.system(size: 36, weight: .semibold))
                         .foregroundColor(.white)
                     Text(textBottom)
-                        .font(.caption)
+                        .font(.system(size: 20, weight: .regular))
                         .foregroundColor(.white)
                 }
             )

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>engines_count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@engines_count@</string>
+		<key>engines_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>0 engines</string>
+			<key>one</key>
+			<string>1 engine</string>
+			<key>other</key>
+			<string>%u engines</string>
+		</dict>
+	</dict>
+	<key>fuel_amount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@fuel_amount@</string>
+		<key>fuel_amount</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>0 tons of fuel</string>
+			<key>one</key>
+			<string>1 ton of fuel</string>
+			<key>other</key>
+			<string>%u tons of fuel</string>
+		</dict>
+	</dict>
+	<key>burn_time</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@burn_time@</string>
+		<key>burn_time</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>0 seconds burn time</string>
+			<key>one</key>
+			<string>1 second burn time</string>
+			<key>other</key>
+			<string>%u seconds burn time</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

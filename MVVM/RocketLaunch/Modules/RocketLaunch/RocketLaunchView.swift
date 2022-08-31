@@ -39,7 +39,7 @@ struct RocketLaunchView: View {
                     .position(position)
             }
             
-            Text(.RocketLaunch.notLaunched) 
+            Text(.RocketLaunch.notLaunched)
                 .padding()
         }
         .navigationBarTitle(.RocketLaunch.title)

@@ -51,21 +51,21 @@ extension RocketDetailDTO: DTOModelProtocol {
 
         let massParameter = Parameter(
             type: .mass,
-            name: "mass", // TODO: use localized string key
+            name: .RocketDetail.Parameters.mass,
             metric: self.mass.kg,
             imperial: self.mass.lb
         )
 
         let diameterParameter = Parameter(
             type: .diameter,
-            name: "diameter", // TODO: use localized string key
+            name: .RocketDetail.Parameters.diameter,
             metric: self.diameter.meters,
             imperial: self.diameter.feet
         )
 
         let heightParameter = Parameter(
             type: .height,
-            name: "heigh", // TODO: use localized string key
+            name: .RocketDetail.Parameters.height, 
             metric: self.height.meters,
             imperial: self.height.meters
         )

@@ -65,16 +65,16 @@ struct RocketDetailView: View {
 
             HStack {
                 RectangleView(
-                    textTop: rocket.getParameter(type: .height)?.name ?? "nil",
-                    textBottom: .RocketDetail.Parameters.height
+                    textTop: rocket.getParameter(type: .height)?.metricString ?? "nil",
+                    textBottom: rocket.getParameter(type: .height)?.name ?? "nil"
                 )
                 RectangleView(
-                    textTop: rocket.getParameter(type: .diameter)?.name ?? "nil",
-                    textBottom: .RocketDetail.Parameters.diameter
+                    textTop: rocket.getParameter(type: .diameter)?.metricString ?? "nil",
+                    textBottom: rocket.getParameter(type: .diameter)?.name ?? "nil"
                 )
                 RectangleView(
-                    textTop: rocket.getParameter(type: .mass)?.name ?? "nil",
-                    textBottom: .RocketDetail.Parameters.mass
+                    textTop: rocket.getParameter(type: .mass)?.metricString ?? "nil",
+                    textBottom: rocket.getParameter(type: .mass)?.name ?? "nil"
                 )
             }
         }
@@ -90,20 +90,20 @@ struct RocketDetailView: View {
             VStack(alignment: .leading, spacing: spacingInParts) {
                 StageItemView(
                     image: Icons.reusable,
-                    text: stage.reusable ? "reusable" : "not reusable"
+                    text: boolString(name: PluralString.reusable.stringValue, value: stage.reusable)
                 )
                 StageItemView(
                     image: Icons.engine,
-                    text: stage.engines > 1 ? "\(stage.engines) engine" : "\(stage.engines) engines"
+                    text: pluralString(name: PluralString.enginesCount.stringValue, count: UInt(stage.engines))
                 )
                 StageItemView(
                     image: Icons.fuel,
-                    text: stage.fuelAmount == 1 ? "\(stage.fuelAmount) ton of fuel" : "\(stage.fuelAmount) tons of fuel"
+                    text: pluralString(name: PluralString.fuelAmount.stringValue, count: UInt(stage.fuelAmount))
                 )
                 if let time = stage.burnTime {
                     StageItemView(
                         image: Icons.burn,
-                        text: time > 1 ? "\(time) seconds burn time" : "\(time) second burn time"
+                        text: pluralString(name: PluralString.burnTime.stringValue, count: UInt(time))
                     )
                 }
 

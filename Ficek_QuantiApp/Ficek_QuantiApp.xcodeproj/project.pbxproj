@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0E0A96729A83B22004760E7 /* Ficek_QuantiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A96629A83B22004760E7 /* Ficek_QuantiAppApp.swift */; };
+		F0E0A96B29A83B24004760E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E0A96A29A83B24004760E7 /* Assets.xcassets */; };
+		F0E0A96E29A83B24004760E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */; };
+		F0E0A97529A83B33004760E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97429A83B33004760E7 /* MainView.swift */; };
+		F0E0A97729A83B50004760E7 /* RocketStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97629A83B50004760E7 /* RocketStruct.swift */; };
+		F0E0A97929A83B85004760E7 /* RocketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97829A83B85004760E7 /* RocketListView.swift */; };
+		F0E0A97B29A83BB3004760E7 /* RocketListPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97A29A83BB3004760E7 /* RocketListPartView.swift */; };
+		F0E0A97D29A83BDC004760E7 /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97C29A83BDC004760E7 /* RocketDetailView.swift */; };
+		F0E0A97F29A83BE3004760E7 /* RocketLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97E29A83BE3004760E7 /* RocketLaunchView.swift */; };
+		F0E0A98129A84239004760E7 /* RocketParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98029A84239004760E7 /* RocketParametersView.swift */; };
+		F0E0A98629A843E5004760E7 /* RocketFirstStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98529A843E5004760E7 /* RocketFirstStageView.swift */; };
+		F0E0A98829A843EC004760E7 /* RocketSecondStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98729A843EC004760E7 /* RocketSecondStageView.swift */; };
+		F0E0A98A29A843F3004760E7 /* RocketPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98929A843F3004760E7 /* RocketPhotosView.swift */; };
+		F0E0A98C29A849E6004760E7 /* RocketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98B29A849E6004760E7 /* RocketRepository.swift */; };
+		F0E0A99629A96465004760E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F0E0A99529A96465004760E7 /* ComposableArchitecture */; };
+		F0E0A99829A9732B004760E7 /* RocketDetailDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F0E0A96329A83B22004760E7 /* Ficek_QuantiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ficek_QuantiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E0A96629A83B22004760E7 /* Ficek_QuantiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ficek_QuantiAppApp.swift; sourceTree = "<group>"; };
+		F0E0A96A29A83B24004760E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0E0A97429A83B33004760E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F0E0A97629A83B50004760E7 /* RocketStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketStruct.swift; sourceTree = "<group>"; };
+		F0E0A97829A83B85004760E7 /* RocketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListView.swift; sourceTree = "<group>"; };
+		F0E0A97A29A83BB3004760E7 /* RocketListPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListPartView.swift; sourceTree = "<group>"; };
+		F0E0A97C29A83BDC004760E7 /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
+		F0E0A97E29A83BE3004760E7 /* RocketLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchView.swift; sourceTree = "<group>"; };
+		F0E0A98029A84239004760E7 /* RocketParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketParametersView.swift; sourceTree = "<group>"; };
+		F0E0A98529A843E5004760E7 /* RocketFirstStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketFirstStageView.swift; sourceTree = "<group>"; };
+		F0E0A98729A843EC004760E7 /* RocketSecondStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSecondStageView.swift; sourceTree = "<group>"; };
+		F0E0A98929A843F3004760E7 /* RocketPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketPhotosView.swift; sourceTree = "<group>"; };
+		F0E0A98B29A849E6004760E7 /* RocketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketRepository.swift; sourceTree = "<group>"; };
+		F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailDomain.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0E0A96029A83B22004760E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E0A99629A96465004760E7 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0E0A95A29A83B22004760E7 = {
+			isa = PBXGroup;
+			children = (
+				F0E0A96529A83B22004760E7 /* Ficek_QuantiApp */,
+				F0E0A96429A83B22004760E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0E0A96429A83B22004760E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A96329A83B22004760E7 /* Ficek_QuantiApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0E0A96529A83B22004760E7 /* Ficek_QuantiApp */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A96629A83B22004760E7 /* Ficek_QuantiAppApp.swift */,
+				F0E0A97429A83B33004760E7 /* MainView.swift */,
+				F0E0A98329A8438F004760E7 /* RocketList */,
+				F0E0A98229A84385004760E7 /* RocketDetail */,
+				F0E0A98429A843A7004760E7 /* RocketLaunch */,
+				F0E0A96A29A83B24004760E7 /* Assets.xcassets */,
+				F0E0A96C29A83B24004760E7 /* Preview Content */,
+			);
+			path = Ficek_QuantiApp;
+			sourceTree = "<group>";
+		};
+		F0E0A96C29A83B24004760E7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0E0A98229A84385004760E7 /* RocketDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A99929AA4F3C004760E7 /* Presentation */,
+				F0E0A99A29AA4F58004760E7 /* Domain */,
+			);
+			path = RocketDetail;
+			sourceTree = "<group>";
+		};
+		F0E0A98329A8438F004760E7 /* RocketList */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A99C29AA4F75004760E7 /* Presentation */,
+				F0E0A99B29AA4F71004760E7 /* Domain */,
+			);
+			path = RocketList;
+			sourceTree = "<group>";
+		};
+		F0E0A98429A843A7004760E7 /* RocketLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A97E29A83BE3004760E7 /* RocketLaunchView.swift */,
+			);
+			path = RocketLaunch;
+			sourceTree = "<group>";
+		};
+		F0E0A99929AA4F3C004760E7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A97C29A83BDC004760E7 /* RocketDetailView.swift */,
+				F0E0A98029A84239004760E7 /* RocketParametersView.swift */,
+				F0E0A98529A843E5004760E7 /* RocketFirstStageView.swift */,
+				F0E0A98729A843EC004760E7 /* RocketSecondStageView.swift */,
+				F0E0A98929A843F3004760E7 /* RocketPhotosView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F0E0A99A29AA4F58004760E7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F0E0A99B29AA4F71004760E7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A97629A83B50004760E7 /* RocketStruct.swift */,
+				F0E0A98B29A849E6004760E7 /* RocketRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F0E0A99C29AA4F75004760E7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A97A29A83BB3004760E7 /* RocketListPartView.swift */,
+				F0E0A97829A83B85004760E7 /* RocketListView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0E0A96229A83B22004760E7 /* Ficek_QuantiApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0E0A97129A83B24004760E7 /* Build configuration list for PBXNativeTarget "Ficek_QuantiApp" */;
+			buildPhases = (
+				F0E0A95F29A83B22004760E7 /* Sources */,
+				F0E0A96029A83B22004760E7 /* Frameworks */,
+				F0E0A96129A83B22004760E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ficek_QuantiApp;
+			packageProductDependencies = (
+				F0E0A99529A96465004760E7 /* ComposableArchitecture */,
+			);
+			productName = Ficek_QuantiApp;
+			productReference = F0E0A96329A83B22004760E7 /* Ficek_QuantiApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0E0A95B29A83B22004760E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					F0E0A96229A83B22004760E7 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = F0E0A95E29A83B22004760E7 /* Build configuration list for PBXProject "Ficek_QuantiApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0E0A95A29A83B22004760E7;
+			packageReferences = (
+				F0E0A99429A96465004760E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
+			productRefGroup = F0E0A96429A83B22004760E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0E0A96229A83B22004760E7 /* Ficek_QuantiApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0E0A96129A83B22004760E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E0A96E29A83B24004760E7 /* Preview Assets.xcassets in Resources */,
+				F0E0A96B29A83B24004760E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0E0A95F29A83B22004760E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E0A97529A83B33004760E7 /* MainView.swift in Sources */,
+				F0E0A98C29A849E6004760E7 /* RocketRepository.swift in Sources */,
+				F0E0A99829A9732B004760E7 /* RocketDetailDomain.swift in Sources */,
+				F0E0A97D29A83BDC004760E7 /* RocketDetailView.swift in Sources */,
+				F0E0A96729A83B22004760E7 /* Ficek_QuantiAppApp.swift in Sources */,
+				F0E0A97929A83B85004760E7 /* RocketListView.swift in Sources */,
+				F0E0A98129A84239004760E7 /* RocketParametersView.swift in Sources */,
+				F0E0A98629A843E5004760E7 /* RocketFirstStageView.swift in Sources */,
+				F0E0A97B29A83BB3004760E7 /* RocketListPartView.swift in Sources */,
+				F0E0A98829A843EC004760E7 /* RocketSecondStageView.swift in Sources */,
+				F0E0A97F29A83BE3004760E7 /* RocketLaunchView.swift in Sources */,
+				F0E0A98A29A843F3004760E7 /* RocketPhotosView.swift in Sources */,
+				F0E0A97729A83B50004760E7 /* RocketStruct.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F0E0A96F29A83B24004760E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0E0A97029A83B24004760E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0E0A97229A83B24004760E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ficek_QuantiApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 45KK6Y7684;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.Ficek.Ficek-QuantiApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0E0A97329A83B24004760E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ficek_QuantiApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 45KK6Y7684;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.Ficek.Ficek-QuantiApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0E0A95E29A83B22004760E7 /* Build configuration list for PBXProject "Ficek_QuantiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0E0A96F29A83B24004760E7 /* Debug */,
+				F0E0A97029A83B24004760E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0E0A97129A83B24004760E7 /* Build configuration list for PBXNativeTarget "Ficek_QuantiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0E0A97229A83B24004760E7 /* Debug */,
+				F0E0A97329A83B24004760E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F0E0A99429A96465004760E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F0E0A99529A96465004760E7 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0E0A99429A96465004760E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F0E0A95B29A83B22004760E7 /* Project object */;
+}

@@ -14,12 +14,6 @@
       "filename" : "Fuel@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "filename" : "Fuel.svg",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "unassigned" : true
     }
   ],
   "info" : {

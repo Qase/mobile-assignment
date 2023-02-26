@@ -10,35 +10,34 @@ import ComposableArchitecture
 
 struct RocketParametersView: View {
     let store: StoreOf<RocketDetailDomain>
-    let rocket: Rocket
     
     var body: some View {
         WithViewStore(self.store) { viewStore in
             VStack(alignment: .leading, spacing: 16) {
                 Text("Overview")
                     .font(.headline)
-                Text(rocket.description)
+                Text(viewStore.rocket.description)
                     .font(.subheadline)
                 Text("Parameters")
                     .font(.headline)
                 HStack(spacing: 16) {
                     Group {
                         VStack(spacing: 4) {
-                            Text(String(Int(round(rocket.height.meters ?? 0))) + "m")
+                            Text(viewStore.height)
                                 .font(.system(size: 24))
                                 .bold()
                             Text("height")
                                 .font(.headline)
                         }
                         VStack(spacing: 4) {
-                            Text(String(rocket.diameter.meters ?? 0) + "m")
+                            Text(viewStore.diameter)
                                 .font(.system(size: 24))
                                 .bold()
                             Text("diameter")
                                 .font(.headline)
                         }
                         VStack(spacing: 4) {
-                            Text(String(rocket.mass.kg) + "t")
+                            Text(viewStore.mass)
                                 .font(.system(size: 24))
                                 .bold()
                             Text("mass")
@@ -46,8 +45,10 @@ struct RocketParametersView: View {
                         }
                     }
                     .frame(width: 110, height: 110)
-                    // .aspectRatio(1.0, contentMode: .fit)
-                    .background(Color(.gray))
+                    .background (
+                        RoundedRectangle(cornerRadius: 16)
+                            .foregroundColor(.gray)
+                    )
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                 }
                 .foregroundColor(Color.white)

@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct MainView: View {
     var body: some View {
         RocketListView(
-            store: Store(initialState: RocketDetailDomain.State(), reducer: RocketDetailDomain())
+            store: Store(initialState: RocketListDomain.State(), reducer: RocketListDomain()._printChanges())
         )
     }
 }

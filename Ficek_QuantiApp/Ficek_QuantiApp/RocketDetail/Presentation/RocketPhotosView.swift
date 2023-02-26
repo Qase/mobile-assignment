@@ -6,34 +6,34 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct RocketPhotosView: View {
-    var rocket: Rocket
+    let store: StoreOf<RocketDetailDomain>
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Photos")
-                .font(.headline)
-                .padding(.leading, 16)
-            
-            ForEach (rocket.flickrImages, id: \.self) { image in
+        WithViewStore(self.store) { viewStore in
+            VStack(alignment: .leading) {
+                Text("Photos")
+                    .font(.headline)
+                    .padding(.leading, 16)
                 
-                AsyncImage(url: URL(string: image), content: { asyncImage in
-                    asyncImage
-                        .resizable()
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .scaledToFit()
-                        .padding(15)
-                }, placeholder: {
-                    ProgressView()
+                ForEach (viewStore.rocket.flickrImages, id: \.self) { image in
+                    
+                    AsyncImage(url: URL(string: image), content: { asyncImage in
+                        asyncImage
+                            .resizable()
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .scaledToFit()
+                            .padding(15)
+                    }, placeholder: {
+                        ProgressView()
                     }
-                )
+                    )
+                }
             }
         }
-        
-        
-        
     }
 }
 //

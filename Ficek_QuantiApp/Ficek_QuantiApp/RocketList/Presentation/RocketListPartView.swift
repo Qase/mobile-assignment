@@ -10,7 +10,6 @@ import ComposableArchitecture
 
 struct RocketListPartView: View {
     let store: StoreOf<RocketDetailDomain>
-    let rocket: Rocket
 
     var body: some View {
         WithViewStore(self.store) { viewStore in
@@ -18,9 +17,9 @@ struct RocketListPartView: View {
                 Image("Rocket")
                 
                 VStack(alignment: .leading) {
-                    Text(rocket.rocketName)
+                    Text(viewStore.rocket.name)
                         .font(.callout)
-                    Text(rocket.firstFlight)
+                    Text("First flight: \(viewStore.rocket.firstFlight)")
                         .font(.caption)
                         .foregroundColor(.gray)
                 }

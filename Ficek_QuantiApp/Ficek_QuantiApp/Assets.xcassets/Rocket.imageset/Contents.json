@@ -14,12 +14,6 @@
       "filename" : "Rocket@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "filename" : "Rocket.svg",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "unassigned" : true
     }
   ],
   "info" : {

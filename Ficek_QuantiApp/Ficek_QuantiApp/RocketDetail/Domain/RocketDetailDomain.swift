@@ -11,34 +11,38 @@ import Dependencies
 
 struct RocketDetailDomain: ReducerProtocol{
     
-    struct State: Equatable {
-        var rocketItems: IdentifiedArrayOf<Rocket> = []
+    struct State: Equatable, Identifiable {
+        var id: String { rocket.id }
+        var rocket: Rocket
+        var height: String {"\(Int(round(rocket.height.meters ?? 0)))m"}
+        var diameter: String { "\(Int(round(rocket.diameter.meters ?? 0)))m" }
+        var mass: String { "\(rocket.mass.kg / 1000)t" }
+        
+        var reusableFirstSt: String { rocket.firstStage.reusable ? "Reusable" : "Not reusable" }
+        var enginesFirstSt: String { "\(rocket.firstStage.engines) engines" }
+        var fuelAmmountFirstSt: String { "\(rocket.firstStage.fuelAmountTons) tons of fuel"}
+        var burnTimeFirstSt: String { if let burnTimeSec = rocket.firstStage.burnTimeSEC {
+            return "\(burnTimeSec) seconds burn time"
+        } else {
+            return "Data not available"
+        }}
+        
+        var reusableSecondSt: String { rocket.secondStage.reusable ? "Reusable" : "Not reusable" }
+        var enginesSecondSt: String { "\(rocket.secondStage.engines) engines" }
+        var fuelAmmountSecondSt: String { "\(rocket.secondStage.fuelAmountTons) tons of fuel"}
+        var burnTimeSecondSt: String { if let burnTimeSec = rocket.secondStage.burnTimeSEC {
+            return "\(burnTimeSec) seconds burn time"
+        } else {
+            return "Data not available"
+        }}
     }
     
     enum Action: Equatable {
-        case onAppear
-        case fetchRockets(TaskResult<[Rocket]>)
+      
+    
     }
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch action {
-            
-        case .onAppear:
-            @Dependency(\.rocketRepositoryClient) var rocketRepositoryClient
-            return .task {
-                await .fetchRockets(
-                    TaskResult {
-                        return try await rocketRepositoryClient.fetchAllRockets()
-                    }
-                )
-                
-            }
-        case .fetchRockets(.success(let result)):
-            state.rocketItems = IdentifiedArray(uniqueElements: result)
-            return .none
-        case .fetchRockets(.failure(let error)):
-            print(error)
-            return .none
-        }
+       
     }
 }

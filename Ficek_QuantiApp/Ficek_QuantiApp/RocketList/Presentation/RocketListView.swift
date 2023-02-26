@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct RocketListView: View {
-    let store: StoreOf<RocketDetailDomain>
+    let store: StoreOf<RocketListDomain>
     
     var body: some View {
         WithViewStore(self.store, observe: \.rocketItems) { viewStore in
@@ -18,16 +18,18 @@ struct RocketListView: View {
                     .font(.largeTitle)
                     .bold()
                     .padding(.leading, 25)
+                
                 NavigationStack {
                     List {
-                        ForEach(viewStore.state.elements) { rocket in
-                            NavigationLink(destination: {
-                                RocketDetailView(store: store, rocket: rocket)
-                                
-                            }, label: {
-                                RocketListPartView(store: store, rocket: rocket)
-                            })
-                        }
+                        ForEachStore(
+                            self.store.scope(state: \.rocketItems,
+                                             action: RocketListDomain.Action.rockets(id:action:))) { rocket in
+                                                 NavigationLink(destination: {
+                                                     RocketDetailView(store: rocket)
+                                                 }, label: {
+                                                     RocketListPartView(store: rocket)
+                                                 })
+                                             }
                     }
                 }.task {
                     viewStore.send(.onAppear)

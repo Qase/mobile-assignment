@@ -10,58 +10,30 @@ import Foundation
 struct Rocket: Decodable, Equatable, Identifiable{
     
     var id: String
-    var active: Bool
-    var stages, boosters, costPerLaunch, successRatePct: Int
-    var firstFlight, country, company: String
+    var firstFlight: String
     var height, diameter: Diameter
     var mass: Mass
-    var payloadWeights: [PayloadWeight]
     var firstStage: FirstStage
     var secondStage: SecondStage
     var engines: Engines
-    var landingLegs: LandingLegs
     var flickrImages: [String]
-    var wikipedia: String
-    var description, rocketName, rocketType: String
-
+    var description: String
+    var name: String
+    var type: String
+ 
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case active, stages, boosters
-        case costPerLaunch = "cost_per_launch"
-        case successRatePct = "success_rate_pct"
         case firstFlight = "first_flight"
-        case country, company, height, diameter, mass
-        case payloadWeights = "payload_weights"
+        case height, diameter, mass
         case firstStage = "first_stage"
         case secondStage = "second_stage"
         case engines
-        case landingLegs = "landing_legs"
         case flickrImages = "flickr_images"
-        case wikipedia
         case description
-        case rocketName = "name"
-        case rocketType = "type"
+        case name = "name"
+        case type = "type"
     }
 }
-//
-//extension Rocket: Identifiable {
-//    var id: String { return rocketID }
-//}
-
-//struct Photo {
-//    //var id: String
-//    var url: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        //case id
-//        case url = "flickr_images"
-//    }
-//}
-//
-//extension Photo: Decodable {}
-//extension Photo: Identifiable {
-//    var id: String { return flickrImages }
-//}
 
 // MARK: - Diameter
 struct Diameter: Codable, Equatable {
@@ -71,38 +43,14 @@ struct Diameter: Codable, Equatable {
 // MARK: - Engines
 struct Engines: Codable, Equatable {
     var number: Int
-    var type, version: String
-    var layout: String?
-    var isp: ISP
-    var engineLossMax: Int?
-    var propellant1, propellant2: String
-    var thrustSeaLevel, thrustVacuum: Thrust
-    var thrustToWeight: Double
+    var type: String
+    var version: String
 
     enum CodingKeys: String, CodingKey {
-        case number, type, version, layout, isp
-        case engineLossMax = "engine_loss_max"
-        case propellant1 = "propellant_1"
-        case propellant2 = "propellant_2"
-        case thrustSeaLevel = "thrust_sea_level"
-        case thrustVacuum = "thrust_vacuum"
-        case thrustToWeight = "thrust_to_weight"
+        case number
+        case type
+        case version
     }
-}
-
-// MARK: - ISP
-struct ISP: Codable, Equatable {
-    var seaLevel, vacuum: Int
-
-    enum CodingKeys: String, CodingKey {
-        case seaLevel = "sea_level"
-        case vacuum
-    }
-}
-
-// MARK: - Thrust
-struct Thrust: Codable, Equatable {
-    var kN, lbf: Int
 }
 
 // MARK: - FirstStage
@@ -111,33 +59,16 @@ struct FirstStage: Codable, Equatable {
     var engines: Int
     var fuelAmountTons: Double
     var burnTimeSEC: Int?
-    var thrustSeaLevel, thrustVacuum: Thrust
-    var cores: Int?
 
     enum CodingKeys: String, CodingKey {
         case reusable, engines
         case fuelAmountTons = "fuel_amount_tons"
         case burnTimeSEC = "burn_time_sec"
-        case thrustSeaLevel = "thrust_sea_level"
-        case thrustVacuum = "thrust_vacuum"
-        case cores
     }
-}
-
-// MARK: - LandingLegs
-struct LandingLegs: Codable, Equatable{
-    var number: Int
-    var material: String?
 }
 
 // MARK: - Mass
 struct Mass: Codable, Equatable  {
-    var kg, lb: Int
-}
-
-// MARK: - PayloadWeight
-struct PayloadWeight: Codable, Equatable {
-    var id, name: String
     var kg, lb: Int
 }
 
@@ -147,46 +78,22 @@ struct SecondStage: Codable, Equatable {
     var engines: Int
     var fuelAmountTons: Double
     var burnTimeSEC: Int?
-    var thrust: Thrust
-    var payloads: Payloads
 
     enum CodingKeys: String, CodingKey {
         case reusable, engines
         case fuelAmountTons = "fuel_amount_tons"
         case burnTimeSEC = "burn_time_sec"
-        case thrust, payloads
     }
 }
-
-// MARK: - Payloads
-struct Payloads: Codable, Equatable {
-    var option1: String
-    var compositeFairing: CompositeFairing
-    var option2: String?
-
-    enum CodingKeys: String, CodingKey {
-        case option1 = "option_1"
-        case compositeFairing = "composite_fairing"
-        case option2 = "option_2"
-    }
-}
-
-// MARK: - CompositeFairing
-struct CompositeFairing: Codable, Equatable {
-    var height, diameter: Diameter
-}
-
-
-
 
 enum RocketError: Error {
     case internalError
     case badUrl
 }
 
-
-
-let json =
+struct Mock {
+    
+    let json =
 """
 {
     "height": {
@@ -291,5 +198,6 @@ let json =
     "id": "5e9d0d95eda69955f709d1eb"
 }
 """
-
-let data = json.data(using: .utf8)
+    var data: Data { json.data(using: .utf8)! }
+    var mock: [Rocket] { try! JSONDecoder().decode([Rocket].self, from: data) }
+}

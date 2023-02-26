@@ -14,12 +14,6 @@
       "filename" : "Engine@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "filename" : "Engine.svg",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "unassigned" : true
     }
   ],
   "info" : {

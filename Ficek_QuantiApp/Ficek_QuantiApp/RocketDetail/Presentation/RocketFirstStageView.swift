@@ -6,46 +6,41 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct RocketFirstStageView: View {
-    let rocket: Rocket
+    let store: StoreOf<RocketDetailDomain>
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16){
-            Text("First Stage")
-                .font(.headline)
-            Group {
-                HStack(spacing: 16) {
-                    Image("Reusable")
-                    if rocket.firstStage.reusable {
-                        Text("Not reusable")
-                    } else {
-                        Text("reusable")
+        WithViewStore(self.store) { viewStore in
+            VStack(alignment: .leading, spacing: 16){
+                Text("First Stage")
+                    .font(.headline)
+                Group {
+                    HStack(spacing: 16) {
+                        Image("Reusable")
+                        Text(viewStore.reusableFirstSt)
+                    }
+                    HStack(spacing: 16) {
+                        Image("Engine")
+                        Text(viewStore.enginesFirstSt)
+                    }
+                    HStack(spacing: 16) {
+                        Image("Fuel")
+                        Text(viewStore.fuelAmmountFirstSt)
+                    }
+                    HStack(spacing: 16) {
+                        Image("Burn")
+                        Text(viewStore.burnTimeFirstSt)
                     }
                 }
-                HStack(spacing: 16) {
-                    Image("Engine")
-                    Text(String(rocket.engines.number) + " engines")
-                }
-                HStack(spacing: 16) {
-                    Image("Fuel")
-                    Text(String(rocket.firstStage.fuelAmountTons) + " tons of fuel")
-                }
-                HStack(spacing: 16) {
-                    Image("Burn")
-                    if let burnTimeSec = rocket.firstStage.burnTimeSEC {
-                        Text(String(burnTimeSec) + " seconds burn time")
-                    } else {
-                        Text("Data not available")
-                    }
-                }
+                .font(.subheadline)
             }
-            .font(.subheadline)
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(.gray).opacity(0.2))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.gray).opacity(0.2))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
 

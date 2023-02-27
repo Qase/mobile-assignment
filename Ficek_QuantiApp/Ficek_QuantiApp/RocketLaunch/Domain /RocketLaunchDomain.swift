@@ -22,7 +22,7 @@ struct RocketLaunchDomain: ReducerProtocol{
     
     enum Action: Equatable {
         case onAppear
-        case task(TaskResult<Bool>)
+        case flying(Double)
     }
     
     @Dependency(\.coreMotionClient) var coreMotionClient
@@ -30,26 +30,18 @@ struct RocketLaunchDomain: ReducerProtocol{
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         switch action {
         case .onAppear:
-            return .task {
-                await .task(
-                    TaskResult {
-                        return try await coreMotionClient.gyro() > 1
-                    }
-                )
+            return .run { send in
+                for try await event in try await self.coreMotionClient.xRotationRate(OperationQueue()) {
+                    await send(.flying(event))
+                }
             }
-                    
-        case .task(.success(let result)):
-            if result == false {
-                return .send(.onAppear)
-            }
-            else {
-                    state.isFlying = true
-            }
-           
-            return .none
             
-        case .task(.failure(let error)):
+        case .flying(let result):
+            if result > 1 || result < -1 {
+                state.isFlying = true
+            }
             return .none
         }
     }
 }
+

@@ -19,7 +19,6 @@ extension DependencyValues {
 struct RequestBuilderClient {
     struct Input {
         let url: URL
-       
     }
     
     let rocketRequest: (Input) throws -> URLRequest

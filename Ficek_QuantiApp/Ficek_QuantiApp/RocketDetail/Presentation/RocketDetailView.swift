@@ -23,28 +23,37 @@ struct RocketDetailView: View {
                     RocketPhotosView(store: store)
                 }
             }
+            
             .toolbar {
-                NavigationStack {
-                    NavigationLink(destination: {
-                        RocketLaunchView(store:
-                                            Store(initialState:
-                                                    RocketLaunchDomain.State(),
-                                                  reducer: RocketLaunchDomain()
-                                                 )
-                        )
-                    }, label: {
-                        Text("Launch")
-                    })
+                ToolbarItem(placement: .navigation) {
+                    NavigationLink(
+                        destination: {
+                            RocketLaunchView(
+                                store:  Store(
+                                    initialState: RocketLaunchDomain.State(),
+                                    reducer: RocketLaunchDomain()
+                                )
+                            )
+                        },
+                        label: {
+                            Text("Launch")
+                        }
+                    )
                 }
             }
+            .navigationTitle(viewStore.name)
         }
     }
 }
-//struct RocketDetailView_Previews: PreviewProvider {
-//    let mock = Mock()
-//
-//    static var previews: some View {
-//        RocketDetailView(store: Store(initialState: RocketDetailDomain.State(rocket: mock.mock.first!), reducer: RocketListDomain()._printChanges())
-//        )
-//    }
-//}
+
+struct RocketDetailView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        RocketDetailView(
+            store: Store(
+                initialState: RocketDetailDomain.State(rocket: .mock),
+                reducer: RocketDetailDomain()
+            )
+        )
+    }
+}

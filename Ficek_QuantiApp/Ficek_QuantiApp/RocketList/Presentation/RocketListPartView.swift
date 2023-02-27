@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct RocketListPartView: View {
     let store: StoreOf<RocketDetailDomain>
-
+    
     var body: some View {
         WithViewStore(self.store) { viewStore in
             HStack {
@@ -28,8 +28,13 @@ struct RocketListPartView: View {
     }
 }
 
-//struct RocketListPartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RocketListPartView(store: Store<RocketDetailDomain.State, RocketDetailDomain.Action>)
-//    }
-//}
+struct RocketListPartView_Previews: PreviewProvider {
+    static var previews: some View {
+        RocketListPartView(
+            store: Store(
+                initialState: RocketDetailDomain.State(rocket: .mock),
+                reducer: RocketDetailDomain()
+            )
+        )
+    }
+}

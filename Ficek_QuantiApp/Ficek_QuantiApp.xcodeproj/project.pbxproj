@@ -174,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */,
-				F0E0A99D29AA6531004760E7 /* RocketListDomain.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -182,6 +181,7 @@
 		F0E0A99B29AA4F71004760E7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F0E0A99D29AA6531004760E7 /* RocketListDomain.swift */,
 				F0E0A97629A83B50004760E7 /* RocketStruct.swift */,
 				F0B5C78E29AAE2D900A875AE /* Dependencies */,
 			);

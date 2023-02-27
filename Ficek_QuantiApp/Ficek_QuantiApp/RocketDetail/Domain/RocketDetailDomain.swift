@@ -13,6 +13,7 @@ struct RocketDetailDomain: ReducerProtocol{
     
     struct State: Equatable, Identifiable {
         var id: String { rocket.id }
+        var name: String { rocket.name }
         var rocket: Rocket
         var height: String {"\(Int(round(rocket.height.meters ?? 0)))m"}
         var diameter: String { "\(Int(round(rocket.diameter.meters ?? 0)))m" }

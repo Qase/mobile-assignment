@@ -17,41 +17,80 @@ extension DependencyValues {
     }
 }
 
+
 struct CoreMotionClient {
-//    struct Input {
-//        let url: URL
-//
-//    }
     
-   // let rocketRequest: (Input) throws -> URLRequest
+    //    struct Input {
+    //        let url: URL
+    //
+    //    }
+    
+    let gyro: () async throws ->  Double
 }
 
 extension CoreMotionClient: DependencyKey {
-    static var liveValue: CoreMotionClient {
+    @MainActor
+    static var liveValue: CoreMotionClient { 
+        let motionManager = CMMotionManager()
+        let motionQueue = OperationQueue()
         
         return Self(
-           
+
+            gyro: {
+                motionManager.startGyroUpdates()
+                    let data = motionManager.gyroData
+                    guard let data = data else {
+                        return 0
+                    }
+                    
+                    let motion: CMRotationRate = data.rotationRate
+                    motionManager.gyroUpdateInterval = 1/60
+                    
+                return motion.y
+
+            }
         )
     }
 }
 
-
 struct MotionManager {
-    var motion = CMMotionManager()
-   
-    // Read the most recent accelerometer value
-//    manager.accelerometerData?.acceleration.x
-//    manager.accelerometerData?.acceleration.y
-//    manager.accelerometerData?.acceleration.z
-
-    // How frequently to read accelerometer updates, in seconds
-//    manager.accelerometerUpdateInterval = 0.1
-
-//     Start accelerometer updates on a specific thread
-//    manager.startAccelerometerUpdates(to: .main) { (data, error) in
-        // Handle acceleration update
-//    }
-//    managerstartAccelerometerUpdates() {
+    let motionManager = CMMotionManager()
+    let motionQueue = OperationQueue()
+    
+    func startAcceleroMeter() -> Double{
+//        motionManager.startGyroUpdates(to: motionQueue) { (data: CMGyroData?, error: Error?) in
+//            guard let data = data else {
+//                print("Error: \(error!)")
+//                return
+//            }
 //
-//    }
+//            let motion: CMRotationRate = data.rotationRate
+//            motionManager.gyroUpdateInterval = 1/60
+//
+//            DispatchQueue.main.async {
+//                // print("X: ",motion.x)
+//                print("Y: ",motion.y)
+//                //print("Z: ",motion.z)
+//            }
+//        }
+        motionManager.startGyroUpdates()
+            let data = motionManager.gyroData
+            guard let data = data else {
+                return 0
+            }
+            
+            let motion: CMRotationRate = data.rotationRate
+            motionManager.gyroUpdateInterval = 1/60
+            
+        return motion.y
+//            DispatchQueue.main.async {
+//                // print("X: ",motion.x)
+//                if motion.y > 1 {
+//                    return true
+//                }
+//                print("Y: ",motion.y)
+//                //print("Z: ",motion.z)
+//            }
+    }
 }
+

@@ -43,9 +43,14 @@ struct RocketSecondStageView: View {
         }
     }
 }
-//
-//struct RocketSecondStageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RocketSecondStageView()
-//    }
-//}
+
+struct RocketSecondStageView_Previews: PreviewProvider {
+    static var previews: some View {
+        RocketSecondStageView(
+            store: Store(
+                initialState: RocketDetailDomain.State(rocket: .mock),
+                reducer: RocketDetailDomain()
+            )
+        )
+    }
+}

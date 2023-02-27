@@ -20,25 +20,33 @@ struct RocketPhotosView: View {
                 
                 ForEach (viewStore.rocket.flickrImages, id: \.self) { image in
                     
-                    AsyncImage(url: URL(string: image), content: { asyncImage in
-                        asyncImage
-                            .resizable()
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .scaledToFit()
-                            .padding(15)
-                    }, placeholder: {
-                        ProgressView()
-                    }
+                    AsyncImage(
+                        url: URL(string: image),
+                        content: { asyncImage in
+                            asyncImage
+                                .resizable()
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .scaledToFit()
+                                .padding(15)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
                     )
                 }
             }
         }
     }
 }
-//
-//struct RocketPhotosView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RocketPhotosView()
-//    }
-//}
+
+struct RocketPhotosView_Previews: PreviewProvider {
+    static var previews: some View {
+        RocketPhotosView(
+            store: Store(
+                initialState: RocketDetailDomain.State(rocket: .mock),
+                reducer: RocketDetailDomain()
+            )
+        )
+    }
+}

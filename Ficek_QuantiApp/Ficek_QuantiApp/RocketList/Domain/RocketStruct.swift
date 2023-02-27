@@ -91,113 +91,221 @@ enum RocketError: Error {
     case badUrl
 }
 
-struct Mock {
-    
-    let json =
-"""
-{
-    "height": {
-        "meters": 22.25,
-        "feet": 73
-    },
-    "diameter": {
-        "meters": 1.68,
-        "feet": 5.5
-    },
-    "mass": {
-        "kg": 30146,
-        "lb": 66460
-    },
-    "first_stage": {
-        "thrust_sea_level": {
-            "kN": 420,
-            "lbf": 94000
-        },
-        "thrust_vacuum": {
-            "kN": 480,
-            "lbf": 110000
-        },
-        "reusable": false,
-        "engines": 1,
-        "fuel_amount_tons": 44.3,
-        "burn_time_sec": 169
-    },
-    "second_stage": {
-        "thrust": {
-            "kN": 31,
-            "lbf": 7000
-        },
-        "payloads": {
-            "composite_fairing": {
-                "height": {
-                    "meters": 3.5,
-                    "feet": 11.5
-                },
-                "diameter": {
-                    "meters": 1.5,
-                    "feet": 4.9
-                }
-            },
-            "option_1": "composite fairing"
-        },
-        "reusable": false,
-        "engines": 1,
-        "fuel_amount_tons": 3.38,
-        "burn_time_sec": 378
-    },
-    "engines": {
-        "isp": {
-            "sea_level": 267,
-            "vacuum": 304
-        },
-        "thrust_sea_level": {
-            "kN": 420,
-            "lbf": 94000
-        },
-        "thrust_vacuum": {
-            "kN": 480,
-            "lbf": 110000
-        },
-        "number": 1,
-        "type": "merlin",
-        "version": "1C",
-        "layout": "single",
-        "engine_loss_max": 0,
-        "propellant_1": "liquid oxygen",
-        "propellant_2": "RP-1 kerosene",
-        "thrust_to_weight": 96
-    },
-    "landing_legs": {
-        "number": 0,
-        "material": null
-    },
-    "payload_weights": [
-        {
-            "id": "leo",
-            "name": "Low Earth Orbit",
-            "kg": 450,
-            "lb": 992
-        }
-    ],
-    "flickr_images": [
-        "https://imgur.com/DaCfMsj.jpg",
-        "https://imgur.com/azYafd8.jpg"
-    ],
-    "name": "Falcon 1",
-    "type": "rocket",
-    "active": false,
-    "stages": 2,
-    "boosters": 0,
-    "cost_per_launch": 6700000,
-    "success_rate_pct": 40,
-    "first_flight": "2006-03-24",
-    "country": "Republic of the Marshall Islands",
-    "company": "SpaceX",
-    "wikipedia": "https://en.wikipedia.org/wiki/Falcon_1",
-    "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.",
-    "id": "5e9d0d95eda69955f709d1eb"
+extension Rocket {
+    static let mock: Self = 
+         Rocket(
+          id: "5e9d0d95eda69955f709d1eb",
+          firstFlight: "2006-03-24",
+          height: Diameter(
+            meters: 22.25,
+            feet: 73.0
+          ),
+          diameter: Diameter(
+            meters: 1.68,
+            feet: 5.5
+          ),
+          mass: Mass(
+            kg: 30146,
+            lb: 66460
+          ),
+          firstStage: FirstStage(
+            reusable: false,
+            engines: 1,
+            fuelAmountTons: 44.3,
+            burnTimeSEC: 169
+          ),
+          secondStage: SecondStage(
+            reusable: false,
+            engines: 1,
+            fuelAmountTons: 3.38,
+            burnTimeSEC: 378
+          ),
+          engines: Engines(
+            number: 1,
+            type: "merlin",
+            version: "1C"
+          ),
+          flickrImages: [
+           "https://imgur.com/DaCfMsj.jpg",
+           "https://imgur.com/azYafd8.jpg"
+          ],
+          description: "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.",
+          name: "Falcon 1",
+          type: "rocket"
+        )
 }
-"""
-    var data: Data { json.data(using: .utf8)! }
-    var mock: [Rocket] { try! JSONDecoder().decode([Rocket].self, from: data) }
+
+extension [Rocket] {
+    static let mock: Self = [
+         Rocket(
+          id: "5e9d0d95eda69955f709d1eb",
+          firstFlight: "2006-03-24",
+          height: Diameter(
+            meters: 22.25,
+            feet: 73.0
+          ),
+          diameter: Diameter(
+            meters: 1.68,
+            feet: 5.5
+          ),
+          mass: Mass(
+            kg: 30146,
+            lb: 66460
+          ),
+          firstStage: FirstStage(
+            reusable: false,
+            engines: 1,
+            fuelAmountTons: 44.3,
+            burnTimeSEC: 169
+          ),
+          secondStage: SecondStage(
+            reusable: false,
+            engines: 1,
+            fuelAmountTons: 3.38,
+            burnTimeSEC: 378
+          ),
+          engines: Engines(
+            number: 1,
+            type: "merlin",
+            version: "1C"
+          ),
+          flickrImages: [
+           "https://imgur.com/DaCfMsj.jpg",
+           "https://imgur.com/azYafd8.jpg"
+          ],
+          description: "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.",
+          name: "Falcon 1",
+          type: "rocket"
+        ),
+         Rocket(
+          id: "5e9d0d95eda69973a809d1ec",
+          firstFlight: "2010-06-04",
+          height: Diameter(
+            meters: 70.0,
+            feet: 229.6
+          ),
+          diameter: Diameter(
+            meters: 3.7,
+            feet: 12.0
+          ),
+          mass: Mass(
+            kg: 549054,
+            lb: 1207920
+          ),
+          firstStage: FirstStage(
+            reusable: true,
+            engines: 9,
+            fuelAmountTons: 385.0,
+            burnTimeSEC: 162
+          ),
+          secondStage: SecondStage(
+            reusable: false,
+            engines: 1,
+            fuelAmountTons: 90.0,
+            burnTimeSEC: 397
+          ),
+          engines: Engines(
+            number: 9,
+            type: "merlin",
+            version: "1D+"
+          ),
+          flickrImages: [
+            "https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg",
+            "https://farm4.staticflickr.com/3955/32915197674_eee74d81bb_b.jpg",
+            "https://farm1.staticflickr.com/293/32312415025_6841e30bf1_b.jpg",
+            "https://farm1.staticflickr.com/623/23660653516_5b6cb301d1_b.jpg",
+            "https://farm6.staticflickr.com/5518/31579784413_d853331601_b.jpg",
+            "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg"
+          ],
+          description: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
+          name: "Falcon 9",
+          type: "rocket"
+        ),
+         Rocket(
+          id: "5e9d0d95eda69974db09d1ed",
+          firstFlight: "2018-02-06",
+          height: Diameter(
+            meters: 70.0,
+            feet: 229.6
+          ),
+          diameter: Diameter(
+            meters: 12.2,
+            feet: 39.9
+          ),
+          mass: Mass(
+            kg: 1420788,
+            lb: 3125735
+          ),
+          firstStage: FirstStage(
+            reusable: true,
+            engines: 27,
+            fuelAmountTons: 1155.0,
+            burnTimeSEC: 162
+          ),
+          secondStage: SecondStage(
+            reusable: false,
+            engines: 1,
+            fuelAmountTons: 90.0,
+            burnTimeSEC: 397
+          ),
+          engines: Engines(
+            number: 27,
+            type: "merlin",
+            version: "1D+"
+          ),
+          flickrImages: [
+            "https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg",
+            "https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg",
+            "https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg",
+            "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg"
+          ],
+          description: "With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.",
+          name: "Falcon Heavy",
+          type: "rocket"
+        ),
+         Rocket(
+          id: "5e9d0d96eda699382d09d1ee",
+          firstFlight: "2021-12-01",
+          height: Diameter(
+            meters: 118.0,
+            feet: 387.0
+          ),
+          diameter: Diameter(
+            meters: 9.0,
+            feet: 30.0
+          ),
+          mass: Mass(
+            kg: 1335000,
+            lb: 2943000
+          ),
+          firstStage: FirstStage(
+            reusable: true,
+            engines: 37,
+            fuelAmountTons: 3300.0,
+            burnTimeSEC: nil
+          ),
+          secondStage: SecondStage(
+            reusable: true,
+            engines: 6,
+            fuelAmountTons: 1200.0,
+            burnTimeSEC: nil
+          ),
+          engines: Engines(
+            number: 37,
+            type: "raptor",
+            version: ""
+          ),
+          flickrImages: [
+            "https://live.staticflickr.com/65535/48954138962_ee541e6755_b.jpg",
+            "https://live.staticflickr.com/65535/48953946911_e60c5bcc5c_b.jpg",
+            "https://live.staticflickr.com/65535/48954138922_9c42173f08_b.jpg",
+            "https://live.staticflickr.com/65535/48953947006_313f01ec93_b.jpg"
+          ],
+          description: "Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon.",
+          name: "Starship",
+          type: "rocket"
+        )
+           
+        ]
 }
+

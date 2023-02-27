@@ -58,8 +58,13 @@ struct RocketParametersView: View {
     }
 }
 
-//struct RocketParametersView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RocketParametersView()
-//    }
-//}
+struct RocketParametersView_Previews: PreviewProvider {
+    static var previews: some View {
+        RocketParametersView(
+            store: Store(
+                initialState: RocketDetailDomain.State(rocket: .mock),
+                reducer: RocketDetailDomain()
+            )
+        )
+    }
+}

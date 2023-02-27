@@ -16,22 +16,21 @@ struct RocketListDomain: ReducerProtocol{
     }
     
     enum Action: Equatable {
-        case onAppear
+        case task
         case fetchRockets(TaskResult<[Rocket]>)
         case rockets(id: RocketDetailDomain.State.ID, action: RocketDetailDomain.Action)
     }
     
-    @Dependency(\.rocketRepositoryClient) var rocketRepositoryClient
+    @Dependency(\.rocketRepositoryClient.fetchAllRockets) var fetchAllRockets
     
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
-            case .onAppear:
-
+            case .task:
                 return .task {
                     await .fetchRockets(
                         TaskResult {
-                            return try await rocketRepositoryClient.fetchAllRockets()
+                            return try await fetchAllRockets()
                         }
                     )
                 }
@@ -39,6 +38,7 @@ struct RocketListDomain: ReducerProtocol{
             case .fetchRockets(.success(let result)):
                 state.rocketItems = IdentifiedArrayOf(uniqueElements: result.map{ RocketDetailDomain.State(rocket: $0)})
                 return .none
+                
             case .fetchRockets(.failure(let error)):
                 print(error)
                 return .none

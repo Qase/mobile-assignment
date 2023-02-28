@@ -16,10 +16,15 @@ final class RocketListDomainTests: XCTestCase {
     @Dependency(\.rocketRepositoryClient.fetchAllRockets) var fetchAllRockets
     
     func testDomain() async {
-        let store = TestStore(initialState: RocketListDomain.State(), reducer: RocketListDomain())
+        let store = TestStore(
+            initialState: RocketListDomain.State(),
+            reducer: RocketListDomain()
+        )
+        
         await store.send(.fetchRockets(.success([Rocket].mock))) {
             $0.rocketItems = IdentifiedArrayOf(
-                uniqueElements: [Rocket].mock.map { RocketDetailDomain.State(rocket: $0) } )
+                uniqueElements: [Rocket].mock.map { RocketDetailDomain.State(rocket: $0) }
+            )
         }
         
     }

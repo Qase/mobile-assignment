@@ -17,7 +17,6 @@ extension DependencyValues {
     }
 }
 
-
 struct CoreMotionClient {
     
     //    struct Input {

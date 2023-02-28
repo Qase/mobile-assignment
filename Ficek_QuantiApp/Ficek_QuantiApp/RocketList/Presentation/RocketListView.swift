@@ -17,19 +17,21 @@ struct RocketListView: View {
                 NavigationStack {
                     List {
                         ForEachStore(
-                            self.store.scope(state: \.rocketItems,
-                                             action: RocketListDomain.Action.rockets(id:action:))) { rocket in
-                                                 NavigationLink(
-                                                    destination: {
-                                                        RocketDetailView(store: rocket)
-                                                    },
-                                                    label: {
-                                                        RocketListPartView(store: rocket)
-                                                    }
-                                                 )
-                                             }
+                            self.store.scope(
+                                state: \.rocketItems,
+                                action: RocketListDomain.Action.rockets(id:action:))) { rocket in
+                                    NavigationLink(
+                                        destination: {
+                                            RocketDetailView(store: rocket)
+                                        },
+                                        label: {
+                                            RocketListPartView(store: rocket)
+                                        }
+                                    )
+                                }
                     }
                     .navigationTitle("Rockets")
+                    .navigationBarTitleDisplayMode(.large)
                 }.task {
                     await viewStore.send(.task).finish()
                 }

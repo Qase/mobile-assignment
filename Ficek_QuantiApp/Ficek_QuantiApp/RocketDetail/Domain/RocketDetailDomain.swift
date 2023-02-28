@@ -29,12 +29,14 @@ struct RocketDetailDomain: ReducerProtocol{
             }
         
         var reusableSecondSt: String { rocket.secondStage.reusable ? "Reusable" : "Not reusable" }
+        var firstFlight: String { "First flight: \(rocket.firstFlight)"}
         var enginesSecondSt: String { "\(rocket.secondStage.engines) engines" }
         var fuelAmmountSecondSt: String { "\(rocket.secondStage.fuelAmountTons) tons of fuel"}
         var burnTimeSecondSt: String {  rocket.secondStage.burnTimeSEC != nil
             ? "\(String(describing: rocket.secondStage.burnTimeSEC)) seconds burn time"
             : "Data not available"
         }
+        
     }
     
     enum Action: Equatable {

@@ -8,7 +8,6 @@
 import Foundation
 
 struct Rocket: Decodable, Equatable, Identifiable{
-    
     var id: String
     var firstFlight: String
     var height, diameter: Diameter
@@ -35,12 +34,10 @@ struct Rocket: Decodable, Equatable, Identifiable{
     }
 }
 
-// MARK: - Diameter
 struct Diameter: Codable, Equatable {
     var meters, feet: Double?
 }
 
-// MARK: - Engines
 struct Engines: Codable, Equatable {
     var number: Int
     var type: String
@@ -53,7 +50,6 @@ struct Engines: Codable, Equatable {
     }
 }
 
-// MARK: - FirstStage
 struct FirstStage: Codable, Equatable {
     var reusable: Bool
     var engines: Int
@@ -67,12 +63,10 @@ struct FirstStage: Codable, Equatable {
     }
 }
 
-// MARK: - Mass
 struct Mass: Codable, Equatable  {
     var kg, lb: Int
 }
 
-// MARK: - SecondStage
 struct SecondStage: Codable, Equatable {
     var reusable: Bool
     var engines: Int

@@ -32,7 +32,8 @@ final class RocketRepositoryTests: XCTestCase {
         XCTAssertEqual(response, .mockTest)
     }
 
-    let jsonMock = """
+    let jsonMock =
+    """
     [
         {
             "height": {

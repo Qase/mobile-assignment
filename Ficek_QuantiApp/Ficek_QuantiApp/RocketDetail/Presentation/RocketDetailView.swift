@@ -42,6 +42,7 @@ struct RocketDetailView: View {
                 }
             }
             .navigationTitle(viewStore.name)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

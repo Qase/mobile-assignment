@@ -14,12 +14,12 @@ struct RocketLaunchView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             GeometryReader { geo in
-                VStack(spacing: -50){
+                VStack(spacing: -380){
                     Image(viewStore.image)
                         .padding()
                         .frame(
                             width: geo.size.width,
-                            height: 500,
+                            height: 1000,
                             alignment: viewStore.isFlying ? .top : .center
                         )
                         .animation(viewStore.animation, value: viewStore.isFlying)
@@ -33,6 +33,7 @@ struct RocketLaunchView: View {
             }
         }
         .navigationTitle("Launch")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -40,7 +41,8 @@ struct RocketLaunchView_Previews: PreviewProvider {
     static var previews: some View {
         RocketLaunchView(
             store: Store(
-                initialState: RocketLaunchDomain.State(), reducer: RocketLaunchDomain()
+                initialState: RocketLaunchDomain.State(),
+                reducer: RocketLaunchDomain()
             )
         )
     }

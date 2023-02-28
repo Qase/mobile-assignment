@@ -171,6 +171,7 @@
 			children = (
 				F0E0A99C29AA4F75004760E7 /* Presentation */,
 				F0E0A99B29AA4F71004760E7 /* Domain */,
+				F0FBCB2B29AEBFFE0046D27E /* Data */,
 			);
 			path = RocketList;
 			sourceTree = "<group>";
@@ -208,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				F0E0A99D29AA6531004760E7 /* RocketListDomain.swift */,
-				F0E0A97629A83B50004760E7 /* RocketStruct.swift */,
 				F0B5C78E29AAE2D900A875AE /* Dependencies */,
 			);
 			path = Domain;
@@ -231,6 +231,14 @@
 				F0FBCB2929AEB90E0046D27E /* RocketLaunchDomainTests.swift */,
 			);
 			path = Ficek_QuantiAppTests;
+			sourceTree = "<group>";
+		};
+		F0FBCB2B29AEBFFE0046D27E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0A97629A83B50004760E7 /* RocketStruct.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -15,11 +15,12 @@ struct RocketListPartView: View {
         WithViewStore(self.store) { viewStore in
             HStack {
                 Image("Rocket")
+                    .padding(7)
                 
                 VStack(alignment: .leading) {
                     Text(viewStore.rocket.name)
                         .font(.callout)
-                    Text("First flight: \(viewStore.rocket.firstFlight)")
+                    Text(viewStore.firstFlight)
                         .font(.caption)
                         .foregroundColor(.gray)
                 }

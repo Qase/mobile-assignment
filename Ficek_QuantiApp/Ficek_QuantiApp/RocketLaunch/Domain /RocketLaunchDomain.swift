@@ -16,7 +16,7 @@ struct RocketLaunchDomain: ReducerProtocol{
     struct State: Equatable {
         var isFlying: Bool = false
         var image: String { isFlying ? "Rocket Flying" : "Rocket Idle"}
-        var launchText: String { isFlying ? "Rocket launched!" : "Lift the phone to launch the rocket"}
+        var launchText: String { isFlying ? "Launch successfull!" : "Lift the phone to launch the rocket"}
         var animation: Animation = Animation.spring()
     }
     
@@ -37,7 +37,7 @@ struct RocketLaunchDomain: ReducerProtocol{
             }
             
         case .flying(let result):
-            if result > 1 || result < -1 {
+            if result > 2 || result < -2 {
                 state.isFlying = true
             }
             return .none

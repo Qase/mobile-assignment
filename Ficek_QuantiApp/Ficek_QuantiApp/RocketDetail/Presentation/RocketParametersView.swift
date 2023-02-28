@@ -20,7 +20,7 @@ struct RocketParametersView: View {
                     .font(.subheadline)
                 Text("Parameters")
                     .font(.headline)
-                HStack(spacing: 16) {
+                HStack(alignment: .center, spacing: 36) {
                     Group {
                         VStack(spacing: 4) {
                             Text(viewStore.height)
@@ -44,7 +44,7 @@ struct RocketParametersView: View {
                                 .font(.headline)
                         }
                     }
-                    .frame(width: 110, height: 110)
+                    .frame(width: 108, height: 108)
                     .background (
                         RoundedRectangle(cornerRadius: 16)
                             .foregroundColor(Color("PinkAsImages"))

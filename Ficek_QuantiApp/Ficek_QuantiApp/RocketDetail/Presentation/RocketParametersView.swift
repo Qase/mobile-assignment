@@ -47,7 +47,7 @@ struct RocketParametersView: View {
                     .frame(width: 110, height: 110)
                     .background (
                         RoundedRectangle(cornerRadius: 16)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color("PinkAsImages"))
                     )
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                 }

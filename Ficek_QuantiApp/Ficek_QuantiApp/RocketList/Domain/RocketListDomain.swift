@@ -36,7 +36,10 @@ struct RocketListDomain: ReducerProtocol{
                 }
                 
             case .fetchRockets(.success(let result)):
-                state.rocketItems = IdentifiedArrayOf(uniqueElements: result.map{ RocketDetailDomain.State(rocket: $0)})
+                state.rocketItems = IdentifiedArrayOf(
+                    uniqueElements: result.map { RocketDetailDomain.State(rocket: $0)
+                    }
+                )
                 return .none
                 
             case .fetchRockets(.failure(let error)):

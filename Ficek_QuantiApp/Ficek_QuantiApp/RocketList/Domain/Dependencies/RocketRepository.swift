@@ -47,6 +47,19 @@ extension RocketRepositoryClient: DependencyKey {
             }
         )
     }
+    
+    static let testValue = RocketRepositoryClient(
+        //fetchAllRockets: unimplemented("RocketRepositoryClient(fetchAllRockets: )")
+        fetchAllRockets: {
+            return .mock
+        }
+    )
+    
+    static let previewValue = RocketRepositoryClient(
+        fetchAllRockets: {
+            return .mock
+        }
+    )
 }
 
 

@@ -22,28 +22,26 @@ struct RocketDetailDomain: ReducerProtocol{
         var reusableFirstSt: String { rocket.firstStage.reusable ? "Reusable" : "Not reusable" }
         var enginesFirstSt: String { "\(rocket.firstStage.engines) engines" }
         var fuelAmmountFirstSt: String { "\(rocket.firstStage.fuelAmountTons) tons of fuel"}
-        var burnTimeFirstSt: String { if let burnTimeSec = rocket.firstStage.burnTimeSEC {
-            return "\(burnTimeSec) seconds burn time"
-        } else {
-            return "Data not available"
-        }}
+        var burnTimeFirstSt: String {
+            rocket.firstStage.burnTimeSEC != nil
+                ? "\(String(describing: rocket.firstStage.burnTimeSEC)) seconds burn time"
+                : "Data not available"
+            }
         
         var reusableSecondSt: String { rocket.secondStage.reusable ? "Reusable" : "Not reusable" }
         var enginesSecondSt: String { "\(rocket.secondStage.engines) engines" }
         var fuelAmmountSecondSt: String { "\(rocket.secondStage.fuelAmountTons) tons of fuel"}
-        var burnTimeSecondSt: String { if let burnTimeSec = rocket.secondStage.burnTimeSEC {
-            return "\(burnTimeSec) seconds burn time"
-        } else {
-            return "Data not available"
-        }}
+        var burnTimeSecondSt: String {  rocket.secondStage.burnTimeSEC != nil
+            ? "\(String(describing: rocket.secondStage.burnTimeSEC)) seconds burn time"
+            : "Data not available"
+        }
     }
     
     enum Action: Equatable {
-      
-    
+        
     }
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-       
+        
     }
 }

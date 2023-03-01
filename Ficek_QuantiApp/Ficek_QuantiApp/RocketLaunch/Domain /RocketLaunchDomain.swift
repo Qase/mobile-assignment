@@ -10,7 +10,6 @@ import ComposableArchitecture
 import Dependencies
 import SwiftUI
 
-
 struct RocketLaunchDomain: ReducerProtocol{
     
     struct State: Equatable {

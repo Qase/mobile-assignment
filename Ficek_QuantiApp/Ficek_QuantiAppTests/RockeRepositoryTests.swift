@@ -22,7 +22,8 @@ final class RocketRepositoryTests: XCTestCase {
         let sut = withDependencies {
             $0.apiClient = APIClient(request: { _ in
                 return (data, mockResponse)
-            })
+            }
+        )
 
         } operation: {
             RocketRepositoryClient.liveValue

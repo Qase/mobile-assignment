@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Rocket Struct
 struct Rocket: Decodable, Equatable, Identifiable{
     var id: String
     var firstFlight: String
@@ -85,6 +86,7 @@ enum RocketError: Error {
     case badUrl
 }
 
+//MARK: Mock data
 extension Rocket {
     static let mock: Self = 
          Rocket(
@@ -129,6 +131,7 @@ extension Rocket {
         )
 }
 
+//MARK: Mock data array
 extension [Rocket] {
     static let mock: Self = [
          Rocket(

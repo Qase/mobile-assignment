@@ -16,3 +16,4 @@ rootProject.name = "My Application"
 include ':app'
 include ':rocket-list'
 include ':rocket-repo'
+include ':rocket-detail'

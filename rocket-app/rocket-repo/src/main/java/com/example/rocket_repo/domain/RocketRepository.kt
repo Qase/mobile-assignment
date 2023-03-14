@@ -4,4 +4,5 @@ import com.example.rocket_repo.model.Rocket
 
 interface RocketRepository {
     fun getRockets(): List<Rocket>
+    fun getRocketDetail(id: String): Rocket
 }

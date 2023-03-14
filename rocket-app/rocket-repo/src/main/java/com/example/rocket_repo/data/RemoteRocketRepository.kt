@@ -7,4 +7,9 @@ class RemoteRocketRepository: RocketRepository {
     override fun getRockets(): List<Rocket> {
        return rockets
     }
+
+    override fun getRocketDetail(id: String): Rocket {
+        TODO("Not yet implemented")
+    }
+
 }

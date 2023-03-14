@@ -1,48 +1,44 @@
 package com.example.rocket_repo.data
 
+import com.example.rocket_repo.model.Parameter
 import com.example.rocket_repo.model.Rocket
 import com.example.rocket_repo.model.RocketParameters
+import java.time.LocalDate
 import java.util.*
+
+val rocketParameters = RocketParameters(
+    Parameter.Height(90),
+    Parameter.Diameter(40),
+    Parameter.Mass(50)
+)
 
 val rockets = listOf(
     Rocket(
+        "1",
         "Falcon 1",
-        Calendar.getInstance().time,
+        LocalDate.now(),
         "Rocket",
-        RocketParameters(
-            90,
-            40,
-            500
-        )
+        rocketParameters
     ),
     Rocket(
+        "2",
         "Falcon 9",
-        Calendar.getInstance().time,
+        LocalDate.now(),
         "Rocket",
-        RocketParameters(
-            90,
-            40,
-            500
-        )
+        rocketParameters
     ),
     Rocket(
+        "3",
         "Falcon Heavy",
-        Calendar.getInstance().time,
+        LocalDate.now(),
         "Rocket",
-        RocketParameters(
-            90,
-            40,
-            500
-        )
+        rocketParameters
     ),
     Rocket(
+        "4",
         "Starship",
-        Calendar.getInstance().time,
+        LocalDate.now(),
         "Rocket",
-        RocketParameters(
-            90,
-            40,
-            500
-        )
+        rocketParameters
     )
 )

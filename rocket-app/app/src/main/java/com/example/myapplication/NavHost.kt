@@ -3,6 +3,7 @@ package com.example.myapplication
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
@@ -18,10 +19,10 @@ fun RocketAppNavHost() {
     val navController = rememberNavController()
 
 
-    Scaffold (
+    Surface (
         modifier = Modifier.fillMaxSize()
-    ){ innerPadding ->
-        NavHost(navController, Screen.RocketList.route, Modifier.padding(innerPadding)) {
+    ) {
+        NavHost(navController, Screen.RocketList.route) {
 
             composable(Screen.RocketList.route) {
                 RocketListScreen {
@@ -33,7 +34,11 @@ fun RocketAppNavHost() {
                 "${Screen.RocketDetail.route}/{rocketId}",
                 arguments = listOf(navArgument("rocketId") { type = NavType.StringType })
             ) { backStackEntry ->
-                backStackEntry.arguments?.getString("rocketId")?.let { RocketDetailScreen(it) }
+                backStackEntry.arguments?.getString("rocketId")?.let {
+                    RocketDetailScreen(it) {
+                        navController.popBackStack()
+                    }
+                }
             }
         }
     }

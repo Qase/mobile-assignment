@@ -34,11 +34,11 @@ fun RocketDetailScreen(id: String, onNavigateBack: () -> Unit) {
     val rocketState: State<Rocket?> = viewModel.rocket.observeAsState()
     viewModel.getRocket(id)
     val rocket: Rocket? = rocketState.value
-    rocket?.let { rocket ->
+    rocket?.let { r ->
         Scaffold(
-            topBar = { TopBar(rocketName = rocket.name, onNavigateBack) }
+            topBar = { TopBar(rocketName = r.name, onNavigateBack) }
         ) { innerPadding ->
-            RocketDetail(rocket, innerPadding)
+            RocketDetail(r, innerPadding)
         }
     }
 }
@@ -53,22 +53,27 @@ fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Icon(painter = painterResource(id = R.drawable.back_arrow), contentDescription = null, tint = Color.Blue)
-            ClickableText(
-                text = AnnotatedString("Rockets"),
-                onClick = { onNavigateBack() },
-                style = TextStyle(
-                    color = Color.Blue,
-                    fontStyle = MaterialTheme.typography.h6.fontStyle,
-                    fontSize = MaterialTheme.typography.h6.fontSize
-                )
-            )
+            BackToRocketsButton(onNavigateBack)
             Text(text = rocketName, color = Color.Black, style = MaterialTheme.typography.h6, modifier = Modifier
                 .weight(1f)
                 .padding(start = 60.dp))
             Text(text = "Launch", color = Color.Blue, style = MaterialTheme.typography.h6)
         }
     }
+}
+
+@Composable
+fun BackToRocketsButton(onNavigateBack: () -> Unit) {
+    Icon(painter = painterResource(id = R.drawable.back_arrow), contentDescription = null, tint = Color.Blue)
+    ClickableText(
+        text = AnnotatedString("Rockets"),
+        onClick = { onNavigateBack() },
+        style = TextStyle(
+            color = Color.Blue,
+            fontStyle = MaterialTheme.typography.h6.fontStyle,
+            fontSize = MaterialTheme.typography.h6.fontSize
+        )
+    )
 }
 
 @Composable
@@ -88,6 +93,7 @@ fun RocketDetail(rocket: Rocket, paddingValues: PaddingValues) {
 
 @Composable
 fun Overview(body: String) {
+
     Text(
         text = stringResource(R.string.overview),
         color = Color.Black,
@@ -106,7 +112,6 @@ fun ParametersRow(rocketParameters: RocketParameters) {
     Text(
         text = stringResource(R.string.parameters),
         style = MaterialTheme.typography.h6,
-        modifier = Modifier.padding(4.dp)
     )
 
     Row(

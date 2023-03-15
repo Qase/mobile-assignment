@@ -22,12 +22,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.rocket_list.R
-import com.example.rocket_list.presentation.RocketViewModel
+import com.example.rocket_list.presentation.RocketListViewModel
 import com.example.rocket_repo.model.Rocket
 
 @Composable
 fun RocketListScreen(navigateToRocketDetail: (String) -> Unit) {
-    val viewModel = viewModel<RocketViewModel>()
+    val viewModel = viewModel<RocketListViewModel>()
     val rockets: List<Rocket> by viewModel.rockets.observeAsState(emptyList())
     viewModel.getRockets()
 

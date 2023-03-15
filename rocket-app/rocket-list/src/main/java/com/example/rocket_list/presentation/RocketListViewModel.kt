@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.rocket_repo.model.Rocket
 
-class RocketViewModel : ViewModel() {
+class RocketListViewModel : ViewModel() {
     private val _rockets = MutableLiveData<List<Rocket>>()
     val rockets: LiveData<List<Rocket>>
         get() = _rockets

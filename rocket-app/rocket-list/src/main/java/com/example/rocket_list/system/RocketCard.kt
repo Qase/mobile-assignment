@@ -4,14 +4,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,7 +19,6 @@ import com.example.rocket_repo.data.rockets
 import com.example.rocket_repo.model.Rocket
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 @Composable
 fun RocketCard(rocket: Rocket, navigateToRocketDetail: (String) -> Unit) {
@@ -38,7 +35,6 @@ fun RocketCard(rocket: Rocket, navigateToRocketDetail: (String) -> Unit) {
             contentDescription = "Rocket icon",
             modifier = Modifier
                 .size(30.dp)
-                .clip(CircleShape)
         )
 
         Spacer(modifier = Modifier.width(10.dp))

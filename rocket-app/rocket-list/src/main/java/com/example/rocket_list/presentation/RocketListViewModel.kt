@@ -8,14 +8,16 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class RocketListViewModel : ViewModel() {
-    private val _rockets = MutableStateFlow<List<RocketItemState>>(emptyList())
-    val rockets: StateFlow<List<RocketItemState>>
+    private val _rockets = MutableStateFlow(RocketListState())
+    val rockets: StateFlow<RocketListState>
         get() = _rockets
 
     fun getRockets() {
-        _rockets.value = rocketsMock.map {
-            RocketItemState(it.id, it.name, formatFirstFlightDate(it.firstFlight))
-        }
+        _rockets.value = RocketListState(
+            rocketsMock.map {
+                RocketItemState(it.id, it.name, formatFirstFlightDate(it.firstFlight))
+            }
+        )
     }
 
     private fun formatFirstFlightDate(date: LocalDate): String {

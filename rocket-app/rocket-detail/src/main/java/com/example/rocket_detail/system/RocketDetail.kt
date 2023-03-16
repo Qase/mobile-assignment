@@ -73,7 +73,7 @@ fun BackToRocketsButton(onNavigateBack: () -> Unit) {
 }
 
 @Composable
-fun RocketDetail(rocket: RocketDetailState, paddingValues: PaddingValues) {
+fun RocketDetail(rocketState: RocketDetailState, paddingValues: PaddingValues) {
     val scrollState = rememberScrollState()
 
     Column(
@@ -82,8 +82,8 @@ fun RocketDetail(rocket: RocketDetailState, paddingValues: PaddingValues) {
             .scrollable(scrollState, Orientation.Vertical)
             .padding(paddingValues)
     ) {
-        Overview(rocket.overview)
-        ParametersRow(rocket.height, rocket.diameter, rocket.mass)
+        Overview(rocketState.overview)
+        ParametersRow(rocketState.height, rocketState.diameter, rocketState.mass)
     }
 }
 

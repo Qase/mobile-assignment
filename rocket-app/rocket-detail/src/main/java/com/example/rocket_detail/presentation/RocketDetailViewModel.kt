@@ -1,17 +1,16 @@
 package com.example.rocket_detail.presentation
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.rocket_repo.data.rocketsMock
-import com.example.rocket_repo.model.Rocket
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 class RocketDetailViewModel: ViewModel() {
-    private val _rocket = MutableLiveData<Rocket>()
-    val rocket: LiveData<Rocket>
+    private val _rocket = MutableStateFlow(RocketDetailState())
+    val rocket: StateFlow<RocketDetailState>
         get() = _rocket
 
     fun getRocket(id: String) {
-        _rocket.postValue(rocketsMock[id.toInt() - 1])
+        _rocket.value = RocketDetailState(rocketsMock[id.toInt() - 1])
     }
 }

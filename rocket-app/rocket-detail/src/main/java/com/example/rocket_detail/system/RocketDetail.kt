@@ -9,8 +9,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
-import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -23,23 +23,19 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.rocket_detail.R
+import com.example.rocket_detail.presentation.ParameterState
+import com.example.rocket_detail.presentation.RocketDetailState
 import com.example.rocket_detail.presentation.RocketDetailViewModel
-import com.example.rocket_repo.model.Parameter
-import com.example.rocket_repo.model.Rocket
-import com.example.rocket_repo.model.RocketParameters
 
 @Composable
 fun RocketDetailScreen(id: String, onNavigateBack: () -> Unit) {
     val viewModel = viewModel<RocketDetailViewModel>()
-    val rocketState: State<Rocket?> = viewModel.rocket.observeAsState()
+    val rocketState: RocketDetailState by viewModel.rocket.collectAsState()
     viewModel.getRocket(id)
-    val rocket: Rocket? = rocketState.value
-    rocket?.let { r ->
-        Scaffold(
-            topBar = { TopBar(rocketName = r.name, onNavigateBack) }
-        ) { innerPadding ->
-            RocketDetail(r, innerPadding)
-        }
+    Scaffold(
+        topBar = { TopBar(rocketState.name, onNavigateBack) }
+    ) { innerPadding ->
+        RocketDetail(rocketState, innerPadding)
     }
 }
 
@@ -77,7 +73,7 @@ fun BackToRocketsButton(onNavigateBack: () -> Unit) {
 }
 
 @Composable
-fun RocketDetail(rocket: Rocket, paddingValues: PaddingValues) {
+fun RocketDetail(rocket: RocketDetailState, paddingValues: PaddingValues) {
     val scrollState = rememberScrollState()
 
     Column(
@@ -86,14 +82,13 @@ fun RocketDetail(rocket: Rocket, paddingValues: PaddingValues) {
             .scrollable(scrollState, Orientation.Vertical)
             .padding(paddingValues)
     ) {
-        Overview("")
-        ParametersRow(rocket.parameters)
+        Overview(rocket.overview)
+        ParametersRow(rocket.height, rocket.diameter, rocket.mass)
     }
 }
 
 @Composable
 fun Overview(body: String) {
-
     Text(
         text = stringResource(R.string.overview),
         color = Color.Black,
@@ -108,7 +103,11 @@ fun Overview(body: String) {
 }
 
 @Composable
-fun ParametersRow(rocketParameters: RocketParameters) {
+fun ParametersRow(
+    height: ParameterState,
+    diameter: ParameterState,
+    mass: ParameterState,
+) {
     Text(
         text = stringResource(R.string.parameters),
         style = MaterialTheme.typography.h6,
@@ -118,14 +117,14 @@ fun ParametersRow(rocketParameters: RocketParameters) {
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        ParameterDetail(rocketParameters.height)
-        ParameterDetail(rocketParameters.diameter)
-        ParameterDetail(rocketParameters.mass)
+        ParameterDetail(height)
+        ParameterDetail(diameter)
+        ParameterDetail(mass)
     }
 }
 
 @Composable
-fun ParameterDetail(param: Parameter) {
+fun ParameterDetail(param: ParameterState) {
     Column(
        modifier = Modifier
            .width(120.dp)
@@ -137,12 +136,12 @@ fun ParameterDetail(param: Parameter) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "${param.value}${param.unit}",
+            text = param.value,
             style = MaterialTheme.typography.h3,
             color = Color.White
         )
         Text(
-            text = param.type,
+            text = param.type.paramName,
             style = MaterialTheme.typography.subtitle1,
             color = Color.White
         )

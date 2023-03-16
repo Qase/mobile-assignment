@@ -1,14 +1,13 @@
 package com.example.rocket_repo.data
 
-import com.example.rocket_repo.model.Parameter
 import com.example.rocket_repo.model.Rocket
 import com.example.rocket_repo.model.RocketParameters
 import java.time.LocalDate
 
 val rocketParameters = RocketParameters(
-    Parameter.Height(90),
-    Parameter.Diameter(40),
-    Parameter.Mass(50)
+    90,
+    40,
+    500
 )
 
 val rocketsMock = listOf(

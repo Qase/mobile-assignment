@@ -11,8 +11,8 @@ import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,20 +22,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.rocket_list.R
+import com.example.rocket_list.presentation.RocketItemState
 import com.example.rocket_list.presentation.RocketListViewModel
-import com.example.rocket_repo.model.Rocket
 
 @Composable
 fun RocketListScreen(navigateToRocketDetail: (String) -> Unit) {
     val viewModel = viewModel<RocketListViewModel>()
-    val rockets: List<Rocket> by viewModel.rockets.observeAsState(emptyList())
+    val rocketItems: List<RocketItemState> by viewModel.rockets.collectAsState()
     viewModel.getRockets()
 
-    RocketList(rockets, navigateToRocketDetail)
+    RocketList(rocketItems, navigateToRocketDetail)
 }
 
 @Composable
-fun RocketList(rockets: List<Rocket>, navigateToRocketDetail: (String) -> Unit) {
+fun RocketList(rocketItems: List<RocketItemState>, navigateToRocketDetail: (String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -53,7 +53,7 @@ fun RocketList(rockets: List<Rocket>, navigateToRocketDetail: (String) -> Unit) 
                 .padding(8.dp)
                 .clip(RoundedCornerShape(20.dp))
         ) {
-            items(rockets) {
+            items(rocketItems) {
                 RocketCard(it, navigateToRocketDetail)
                 Divider(color = Color.LightGray)
             }

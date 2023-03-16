@@ -5,7 +5,7 @@ import com.example.rocket_repo.domain.RocketRepository
 
 class RemoteRocketRepository: RocketRepository {
     override fun getRockets(): List<Rocket> {
-       return rockets
+       return rocketsMock
     }
 
     override fun getRocketDetail(id: String): Rocket {

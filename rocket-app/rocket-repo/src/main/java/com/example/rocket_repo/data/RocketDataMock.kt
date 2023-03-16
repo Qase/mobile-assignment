@@ -4,7 +4,6 @@ import com.example.rocket_repo.model.Parameter
 import com.example.rocket_repo.model.Rocket
 import com.example.rocket_repo.model.RocketParameters
 import java.time.LocalDate
-import java.util.*
 
 val rocketParameters = RocketParameters(
     Parameter.Height(90),
@@ -12,7 +11,7 @@ val rocketParameters = RocketParameters(
     Parameter.Mass(50)
 )
 
-val rockets = listOf(
+val rocketsMock = listOf(
     Rocket(
         "1",
         "Falcon 1",

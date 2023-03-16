@@ -13,7 +13,6 @@ class RocketListViewModel : ViewModel() {
         get() = _rockets
 
     fun getRockets() {
-
         _rockets.value = rocketsMock.map {
             RocketItemState(it.id, it.name, formatFirstFlightDate(it.firstFlight))
         }

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.myapplication'
+    namespace 'cz.quanti.rocket_app.app'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.myapplication"
+        applicationId "cz.quanti.rocket_app.app"
         minSdk 28
         targetSdk 33
         versionCode 1

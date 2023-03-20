@@ -30,7 +30,6 @@ import com.example.rocket_list.presentation.RocketListViewModel
 fun RocketListScreen(navigateToRocketDetail: (String) -> Unit) {
     val viewModel = viewModel<RocketListViewModel>()
     val rocketListState: RocketListState by viewModel.rockets.collectAsState()
-    viewModel.getRockets()
 
     RocketList(rocketListState.rockets, navigateToRocketDetail)
 }

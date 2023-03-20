@@ -12,7 +12,11 @@ class RocketListViewModel : ViewModel() {
     val rockets: StateFlow<RocketListState>
         get() = _rockets
 
-    fun getRockets() {
+    init {
+        getRockets()
+    }
+
+    private fun getRockets() {
         _rockets.value = RocketListState(
             rocketsMock.map {
                 RocketItemState(it.id, it.name, formatFirstFlightDate(it.firstFlight))

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="rocketList">Rocket list</string>
+    <string name="rocketDetail">Rocket detail</string>
+    <string name="rocketLaunch">Launch</string>
+</resources>

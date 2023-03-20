@@ -12,10 +12,10 @@ import androidx.navigation.navArgument
 import com.example.rocket_detail.system.RocketDetailScreen
 import com.example.rocket_list.system.RocketListScreen
 
+const val ARG_ROCKET_ID = "rocketId"
 @Composable
 fun RocketAppNavHost() {
     val navController = rememberNavController()
-    val rocketId = "rocketId"
 
     Surface (
         modifier = Modifier.fillMaxSize()
@@ -29,10 +29,10 @@ fun RocketAppNavHost() {
             }
 
             composable(
-                "${Screen.RocketDetail.route}/${rocketId}",
-                arguments = listOf(navArgument(rocketId) { type = NavType.StringType })
+                "${Screen.RocketDetail.route}/{${ARG_ROCKET_ID}}",
+                arguments = listOf(navArgument(ARG_ROCKET_ID) { type = NavType.StringType })
             ) { backStackEntry ->
-                backStackEntry.arguments?.getString(rocketId)?.let {
+                backStackEntry.arguments?.getString(ARG_ROCKET_ID)?.let {
                     RocketDetailScreen(it) {
                         navController.popBackStack()
                     }

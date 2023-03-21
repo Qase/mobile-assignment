@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'cz.quanti.rocket_app.rocket_list'
+    namespace 'cz.quanti.rocketapp.rocketlist'
     compileSdk 33
 
     defaultConfig {
@@ -46,7 +46,7 @@ android {
 }
 
 dependencies {
-    implementation project(':rocket-repo')
+    implementation project(':rocket-data')
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.activity:activity-compose:1.6.1'

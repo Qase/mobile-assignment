@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'cz.quanti.rocket_app.app'
+    namespace 'cz.quanti.rocketapp.app'
     compileSdk 33
 
     defaultConfig {

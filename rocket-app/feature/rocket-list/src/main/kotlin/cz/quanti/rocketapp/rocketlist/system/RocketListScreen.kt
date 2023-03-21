@@ -25,6 +25,7 @@ import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
 import cz.quanti.rocketapp.rocketlist.presentation.RocketListState
 import cz.quanti.rocketapp.rocketlist.presentation.RocketListViewModel
+import cz.quanti.rocketapp.rocketlist.system.RocketCard
 
 @Composable
 fun RocketListScreen(navigateToRocketDetail: (String) -> Unit) {

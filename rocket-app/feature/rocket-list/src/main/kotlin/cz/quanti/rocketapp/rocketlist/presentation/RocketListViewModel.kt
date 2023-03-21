@@ -1,10 +1,12 @@
 package cz.quanti.rocketapp.rocketlist.presentation
 
 import androidx.lifecycle.ViewModel
-import cz.quanti.rocketapp.rocketdata.data.rocketsMock
+import androidx.lifecycle.viewModelScope
+import cz.quanti.rocketapp.rocketdata.domain.getRocketsUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import java.time.LocalDate
+import kotlinx.coroutines.launch
 import java.time.format.DateTimeFormatter
 
 class RocketListViewModel : ViewModel() {
@@ -17,14 +19,16 @@ class RocketListViewModel : ViewModel() {
     }
 
     private fun getRockets() {
-        _rockets.value = RocketListState(
-            rocketsMock.map {
-                RocketItemState(it.id, it.name, formatFirstFlightDate(it.firstFlight))
-            }
-        )
+        viewModelScope.launch(Dispatchers.IO) {
+            _rockets.value = RocketListState(
+                getRocketsUseCase().map {
+                    RocketItemState(it.id, it.name, it.firstFlight)
+                }
+            )
+        }
     }
 
-    private fun formatFirstFlightDate(date: LocalDate): String {
+    private fun formatFirstFlightDate(date: String): String {
         val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
         return "First flight: ${date.format(formatter)}"
     }

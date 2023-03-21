@@ -12,8 +12,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "My Application"
+rootProject.name = "rocket-app"
 include ':app'
-include ':rocket-list'
-include ':rocket-repo'
-include ':rocket-detail'
+include ':feature:rocket-list'
+include ':library:rocket-data'
+include ':feature:rocket-detail'

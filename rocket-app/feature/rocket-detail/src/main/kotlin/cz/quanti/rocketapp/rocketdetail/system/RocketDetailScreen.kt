@@ -1,4 +1,4 @@
-package com.example.rocket_detail.system
+package cz.quanti.rocketapp.rocketdetail.system
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation

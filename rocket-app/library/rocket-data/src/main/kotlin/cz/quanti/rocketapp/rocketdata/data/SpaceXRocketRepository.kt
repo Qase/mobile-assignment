@@ -4,7 +4,7 @@ import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
 import cz.quanti.rocketapp.rocketdata.model.Rocket
 import cz.quanti.rocketapp.rocketdata.domain.RocketRepository
 
-class SpaceXRocketRepository(private val api: RocketApiService): RocketRepository {
+internal class SpaceXRocketRepository(private val api: RocketApiService): RocketRepository {
 
     override suspend fun getRockets(): List<Rocket> {
        return api.getRockets().map {

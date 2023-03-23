@@ -3,7 +3,7 @@ package cz.quanti.rocketapp.rocketdata.data
 import com.google.gson.annotations.SerializedName
 
 
-data class RocketResponse(
+internal data class RocketResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("rocket_name")

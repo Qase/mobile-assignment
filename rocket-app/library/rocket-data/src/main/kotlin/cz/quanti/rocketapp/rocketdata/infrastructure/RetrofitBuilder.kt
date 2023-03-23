@@ -4,7 +4,7 @@ import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitBuilder {
+internal object RetrofitBuilder {
     private const val BASE_URL = "https://api.spacexdata.com/v3/"
 
     private fun getRetrofit(): Retrofit {

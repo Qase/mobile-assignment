@@ -8,7 +8,7 @@ class SpaceXRocketRepository(private val api: RocketApiService): RocketRepositor
 
     override suspend fun getRockets(): List<Rocket> {
        return api.getRockets().map {
-           Rocket(it)
+           it.toRocket()
        }
     }
 

@@ -1,6 +1,6 @@
 package cz.quanti.rocketapp.rocketdata.infrastructure
 
-import cz.quanti.rocketapp.rocketdata.domain.ApiService
+import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,5 +14,5 @@ object RetrofitBuilder {
             .build()
     }
 
-    val apiService: ApiService = getRetrofit().create(ApiService::class.java)
+    val apiService: RocketApiService = getRetrofit().create(RocketApiService::class.java)
 }

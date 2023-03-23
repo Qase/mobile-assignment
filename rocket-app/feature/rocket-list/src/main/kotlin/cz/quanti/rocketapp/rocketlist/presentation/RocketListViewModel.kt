@@ -29,9 +29,8 @@ class RocketListViewModel(private val getRocketsUseCase: GetRocketsUseCase) : Vi
         }
     }
 
-    private fun formatFirstFlightDate(date: String): String {
-        val localDate = LocalDate.parse(date)
+    private fun formatFirstFlightDate(date: LocalDate): String {
         val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
-        return "First flight: ${localDate.format(formatter)}"
+        return "First flight: ${date.format(formatter)}"
     }
 }

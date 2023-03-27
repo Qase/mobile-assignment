@@ -1,4 +1,4 @@
-package cz.quanti.rocketapp.rocketdata.infrastructure
+package cz.quanti.rocketapp.rocketdata.system
 
 import cz.quanti.rocketapp.rocketdata.domain.RocketApiService
 import retrofit2.Retrofit

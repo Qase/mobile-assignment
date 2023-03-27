@@ -4,7 +4,7 @@ data class RocketListState(
     val rockets: List<RocketItemState> = emptyList()
 )
 data class RocketItemState(
-    val id: String,
+    val id: Int,
     val name: String,
     val firstFlight: String
 )

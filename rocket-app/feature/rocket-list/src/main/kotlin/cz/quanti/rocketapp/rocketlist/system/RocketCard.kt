@@ -1,8 +1,7 @@
-package com.example.rocket_list.system
+package cz.quanti.rocketapp.rocketlist.system
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -24,7 +23,9 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
             .background(Color.White)
             .fillMaxSize()
             .padding(8.dp)
+/*
             .clickable { navigateToRocketDetail(rocketItem.id) }
+*/
     ) {
         Image(
             painter = painterResource(id = R.drawable.rocket),

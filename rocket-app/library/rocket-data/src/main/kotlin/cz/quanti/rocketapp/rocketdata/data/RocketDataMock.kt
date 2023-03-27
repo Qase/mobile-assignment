@@ -12,28 +12,28 @@ val rocketParameters = RocketParameters(
 
 val rocketsMock = listOf(
     Rocket(
-        "1",
+        1,
         "Falcon 1",
         LocalDate.now(),
         "Rocket",
         rocketParameters
     ),
     Rocket(
-        "2",
+        2,
         "Falcon 9",
         LocalDate.now(),
         "Rocket",
         rocketParameters
     ),
     Rocket(
-        "3",
+        3,
         "Falcon Heavy",
         LocalDate.now(),
         "Rocket",
         rocketParameters
     ),
     Rocket(
-        "4",
+        4,
         "Starship",
         LocalDate.now(),
         "Rocket",

@@ -9,8 +9,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.rocket_detail.system.RocketDetailScreen
-import com.example.rocket_list.system.RocketListScreen
+import cz.quanti.rocketapp.rocketdetail.system.RocketDetailScreen
+import cz.quanti.rocketapp.rocketlist.system.RocketListScreen
+import org.koin.androidx.compose.koinViewModel
 
 const val ARG_ROCKET_ID = "rocketId"
 @Composable
@@ -23,7 +24,7 @@ fun RocketAppNavHost() {
         NavHost(navController, Screen.RocketList.route) {
 
             composable(Screen.RocketList.route) {
-                RocketListScreen {
+                RocketListScreen(koinViewModel()) {
                     navController.navigate("${Screen.RocketDetail.route}/$it")
                 }
             }

@@ -1,4 +1,4 @@
-package com.example.rocket_list.system
+package cz.quanti.rocketapp.rocketlist.system
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -20,17 +20,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
 import cz.quanti.rocketapp.rocketlist.presentation.RocketListState
 import cz.quanti.rocketapp.rocketlist.presentation.RocketListViewModel
 
 @Composable
-fun RocketListScreen(navigateToRocketDetail: (String) -> Unit) {
-    val viewModel = viewModel<RocketListViewModel>()
+fun RocketListScreen(viewModel: RocketListViewModel, navigateToRocketDetail: (String) -> Unit) {
     val rocketListState: RocketListState by viewModel.rockets.collectAsState()
-
     RocketList(rocketListState.rockets, navigateToRocketDetail)
 }
 

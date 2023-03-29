@@ -8,7 +8,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -17,9 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
 import cz.quanti.rocketapp.rocketlist.presentation.RocketListState
@@ -36,11 +35,11 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.lightGray))
+            .background(RocketAppTheme.colorPalette.rocketListScreenBackgroundColor)
     ) {
         Text(
             text = stringResource(R.string.rockets),
-            style = MaterialTheme.typography.h3,
+            style = RocketAppTheme.typography.screenTitle,
             modifier = Modifier.padding(start = 8.dp, top = 40.dp)
         )
 

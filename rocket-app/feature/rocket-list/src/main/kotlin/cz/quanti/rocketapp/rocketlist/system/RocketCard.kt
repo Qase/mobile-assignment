@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import cz.quanti.rocketapp.design.system.Dimensions
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -20,9 +20,9 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .background(RocketAppTheme.colorPalette.rocketListItemBackgroundColor)
+            .background(RocketAppTheme.colors.rocketListItemBackgroundColor)
             .fillMaxSize()
-            .padding(8.dp)
+            .padding(Dimensions.sidePadding)
 /*
             .clickable { navigateToRocketDetail(rocketItem.id) }
 */
@@ -30,10 +30,10 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
         Image(
             painter = painterResource(id = R.drawable.rocket),
             contentDescription = "Rocket icon",
-            modifier = Modifier.size(30.dp)
+            modifier = Modifier.size(Dimensions.iconSize)
         )
 
-        Spacer(modifier = Modifier.width(10.dp))
+        Spacer(modifier = Modifier.width(Dimensions.mediumSpacer))
 
         RocketOverview(rocketItem)
 
@@ -41,7 +41,7 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
 
         Icon(
             painter = painterResource(id = R.drawable.arrow),
-            tint = RocketAppTheme.colorPalette.iconButtonColor,
+            tint = RocketAppTheme.colors.iconButtonColor,
             contentDescription = null,
         )
     }
@@ -57,7 +57,7 @@ fun RocketOverview(rocketItem: RocketItemState) {
             style = RocketAppTheme.typography.cardTitle
         )
 
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(Dimensions.smallSpacer))
 
         Text(
             text = rocketItem.firstFlight,

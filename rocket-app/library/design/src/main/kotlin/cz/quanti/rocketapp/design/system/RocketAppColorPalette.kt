@@ -5,11 +5,13 @@ import androidx.compose.ui.graphics.Color
 data class RocketAppColorPalette(
    val rocketListScreenBackgroundColor: Color,
    val rocketListItemBackgroundColor: Color,
-   val iconButtonColor: Color
+   val iconButtonColor: Color,
+   val listDividerColor: Color
 )
 
 val rocketAppColorPalette = RocketAppColorPalette(
     rocketListScreenBackgroundColor = lightGrey,
     rocketListItemBackgroundColor = Color.White,
-    iconButtonColor = lightGrey
+    iconButtonColor = lightGrey,
+    listDividerColor = lightGrey
 )

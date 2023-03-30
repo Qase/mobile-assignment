@@ -15,9 +15,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
+import cz.quanti.rocketapp.design.system.Dimensions
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -35,23 +34,27 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(RocketAppTheme.colorPalette.rocketListScreenBackgroundColor)
+            .background(RocketAppTheme.colors.rocketListScreenBackgroundColor)
     ) {
         Text(
             text = stringResource(R.string.rockets),
             style = RocketAppTheme.typography.screenTitle,
-            modifier = Modifier.padding(start = 8.dp, top = 40.dp)
+            modifier = Modifier
+                .padding(
+                    start = Dimensions.sidePadding,
+                    top = Dimensions.titleTopPadding
+                )
         )
 
         LazyColumn(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(8.dp)
-                .clip(RoundedCornerShape(20.dp))
+                .padding(Dimensions.sidePadding)
+                .clip(RoundedCornerShape(Dimensions.roundCorners))
         ) {
             items(rockets) {
                 RocketCard(it, navigateToRocketDetail)
-                Divider(color = Color.LightGray)
+                Divider(color = RocketAppTheme.colors.listDividerColor)
             }
         }
     }

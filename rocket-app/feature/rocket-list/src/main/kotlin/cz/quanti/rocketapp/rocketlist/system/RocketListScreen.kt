@@ -16,7 +16,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import cz.quanti.rocketapp.design.system.Dimensions
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -41,16 +40,16 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
             style = RocketAppTheme.typography.screenTitle,
             modifier = Modifier
                 .padding(
-                    start = Dimensions.sidePadding,
-                    top = Dimensions.titleTopPadding
+                    start = RocketAppTheme.dimensions.sidePadding,
+                    top = RocketAppTheme.dimensions.titleTopPadding
                 )
         )
 
         LazyColumn(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(Dimensions.sidePadding)
-                .clip(RoundedCornerShape(Dimensions.roundCorners))
+                .padding(RocketAppTheme.dimensions.sidePadding)
+                .clip(RoundedCornerShape(RocketAppTheme.dimensions.roundCorners))
         ) {
             items(rockets) {
                 RocketCard(it, navigateToRocketDetail)

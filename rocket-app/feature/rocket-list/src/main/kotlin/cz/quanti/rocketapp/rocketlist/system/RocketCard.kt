@@ -10,7 +10,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import cz.quanti.rocketapp.design.system.Dimensions
 import cz.quanti.rocketapp.design.system.RocketAppTheme
 import cz.quanti.rocketapp.rocketlist.R
 import cz.quanti.rocketapp.rocketlist.presentation.RocketItemState
@@ -22,7 +21,7 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
         modifier = Modifier
             .background(RocketAppTheme.colors.rocketListItemBackgroundColor)
             .fillMaxSize()
-            .padding(Dimensions.sidePadding)
+            .padding(RocketAppTheme.dimensions.sidePadding)
 /*
             .clickable { navigateToRocketDetail(rocketItem.id) }
 */
@@ -30,10 +29,10 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
         Image(
             painter = painterResource(id = R.drawable.rocket),
             contentDescription = "Rocket icon",
-            modifier = Modifier.size(Dimensions.iconSize)
+            modifier = Modifier.size(RocketAppTheme.dimensions.iconSize)
         )
 
-        Spacer(modifier = Modifier.width(Dimensions.mediumSpacer))
+        Spacer(modifier = Modifier.width(RocketAppTheme.dimensions.mediumSpacer))
 
         RocketOverview(rocketItem)
 
@@ -57,7 +56,7 @@ fun RocketOverview(rocketItem: RocketItemState) {
             style = RocketAppTheme.typography.cardTitle
         )
 
-        Spacer(modifier = Modifier.height(Dimensions.smallSpacer))
+        Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.smallSpacer))
 
         Text(
             text = rocketItem.firstFlight,

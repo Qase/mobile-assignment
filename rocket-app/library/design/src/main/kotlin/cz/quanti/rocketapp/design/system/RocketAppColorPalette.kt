@@ -1,7 +1,9 @@
 package cz.quanti.rocketapp.design.system
 
+import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 
+@Immutable
 data class RocketAppColorPalette(
    val rocketListScreenBackgroundColor: Color,
    val rocketListItemBackgroundColor: Color,

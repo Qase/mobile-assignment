@@ -19,7 +19,7 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .background(RocketAppTheme.colors.rocketListItemBackgroundColor)
+            .background(RocketAppTheme.colors.componentBackground)
             .fillMaxSize()
             .padding(RocketAppTheme.dimensions.sidePadding)
 /*
@@ -40,7 +40,7 @@ fun RocketCard(rocketItem: RocketItemState, navigateToRocketDetail: (String) -> 
 
         Icon(
             painter = painterResource(id = R.drawable.arrow),
-            tint = RocketAppTheme.colors.iconButtonColor,
+            tint = RocketAppTheme.colors.secondary,
             contentDescription = null,
         )
     }
@@ -53,14 +53,16 @@ fun RocketOverview(rocketItem: RocketItemState) {
     ) {
         Text(
             text = rocketItem.name,
-            style = RocketAppTheme.typography.cardTitle
+            style = RocketAppTheme.typography.cardTitle,
+            color = RocketAppTheme.colors.textPrimary
         )
 
         Spacer(modifier = Modifier.height(RocketAppTheme.dimensions.smallSpacer))
 
         Text(
             text = rocketItem.firstFlight,
-            style = RocketAppTheme.typography.cardBody
+            style = RocketAppTheme.typography.cardBody,
+            color = RocketAppTheme.colors.textSecondary
         )
     }
 }

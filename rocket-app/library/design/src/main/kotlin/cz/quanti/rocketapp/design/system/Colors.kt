@@ -2,5 +2,8 @@ package cz.quanti.rocketapp.design.system
 
 import androidx.compose.ui.graphics.Color
 
-val lightGrey = Color(0xfff0e9e9)
-val pink = Color(0xffcf4273)
+val black = Color.Black
+val white = Color.White
+val grey = Color(0xffa3a3a7)
+val lightGrey = Color(0xfff5f5f5)
+val pink = Color(0xfff25187)

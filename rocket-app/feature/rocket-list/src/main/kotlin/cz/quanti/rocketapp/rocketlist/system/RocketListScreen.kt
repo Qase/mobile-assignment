@@ -33,11 +33,12 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(RocketAppTheme.colors.rocketListScreenBackgroundColor)
+            .background(RocketAppTheme.colors.background)
     ) {
         Text(
             text = stringResource(R.string.rockets),
             style = RocketAppTheme.typography.screenTitle,
+            color = RocketAppTheme.colors.textPrimary,
             modifier = Modifier
                 .padding(
                     start = RocketAppTheme.dimensions.sidePadding,
@@ -53,7 +54,7 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
         ) {
             items(rockets) {
                 RocketCard(it, navigateToRocketDetail)
-                Divider(color = RocketAppTheme.colors.listDividerColor)
+                Divider(color = RocketAppTheme.colors.background)
             }
         }
     }

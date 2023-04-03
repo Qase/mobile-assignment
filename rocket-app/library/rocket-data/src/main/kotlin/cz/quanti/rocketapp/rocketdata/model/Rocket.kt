@@ -2,7 +2,6 @@ package cz.quanti.rocketapp.rocketdata.model
 
 import java.time.LocalDate
 
-
 data class Rocket(
     val id: Int,
     val name: String,

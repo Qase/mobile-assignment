@@ -5,7 +5,7 @@ import cz.quanti.rocketapp.rocketdata.data.rocketsMock
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class RocketDetailViewModel: ViewModel() {
+class RocketDetailViewModel : ViewModel() {
     private val _rocket = MutableStateFlow(RocketDetailState())
     val rocket: StateFlow<RocketDetailState>
         get() = _rocket

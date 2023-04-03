@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id "io.gitlab.arturbosch.detekt" version "1.22.0"
 }
 
 android {
@@ -38,7 +39,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -49,4 +49,12 @@ dependencies {
     testImplementation "io.mockk:mockk:1.13.4"
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
     testImplementation 'io.kotest:kotest-assertions-core-jvm:5.5.5'
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0"
+}
+
+detekt {
+    toolVersion = "1.22.0"
+    source = files("src/main/kotlin")
+    config = files("${project.rootDir}/detekt.yml")
+    buildUponDefaultConfig = true
 }

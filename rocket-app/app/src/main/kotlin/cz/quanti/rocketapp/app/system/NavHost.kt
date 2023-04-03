@@ -2,7 +2,7 @@ package cz.quanti.rocketapp.app.system
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -14,15 +14,15 @@ import cz.quanti.rocketapp.rocketlist.system.RocketListScreen
 import org.koin.androidx.compose.koinViewModel
 
 const val ARG_ROCKET_ID = "rocketId"
+
 @Composable
 fun RocketAppNavHost() {
     val navController = rememberNavController()
 
-    Surface (
+    Surface(
         modifier = Modifier.fillMaxSize()
     ) {
         NavHost(navController, Screen.RocketList.route) {
-
             composable(Screen.RocketList.route) {
                 RocketListScreen(koinViewModel()) {
                     navController.navigate("${Screen.RocketDetail.route}/$it")
@@ -42,4 +42,3 @@ fun RocketAppNavHost() {
         }
     }
 }
-

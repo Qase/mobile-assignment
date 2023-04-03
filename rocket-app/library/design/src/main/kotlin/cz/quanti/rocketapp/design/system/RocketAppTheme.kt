@@ -5,4 +5,3 @@ object RocketAppTheme {
     val colors = rocketAppColorPalette
     val dimensions = rocketAppDimensions
 }
-

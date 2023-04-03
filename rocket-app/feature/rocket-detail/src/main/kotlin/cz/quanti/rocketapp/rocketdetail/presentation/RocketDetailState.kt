@@ -9,7 +9,7 @@ data class RocketDetailState(
     val diameter: ParameterState = ParameterState.DiameterState(0),
     val mass: ParameterState = ParameterState.MassState(0),
 ) {
-    constructor(rocket: Rocket): this(
+    constructor(rocket: Rocket) : this(
         rocket.name,
         rocket.overview,
         ParameterState.HeightState(rocket.parameters.height),
@@ -23,7 +23,8 @@ sealed class ParameterState(
     val type: ParameterType
 ) {
     data class HeightState(val height: Int) : ParameterState("${height}m", ParameterType.HEIGHT)
-    data class DiameterState(val diameter: Int) : ParameterState("${diameter}m",
+    data class DiameterState(val diameter: Int) : ParameterState(
+        "${diameter}m",
         ParameterType.DIAMETER
     )
     data class MassState(val mass: Int) : ParameterState("${mass}t", ParameterType.MASS)
@@ -34,4 +35,3 @@ enum class ParameterType(val paramName: String) {
     DIAMETER("diameter"),
     MASS("mass")
 }
-

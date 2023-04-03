@@ -8,7 +8,7 @@ internal fun RocketResponse.toRocket(): Rocket {
         this.id,
         this.name,
         LocalDate.parse(this.firstFlight),
-    "",
+        "",
         rocketParameters
     )
 }

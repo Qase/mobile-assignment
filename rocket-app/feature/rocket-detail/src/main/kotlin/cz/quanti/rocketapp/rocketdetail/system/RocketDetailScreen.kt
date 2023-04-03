@@ -3,11 +3,22 @@ package cz.quanti.rocketapp.rocketdetail.system
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
-import androidx.compose.material.*
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -50,9 +61,14 @@ fun TopBar(rocketName: String, onNavigateBack: () -> Unit) {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             BackToRocketsButton(onNavigateBack)
-            Text(text = rocketName, color = Color.Black, style = MaterialTheme.typography.h6, modifier = Modifier
-                .weight(1f)
-                .padding(start = 60.dp))
+            Text(
+                text = rocketName,
+                color = Color.Black,
+                style = MaterialTheme.typography.h6,
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(start = 60.dp)
+            )
             Text(text = "Launch", color = Color.Blue, style = MaterialTheme.typography.h6)
         }
     }
@@ -126,12 +142,12 @@ fun ParametersRow(
 @Composable
 fun ParameterDetail(param: ParameterState) {
     Column(
-       modifier = Modifier
-           .width(120.dp)
-           .height(120.dp)
-           .clip(RoundedCornerShape(20.dp))
-           .background(color = colorResource(id = R.color.pink))
-           .padding(5.dp),
+        modifier = Modifier
+            .width(120.dp)
+            .height(120.dp)
+            .clip(RoundedCornerShape(20.dp))
+            .background(color = colorResource(id = R.color.pink))
+            .padding(5.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

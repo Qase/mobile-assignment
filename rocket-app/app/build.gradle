@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id "io.gitlab.arturbosch.detekt" version "1.22.0"
 }
 
 android {
@@ -64,4 +65,13 @@ dependencies {
     implementation "io.insert-koin:koin-android:3.3.3"
     implementation "io.insert-koin:koin-core:3.3.3"
     implementation "io.insert-koin:koin-androidx-compose:3.4.2"
+
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0"
+}
+
+detekt {
+    toolVersion = "1.22.0"
+    source = files("src/main/kotlin")
+    config = files("${project.rootDir}/detekt.yml")
+    buildUponDefaultConfig = true
 }

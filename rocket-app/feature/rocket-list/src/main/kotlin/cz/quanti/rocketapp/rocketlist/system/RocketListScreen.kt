@@ -58,5 +58,4 @@ fun RocketList(rockets: List<RocketItemState>, navigateToRocketDetail: (String) 
             }
         }
     }
-
 }

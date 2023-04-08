@@ -1,8 +1,8 @@
 //
-//  CoreMotionClient.swift
-//  Ficek_QuantiApp
+//  File.swift
+//  
 //
-//  Created by Martin Ficek on 26.02.2023.
+//  Created by Martin Ficek on 08.04.2023.
 //
 
 import Foundation
@@ -11,25 +11,25 @@ import XCTestDynamicOverlay
 import CoreMotion
 
 extension DependencyValues {
-    var coreMotionClient: CoreMotionClient {
+    public var coreMotionClient: CoreMotionClient {
         get { self[CoreMotionClient.self] }
         set { self[CoreMotionClient.self] = newValue }
     }
 }
 
-struct CoreMotionClient {
+public struct CoreMotionClient {
     
     //    struct Input {
     //        let url: URL
     //
     //    }
     
-    let xRotationRate: (OperationQueue) async throws -> AsyncThrowingStream<Double, Error>
+   public let xRotationRate: (OperationQueue) async throws -> AsyncThrowingStream<Double, Error>
 }
 
 extension CoreMotionClient: DependencyKey {
     @MainActor
-    static var liveValue: CoreMotionClient {
+   public static var liveValue: CoreMotionClient {
         let motionManager = CMMotionManager()
         
         return Self(
@@ -49,3 +49,4 @@ extension CoreMotionClient: DependencyKey {
         )
     }
 }
+

@@ -10,6 +10,7 @@ import XCTest
 import ComposableArchitecture
 @testable import Ficek_QuantiApp
 import SwiftUI
+import CoreMotionClient
 
 @MainActor
 final class RocketLaunchDomainTests: XCTestCase {
@@ -22,7 +23,7 @@ final class RocketLaunchDomainTests: XCTestCase {
         )
        
         await store.send(.flying(0))
-        await store.send(.flying(2)) {
+        await store.send(.flying(3)) {
             $0.isFlying = true
         }
     }

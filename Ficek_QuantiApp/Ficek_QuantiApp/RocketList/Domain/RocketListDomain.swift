@@ -8,6 +8,8 @@
 import Foundation
 import ComposableArchitecture
 import Dependencies
+import Rocket
+import RocketRepository
 
 struct RocketListDomain: ReducerProtocol{
     
@@ -21,7 +23,7 @@ struct RocketListDomain: ReducerProtocol{
         case rockets(id: RocketDetailDomain.State.ID, action: RocketDetailDomain.Action)
     }
     
-    @Dependency(\.rocketRepositoryClient.fetchAllRockets) var fetchAllRockets
+    @Dependency(\.rocketRepository.fetchAllRockets) var fetchAllRockets
     
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in

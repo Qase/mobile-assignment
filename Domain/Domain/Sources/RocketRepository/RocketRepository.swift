@@ -9,25 +9,28 @@ import Foundation
 import ComposableArchitecture
 import Dependencies
 import XCTestDynamicOverlay
+import Rocket
+import APIClient
+import RequestBuilderClient
 
 extension DependencyValues {
-    var rocketRepositoryClient: RocketRepositoryClient {
-        get { self[RocketRepositoryClient.self] }
-        set { self[RocketRepositoryClient.self] = newValue }
+    public var rocketRepository: RocketRepository{
+        get { self[RocketRepository.self] }
+        set { self[RocketRepository.self] = newValue }
     }
 }
 
-struct RocketRepositoryClient {
+public struct RocketRepository{
 //    struct Input {
 //
 //
 //    }
-    let fetchAllRockets: () async throws -> [Rocket]
+  public let fetchAllRockets: () async throws -> [Rocket]
 }
 
-extension RocketRepositoryClient: DependencyKey {
+extension RocketRepository: DependencyKey {
     
-    static var liveValue: RocketRepositoryClient {
+   public static var liveValue: RocketRepository {
         @Dependency(\.apiClient) var apiClient
         @Dependency(\.requestBuilderClient) var requestBuilderClient
         
@@ -48,14 +51,14 @@ extension RocketRepositoryClient: DependencyKey {
         )
     }
     
-    static let testValue = RocketRepositoryClient(
+   public static let testValue = RocketRepository(
         //fetchAllRockets: unimplemented("RocketRepositoryClient(fetchAllRockets: )")
         fetchAllRockets: {
             return .mock
         }
     )
     
-    static let previewValue = RocketRepositoryClient(
+    public static let previewValue = RocketRepository(
         fetchAllRockets: {
             return .mock
         }

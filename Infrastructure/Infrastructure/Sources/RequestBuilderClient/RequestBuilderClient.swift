@@ -10,22 +10,26 @@ import ComposableArchitecture
 import XCTestDynamicOverlay
 
 extension DependencyValues {
-    var requestBuilderClient: RequestBuilderClient {
+    public var requestBuilderClient: RequestBuilderClient {
         get { self[RequestBuilderClient.self] }
         set { self[RequestBuilderClient.self] = newValue }
     }
 }
 
-struct RequestBuilderClient {
-    struct Input {
-        let url: URL
-    }
+public struct RequestBuilderClient {
+    public struct Input {
+        public let url: URL
+        
+        public init(url: URL) {
+            self.url = url
+        }
+     }
     
-    let rocketRequest: (Input) throws -> URLRequest
+   public let rocketRequest: (Input) throws -> URLRequest
 }
 
 extension RequestBuilderClient: DependencyKey {
-    static var liveValue: RequestBuilderClient {
+   public static var liveValue: RequestBuilderClient {
         
         return Self(
             rocketRequest: { input in
@@ -36,7 +40,7 @@ extension RequestBuilderClient: DependencyKey {
         )
     }
     
-    static var testValue = RequestBuilderClient { input in
+    public static var testValue = RequestBuilderClient { input in
         return URLRequest(url: input.url)
     }
 }

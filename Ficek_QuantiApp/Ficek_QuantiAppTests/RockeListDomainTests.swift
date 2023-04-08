@@ -10,6 +10,7 @@ import XCTest
 import ComposableArchitecture
 @testable import Ficek_QuantiApp
 import SwiftUI
+import Rocket
 
 @MainActor
 final class RocketListDomainTests: XCTestCase {

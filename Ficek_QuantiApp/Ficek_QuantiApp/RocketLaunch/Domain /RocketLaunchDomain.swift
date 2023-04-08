@@ -9,6 +9,7 @@ import Foundation
 import ComposableArchitecture
 import Dependencies
 import SwiftUI
+import CoreMotionClient
 
 struct RocketLaunchDomain: ReducerProtocol{
     

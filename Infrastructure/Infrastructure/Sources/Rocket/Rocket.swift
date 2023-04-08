@@ -8,18 +8,18 @@
 import Foundation
 
 //MARK: Rocket Struct
-struct Rocket: Decodable, Equatable, Identifiable{
-    var id: String
-    var firstFlight: String
-    var height, diameter: Diameter
-    var mass: Mass
-    var firstStage: FirstStage
-    var secondStage: SecondStage
-    var engines: Engines
-    var flickrImages: [String]
-    var description: String
-    var name: String
-    var type: String
+public struct Rocket: Decodable, Equatable, Identifiable{
+    public var id: String
+    public var firstFlight: String
+    public var height, diameter: Diameter
+    public var mass: Mass
+    public var firstStage: FirstStage
+    public var secondStage: SecondStage
+    public var engines: Engines
+    public var flickrImages: [String]
+    public var description: String
+    public var name: String
+    public var type: String
  
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -35,14 +35,14 @@ struct Rocket: Decodable, Equatable, Identifiable{
     }
 }
 
-struct Diameter: Codable, Equatable {
-    var meters, feet: Double?
+public struct Diameter: Codable, Equatable {
+    public var meters, feet: Double?
 }
 
-struct Engines: Codable, Equatable {
-    var number: Int
-    var type: String
-    var version: String
+public struct Engines: Codable, Equatable {
+    public var number: Int
+    public var type: String
+    public var version: String
 
     enum CodingKeys: String, CodingKey {
         case number
@@ -51,11 +51,11 @@ struct Engines: Codable, Equatable {
     }
 }
 
-struct FirstStage: Codable, Equatable {
-    var reusable: Bool
-    var engines: Int
-    var fuelAmountTons: Double
-    var burnTimeSEC: Int?
+public struct FirstStage: Codable, Equatable {
+   public var reusable: Bool
+   public var engines: Int
+   public var fuelAmountTons: Double
+   public var burnTimeSEC: Int?
 
     enum CodingKeys: String, CodingKey {
         case reusable, engines
@@ -64,15 +64,15 @@ struct FirstStage: Codable, Equatable {
     }
 }
 
-struct Mass: Codable, Equatable  {
-    var kg, lb: Int
+public struct Mass: Codable, Equatable  {
+   public var kg, lb: Int
 }
 
-struct SecondStage: Codable, Equatable {
-    var reusable: Bool
-    var engines: Int
-    var fuelAmountTons: Double
-    var burnTimeSEC: Int?
+public struct SecondStage: Codable, Equatable {
+   public var reusable: Bool
+   public var engines: Int
+   public var fuelAmountTons: Double
+   public var burnTimeSEC: Int?
 
     enum CodingKeys: String, CodingKey {
         case reusable, engines
@@ -81,14 +81,14 @@ struct SecondStage: Codable, Equatable {
     }
 }
 
-enum RocketError: Error {
+public enum RocketError: Error {
     case internalError
     case badUrl
 }
 
 //MARK: Mock data
 extension Rocket {
-    static let mock: Self = 
+   public static let mock: Self =
          Rocket(
           id: "5e9d0d95eda69955f709d1eb",
           firstFlight: "2006-03-24",
@@ -133,7 +133,7 @@ extension Rocket {
 
 //MARK: Mock data array
 extension [Rocket] {
-    static let mock: Self = [
+    public static let mock: Self = [
          Rocket(
           id: "5e9d0d95eda69955f709d1eb",
           firstFlight: "2006-03-24",
@@ -306,7 +306,7 @@ extension [Rocket] {
         ]
     
     
-    static let mockTest: Self = [
+   public static let mockTest: Self = [
          Rocket(
           id: "5e9d0d95eda69955f709d1eb",
           firstFlight: "2006-03-24",

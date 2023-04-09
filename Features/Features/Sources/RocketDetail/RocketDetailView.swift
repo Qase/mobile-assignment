@@ -7,11 +7,16 @@
 
 import SwiftUI
 import ComposableArchitecture
+import RocketLaunch
 
-struct RocketDetailView: View {
-    let store: StoreOf<RocketDetailDomain>
+public struct RocketDetailView: View {
+    public let store: StoreOf<RocketDetailDomain>
     
-    var body: some View {
+    public init(store: StoreOf<RocketDetailDomain>) {
+        self.store = store
+    }
+    
+   public var body: some View {
         WithViewStore(self.store) { viewStore in
             ScrollView {
                 VStack(alignment: .leading) {

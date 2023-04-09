@@ -7,11 +7,16 @@
 
 import SwiftUI
 import ComposableArchitecture
+import RocketDetail
 
-struct RocketListPartView: View {
-    let store: StoreOf<RocketDetailDomain>
+public struct RocketListPartView: View {
+   public let store: StoreOf<RocketDetailDomain>
     
-    var body: some View {
+    public init(store: StoreOf<RocketDetailDomain>) {
+        self.store = store
+    }
+    
+    public var body: some View {
         WithViewStore(self.store) { viewStore in
             HStack {
                 Image("Rocket")

@@ -8,10 +8,14 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct RocketLaunchView: View {
-    let store: StoreOf<RocketLaunchDomain>
-        
-    var body: some View {
+public struct RocketLaunchView: View {
+    public let store: StoreOf<RocketLaunchDomain>
+    
+    public init(store: StoreOf<RocketLaunchDomain>) {
+        self.store = store
+    }
+    
+   public var body: some View {
         WithViewStore(self.store) { viewStore in
             GeometryReader { geo in
                 VStack(spacing: -380){

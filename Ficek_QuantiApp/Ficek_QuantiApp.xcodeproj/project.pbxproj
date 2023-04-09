@@ -7,34 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F010604E29E22FEB00F620BC /* RocketRepository in Frameworks */ = {isa = PBXBuildFile; productRef = F010604D29E22FEB00F620BC /* RocketRepository */; };
-		F0B5C79629AAE37100A875AE /* RocketLaunchDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5C79529AAE37100A875AE /* RocketLaunchDomain.swift */; };
-		F0D977F729E230F900D29FF6 /* CoreMotionClient in Frameworks */ = {isa = PBXBuildFile; productRef = F0D977F629E230F900D29FF6 /* CoreMotionClient */; };
+		F04E96F429E23BD1008BDB1A /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = F04E96F329E23BD1008BDB1A /* RocketList */; };
+		F0A41DEE29E2384400EEF7DC /* RocketDetail in Frameworks */ = {isa = PBXBuildFile; productRef = F0A41DED29E2384400EEF7DC /* RocketDetail */; };
 		F0E0A96729A83B22004760E7 /* Ficek_QuantiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A96629A83B22004760E7 /* Ficek_QuantiAppApp.swift */; };
 		F0E0A96B29A83B24004760E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E0A96A29A83B24004760E7 /* Assets.xcassets */; };
 		F0E0A96E29A83B24004760E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */; };
 		F0E0A97529A83B33004760E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97429A83B33004760E7 /* MainView.swift */; };
-		F0E0A97929A83B85004760E7 /* RocketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97829A83B85004760E7 /* RocketListView.swift */; };
-		F0E0A97B29A83BB3004760E7 /* RocketListPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97A29A83BB3004760E7 /* RocketListPartView.swift */; };
-		F0E0A97D29A83BDC004760E7 /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97C29A83BDC004760E7 /* RocketDetailView.swift */; };
-		F0E0A97F29A83BE3004760E7 /* RocketLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A97E29A83BE3004760E7 /* RocketLaunchView.swift */; };
-		F0E0A98129A84239004760E7 /* RocketParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98029A84239004760E7 /* RocketParametersView.swift */; };
-		F0E0A98629A843E5004760E7 /* RocketFirstStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98529A843E5004760E7 /* RocketFirstStageView.swift */; };
-		F0E0A98829A843EC004760E7 /* RocketSecondStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98729A843EC004760E7 /* RocketSecondStageView.swift */; };
-		F0E0A98A29A843F3004760E7 /* RocketPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A98929A843F3004760E7 /* RocketPhotosView.swift */; };
 		F0E0A99629A96465004760E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F0E0A99529A96465004760E7 /* ComposableArchitecture */; };
-		F0E0A99829A9732B004760E7 /* RocketDetailDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */; };
-		F0E0A99E29AA6531004760E7 /* RocketListDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A99D29AA6531004760E7 /* RocketListDomain.swift */; };
-		F0E6071529E1A58700AA7E43 /* Rocket in Frameworks */ = {isa = PBXBuildFile; productRef = F0E6071429E1A58700AA7E43 /* Rocket */; };
 		F0EB21B929DECBFA00AD42F9 /* CombineExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21B829DECBFA00AD42F9 /* CombineExtensions */; };
-		F0EB21BB29DECBFA00AD42F9 /* CoreDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21BA29DECBFA00AD42F9 /* CoreDatabase */; };
-		F0EB21BD29DECBFA00AD42F9 /* ErrorReporting in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21BC29DECBFA00AD42F9 /* ErrorReporting */; };
-		F0EB21BF29DECBFA00AD42F9 /* KeyValueStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21BE29DECBFA00AD42F9 /* KeyValueStorage */; };
-		F0EB21C129DECBFA00AD42F9 /* ModelConvertible in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21C029DECBFA00AD42F9 /* ModelConvertible */; };
-		F0EB21C329DECBFA00AD42F9 /* NetworkMonitoring in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21C229DECBFA00AD42F9 /* NetworkMonitoring */; };
-		F0EB21C529DECBFA00AD42F9 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21C429DECBFA00AD42F9 /* Networking */; };
 		F0EB21C729DECBFA00AD42F9 /* RequestBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21C629DECBFA00AD42F9 /* RequestBuilder */; };
-		F0EB21C929DECBFA00AD42F9 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21C829DECBFA00AD42F9 /* Utils */; };
 		F0FBCB2629AE966D0046D27E /* RockeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBCB2529AE966D0046D27E /* RockeRepositoryTests.swift */; };
 		F0FBCB2829AE9D8B0046D27E /* RockeListDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBCB2729AE9D8B0046D27E /* RockeListDomainTests.swift */; };
 		F0FBCB2A29AEB90E0046D27E /* RocketLaunchDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBCB2929AEB90E0046D27E /* RocketLaunchDomainTests.swift */; };
@@ -54,22 +35,11 @@
 		F0873A0729E1921C00EC7465 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = ../Features/Features; sourceTree = "<group>"; };
 		F0873A0829E1924300EC7465 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ../Domain/Domain; sourceTree = "<group>"; };
 		F0873A0A29E1927D00EC7465 /* Infrastructure */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Infrastructure; path = ../Infrastructure/Infrastructure; sourceTree = "<group>"; };
-		F0B5C79529AAE37100A875AE /* RocketLaunchDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchDomain.swift; sourceTree = "<group>"; };
 		F0E0A96329A83B22004760E7 /* Ficek_QuantiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ficek_QuantiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E0A96629A83B22004760E7 /* Ficek_QuantiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ficek_QuantiAppApp.swift; sourceTree = "<group>"; };
 		F0E0A96A29A83B24004760E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0E0A97429A83B33004760E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		F0E0A97829A83B85004760E7 /* RocketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListView.swift; sourceTree = "<group>"; };
-		F0E0A97A29A83BB3004760E7 /* RocketListPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListPartView.swift; sourceTree = "<group>"; };
-		F0E0A97C29A83BDC004760E7 /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
-		F0E0A97E29A83BE3004760E7 /* RocketLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchView.swift; sourceTree = "<group>"; };
-		F0E0A98029A84239004760E7 /* RocketParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketParametersView.swift; sourceTree = "<group>"; };
-		F0E0A98529A843E5004760E7 /* RocketFirstStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketFirstStageView.swift; sourceTree = "<group>"; };
-		F0E0A98729A843EC004760E7 /* RocketSecondStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSecondStageView.swift; sourceTree = "<group>"; };
-		F0E0A98929A843F3004760E7 /* RocketPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketPhotosView.swift; sourceTree = "<group>"; };
-		F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailDomain.swift; sourceTree = "<group>"; };
-		F0E0A99D29AA6531004760E7 /* RocketListDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListDomain.swift; sourceTree = "<group>"; };
 		F0FBCB1C29AE96590046D27E /* Ficek_QuantiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ficek_QuantiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FBCB2529AE966D0046D27E /* RockeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockeRepositoryTests.swift; sourceTree = "<group>"; };
 		F0FBCB2729AE9D8B0046D27E /* RockeListDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockeListDomainTests.swift; sourceTree = "<group>"; };
@@ -82,17 +52,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0EB21B929DECBFA00AD42F9 /* CombineExtensions in Frameworks */,
-				F0E6071529E1A58700AA7E43 /* Rocket in Frameworks */,
-				F0EB21BB29DECBFA00AD42F9 /* CoreDatabase in Frameworks */,
-				F0EB21C929DECBFA00AD42F9 /* Utils in Frameworks */,
-				F0EB21C529DECBFA00AD42F9 /* Networking in Frameworks */,
-				F0EB21BD29DECBFA00AD42F9 /* ErrorReporting in Frameworks */,
-				F0D977F729E230F900D29FF6 /* CoreMotionClient in Frameworks */,
-				F0EB21C329DECBFA00AD42F9 /* NetworkMonitoring in Frameworks */,
-				F0EB21BF29DECBFA00AD42F9 /* KeyValueStorage in Frameworks */,
-				F0EB21C129DECBFA00AD42F9 /* ModelConvertible in Frameworks */,
-				F010604E29E22FEB00F620BC /* RocketRepository in Frameworks */,
+				F0A41DEE29E2384400EEF7DC /* RocketDetail in Frameworks */,
 				F0EB21C729DECBFA00AD42F9 /* RequestBuilder in Frameworks */,
+				F04E96F429E23BD1008BDB1A /* RocketList in Frameworks */,
 				F0E0A99629A96465004760E7 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,22 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F0B5C79329AAE34F00A875AE /* Domain  */ = {
-			isa = PBXGroup;
-			children = (
-				F0B5C79529AAE37100A875AE /* RocketLaunchDomain.swift */,
-			);
-			path = "Domain ";
-			sourceTree = "<group>";
-		};
-		F0B5C79429AAE35600A875AE /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A97E29A83BE3004760E7 /* RocketLaunchView.swift */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		F0E0A95A29A83B22004760E7 = {
 			isa = PBXGroup;
 			children = (
@@ -150,9 +96,6 @@
 			children = (
 				F0E0A96629A83B22004760E7 /* Ficek_QuantiAppApp.swift */,
 				F0E0A97429A83B33004760E7 /* MainView.swift */,
-				F0E0A98329A8438F004760E7 /* RocketList */,
-				F0E0A98229A84385004760E7 /* RocketDetail */,
-				F0E0A98429A843A7004760E7 /* RocketLaunch */,
 				F0E0A96A29A83B24004760E7 /* Assets.xcassets */,
 				F0E0A96C29A83B24004760E7 /* Preview Content */,
 			);
@@ -165,70 +108,6 @@
 				F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F0E0A98229A84385004760E7 /* RocketDetail */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A99929AA4F3C004760E7 /* Presentation */,
-				F0E0A99A29AA4F58004760E7 /* Domain */,
-			);
-			path = RocketDetail;
-			sourceTree = "<group>";
-		};
-		F0E0A98329A8438F004760E7 /* RocketList */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A99C29AA4F75004760E7 /* Presentation */,
-				F0E0A99B29AA4F71004760E7 /* Domain */,
-			);
-			path = RocketList;
-			sourceTree = "<group>";
-		};
-		F0E0A98429A843A7004760E7 /* RocketLaunch */ = {
-			isa = PBXGroup;
-			children = (
-				F0B5C79429AAE35600A875AE /* Presentation */,
-				F0B5C79329AAE34F00A875AE /* Domain  */,
-			);
-			path = RocketLaunch;
-			sourceTree = "<group>";
-		};
-		F0E0A99929AA4F3C004760E7 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A97C29A83BDC004760E7 /* RocketDetailView.swift */,
-				F0E0A98029A84239004760E7 /* RocketParametersView.swift */,
-				F0E0A98529A843E5004760E7 /* RocketFirstStageView.swift */,
-				F0E0A98729A843EC004760E7 /* RocketSecondStageView.swift */,
-				F0E0A98929A843F3004760E7 /* RocketPhotosView.swift */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		F0E0A99A29AA4F58004760E7 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A99729A9732B004760E7 /* RocketDetailDomain.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		F0E0A99B29AA4F71004760E7 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A99D29AA6531004760E7 /* RocketListDomain.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		F0E0A99C29AA4F75004760E7 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				F0E0A97A29A83BB3004760E7 /* RocketListPartView.swift */,
-				F0E0A97829A83B85004760E7 /* RocketListView.swift */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		F0E6071329E1A58700AA7E43 /* Frameworks */ = {
@@ -267,17 +146,9 @@
 			packageProductDependencies = (
 				F0E0A99529A96465004760E7 /* ComposableArchitecture */,
 				F0EB21B829DECBFA00AD42F9 /* CombineExtensions */,
-				F0EB21BA29DECBFA00AD42F9 /* CoreDatabase */,
-				F0EB21BC29DECBFA00AD42F9 /* ErrorReporting */,
-				F0EB21BE29DECBFA00AD42F9 /* KeyValueStorage */,
-				F0EB21C029DECBFA00AD42F9 /* ModelConvertible */,
-				F0EB21C229DECBFA00AD42F9 /* NetworkMonitoring */,
-				F0EB21C429DECBFA00AD42F9 /* Networking */,
 				F0EB21C629DECBFA00AD42F9 /* RequestBuilder */,
-				F0EB21C829DECBFA00AD42F9 /* Utils */,
-				F0E6071429E1A58700AA7E43 /* Rocket */,
-				F010604D29E22FEB00F620BC /* RocketRepository */,
-				F0D977F629E230F900D29FF6 /* CoreMotionClient */,
+				F0A41DED29E2384400EEF7DC /* RocketDetail */,
+				F04E96F329E23BD1008BDB1A /* RocketList */,
 			);
 			productName = Ficek_QuantiApp;
 			productReference = F0E0A96329A83B22004760E7 /* Ficek_QuantiApp.app */;
@@ -368,18 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E0A97529A83B33004760E7 /* MainView.swift in Sources */,
-				F0E0A99829A9732B004760E7 /* RocketDetailDomain.swift in Sources */,
-				F0E0A99E29AA6531004760E7 /* RocketListDomain.swift in Sources */,
-				F0E0A97D29A83BDC004760E7 /* RocketDetailView.swift in Sources */,
 				F0E0A96729A83B22004760E7 /* Ficek_QuantiAppApp.swift in Sources */,
-				F0E0A97929A83B85004760E7 /* RocketListView.swift in Sources */,
-				F0E0A98129A84239004760E7 /* RocketParametersView.swift in Sources */,
-				F0E0A98629A843E5004760E7 /* RocketFirstStageView.swift in Sources */,
-				F0E0A97B29A83BB3004760E7 /* RocketListPartView.swift in Sources */,
-				F0E0A98829A843EC004760E7 /* RocketSecondStageView.swift in Sources */,
-				F0E0A97F29A83BE3004760E7 /* RocketLaunchView.swift in Sources */,
-				F0E0A98A29A843F3004760E7 /* RocketPhotosView.swift in Sources */,
-				F0B5C79629AAE37100A875AE /* RocketLaunchDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +268,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					srmv7k,
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -468,6 +332,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					srmv7k,
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -664,67 +532,28 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F010604D29E22FEB00F620BC /* RocketRepository */ = {
+		F04E96F329E23BD1008BDB1A /* RocketList */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = RocketRepository;
+			productName = RocketList;
 		};
-		F0D977F629E230F900D29FF6 /* CoreMotionClient */ = {
+		F0A41DED29E2384400EEF7DC /* RocketDetail */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CoreMotionClient;
+			productName = RocketDetail;
 		};
 		F0E0A99529A96465004760E7 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0E0A99429A96465004760E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
-		F0E6071429E1A58700AA7E43 /* Rocket */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Rocket;
-		};
 		F0EB21B829DECBFA00AD42F9 /* CombineExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
 			productName = CombineExtensions;
 		};
-		F0EB21BA29DECBFA00AD42F9 /* CoreDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = CoreDatabase;
-		};
-		F0EB21BC29DECBFA00AD42F9 /* ErrorReporting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = ErrorReporting;
-		};
-		F0EB21BE29DECBFA00AD42F9 /* KeyValueStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = KeyValueStorage;
-		};
-		F0EB21C029DECBFA00AD42F9 /* ModelConvertible */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = ModelConvertible;
-		};
-		F0EB21C229DECBFA00AD42F9 /* NetworkMonitoring */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = NetworkMonitoring;
-		};
-		F0EB21C429DECBFA00AD42F9 /* Networking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = Networking;
-		};
 		F0EB21C629DECBFA00AD42F9 /* RequestBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
 			productName = RequestBuilder;
-		};
-		F0EB21C829DECBFA00AD42F9 /* Utils */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB21B729DECBFA00AD42F9 /* XCRemoteSwiftPackageReference "swift-core" */;
-			productName = Utils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

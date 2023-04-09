@@ -7,11 +7,16 @@
 
 import SwiftUI
 import ComposableArchitecture
+import RocketDetail
 
-struct RocketListView: View {
-    let store: StoreOf<RocketListDomain>
+public struct RocketListView: View {
+   public let store: StoreOf<RocketListDomain>
     
-    var body: some View {
+    public init(store: StoreOf<RocketListDomain>) {
+        self.store = store
+    }
+    
+   public var body: some View {
         WithViewStore(self.store, observe: \.rocketItems) { viewStore in
             VStack(alignment: .leading) {
                 NavigationStack {
@@ -32,7 +37,11 @@ struct RocketListView: View {
                     }
                     .navigationTitle("Rockets")
                     .navigationBarTitleDisplayMode(.large)
-                }.task {
+//                    .onAppear{
+//                        viewStore.send(.rocketTask)
+//                    }
+                }
+                .task {
                     await viewStore.send(.task).finish()
                 }
             }

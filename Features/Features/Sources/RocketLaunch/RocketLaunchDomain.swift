@@ -11,23 +11,30 @@ import Dependencies
 import SwiftUI
 import CoreMotionClient
 
-struct RocketLaunchDomain: ReducerProtocol{
+public struct RocketLaunchDomain: ReducerProtocol{
     
-    struct State: Equatable {
-        var isFlying: Bool = false
-        var image: String { isFlying ? "Rocket Flying" : "Rocket Idle"}
-        var launchText: String { isFlying ? "Launch successfull!" : "Lift the phone to launch the rocket"}
-        var animation: Animation = Animation.spring()
+    public init() { }
+    
+   public struct State: Equatable {
+       public var isFlying: Bool = false
+       public var image: String { isFlying ? "Rocket Flying" : "Rocket Idle"}
+       public var launchText: String { isFlying ? "Launch successfull!" : "Lift the phone to launch the rocket"}
+       public var animation: Animation = Animation.spring()
+       
+       public init() { }
     }
     
-    enum Action: Equatable {
+    
+    
+    public enum Action: Equatable {
         case onAppear
         case flying(Double)
     }
     
     @Dependency(\.coreMotionClient) var coreMotionClient
     
-    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+    public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+        
         switch action {
         case .onAppear:
             return .run { send in

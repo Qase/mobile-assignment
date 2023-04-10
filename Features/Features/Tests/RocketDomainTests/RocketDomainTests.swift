@@ -1,22 +1,23 @@
 //
-//  RockeListDomainTests.swift
-//  Ficek_QuantiAppTests
+//  RocketDomainTests.swift
+//  
 //
-//  Created by Martin Ficek on 28.02.2023.
+//  Created by Martin Ficek on 10.04.2023.
 //
 
 import Foundation
 import XCTest
 import ComposableArchitecture
-@testable import Ficek_QuantiApp
-import SwiftUI
+import Combine
+import XCTestDynamicOverlay
+import RocketClient
 import Rocket
+import RocketList
+import RocketDetail
 
 @MainActor
-final class RocketListDomainTests: XCTestCase {
-    @Dependency(\.rocketRepositoryClient.fetchAllRockets) var fetchAllRockets
-    
-    func testDomain() async {
+final class RocketDomainTests: XCTestCase {
+    func testRocketListDomain() async {
         let store = TestStore(
             initialState: RocketListDomain.State(),
             reducer: RocketListDomain()
@@ -27,6 +28,5 @@ final class RocketListDomainTests: XCTestCase {
                 uniqueElements: [Rocket].mock.map { RocketDetailDomain.State(rocket: $0) }
             )
         }
-        
     }
 }

@@ -37,12 +37,9 @@ public struct RocketListView: View {
                     }
                     .navigationTitle("Rockets")
                     .navigationBarTitleDisplayMode(.large)
-//                    .onAppear{
-//                        viewStore.send(.rocketTask)
-//                    }
-                }
-                .task {
-                    await viewStore.send(.task).finish()
+                    .onAppear{
+                        viewStore.send(.task)
+                    }
                 }
             }
         }

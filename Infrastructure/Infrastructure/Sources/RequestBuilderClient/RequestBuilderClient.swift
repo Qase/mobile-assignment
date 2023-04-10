@@ -8,6 +8,7 @@
 import Foundation
 import ComposableArchitecture
 import XCTestDynamicOverlay
+import RequestBuilder
 
 extension DependencyValues {
     public var requestBuilderClient: RequestBuilderClient {
@@ -17,30 +18,34 @@ extension DependencyValues {
 }
 
 public struct RequestBuilderClient {
-    public struct Input {
-        public let url: URL
-        
-        public init(url: URL) {
-            self.url = url
-        }
-     }
+//    public struct Input {
+//        public let url: String
+//
+//        public init(url: String) {
+//            self.url = url
+//        }
+//     }
     
-   public let rocketRequest: (Input) throws -> URLRequest
+   public let rocketRequest: () -> Request
 }
 
 extension RequestBuilderClient: DependencyKey {
    public static var liveValue: RequestBuilderClient {
         
         return Self(
-            rocketRequest: { input in
-                var request = URLRequest(url: input.url)
-                request.httpMethod = "GET"
-                return request
+            rocketRequest: {
+//                var request = URLRequest(url: input.url)
+//                request.httpMethod = "GET"
+//                return request
+//
+                return Request(
+                    endpoint: "https://api.spacexdata.com/v4/rockets"
+                )
             }
         )
     }
     
-    public static var testValue = RequestBuilderClient { input in
-        return URLRequest(url: input.url)
+    public static var testValue = RequestBuilderClient {
+        return Request(endpoint: "https://api.spacexdata.com/v4/rockets")
     }
 }

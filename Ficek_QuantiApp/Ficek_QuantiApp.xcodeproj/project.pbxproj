@@ -16,9 +16,6 @@
 		F0E0A99629A96465004760E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F0E0A99529A96465004760E7 /* ComposableArchitecture */; };
 		F0EB21B929DECBFA00AD42F9 /* CombineExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21B829DECBFA00AD42F9 /* CombineExtensions */; };
 		F0EB21C729DECBFA00AD42F9 /* RequestBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB21C629DECBFA00AD42F9 /* RequestBuilder */; };
-		F0FBCB2629AE966D0046D27E /* RockeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBCB2529AE966D0046D27E /* RockeRepositoryTests.swift */; };
-		F0FBCB2829AE9D8B0046D27E /* RockeListDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBCB2729AE9D8B0046D27E /* RockeListDomainTests.swift */; };
-		F0FBCB2A29AEB90E0046D27E /* RocketLaunchDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBCB2929AEB90E0046D27E /* RocketLaunchDomainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +38,6 @@
 		F0E0A96D29A83B24004760E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0E0A97429A83B33004760E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F0FBCB1C29AE96590046D27E /* Ficek_QuantiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ficek_QuantiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0FBCB2529AE966D0046D27E /* RockeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockeRepositoryTests.swift; sourceTree = "<group>"; };
-		F0FBCB2729AE9D8B0046D27E /* RockeListDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockeListDomainTests.swift; sourceTree = "<group>"; };
-		F0FBCB2929AEB90E0046D27E /* RocketLaunchDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchDomainTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +114,6 @@
 		F0FBCB1D29AE96590046D27E /* Ficek_QuantiAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				F0FBCB2529AE966D0046D27E /* RockeRepositoryTests.swift */,
-				F0FBCB2729AE9D8B0046D27E /* RockeListDomainTests.swift */,
-				F0FBCB2929AEB90E0046D27E /* RocketLaunchDomainTests.swift */,
 			);
 			path = Ficek_QuantiAppTests;
 			sourceTree = "<group>";
@@ -247,9 +238,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0FBCB2829AE9D8B0046D27E /* RockeListDomainTests.swift in Sources */,
-				F0FBCB2629AE966D0046D27E /* RockeRepositoryTests.swift in Sources */,
-				F0FBCB2A29AEB90E0046D27E /* RocketLaunchDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +435,10 @@
 		F0FBCB2329AE96590046D27E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					srmv7k,
+				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -465,6 +457,10 @@
 		F0FBCB2429AE96590046D27E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					srmv7k,
+				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

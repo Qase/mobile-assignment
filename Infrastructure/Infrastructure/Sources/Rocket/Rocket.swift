@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: Rocket Struct
-public struct Rocket: Decodable, Equatable, Identifiable{
+public struct Rocket: Codable, Equatable, Identifiable{
     public var id: String
     public var firstFlight: String
     public var height, diameter: Diameter
@@ -84,6 +84,7 @@ public struct SecondStage: Codable, Equatable {
 public enum RocketError: Error {
     case internalError
     case badUrl
+    case networkError
 }
 
 //MARK: Mock data

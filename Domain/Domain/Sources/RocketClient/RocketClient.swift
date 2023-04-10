@@ -6,14 +6,11 @@
 //
 
 import Foundation
-import ComposableArchitecture
 import Dependencies
 import XCTestDynamicOverlay
 import Rocket
 import Combine
 import Networking
-import RequestBuilder
-import NetworkMonitoring
 import APIClient
 import RequestBuilderClient
 
@@ -60,11 +57,6 @@ extension RocketClient: DependencyKey {
     
     public static let testValue = RocketClient(
         fetchAllRockets: unimplemented("RocketRepositoryClient(fetchAllRockets: )")
-//        fetchAllRockets: {
-//            return Just([Rocket].mock)
-//                .setFailureType(to: RocketError.self)
-//                .eraseToAnyPublisher()
-//        }
     )
     
     public static let previewValue = RocketClient(

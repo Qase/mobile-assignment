@@ -1,3 +1,4 @@
 # Domain
 
-A description of this package.
+Domain special targets only for this application
+

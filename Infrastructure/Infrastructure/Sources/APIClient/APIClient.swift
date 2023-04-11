@@ -51,11 +51,3 @@ extension APIClient: DependencyKey {
         request: unimplemented()
         )
 }
-
-
-//let mockHeaders = [HTTPHeader(name: "Content-Type", value: "application/json; charset=utf-8")]
-//let mockBody = try! JSONEncoder().encode([Rocket].mock)
-//
-//return Just<(headers: [HTTPHeader], body: Data)> ((headers: mockHeaders, body: mockBody))
-//    .setFailureType(to: NetworkError.self)
-//    .eraseToAnyPublisher()

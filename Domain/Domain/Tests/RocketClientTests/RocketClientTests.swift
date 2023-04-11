@@ -62,7 +62,7 @@ final class RocketClientTests: XCTestCase {
                     (headers: mockHeaders, body: mockBody))
                 .setFailureType(to: NetworkError.self)
                 .eraseToAnyPublisher()
-            }
+                }
             )
         } operation: {
             RocketClient.liveValue

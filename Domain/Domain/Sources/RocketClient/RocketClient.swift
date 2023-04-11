@@ -38,7 +38,6 @@ extension RocketClient: DependencyKey {
         
         return Self(
             fetchAllRockets: {
-              
                 return apiClient.request(requestBuilder.rocketRequest())
                     .tryMap { (headers, body) -> Data in
                         guard headers["Content-Type"] == "application/json; charset=utf-8" else {

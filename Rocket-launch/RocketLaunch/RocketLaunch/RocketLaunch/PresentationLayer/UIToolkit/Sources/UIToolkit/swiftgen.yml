@@ -1,0 +1,12 @@
+input_dir: Resources
+output_dir: /Users/tomasbrand/Develop/rocket-lunch/RocketLaunch/RocketLaunch/RocketLaunch/PresentationLayer/UIToolkit/Sources/UIToolkit/Resources
+
+xcassets:
+  inputs:
+    - Colors.xcassets
+    - Images.xcassets
+  outputs:
+    - templatePath: swiftgen-xcassets.stencil
+      output: Assets.generated.swift
+      params:
+        publicAccess: true

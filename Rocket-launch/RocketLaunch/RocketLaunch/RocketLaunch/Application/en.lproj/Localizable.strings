@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  RocketLaunch
+
+  Created by Tomáš Brand on 10.04.2023.
+  
+*/
+
+/*  */
+"error_data_load_title" =  "We are sorry, there is error: Data load failed.";
+
+/*  */
+"empty_photos_error_title" = "Photos are empty";
+
+/*  */
+"app_name" = "Rocket Launch";
+
+/*  */
+"rockets_list_title" = "Rockets";
+
+/*  */
+"rocket_cell_subtitle" = "First flyght: %@";
+
+/*  */
+"rockets_empty_screen_title" = "There are not any rockets now. Please, try it later.";
+
+/*  */
+"rocket_launch_button_title" = "Launch";
+
+/*  */
+"rocket_photos_button_title" = "Photos";
+
+/*  */
+"params_section_title" = "Parameters";
+
+/*  */
+"stages_section_title" = "Stages";
+
+/*  */
+"height_value_title" = "height";
+
+/*  */
+"diameter_value_title" = "diameter";
+
+/*  */
+"mass_value_title" = "value";
+
+/*  */
+"first_stage_title" = "First Stage";
+
+/*  */
+"reusable_cell_title" = "reusable";
+
+/*  */
+"not_reusable_cell_title" = "not reusable";
+
+/*  */
+"engines_cell_title" = "%.0f engines";
+
+/*  */
+"one_engine_cell_title" = "1 engine";
+
+/*  */
+"fuel_amount_cell_title" = "%.0f tons of fuel";
+
+/*  */
+"burn_time_cell_title" = "%.0f seconds burn time";
+
+/*  */
+"second_stage_title" = "Second Stage";
+
+/*  */
+"rocket_launch_screen_title" = "Launch";
+
+/*  */
+"rocket_launch_info_text" = "Tilt your phone up to launch the rocket";
+
+/*  */
+"rocket_launch_toast_title" = "Launch successfull!";

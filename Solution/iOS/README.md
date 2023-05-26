@@ -1,7 +1,14 @@
 # iOS solution
 
+## Table of contents
+
+- [Architecture](#architecture)
+- [Clean Architecture principles](#clean-architecture-principles)
+
+## Architecture
+
 <!--
-@startuml iosArchitecture
+@startuml ios-architecture
 
 frame "Domain layer" {
    package "Infrastructure package" #Implementation {
@@ -50,4 +57,8 @@ frame "Presentation layer" {
 
 -->
 
-![](./Docs/Images/iosArchitecture.png)
+![](./Docs/Images/ios-architecture.png)
+
+## Clean Architecture principles
+
+![](./Docs/Images/clean-architecture.png)

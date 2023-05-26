@@ -1,4 +1,4 @@
-# iOS solution
+# iOS Solution
 
 ## Table of contents
 
@@ -73,7 +73,7 @@ frame "Presentation layer" {
 
 ## Clean Architecture principles
 
-Clean Architecture is sometimes wrongly compared to presentation layer architectures such as MVC, MVVM or TCA. Thus it is important to point out that Clean Architecture and presentation layer architectures lay on different
+Clean Architecture (best described in [this Youtube video](https://www.youtube.com/watch?v=2dKZ-dWaCiU&t=174s)) is sometimes wrongly compared to presentation layer architectures such as MVC, MVVM or TCA. Thus it is important to point out that Clean Architecture and presentation layer architectures lay on different
 levels of abstraction. Clean Architecture is highly abstract set of rules that may be applied to any kind of software program. Presentation layer architectures, on the other hand, describe very specific components and the way they communicate with each other.
 
 Clean Architecture basically describes how to decompose the application to various layers to enhance high cohesion and low coupling. Inspired by Clean Architecture, the application is split into multiple packages and targets. It does not use the domain language of Clean Architecture (which by our opinion does not play a significant role) but fully respects its highly refined layering. The proposed layering balances the overhead introduced by the additional layers while preserving its main qualities (testing in isolation, low impact factor on code changes).  

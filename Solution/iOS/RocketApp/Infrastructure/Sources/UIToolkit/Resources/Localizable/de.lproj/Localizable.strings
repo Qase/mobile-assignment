@@ -1,0 +1,27 @@
+// Rocket list
+"rockets" = "Die Raketen!";
+"first_flight %@" = "Der erste Flug!: %@";
+"error" = "Cannot load data, cause:";
+
+// Rocket detail
+"overview" = "Der Überblick!";
+"parameters" = "Die Parameter!";
+"height" = "Die Höhe!";
+"diameter" = "Der DurchMesser!";
+"mass" = "Die Masse!";
+"us_metrics" = "Die schweine amerikanisch metriken!";
+"eu_metrics" = "Die EU metriken!";
+"first_stage" = "Die erste Stuffe!";
+"second_stage" = "Die zweite Stuffe!";
+"reusable" = "Wiederverwenbar!";
+"not_reusable" = "Nicht wiedervervenbar!";
+"engines %lld" = "%lld Motoren!";
+"tons_of_fuel %f" = "%f Tonnen Kraftstoff!";
+"seconds_burn_time %lld" = "%lld Sekunden Brenndauer!";
+"photos" = "Die Fotogalerie!";
+
+// Rocket launch
+"launch" = "Der Start!";
+"tilt_to_launch %@" = "Verbleibende Meter bis zum Start %@";
+"launch_successful" = "Start erfolgreich!";
+"reset_launch" = "Raketenstart zurücksetzen";

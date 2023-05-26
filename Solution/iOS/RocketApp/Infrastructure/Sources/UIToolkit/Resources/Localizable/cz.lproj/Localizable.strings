@@ -1,0 +1,27 @@
+// Rocket list
+"rockets" = "Rakety";
+"first_flight %@" = "První let: %@";
+"error" = "Nelze načíst data, přičina:";
+
+// Rocket detail
+"overview" = "Popis";
+"parameters" = "Parametry";
+"height" = "Výška";
+"diameter" = "Průměr";
+"mass" = "Hmotnost";
+"us_metrics" = "US metrika";
+"eu_metrics" = "EU metrika";
+"first_stage" = "První fáze";
+"second_stage" = "Druhá fáze";
+"reusable" = "Obnovitelný";
+"not_reusable" = "Neobnovitelný";
+"engines %lld" = "%lld Motorů";
+"tons_of_fuel %f" = "%f Tun paliva";
+"seconds_burn_time %lld" = "%lld Vteřin hoření";
+"photos" = "Fotogalerie";
+
+// Rocket launch
+"launch" = "Vypuštění";
+"tilt_to_launch %@" = "Pro vypuštění %@ zbývá metrů:";
+"launch_successful" = "Start úspěšně zahájen!";
+"reset_launch" = "Restartujte let rakety";

@@ -1,0 +1,106 @@
+{% if param.swiftLintDisableRules %}// swiftlint:disable all
+{% endif %}// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+// This is a custom template generated strings keys in extension of LocalizedStringKey 
+// for a convenient using base on SwiftGen template structured-swift5
+{# notes: #}
+{# Stencil will give variable tables which is UNORDEDED collection #}
+{# If you put dash- into construction block it will ignore the newline which will otherwise caused #}
+{# All avaible parameters: #}
+{# noComments = to stop printing translations of the string key as a comment #}
+{# swiftLintDisableRules = for disabling swiftlint rules #}
+{# bundleModule = for adding special init with bundle module #}
+{# publicAccess = for printing public access modifier for example for SPM #}
+
+{# Implementations #}
+{# create variable for public access when parameter "publicAcces" in config file is set to "true" #}
+{% set accessModifier %}{% if param.publicAccess %}public {% endif %}{% endset %}
+{# Macro for removing literals %@ and %lld from strings #}
+{% macro removeLiterals string %}{{ string|replace:' %@',''|replace:' %lld',''|replace:' %f','' }}{% endmacro %}
+{# Macro for printing localization with parameters, so it write each parameters with corensponding type: %@ - String and %lld - Int #}
+{% macro parametersBlock types %}
+    {%- for type in types -%}
+    {%- if type == "String" -%}
+    _ param{{ forloop.counter }}: String
+    {%- elif type == "Float" -%}
+    _ param{{ forloop.counter }}: Float
+    {%- else -%}
+    _ param{{ forloop.counter }}: {{type}}
+    {%- endif -%}
+    {{ ", " if not forloop.last }}
+    {%- endfor -%}
+{% endmacro %}
+{%- macro parametersBlock2 types -%}
+    [{% for type in types %}param{{ forloop.counter }}{{ ", " if not forloop.last }}{% endfor %}]
+{%- endmacro -%}
+{# Macro for printing LocalizedStringKey with parameters in format "stringKey \(p) ..." #}
+{% macro argumentsBlock types %}
+    {%- for type in types -%}
+    \(p{{ forloop.counter }}){{ " " if not forloop.last }}
+    {%- endfor -%}
+{% endmacro %}
+{# Macro for splitting localization key by dot(.) and create tree of enumarations with extra parameters "shouldHaveAccessModifier" #}
+{# It's for printing access control modifier in nested enumarations because in the extension is redudant #}
+{% macro recursiveBlock item shouldHaveAccessModifier %}
+  {% for string in item.strings %}
+  {# Write localization as a comment for specified language #}
+  {% if not param.noComments %}
+  {% for line in string.comment|default:string.translation|split:"\n" %}
+  /// {{ line }}
+  {% endfor %}
+  {% endif %}
+  {% set currentAccessModifier %}{% if shouldHaveAccessModifier %}{{ accessModifier }}{% endif %}{% endset %}
+  {% if string.types %}
+  {% set stringName %}{{ string.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords|replace:'Lld','' }}{% endset %}
+  {# Print static func for localization with parameters #}
+  {{ currentAccessModifier }}static func {{ stringName }}({% call parametersBlock string.types %}) -> LocalizedStringKey {
+      {% if param.bundleModule %}
+      "{{ string.key }}".localizedStringKey(with: {% call parametersBlock2 string.types %})
+      {% else %}
+      "{% call removeLiterals string.key %} {%+ call argumentsBlock string.types %}"
+      {% endif %}
+  }
+  {% else %}
+  {# Otherwise print static constant for localization without parameters #}
+  {{ currentAccessModifier }}static let {{ string.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords }}: LocalizedStringKey = "{{ string.key }}"{% if param.bundleModule %}.localizedStringKey{% endif %}
+  {% endif %}
+  {% endfor %}
+  {% for child in item.children %}
+  {# Print nested enumaration #}
+  enum {{ child.name|swiftIdentifier:"pretty"|escapeReservedKeywords }} {
+      {% filter indent:4," ",true %}{% call recursiveBlock child true %}{% endfilter %}
+  }
+  {% endfor %}
+{% endmacro %}
+{# Implementations #}
+{# body #}
+{% if tables.count > 0 %}
+import SwiftUI
+
+// MARK: - LocalizedStringKey+
+
+{# Print the main block as extension of LocalizedStringKey #}
+{{ accessModifier }}extension LocalizedStringKey {
+    {% call recursiveBlock tables.first.levels false %}
+}
+{% if param.bundleModule %}
+
+{{ accessModifier }}extension String {
+  var nsLocalizedString: String {
+      NSLocalizedString(self, bundle: .module, comment: "")
+  }
+
+  var localizedStringKey: LocalizedStringKey {
+      LocalizedStringKey(nsLocalizedString)
+  }
+
+  func localizedStringKey(with arguments: [CVarArg]) -> LocalizedStringKey {
+      let localizedString = String.localizedStringWithFormat(nsLocalizedString, arguments)
+      return LocalizedStringKey(localizedString)
+  }
+}
+{% endif %}
+{% else %}
+// No string found
+{% endif %}
+{% if param.swiftLintDisableRules %}// swiftlint:enable all{% endif %}
+{# body #}

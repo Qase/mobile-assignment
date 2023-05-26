@@ -1,0 +1,27 @@
+// Rocket list
+"rockets" = "Rockets";
+"first_flight %@" = "First flight: %@";
+"error" = "Kann nicht das Data einladen, die Ursache:";
+
+// Rocket detail
+"overview" = "Overview";
+"parameters" = "Parameters";
+"height" = "Height";
+"diameter" = "Diameter";
+"mass" = "Mass";
+"us_metrics" = "US metrics";
+"eu_metrics" = "EU metrics";
+"first_stage" = "First stage";
+"second_stage" = "Second stage";
+"reusable" = "Reusable";
+"not_reusable" = "Not reusable";
+"engines %lld" = "%lld Engines";
+"tons_of_fuel %f" = "%f Tons of fuel";
+"seconds_burn_time %lld" = "%lld Seconds burn-time";
+"photos" = "Photos";
+
+// Rocket launch
+"launch" = "Launch";
+"tilt_to_launch %@" = "Meters remaining to launch %@:";
+"launch_successful" = "Launch successful!";
+"reset_launch" = "Reset rocket launch";

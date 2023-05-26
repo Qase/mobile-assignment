@@ -1,0 +1,10 @@
+<svg id="arrow_right_blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Group_7406" data-name="Group 7406" transform="translate(-1296.153 -1506.773)">
+    <g id="Union_1" data-name="Union 1">
+      <path id="Path_21998" data-name="Path 21998" d="M1306.153,1524.773a1,1,0,0,1-.707-1.707l4.292-4.293-4.292-4.293a1,1,0,0,1,1.414-1.414l5,5a1,1,0,0,1,0,1.414l-5,5A1,1,0,0,1,1306.153,1524.773Z" fill="#4a80f6"/>
+    </g>
+  </g>
+  <g id="Rectangle_6076" data-name="Rectangle 6076" transform="translate(-1296.153 -1506.773)">
+    <rect id="Rectangle_9106" data-name="Rectangle 9106" width="24" height="24" transform="translate(1296.153 1506.773)" fill="none"/>
+  </g>
+</svg>

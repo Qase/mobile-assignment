@@ -1,0 +1,73 @@
+{
+  "configurations" : [
+    {
+      "id" : "783DD449-CAEA-41F7-96EA-2FABA4938C47",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Domain",
+        "identifier" : "RocketsClientTests",
+        "name" : "RocketsClientTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Features",
+        "identifier" : "RocketDetailTests",
+        "name" : "RocketDetailTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Features",
+        "identifier" : "RocketLaunchTests",
+        "name" : "RocketLaunchTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Features",
+        "identifier" : "RocketListCellTests",
+        "name" : "RocketListCellTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Features",
+        "identifier" : "RocketListTests",
+        "name" : "RocketListTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Infrastructure",
+        "identifier" : "CoreToolkitTests",
+        "name" : "CoreToolkitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Infrastructure",
+        "identifier" : "TCAExtensionsTests",
+        "name" : "TCAExtensionsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RocketApp\/Infrastructure",
+        "identifier" : "UIToolkitTests",
+        "name" : "UIToolkitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

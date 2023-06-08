@@ -13,11 +13,9 @@ public struct RocketListView: View {
 
   struct ViewState: Equatable {
     var loadingStatus: Loadable<IdentifiedArrayOf<RocketListCellCore.State>, RocketsClientAsyncError>
-    var isRouteActive: Bool
 
     init(state: RocketListCore.State) {
       self.loadingStatus = state.loadingStatus
-      self.isRouteActive = state.route != nil
     }
   }
 
@@ -52,17 +50,12 @@ public struct RocketListView: View {
     }
     .listStyle(.sidebar)
     .navigationDestination(
-      isPresented: viewStore.binding(
-        get: { $0.isRouteActive },
-        send: RocketListCore.Action.setNavigation(isActive:)
+      store: self.store.scope(
+        state: \.$rocketDetail,
+        action: { .rocketDetail($0)}
       )
-    ) { destination }
-  }
-
-  @ViewBuilder
-  private var destination: some View {
-    IfLetStore(store.scope(state: \.rocketDetailState, action: RocketListCore.Action.rocketDetail)) {
-      RocketDetailView(store: $0)
+    ) { store in
+      RocketDetailView(store: store)
     }
   }
 

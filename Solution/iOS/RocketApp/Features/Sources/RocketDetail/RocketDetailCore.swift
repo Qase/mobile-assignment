@@ -32,11 +32,7 @@ public struct RocketDetailCore: ReducerProtocol {
       case .setToUSMetrics:
         state.isUSMetrics.toggle()
         return .none
-        
-      case .rocketLaunch(.dismiss):
-        state.rocketLaunch = nil
-        return .none
-        
+      
       case .rocketLaunch:
         return .none
       }

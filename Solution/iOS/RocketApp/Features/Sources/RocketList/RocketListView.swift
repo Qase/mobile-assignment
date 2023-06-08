@@ -44,7 +44,12 @@ public struct RocketListView: View {
   @ViewBuilder
   private func rocketsListView(rocketData: IdentifiedArrayOf<RocketListCellCore.State>) -> some View {
     List {
-      ForEachStore(store.scope(state: \.loadingStatus.arrayData, action: RocketListCore.Action.rocketListCell)) {
+      ForEachStore(
+        store.scope(
+          state: \.loadingStatus.arrayData,
+          action: RocketListCore.Action.rocketListCell
+        )
+      ) {
         RocketListCellView(store: $0)
       }
     }
@@ -52,7 +57,7 @@ public struct RocketListView: View {
     .navigationDestination(
       store: self.store.scope(
         state: \.$rocketDetail,
-        action: { .rocketDetail($0)}
+        action: { .rocketDetail($0) }
       )
     ) { store in
       RocketDetailView(store: store)

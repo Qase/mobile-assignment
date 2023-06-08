@@ -57,9 +57,7 @@ public struct RocketListCore: ReducerProtocol {
       case let .dataFetched(.failure(error)):
         state.loadingStatus = .failure(RocketsClientAsyncError(from: error))
         return .none
-      case .rocketDetail(.dismiss):
-        state.rocketDetail = nil
-        return .none
+     
       case .rocketDetail:
         return .none
       }

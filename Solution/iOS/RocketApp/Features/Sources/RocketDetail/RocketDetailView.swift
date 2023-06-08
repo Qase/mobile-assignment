@@ -101,7 +101,7 @@ public struct RocketDetailView: View {
     .navigationDestination(
       store: self.store.scope(
         state: \.$rocketLaunch,
-        action: { .rocketLaunch($0)}
+        action: { .rocketLaunch($0) }
       )
     ) { store in
       RocketLaunchView(store: store)

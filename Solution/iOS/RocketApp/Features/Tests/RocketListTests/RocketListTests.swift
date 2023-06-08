@@ -15,13 +15,11 @@ final class RocketListTests: XCTestCase {
     store = TestStore(initialState: state, reducer: RocketListCore())
 
     store.send(.rocketListCell(id: "apollo13", action: .cellTapped)) {
-      $0.route = .rocketDetail(.init(rocketData: RocketDetail.mock))
+      $0.rocketDetail = .init(rocketData: RocketDetail.mock)
     }
 
-    store.send(.setNavigation(isActive: true))
-
-    store.send(.setNavigation(isActive: false)) {
-      $0.route = nil
+    store.send(.rocketDetail(.dismiss)) {
+      $0.rocketDetail = nil
     }
   }
 

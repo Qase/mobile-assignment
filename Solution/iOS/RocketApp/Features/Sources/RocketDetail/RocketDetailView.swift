@@ -12,8 +12,6 @@ public struct RocketDetailView: View {
     var rocketData: RocketDetail
     var isUSMetrics: Bool
     var toggleName: LocalizedStringKey
-    var rocketLaunchState: RocketLaunchCore.State?
-    var isRouteActive: Bool
     var firstStageItems: [StageItem]
     var secondStageItems: [StageItem]
 
@@ -27,8 +25,6 @@ public struct RocketDetailView: View {
       self.rocketData = state.rocketData
       self.isUSMetrics = state.isUSMetrics
       self.toggleName = self.isUSMetrics ? .usMetrics : .euMetrics
-      self.rocketLaunchState = state.rocketLaunchState
-      self.isRouteActive = state.route != nil
 
       self.firstStageItems =
       [
@@ -103,20 +99,15 @@ public struct RocketDetailView: View {
     .navigationTitle(viewStore.rocketData.name)
     .navigationBarItems(trailing: Button(.launch) { viewStore.send(.rocketLaunchTapped) })
     .navigationDestination(
-      isPresented: viewStore.binding(
-        get: { $0.isRouteActive },
-        send: RocketDetailCore.Action.setNavigation(isActive:)
+      store: self.store.scope(
+        state: \.$rocketLaunch,
+        action: { .rocketLaunch($0)}
       )
-    ) { destination }
-  }
-
-  @ViewBuilder
-  private var destination: some View {
-    IfLetStore(store.scope(state: \.rocketLaunchState, action: RocketDetailCore.Action.rocketLaunch)) {
-      RocketLaunchView(store: $0)
+    ) { store in
+      RocketLaunchView(store: store)
     }
   }
-
+  
   @ViewBuilder
   private func section<V: View>(_ caption: LocalizedStringKey, _ content: @escaping () -> V) -> some View {
     VStack(alignment: .leading, spacing: 8) {

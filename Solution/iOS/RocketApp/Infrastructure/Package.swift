@@ -34,7 +34,7 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/Qase/swift-core", branch: "develop"),
     .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "0.1.4"),
-    .package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.5.0")),
+    .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.5.0"),
     .package(url: "https://github.com/pointfreeco/composable-core-motion", from: "0.1.0")
   ],
 

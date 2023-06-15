@@ -9,39 +9,16 @@ import RocketsClient
 public struct RocketListCore: ReducerProtocol {
   public struct State: Equatable {
     var loadingStatus: Loadable<IdentifiedArrayOf<RocketListCellCore.State>, RocketsClientAsyncError> = .notRequested
-
-    var route: Route?
-
-    // swiftlint:disable:next nesting
-    enum Route: Equatable {
-      case rocketDetail(RocketDetailCore.State)
-    }
-
-    var rocketDetailState: RocketDetailCore.State? {
-      get {
-        if case let .rocketDetail(state) = route {
-          return state
-        } else {
-          return nil
-        }
-      }
-
-      set {
-        if case let .rocketDetail(state) = route {
-          route = .rocketDetail(newValue ?? state)
-        }
-      }
-    }
-
+    @PresentationState var rocketDetail: RocketDetailCore.State?
+   
     public init() {}
   }
 
   public enum Action: Equatable {
     case rocketListCell(id: RocketListCellCore.State.RocketID, action: RocketListCellCore.Action)
-    case setNavigation(isActive: Bool)
-    case rocketDetail(RocketDetailCore.Action)
     case fetchData
     case dataFetched(TaskResult<[RocketDetail]>)
+    case rocketDetail(PresentationAction<RocketDetailCore.Action>)
   }
 
   public init() {}
@@ -57,17 +34,7 @@ public struct RocketListCore: ReducerProtocol {
           return .none
         }
 
-        state.route = .rocketDetail(.init(rocketData: rocketData.rocketData))
-        return .none
-
-      case .setNavigation(isActive: true):
-        return .none
-
-      case .setNavigation(isActive: false):
-        state.route = nil
-        return .none
-
-      case .rocketDetail:
+        state.rocketDetail = .init(rocketData: rocketData.rocketData)
         return .none
 
       case .fetchData:
@@ -90,10 +57,13 @@ public struct RocketListCore: ReducerProtocol {
       case let .dataFetched(.failure(error)):
         state.loadingStatus = .failure(RocketsClientAsyncError(from: error))
         return .none
+     
+      case .rocketDetail:
+        return .none
       }
     }
     .forEach(\.loadingStatus.arrayData, action: /Action.rocketListCell) { RocketListCellCore() }
-    .ifLet(\.rocketDetailState, action: /Action.rocketDetail) { RocketDetailCore() }
+    .ifLet(\.$rocketDetail, action: /Action.rocketDetail) { RocketDetailCore() }
   }
 }
 

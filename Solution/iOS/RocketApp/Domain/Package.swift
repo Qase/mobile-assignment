@@ -17,7 +17,8 @@ let package = Package(
   dependencies: [
     .package(path: "../Infrastructure"),
     .package(url: "https://github.com/Qase/swift-core", branch: "develop"),
-    .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "0.1.4")
+    .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "0.1.4"),
+    .package(path: "../../fetchRockets")
   ],
 
   targets: [
@@ -31,7 +32,8 @@ let package = Package(
         .product(name: "ModelConvertible", package: "swift-core"),
         .product(name: "Networking", package: "swift-core"),
         .product(name: "RequestBuilder", package: "swift-core"),
-        .product(name: "Dependencies", package: "swift-dependencies")
+        .product(name: "Dependencies", package: "swift-dependencies"),
+        .product(name: "KMMmodule", package: "fetchRockets")
       ]
     ),
     .testTarget(

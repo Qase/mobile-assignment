@@ -2,7 +2,8 @@ import Dependencies
 import Foundation
 
 enum RocketsClientKey: DependencyKey {
-  public static let liveValue: RocketsClient = .liveAsync
+  @MainActor 
+  public static let liveValue: RocketsClient = .liveKMM
   #if DEBUG
   public static let testValue: RocketsClient = .test
   #endif
@@ -15,3 +16,4 @@ public extension DependencyValues {
     set { self[RocketsClientKey.self] = newValue }
   }
 }
+

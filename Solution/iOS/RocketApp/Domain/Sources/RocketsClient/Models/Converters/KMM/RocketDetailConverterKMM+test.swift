@@ -3,55 +3,39 @@ import Dependencies
 import ModelConvertible
 import KMMmodule
 
-public extension RocketDetailConverter {
+public extension RocketDetailConverterKMM {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension RocketsDetailConverter {
+public extension RocketsDetailConverterKMM {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension LineMeasureConverter {
+public extension LineMeasureConverterKMM {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension WeightScaleConverter {
+public extension WeightScaleConverterKMM {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension StageConverter {
+public extension StageConverterKMM {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-
-//KMM
-
-public extension RocketDetailConverter2 {
-  static let test = Self(
-    externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
-    domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
-  )
-}
-
-public extension RocketsDetailConverter2 {
-  static let test = Self(
-    externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
-    domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
-  )
-}
 #endif

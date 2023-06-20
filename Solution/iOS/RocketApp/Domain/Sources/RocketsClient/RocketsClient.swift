@@ -1,6 +1,5 @@
 import Combine
 import Foundation
-import KMMmodule
 
 public struct RocketsClient {
   public typealias GetRocketFunction = (String) async throws -> RocketDetail

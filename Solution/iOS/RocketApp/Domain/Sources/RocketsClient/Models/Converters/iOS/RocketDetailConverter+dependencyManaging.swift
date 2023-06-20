@@ -71,34 +71,3 @@ public extension DependencyValues {
     set { self[StageConverterKey.self] = newValue }
   }
 }
-
-
-//KMM
-
-enum RocketConverterKey2: DependencyKey {
-  static let liveValue: RocketDetailConverter2 = .live
-  #if DEBUG
-  static let testValue: RocketDetailConverter2 = .test
-  #endif
-}
-
-public extension DependencyValues {
-  var rocketConverter2: RocketDetailConverter2 {
-    get { self[RocketConverterKey2.self] }
-    set { self[RocketConverterKey2.self] = newValue }
-  }
-}
-
-enum RocketsConverterKey2: DependencyKey {
-  static let liveValue: RocketsDetailConverter2 = .live
-  #if DEBUG
-  static let testValue: RocketsDetailConverter2 = .test
-  #endif
-}
-
-public extension DependencyValues {
-  var rocketsConverter2: RocketsDetailConverter2 {
-    get { self[RocketsConverterKey2.self] }
-    set { self[RocketsConverterKey2.self] = newValue }
-  }
-}

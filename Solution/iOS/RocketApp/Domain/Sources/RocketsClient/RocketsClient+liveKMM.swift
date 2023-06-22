@@ -26,11 +26,50 @@ public extension RocketsClient {
         return result
       },
       getAllRockets: {
-        let rockets = try await rocketApi.fetchAllRockets()
-        guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
-          throw RocketsClientAsyncError.modelConversionError
+        do {
+          let rockets = try await rocketApi.fetchAllRockets()
+          guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
+            throw RocketsClientAsyncError.modelConversionError
+          }
+          return result
+
+        } catch let error as KotlinException {
+          if let rocketError = error.cause as? RocketException {
+            switch rocketError {
+            case _ as RocketException.NetworkError:
+              throw RocketsClientAsyncError.networkError(.noConnection)
+            default:
+              print("🥶🥶🥶🥶🥶 \(error) 🥶🥶🥶🥶🥶")
+              throw RocketsClientAsyncError.undefinedError
+            }
+          } else {
+            throw RocketsClientAsyncError.networkError(.unauthorized)
+          }
+        } catch let error {
+          print("🥶🥶🥶🥶🥶 \(error) 🥶🥶🥶🥶🥶")
+          throw RocketsClientAsyncError.networkError(.invalidResponse)
         }
-        return result
+//        rocketApi.fetchRockets { rockets in
+//          guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
+//            throw RocketsClientAsyncError.modelConversionError
+//          }
+//
+//          return result
+//        } failure: { error in
+//          switch error {
+//          case _ as RocketException.HttpError:
+//            throw RocketsClientAsyncError.networkError(.noConnection)
+//          default:
+//            throw RocketsClientAsyncError.undefinedError
+//          }
+//        }
+
+//        let rockets = try await rocketApi.fetchAllRockets()
+//
+//        guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
+//          throw RocketsClientAsyncError.modelConversionError
+//        }
+//        return result
       }
     )
   }

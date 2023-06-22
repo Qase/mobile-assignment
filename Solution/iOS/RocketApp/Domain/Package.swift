@@ -18,7 +18,7 @@ let package = Package(
     .package(path: "../Infrastructure"),
     .package(url: "https://github.com/Qase/swift-core", branch: "develop"),
     .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "0.1.4"),
-    .package(path: "../../fetchRockets")
+    .package(url: "https://github.com/yOoZZyOzzbourne/fetchRockets.git", branch: "master")
   ],
 
   targets: [

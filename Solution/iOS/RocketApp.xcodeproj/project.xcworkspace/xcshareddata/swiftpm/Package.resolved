@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "fetchrockets",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yOoZZyOzzbourne/fetchRockets.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "81dbc59657c28fc89617ef9e4e48a822a527f62e"
+      }
+    },
+    {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",

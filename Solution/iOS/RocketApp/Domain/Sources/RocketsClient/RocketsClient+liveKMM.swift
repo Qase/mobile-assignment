@@ -6,8 +6,9 @@ import NetworkClientExtensions
 import Networking
 import RequestBuilder
 import KMMmodule
+import KMPNativeCoroutinesCore
+import KMPNativeCoroutinesAsync
 
-@MainActor
 public extension RocketsClient {
   static var liveKMM: Self {
     @Dependency(\.rocketConverterKMM) var rocketConverterKMM
@@ -18,7 +19,7 @@ public extension RocketsClient {
     
     return Self(
       getRocket: { id in
-        let rocket = try await rocketApi.fetchRocketById(rocketId: id)
+        let rocket = try await asyncFunction(for: rocketApi.fetchRocketById(rocketId: id))
         guard let result = rocketConverterKMM.domainModel(fromExternal: rocket) else {
           throw RocketsClientAsyncError.modelConversionError
         }
@@ -26,50 +27,37 @@ public extension RocketsClient {
         return result
       },
       getAllRockets: {
-        do {
-          let rockets = try await rocketApi.fetchAllRockets()
-          guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
+        //MARK: asyncResult
+        let rockets = await asyncResult(for: rocketApi.fetchAllRockets())
+        switch rockets {
+        case let .success(rockets):
+          print(rockets)
+          guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets as! [RocketKMM]) else {
             throw RocketsClientAsyncError.modelConversionError
           }
           return result
 
-        } catch let error as KotlinException {
-          if let rocketError = error.cause as? RocketException {
-            switch rocketError {
-            case _ as RocketException.NetworkError:
-              throw RocketsClientAsyncError.networkError(.noConnection)
-            default:
-              print("🥶🥶🥶🥶🥶 \(error) 🥶🥶🥶🥶🥶")
-              throw RocketsClientAsyncError.undefinedError
-            }
-          } else {
-            throw RocketsClientAsyncError.networkError(.unauthorized)
-          }
-        } catch let error {
-          print("🥶🥶🥶🥶🥶 \(error) 🥶🥶🥶🥶🥶")
-          throw RocketsClientAsyncError.networkError(.invalidResponse)
+        case .failure:
+          throw RocketsClientAsyncError.undefinedError
         }
-//        rocketApi.fetchRockets { rockets in
-//          guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
+        
+        //MARK: asyncFunction
+//        do {
+//          let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
+//          guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets as! [RocketKMM]) else {
 //            throw RocketsClientAsyncError.modelConversionError
 //          }
 //
 //          return result
-//        } failure: { error in
-//          switch error {
-//          case _ as RocketException.HttpError:
-//            throw RocketsClientAsyncError.networkError(.noConnection)
-//          default:
+//        } catch {
+//          print(error)
+//          if error is RocketException {
 //            throw RocketsClientAsyncError.undefinedError
+//          } else if error is KotlinException {
+//            throw RocketsClientAsyncError.modelConversionError
 //          }
+//          throw RocketsClientAsyncError.networkError(.invalidResponse)
 //        }
-
-//        let rockets = try await rocketApi.fetchAllRockets()
-//
-//        guard let result = rocketsConverterKMM.domainModel(fromExternal: rockets) else {
-//          throw RocketsClientAsyncError.modelConversionError
-//        }
-//        return result
       }
     )
   }

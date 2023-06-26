@@ -2,7 +2,7 @@ import Dependencies
 import Foundation
 
 enum RocketsClientKey: DependencyKey {
-  @MainActor
+  
   public static let liveValue: RocketsClient = .liveKMM
   #if DEBUG
   public static let testValue: RocketsClient = .test

@@ -29,11 +29,7 @@ final class RocketsClientLiveKMMTests: XCTestCase {
   }
 
   func test_rocket_request_failure() async {
-    let requesterMock = URLRequester { _ in
-      Fail(error: URLError(.badServerResponse))
-        .eraseToAnyPublisher()
-    }
-
+    
     await withDependencies { _ in
     } operation: {
       do {

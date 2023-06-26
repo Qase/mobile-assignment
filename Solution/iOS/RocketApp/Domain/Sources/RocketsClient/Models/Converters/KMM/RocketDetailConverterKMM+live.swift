@@ -22,7 +22,7 @@ public extension WeightScaleConverterKMM {
 public extension StageConverterKMM {
   static var live = Self(
     domainModelConverter: {
-      RocketDetail.Stage(reusable: $0.reusable, engines: Int($0.engines), fuelMass: $0.fuelMass, burnTime: $0.burnTime as? Int)
+      RocketDetail.Stage(reusable: $0.reusable, engines: Int($0.engines), fuelMass: $0.fuelMass, burnTime: $0.burnTime?.intValue)
     }
   )
 }

@@ -24,7 +24,25 @@
       "location" : "https://github.com/yOoZZyOzzbourne/fetchRockets.git",
       "state" : {
         "branch" : "master",
-        "revision" : "81dbc59657c28fc89617ef9e4e48a822a527f62e"
+        "revision" : "0a4d8b1326e3d0a2730c4793aa6be95de5a90726"
+      }
+    },
+    {
+      "identity" : "kmp-nativecoroutines",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rickclephas/KMP-NativeCoroutines.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d49f5ce8b4377c94dbda7e09823485d66a9ae404"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
       }
     },
     {

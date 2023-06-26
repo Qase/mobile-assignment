@@ -18,7 +18,8 @@ let package = Package(
     .package(path: "../Infrastructure"),
     .package(url: "https://github.com/Qase/swift-core", branch: "develop"),
     .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "0.1.4"),
-    .package(url: "https://github.com/yOoZZyOzzbourne/fetchRockets.git", branch: "master")
+    .package(url: "https://github.com/yOoZZyOzzbourne/fetchRockets.git", branch: "master"),
+    .package(url: "https://github.com/rickclephas/KMP-NativeCoroutines.git", branch: "master")
   ],
 
   targets: [
@@ -33,7 +34,9 @@ let package = Package(
         .product(name: "Networking", package: "swift-core"),
         .product(name: "RequestBuilder", package: "swift-core"),
         .product(name: "Dependencies", package: "swift-dependencies"),
-        .product(name: "KMMmodule", package: "fetchRockets")
+        .product(name: "KMMmodule", package: "fetchRockets"),
+        .product(name: "KMPNativeCoroutinesCore", package: "KMP-NativeCoroutines"),
+        .product(name: "KMPNativeCoroutinesAsync", package: "KMP-NativeCoroutines")
       ]
     ),
     .testTarget(

@@ -21,6 +21,7 @@ public extension RocketsClient {
       getRocket: { id in
         do {
           let rocket = try await asyncFunction(for: rocketApi.fetchRocketById(rocketId: id))
+          //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
           if let success = rocket as? RocketResultSuccess<AnyObject> {
             guard let result = rocketConverterKMM.domainModel(fromExternal: success.data as! RocketKMM) else {
               throw RocketsClientAsyncError.modelConversionError
@@ -39,6 +40,7 @@ public extension RocketsClient {
       getAllRockets: {
         do {
           let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
+          //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
           if let success = rockets as? RocketResultSuccess<AnyObject> {
             guard let result = rocketsConverterKMM.domainModel(fromExternal: success.data as! [RocketKMM]) else {
               throw RocketsClientAsyncError.modelConversionError

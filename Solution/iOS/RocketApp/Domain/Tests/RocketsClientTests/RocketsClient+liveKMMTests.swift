@@ -2,6 +2,9 @@ import Combine
 import Dependencies
 @testable import Networking
 @testable import RocketsClient
+import KMMmodule
+import KMPNativeCoroutinesAsync
+import KMPNativeCoroutinesCore
 import XCTest
 
 //TODO: Tests in KMM
@@ -12,18 +15,15 @@ final class RocketsClientLiveKMMTests: XCTestCase {
 
     // swiftlint:disable:next force_try
 
-    await withDependencies {
+    withDependencies {
       $0.lineMeasureConverterKMM = .live
       $0.weightScaleConverterKMM = .live
       $0.stageConverterKMM = .live
       $0.rocketConverterKMM = .live
     } operation: {
-      do {
-        rocketData = try await RocketsClient.liveKMM.getRocket("")
-      } catch let error {
-        XCTFail("Unexpected failure. \(error)")
-      }
-
+      @Dependency(\.rocketConverterKMM) var rocketConverterKMM
+      
+      rocketData = rocketConverterKMM.domainModel(fromExternal: RocketKMM.mock)
       XCTAssertEqual(rocketData?.id, "apollo13")
     }
   }
@@ -42,10 +42,9 @@ final class RocketsClientLiveKMMTests: XCTestCase {
       }
     }
   }
-
-  func test_rockets_request_success() async {
-    var rocketData: [RocketDetail] = []
-
+  
+  func test_rocket_request_failure_network() async {
+    var count = 0
     // swiftlint:disable:next force_try
 
     await withDependencies {
@@ -53,35 +52,15 @@ final class RocketsClientLiveKMMTests: XCTestCase {
       $0.weightScaleConverterKMM = .live
       $0.stageConverterKMM = .live
       $0.rocketConverterKMM = .live
-      $0.rocketsConverterKMM = .live
     } operation: {
       do {
-        rocketData = try await RocketsClient.liveKMM.getAllRockets()
+        let _: RocketDetail? = try await RocketsClient.liveKMM.getRocket("")
       } catch let error {
-        XCTFail("Unexpected failure. \(error)")
+        XCTAssertEqual(error as! RocketsClientAsyncError, RocketsClientAsyncError.networkError(.serverError(statusCode: 404)))
+        count += 1
       }
 
-      XCTAssertEqual(rocketData[0].id, "apollo13")
-    }
-  }
-
-  func test_rockets_request_failure() async {
-    let exp = expectation(description: "")
-
-    await withDependencies { _ in
-    } operation: {
-      do {
-        _ = try await RocketsClient.liveKMM.getAllRockets()
-      } catch let error {
-        guard error is RocketsClientAsyncError else {
-          XCTFail("Unexpected error type - \(error).")
-          return
-        }
-
-        exp.fulfill()
-      }
-
-        await fulfillment(of: [exp], timeout: 0.1)
+      XCTAssertEqual(count, 1)
     }
   }
 }

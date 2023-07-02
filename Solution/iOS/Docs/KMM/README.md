@@ -16,6 +16,8 @@
     - [Error hadling](#error-handling) 
 - [Useful links](#useful-links)
 
+ ![](./Docs/Images/iosArchitecture.png)
+
 ## Introduction
 - Download **Android Studio**, add **Kotlin Multiplatform Mobile** plugin
 - **Create Kotlin Multiplatform Library**
@@ -155,7 +157,7 @@ Before delving into the plugin's description, let's take a moment to understand 
 
 - Within the entire project structure, there are two main files where you manage dependencies and plugins, similar to the `Package` file in Xcode. These files are named `build.gradle.kts`. One resides inside the KMM module, while the other is located in the root directory.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/30962b43-ee0e-400c-aed4-792d34f4f1da/Untitled.png)
+    ![](./Docs/KMM/Images/entireProjectStruct)
     
 - The key distinction is that the root project does not contain any source code. It is used to store global configurations in its `build.gradle.kts` file. On the other hand, the **KMM module'**s `build.gradle.kts` file is where code-specific dependencies and plugins are added. Consequently, the *gradle* file in the **KMM module** tends to be more complex.
     - Quick tip: If you are uncertain about where to place the plugin, consider including it in both *gradle* files.

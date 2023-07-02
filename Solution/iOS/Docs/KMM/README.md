@@ -1,5 +1,9 @@
 # Kotlin Multiplatform Mobile
+Another solution of **RocketApp** is now available, utilizing the new framework KMM (Kotlin Multiplatform Mobile). We have prepared a comprehensive guide to help you work with and gain a better understanding of the cross-platform development approach for building mobile apps. This guide provides step-by-step instructions for integrating KMM into your project and addresses common issues you may encounter along the way.
 
+ You can find the repository for this app and its showcase here:
+  [Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/fetchRockets)
+ 
 ## Table of contents
 
 - [Introduction](#introduction)
@@ -62,7 +66,6 @@
     ```
     *commonMain*
     
-    like so:
     ```kotlin
     package com.example.fetchrockets
     import platform.UIKit.UIDevice
@@ -85,7 +88,7 @@ This article aims to provide perspective on two ways of using the KMM library in
 
 Let's dive into the details and explore the two different approaches of utilizing the KMM library in an Xcode package.
   ### Version 1 - Local file or Local Package
-  - Add the KMM shared library as a folder into the app’s root directory ( In my case *fetchRockets* )
+  - Add the KMM shared library as a folder into the app’s root directory ( In my case `fetchRockets` )
     
     ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/iosRootDir.png)
     
@@ -94,8 +97,8 @@ Let's dive into the details and explore the two different approaches of utilizin
 - Add this script into **Build Phases**
     
     ```swift
-    cd "$SRCROOT/**nameOfSharedLibrary**"
-    ./gradlew :**nameOfSharedModule**:embedAndSignAppleFrameworkXcode
+    cd "$SRCROOT/nameOfSharedLibrary"
+    ./gradlew :nameOfSharedModule:embedAndSignAppleFrameworkXcode
     ```
     
    ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/buildPhases.png)

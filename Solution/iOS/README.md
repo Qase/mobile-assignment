@@ -4,7 +4,7 @@
 
 - [Architecture](#architecture)
 - [Clean Architecture principles](#clean-architecture-principles)
-- [Kotlin Multiplatform Mobile](Solution/iOS/Docs/KMM/README.md)
+- [Kotlin Multiplatform Mobile](https://github.com/Qase/mobile-assignment/blob/853d20936c0619913ff780ad2160350e27c0cafd/Solution/iOS/Docs/KMM/README.md)
 
 ## Architecture
 

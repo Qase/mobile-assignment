@@ -3,35 +3,35 @@ import Dependencies
 import ModelConvertible
 import fetchRockets
 
-public extension RocketDetailConverterKMM {
+public extension RocketDetailKMMConverter {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension RocketsDetailConverterKMM {
+public extension RocketsDetailKMMConverter {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension LineMeasureConverterKMM {
+public extension LineMeasureKMMConverter {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension WeightScaleConverterKMM {
+public extension WeightScaleKMMConverter {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")
   )
 }
 
-public extension StageConverterKMM {
+public extension StageKMMConverter {
   static let test = Self(
     externalModelConverter: unimplemented("\(Self.self).externalModelConverter"),
     domainModelConverter: unimplemented("\(Self.self).domainModelConverter")

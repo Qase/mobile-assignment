@@ -16,14 +16,14 @@ final class RocketsClientLiveKMMTests: XCTestCase {
     // swiftlint:disable:next force_try
 
     withDependencies {
-      $0.lineMeasureConverterKMM = .live
-      $0.weightScaleConverterKMM = .live
-      $0.stageConverterKMM = .live
-      $0.rocketConverterKMM = .live
+      $0.lineMeasureKMMConverter = .live
+      $0.weightScaleKMMConverter = .live
+      $0.stageKMMConverter = .live
+      $0.rocketKMMConverter = .live
     } operation: {
-      @Dependency(\.rocketConverterKMM) var rocketConverterKMM
+      @Dependency(\.rocketKMMConverter) var rocketKMMConverter
       
-      rocketData = rocketConverterKMM.domainModel(fromExternal: RocketKMM.mock)
+      rocketData = rocketKMMConverter.domainModel(fromExternal: RocketKMM.mock)
       XCTAssertEqual(rocketData?.id, "apollo13")
     }
   }
@@ -48,10 +48,10 @@ final class RocketsClientLiveKMMTests: XCTestCase {
     // swiftlint:disable:next force_try
 
     await withDependencies {
-      $0.lineMeasureConverterKMM = .live
-      $0.weightScaleConverterKMM = .live
-      $0.stageConverterKMM = .live
-      $0.rocketConverterKMM = .live
+      $0.lineMeasureKMMConverter = .live
+      $0.weightScaleKMMConverter = .live
+      $0.stageKMMConverter = .live
+      $0.rocketKMMConverter = .live
     } operation: {
       do {
         let _: RocketDetail? = try await RocketsClient.liveKMM.getRocket("")

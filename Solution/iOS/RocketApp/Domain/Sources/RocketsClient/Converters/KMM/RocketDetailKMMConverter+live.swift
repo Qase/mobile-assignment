@@ -3,7 +3,7 @@ import Foundation
 import ModelConvertible
 import fetchRockets
 
-public extension LineMeasureConverterKMM {
+public extension LineMeasureKMMConverter {
   static var live = Self(
     domainModelConverter: {
       RocketDetail.LineMeasure(meters: $0.meters, feet: $0.feet)
@@ -11,7 +11,7 @@ public extension LineMeasureConverterKMM {
   )
 }
 
-public extension WeightScaleConverterKMM {
+public extension WeightScaleKMMConverter {
   static var live = Self(
     domainModelConverter: {
       RocketDetail.WeightScale(kilograms: $0.kilograms, pounds: $0.pounds)
@@ -19,27 +19,27 @@ public extension WeightScaleConverterKMM {
   )
 }
 
-public extension StageConverterKMM {
+public extension StageKMMConverter {
   static var live = Self(
     domainModelConverter: {
       RocketDetail.Stage(reusable: $0.reusable, engines: Int($0.engines), fuelMass: $0.fuelMass, burnTime: $0.burnTime?.intValue)
     }
   )
 }
-public extension RocketDetailConverterKMM {
+public extension RocketDetailKMMConverter {
   static var live: Self {
-    @Dependency(\.lineMeasureConverterKMM) var lineMeasureConverterKMM
-    @Dependency(\.weightScaleConverterKMM) var weightScaleConverterKMM
-    @Dependency(\.stageConverterKMM) var stageConverterKMM
+    @Dependency(\.lineMeasureKMMConverter) var lineMeasureKMMConverter
+    @Dependency(\.weightScaleKMMConverter) var weightScaleKMMConverter
+    @Dependency(\.stageKMMConverter) var stageKMMConverter
 
     return .init(
       domainModelConverter: { rocketKMM in
         guard
-          let height = lineMeasureConverterKMM.domainModel(fromExternal: rocketKMM.height),
-          let diameter = lineMeasureConverterKMM.domainModel(fromExternal: rocketKMM.diameter),
-          let mass = weightScaleConverterKMM.domainModel(fromExternal: rocketKMM.mass),
-          let firstStage = stageConverterKMM.domainModel(fromExternal: rocketKMM.firstStage),
-          let secondStage = stageConverterKMM.domainModel(fromExternal: rocketKMM.secondStage)
+          let height = lineMeasureKMMConverter.domainModel(fromExternal: rocketKMM.height),
+          let diameter = lineMeasureKMMConverter.domainModel(fromExternal: rocketKMM.diameter),
+          let mass = weightScaleKMMConverter.domainModel(fromExternal: rocketKMM.mass),
+          let firstStage = stageKMMConverter.domainModel(fromExternal: rocketKMM.firstStage),
+          let secondStage = stageKMMConverter.domainModel(fromExternal: rocketKMM.secondStage)
         else {
           return nil
         }
@@ -61,14 +61,14 @@ public extension RocketDetailConverterKMM {
   }
 }
 
-public extension RocketsDetailConverterKMM {
+public extension RocketsDetailKMMConverter {
   static var live: Self {
-    @Dependency(\.rocketConverterKMM) var rocketConverterKMM
+    @Dependency(\.rocketKMMConverter) var rocketKMMConverter
 
     return .init(
       domainModelConverter: { rocketKMM in
         let rockets: [RocketDetail] = rocketKMM.compactMap {
-          guard let rocket = rocketConverterKMM.domainModel(fromExternal: $0) else {
+          guard let rocket = rocketKMMConverter.domainModel(fromExternal: $0) else {
             return nil
           }
 

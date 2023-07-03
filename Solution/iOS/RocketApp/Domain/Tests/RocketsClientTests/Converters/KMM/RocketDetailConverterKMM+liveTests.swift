@@ -6,12 +6,12 @@ import fetchRockets
 final class RocketDetailConverterKMMLiveTests: XCTestCase {
   func test_lineMeasureConverter() {
     withDependencies {
-      $0.lineMeasureConverterKMM = .live
+      $0.lineMeasureKMMConverter = .live
     } operation: {
-      @Dependency(\.lineMeasureConverterKMM) var lineMeasureConverterKMM
+      @Dependency(\.lineMeasureKMMConverter) var lineMeasureKMMConverter
 
       let rocketDetailKMM = RocketKMM.LineMeasure(meters: 20.0, feet: 65.6)
-      let rocketHeightDomain = lineMeasureConverterKMM.domainModel(fromExternal: rocketDetailKMM)
+      let rocketHeightDomain = lineMeasureKMMConverter.domainModel(fromExternal: rocketDetailKMM)
 
       XCTAssertEqual(rocketHeightDomain?.meters, 20.0)
       XCTAssertEqual(rocketHeightDomain?.feet, 65.6)
@@ -20,12 +20,12 @@ final class RocketDetailConverterKMMLiveTests: XCTestCase {
 
   func test_weightScaleConverter() {
     withDependencies {
-      $0.weightScaleConverterKMM = .live
+      $0.weightScaleKMMConverter = .live
     } operation: {
-      @Dependency(\.weightScaleConverterKMM) var weightScaleConverterKMM
+      @Dependency(\.weightScaleKMMConverter) var weightScaleKMMConverter
 
       let rocketWeightKMM = RocketKMM.WeightScale(kilograms: 10.0, pounds: 22.5)
-      let rocketWeightDomain = weightScaleConverterKMM.domainModel(fromExternal: rocketWeightKMM)
+      let rocketWeightDomain = weightScaleKMMConverter.domainModel(fromExternal: rocketWeightKMM)
 
       XCTAssertEqual(rocketWeightDomain?.kilograms, 10.0)
       XCTAssertEqual(rocketWeightDomain?.pounds, 22.5)
@@ -34,12 +34,12 @@ final class RocketDetailConverterKMMLiveTests: XCTestCase {
 
   func test_stageConverter() {
     withDependencies {
-      $0.stageConverterKMM = .live
+      $0.stageKMMConverter = .live
     } operation: {
-      @Dependency(\.stageConverterKMM) var stageConverterKMM
+      @Dependency(\.stageKMMConverter) var stageKMMConverter
 
       let rocketStageKMM = RocketKMM.Stage(reusable: true, engines: 5, fuelMass: 1000.0, burnTime: nil)
-      let rocketStageDomain = stageConverterKMM.domainModel(fromExternal: rocketStageKMM)
+      let rocketStageDomain = stageKMMConverter.domainModel(fromExternal: rocketStageKMM)
 
       XCTAssertEqual(rocketStageDomain?.reusable, true)
       XCTAssertEqual(rocketStageDomain?.engines, 5)
@@ -50,12 +50,12 @@ final class RocketDetailConverterKMMLiveTests: XCTestCase {
 
   func test_RocketsConverter() {
     withDependencies {
-      $0.lineMeasureConverterKMM = .live
-      $0.weightScaleConverterKMM = .live
-      $0.stageConverterKMM = .live
-      $0.rocketConverterKMM = .live
+      $0.lineMeasureKMMConverter = .live
+      $0.weightScaleKMMConverter = .live
+      $0.stageKMMConverter = .live
+      $0.rocketKMMConverter = .live
     } operation: {
-      @Dependency(\.rocketConverterKMM) var rocketConverterKMM
+      @Dependency(\.rocketKMMConverter) var rocketKMMConverter
 
       let rocketDetailKMM = RocketKMM(
         id: "apollo13",
@@ -69,7 +69,7 @@ final class RocketDetailConverterKMMLiveTests: XCTestCase {
         firstFlight: "1991-03-09",
         photos: ["https://imgur.com/DaCfMsj.jpg", "https://imgur.com/azYafd8.jpg"]
       )
-      let rocketDetailDomain = rocketConverterKMM.domainModel(fromExternal: rocketDetailKMM)
+      let rocketDetailDomain = rocketKMMConverter.domainModel(fromExternal: rocketDetailKMM)
 
       XCTAssertEqual(rocketDetailDomain?.id, "apollo13")
       XCTAssertEqual(rocketDetailDomain?.name, "Apollo 13")

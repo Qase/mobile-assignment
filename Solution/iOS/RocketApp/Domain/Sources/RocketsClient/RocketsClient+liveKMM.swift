@@ -11,8 +11,8 @@ import KMPNativeCoroutinesAsync
  
 public extension RocketsClient {
   static var liveKMM: Self {
-    @Dependency(\.rocketConverterKMM) var rocketConverterKMM
-    @Dependency(\.rocketsConverterKMM) var rocketsConverterKMM
+    @Dependency(\.rocketKMMConverter) var rocketKMMConverter
+    @Dependency(\.rocketsKMMConverter) var rocketsKMMConverter
     
     //MARK: KMM Rocket library integration
     let rocketApi = RocketApi()
@@ -24,7 +24,7 @@ public extension RocketsClient {
           //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
           switch rocket {
           case let success as RocketResultSuccess<AnyObject>:
-            guard let result = rocketConverterKMM.domainModel(fromExternal: success.data as! RocketKMM) else {
+            guard let result = rocketKMMConverter.domainModel(fromExternal: success.data as! RocketKMM) else {
               throw RocketsClientAsyncError.modelConversionError
             }
             
@@ -46,7 +46,7 @@ public extension RocketsClient {
           //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
           switch rockets {
           case let success as RocketResultSuccess<AnyObject>:
-            guard let result = rocketsConverterKMM.domainModel(fromExternal: success.data as! [RocketKMM]) else {
+            guard let result = rocketsKMMConverter.domainModel(fromExternal: success.data as! [RocketKMM]) else {
               throw RocketsClientAsyncError.modelConversionError
             }
             

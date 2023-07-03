@@ -1,7 +1,7 @@
 import Dependencies
 @testable import RocketsClient
 import XCTest
-import KMMmodule
+import fetchRockets
 
 final class RocketDetailConverterKMMLiveTests: XCTestCase {
   func test_lineMeasureConverter() {

@@ -1,7 +1,7 @@
 import Dependencies
 import Foundation
 import ModelConvertible
-import KMMmodule
+import fetchRockets
 
 public extension LineMeasureConverterKMM {
   static var live = Self(

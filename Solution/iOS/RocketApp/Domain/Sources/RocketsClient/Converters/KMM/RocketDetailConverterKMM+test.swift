@@ -1,7 +1,7 @@
 #if DEBUG
 import Dependencies
 import ModelConvertible
-import KMMmodule
+import fetchRockets
 
 public extension RocketDetailConverterKMM {
   static let test = Self(

@@ -1,5 +1,5 @@
 import Foundation
-import KMMmodule
+import fetchRockets
 
 func errorFromRocketFailure(_ failure: RocketResult<RocketException>) -> Error {
     switch failure {

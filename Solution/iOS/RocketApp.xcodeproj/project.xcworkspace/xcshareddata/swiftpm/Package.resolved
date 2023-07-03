@@ -37,6 +37,15 @@
       }
     },
     {
+      "identity" : "mobile-assignment-kmm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Qase/mobile-assignment-kmm.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "74f6310a682e05b80a3bf2af520c79a584f26941"
+      }
+    },
+    {
       "identity" : "rxswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift.git",

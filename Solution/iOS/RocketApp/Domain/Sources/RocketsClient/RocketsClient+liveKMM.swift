@@ -5,10 +5,10 @@ import Foundation
 import NetworkClientExtensions
 import Networking
 import RequestBuilder
-import KMMmodule
+import fetchRockets
 import KMPNativeCoroutinesCore
 import KMPNativeCoroutinesAsync
-
+ 
 public extension RocketsClient {
   static var liveKMM: Self {
     @Dependency(\.rocketConverterKMM) var rocketConverterKMM
@@ -22,17 +22,20 @@ public extension RocketsClient {
         do {
           let rocket = try await asyncFunction(for: rocketApi.fetchRocketById(rocketId: id))
           //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
-          if let success = rocket as? RocketResultSuccess<AnyObject> {
+          switch rocket {
+          case let success as RocketResultSuccess<AnyObject>:
             guard let result = rocketConverterKMM.domainModel(fromExternal: success.data as! RocketKMM) else {
               throw RocketsClientAsyncError.modelConversionError
             }
             
             return result
-          } else if let failure = rocket as? RocketResult<RocketException> {
+            
+          case let failure as RocketResult<RocketException>:
             throw errorFromRocketFailure(failure)
+            
+          default:
+            throw RocketsClientAsyncError.undefinedError
           }
-          
-          throw RocketsClientAsyncError.undefinedError
         } catch {
           throw error
         }
@@ -41,17 +44,21 @@ public extension RocketsClient {
         do {
           let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
           //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
-          if let success = rockets as? RocketResultSuccess<AnyObject> {
+          switch rockets {
+          case let success as RocketResultSuccess<AnyObject>:
             guard let result = rocketsConverterKMM.domainModel(fromExternal: success.data as! [RocketKMM]) else {
               throw RocketsClientAsyncError.modelConversionError
             }
             
             return result
-          } else if let failure = rockets as? RocketResult<RocketException> {
+            
+          case let failure as RocketResult<RocketException>:
             throw errorFromRocketFailure(failure)
+            
+          default:
+            throw RocketsClientAsyncError.undefinedError
           }
-          
-          throw RocketsClientAsyncError.undefinedError
+
         } catch {
           throw error
         }

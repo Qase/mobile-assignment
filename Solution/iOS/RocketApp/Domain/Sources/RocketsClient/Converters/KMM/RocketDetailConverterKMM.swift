@@ -1,6 +1,6 @@
 import Foundation
 import ModelConvertible
-import KMMmodule
+import fetchRockets
 
 public typealias RocketDetailConverterKMM = ModelConverter<RocketDetail, RocketKMM>
 public typealias RocketsDetailConverterKMM = ModelConverter<[RocketDetail], [RocketKMM]>

@@ -2,7 +2,7 @@ import Combine
 import Dependencies
 @testable import Networking
 @testable import RocketsClient
-import KMMmodule
+import fetchRockets
 import KMPNativeCoroutinesAsync
 import KMPNativeCoroutinesCore
 import XCTest

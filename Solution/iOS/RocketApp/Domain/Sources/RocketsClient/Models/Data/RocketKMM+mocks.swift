@@ -1,5 +1,5 @@
 import Foundation
-import KMMmodule
+import fetchRockets
 
 public extension RocketKMM {
   static let mock = RocketKMM(

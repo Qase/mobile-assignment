@@ -88,13 +88,13 @@ This article aims to provide perspective on two ways of using the KMM library in
 
 Let's dive into the details and explore the two different approaches of utilizing the KMM library in an Xcode package.
   ### Version 1 - Local file or Local Package
-  - Add the KMM shared library as a folder into the app’s root directory ( In my case `mobile-assignment-kmm` )
+  - Add the KMM shared library as a folder into the app’s root directory ( In my case `mobile-assignment-kmm` ).
     
     ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/iosRootDir.png)
     
     *Root directory of Xcode project - RocketApp*
     
-- Add this script into **Build Phases**
+- Add this script into **Build Phases**:
     
     ```swift
     cd "$SRCROOT/nameOfSharedLibrary"
@@ -105,7 +105,7 @@ Let's dive into the details and explore the two different approaches of utilizin
     
   *Build phases inside the RocketApp Project*
     
-- Add this piece of code into **BuildSettings-Linking**:
+- Next add this piece of code into **BuildSettings-Linking**:
     
     `$(inherited) -framework nameOfSharedModule` 
     
@@ -113,7 +113,7 @@ Let's dive into the details and explore the two different approaches of utilizin
     
     *Linking inside the RocketApp Project*
     
-- Add this to **Framework Search Path**
+- Finally, add this to **Framework Search Path**:
     
     `$(SRCROOT)/nameOfSharedLibrary/nameOfSharedModule/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)`
     
@@ -123,7 +123,7 @@ Let's dive into the details and explore the two different approaches of utilizin
     
 - And you can freely use the the KMM module in the base project but **not in the packages**.
 - You can manually add it as a package as you do with packages like `Infrastructure`, `Domain` and `Features`.
-    - And use inspiration from this link
+    - And use inspiration from this link:
         
         [Command Line Tool using Swift Package Manager and Utility package](https://dmytro-anokhin.medium.com/command-line-tool-using-swift-package-manager-and-utility-package-e0984224fc04)
         
@@ -195,14 +195,14 @@ Before delving into the plugin's description, let's take a moment to understand 
 	...
 	```
 	
-	- After that you can open terminal in the folder of the KMM module - so in my case - `mobile-assignment-kmm`
+	- After that you can open terminal in the folder of the KMM module - so in my case - `mobile-assignment-kmm`.
 	- Only thing that is left, is to run these commands:
 	    
 	    The first command also creates the framework, so only the first one is necessary.
 	    
 	    `./gradlew createSwiftPackage`
 	    
-	    - Creates the XCFramework, ZIP file and Package.swift
+	    - Creates the XCFramework, ZIP file and Package.swift.
 	    
 	    `./gradlew createXCFramework`
 	    
@@ -356,8 +356,8 @@ do {
     But its only because Swift is confused and does not know what to do with the `Result`.
     This can be ignored, it does not cause any problems with the function of code.
     
-- `RocketConverter` just converts the `RocketKMM` → `RocketDetail` ( which is domain model )
-- And `RocketExceptionConverter` converts the `RocketResult<RocketException>` → `RocketsClientAsyncError` ( which is domain error )
+- `RocketConverter` just converts the `RocketKMM` → `RocketDetail` ( which is domain model ).
+- And `RocketExceptionConverter` converts the `RocketResult<RocketException>` → `RocketsClientAsyncError` ( which is domain error ).
 
 ```swift
 public typealias RocketExceptionConverter = ModelConverter<RocketsClientAsyncError, RocketResult<RocketException>>
@@ -493,8 +493,8 @@ And that is by adding new library - `KMP-NativeCoroutines`:
 - And that solves the problems with main thread.
 - **Its all in the README**
   ### Problems with running the commands on creating package
- - There is a big possibility that the error has to do something with **command line tools** from Xcode
-        - First of all, install command line tools
+ - There is a big possibility that the error has to do something with **command line tools** from Xcode.
+        - First of all, install command line tools:
             
             `xcode-select --install`
             
@@ -526,7 +526,7 @@ There is problem with Swift handling thrown errors from Kotlin. There are few so
       ```
 	*Simple Result type that has two options - Success and Failure*
             
-    - Then its very similar to using normal `Result`, just use `try-catch` and then return either `Success` or `Failure`
+    - Then its very similar to using normal `Result`, just use `try-catch` and then return either `Success` or `Failure`:
             
          ```kotlin
             suspend fun fetchAllRockets(): RocketResult<List<RocketKMM>> {
@@ -561,7 +561,6 @@ There is problem with Swift handling thrown errors from Kotlin. There are few so
 	          default:
 	            throw RocketsClientAsyncError.undefinedError // Domain Error
 	          }
-
         } catch {
           throw error
         }

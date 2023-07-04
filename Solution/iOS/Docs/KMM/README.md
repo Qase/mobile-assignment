@@ -2,7 +2,7 @@
 Another solution of **RocketApp** is now available, utilizing the new framework KMM (Kotlin Multiplatform Mobile). We have prepared a comprehensive guide to help you work with and gain a better understanding of the cross-platform development approach for building mobile apps. This guide provides step-by-step instructions for integrating KMM into your project and addresses common issues you may encounter along the way.
 
  You can find the repository for this app and its showcase here:
-  [Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/fetchRockets)
+  [Mobile-Assignment-KMM repository](https://github.com/Qase/mobile-assignment-kmm)
  
 ## Table of contents
 
@@ -82,13 +82,13 @@ Another solution of **RocketApp** is now available, utilizing the new framework 
 This article aims to provide perspective on two ways of using the KMM library in an Xcode package. Each approach has its own advantages and disadvantages, allowing us to evaluate which one is best suited for our needs.
 
 - Firstly, let's establish some basic information about the structure to avoid any confusion.
-    - The entire project is called `fetchRockets`, and within this project, we have a module named `KMMmodule` where all the use cases and code reside.
-    - Inside the `KMMmodule`, you will find directories such as `commonMain`, `iosMain`, `androidMain`, as well as test files.
+    - The entire project is called `mobile-assignment-kmm`, and within this project, we have a module named `fetchRockets` where all the use cases and code reside.
+    - Inside the `fetchRockets`, you will find directories such as `commonMain`, `iosMain`, `androidMain`, as well as test files.
     - For the sake of clarity, we will refer to the project as `nameOfSharedLibrary` and the module as `nameOfSharedModule` throughout the showcase and code snippets.
 
 Let's dive into the details and explore the two different approaches of utilizing the KMM library in an Xcode package.
   ### Version 1 - Local file or Local Package
-  - Add the KMM shared library as a folder into the app’s root directory ( In my case `fetchRockets` )
+  - Add the KMM shared library as a folder into the app’s root directory ( In my case `mobile-assignment-kmm` )
     
     ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/iosRootDir.png)
     
@@ -148,7 +148,7 @@ Let's dive into the details and explore the two different approaches of utilizin
       ),
     ```
 ### Version 2 - Remote Package
-In this version its used a custom plugin that creates the Swift Package by one simple command in terminal. 
+- In this version a custom plugin it used that creates the Swift Package by one simple command in terminal. 
 
 For more details, please refer to the following link:
 [KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)
@@ -159,7 +159,7 @@ Before delving into the plugin's description, let's take a moment to understand 
     
     ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/entireProjectStruct.png)
     
-- The key distinction is that the root project does not contain any source code. It is used to store global configurations in its `build.gradle.kts` file. On the other hand, the **KMM module'**s `build.gradle.kts` file is where code-specific dependencies and plugins are added. Consequently, the *gradle* file in the **KMM module** tends to be more complex.
+- The key distinction is that the root project does not contain any source code. It is used to store global configurations in its `build.gradle.kts` file. On the other hand, the **KMM module's** `build.gradle.kts` file is where code-specific dependencies and plugins are added. Consequently, the *gradle* file in the **KMM module** tends to be more complex.
     - Quick tip: If you are uncertain about where to place the plugin, consider including it in both *gradle* files.
 
    ### Lets start with the plugin
@@ -185,7 +185,7 @@ Before delving into the plugin's description, let's take a moment to understand 
 	
 	    multiplatformSwiftPackage {
 	//Name of the package 
-	        packageName("KMMmodule")
+	        packageName("fetchRockets")
 	        swiftToolsVersion("5.3")
 	        targetPlatforms {
 	            iOS { v("13") }
@@ -195,7 +195,7 @@ Before delving into the plugin's description, let's take a moment to understand 
 	...
 	```
 	
-	- After that you can open terminal in the folder of the KMM module - so in my case - `fetchRockets`
+	- After that you can open terminal in the folder of the KMM module - so in my case - `mobile-assignment-kmm`
 	- Only thing that is left, is to run these commands:
 	    
 	    The first command also creates the framework, so only the first one is necessary.
@@ -207,16 +207,16 @@ Before delving into the plugin's description, let's take a moment to understand 
 	    `./gradlew createXCFramework`
 	    
 	    - Creates only the XCFramework
-	- **IMPORTANT:** `./gradlew createSwiftPackage`** needs to be re-run every time you make a change in the library**, it creates a **ZIP** file that you can use and it **doesn’t refresh by itself.**
+	- **IMPORTANT: `./gradlew createSwiftPackage` needs to be re-run every time you make a change in the library**, it creates a **ZIP** file that you can use and it **doesn’t refresh by itself.**
 	- After that you are free to use it in packages like this:
 	
 	```swift
 	dependencies: [
 		...
 	//MARK: Local
-	 .package(path: "../../fetchRockets")
+	 .package(path: "../../mobile-assignment-kmm")
 	//MARK: Remote 
-	  .package(url: "https://github.com/yOoZZyOzzbourne/fetchRockets.git", branch: "master"),
+	  .package(url: "https://github.com/Qase/mobile-assignment-kmm.git", branch: "master"),
 	],
 	
 	targets: [
@@ -224,7 +224,7 @@ Before delving into the plugin's description, let's take a moment to understand 
 	    name: "RocketsClient",
 	    dependencies: [
 			...
-	      .product(name: "KMMmodule", package: "fetchRockets")
+	      .product(name: "fetchRockets", package: "mobile-assignment-kmm")
 	    ]
 	  ),
 	```
@@ -322,22 +322,30 @@ data class RocketKMM(
 let rocketApi = RocketApi()
 
 do {
-	   let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
-     //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
-     if let success = rockets as? RocketResultSuccess<AnyObject> {
-        guard let result = rocketsConverterKMM.domainModel(fromExternal: success.data as! [RocketKMM]) else {
-           throw RocketsClientAsyncError.modelConversionError
-			  }
-            
-	      return result
-     } else if let failure = rockets as? RocketResult<RocketException> {
-        throw errorFromRocketFailure(failure)
-     }
-          
-	      throw RocketsClientAsyncError.undefinedError
-     } catch {
-          throw error
-     }
+  let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
+  //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
+  switch rockets {
+  case let success as RocketResultSuccess<AnyObject>:
+    guard let result = rocketsKMMConverter.domainModel(fromExternal: success.data as! [RocketKMM]) else {
+      throw RocketsClientAsyncError.modelConversionError
+    }
+    
+    return result
+    
+  case let failure as RocketResult<RocketException>:
+    guard let error = rocketExceptionConverter.domainModel(fromExternal: failure) else {
+      throw RocketsClientAsyncError.modelConversionError
+    }
+    
+    throw error
+    
+  default:
+    throw RocketsClientAsyncError.undefinedError
+  }
+
+} catch {
+  throw error
+}
 ```
 *Swift handling the KMM fetchAllRockets function*
 
@@ -349,24 +357,31 @@ do {
     This can be ignored, it does not cause any problems with the function of code.
     
 - `RocketConverter` just converts the `RocketKMM` → `RocketDetail` ( which is domain model )
+- And `RocketExceptionConverter` converts the `RocketResult<RocketException>` → `RocketsClientAsyncError` ( which is domain error )
 
 ```swift
-func errorFromRocketFailure(_ failure: RocketResult<RocketException>) -> Error {
-    switch failure {
-    case is RocketResult<RocketException.HttpError>:
-        return RocketsClientAsyncError.networkError(.serverError(statusCode: 404))
-    case is RocketResult<RocketException.NetworkError>:
-        return RocketsClientAsyncError.networkError(.noConnection)
-    case is RocketResult<RocketException.UnknownError>:
-        return RocketsClientAsyncError.undefinedError
-    default:
-        return RocketsClientAsyncError.networkError(.timeoutError)
+public typealias RocketExceptionConverter = ModelConverter<RocketsClientAsyncError, RocketResult<RocketException>>
+
+public extension RocketExceptionConverter {
+  static var live = Self(
+    domainModelConverter: { error in
+      switch error {
+      case is RocketResult<RocketException.HttpError>:
+          return RocketsClientAsyncError.networkError(.serverError(statusCode: 404))
+      case is RocketResult<RocketException.NetworkError>:
+          return RocketsClientAsyncError.networkError(.noConnection)
+      case is RocketResult<RocketException.UnknownError>:
+          return RocketsClientAsyncError.undefinedError
+      default:
+          return RocketsClientAsyncError.networkError(.timeoutError)
+      }
     }
+  )
 }
 ```
-*Custom error mapping function so that the call is more clean*
+*Custom error converting from KMM to Domain*
 
-## Trouble shooting
+## Troubleshooting
    ### Suspending function must only run on DispatchQueue.main
    
  A naive option is to use `@MainActor` to make sure, the function execution is performed on the main thread. However, there is a better solution.
@@ -438,7 +453,7 @@ And that is by adding new library - `KMP-NativeCoroutines`:
 	      name: "RocketsClient",
 	      dependencies: [
 	       ...
-		.product(name: "KMMmodule", package: "fetchRockets"),
+		.product(name: "fetchRockets", package: "mobile-assignment-kmm"),
 		.product(name: "KMPNativeCoroutinesCore", package: "KMP-NativeCoroutines"),
 		.product(name: "KMPNativeCoroutinesAsync", package: "KMP-NativeCoroutines")
 	      ]
@@ -531,21 +546,25 @@ There is problem with Swift handling thrown errors from Kotlin. There are few so
      - After that only whats left is to map the values inside the Swift:
             
           ```swift
-            do {
-                   let rocket = try await asyncFunction(for: rocketApi.fetchAllRockets())
-                   if let success = rocket as? RocketResultSuccess<AnyObject> {
-                      //Custom mapping into domain model
-                    } else if let failure = rocket as? RocketResult<RocketException> {
-                      //Custoom error mapping to domain error
-                      switch failure {
-                         case is RocketResult<RocketException.HttpError>: 
-                     	   return DomainError.HttpError
-                    	}
-                    }
-                      throw DomainError
-                 } catch {
-                   throw error
-               }
+          do {
+	          let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
+	          //MARK: Even though warning is saying "always fails" it in fact does not fail at all. Swift is confused about KMM. - Ignore this warrning
+	          switch rockets {
+	          case let success as RocketResultSuccess<AnyObject>:
+	            //Custom mapping into domain model
+	          case let failure as RocketResult<RocketException>:
+	             //Custoom error mapping to domain error
+	            }
+	            
+	            throw error
+	            
+	          default:
+	            throw RocketsClientAsyncError.undefinedError // Domain Error
+	          }
+
+        } catch {
+          throw error
+        }
           ```
        *Real implementation in Swift handling custom Result type*
             
@@ -572,7 +591,7 @@ There is problem with Swift handling thrown errors from Kotlin. There are few so
 
 [Get started with Kotlin Multiplatform for mobile | Kotlin](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
 
-[Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/fetchRockets)
+[Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/mobile-assignment-kmm)
 
 [r/SpaceX API Docs](https://docs.spacexdata.com/)
 

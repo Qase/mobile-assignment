@@ -2,7 +2,7 @@
 Another solution of **RocketApp** is now available, utilizing the new framework KMM (Kotlin Multiplatform Mobile). We have prepared a comprehensive guide to help you work with and gain a better understanding of the cross-platform development approach for building mobile apps. This guide provides step-by-step instructions for integrating KMM into your project and addresses common issues you may encounter along the way.
 
  You can find the repository for this app and its showcase here:
-  [Mobile-Assignment-KMM repository](https://github.com/Qase/mobile-assignment-kmm)
+  [Mobile-Assignment-KMM repository](https://github.com/Qase/mobile-assignment-kmm).
  
 ## Table of contents
 
@@ -14,16 +14,16 @@ Another solution of **RocketApp** is now available, utilizing the new framework 
 - [Preview of code](#preview-of-code)
     - [Kotlin](#kotlin)
     - [Swift](#swift)
-- [Trouble shooting](#trouble-shooting) 
+- [Troubleshooting](#troubleshooting) 
     - [Suspending function must only run on DispatchQueue.main](#suspending-function-must-only-run-on-dispatchqueuemain)
     - [Problems with running the commands](#problems-with-running-the-commands-on-creating-package)
     - [Error hadling](#error-handling) 
 - [Useful links](#useful-links)
   
 ## Introduction
-- Download **Android Studio**, add **Kotlin Multiplatform Mobile** plugin
-- **Create Kotlin Multiplatform Library**
-- Implement necessary functionality. The code must be compatible with the iOS platform. Thus it must be implemented in Kotlin (no Java and its ecosystem of libraries)
+- Download **Android Studio**, add **Kotlin Multiplatform Mobile** plugin.
+- **Create Kotlin Multiplatform Library**.
+- Implement necessary functionality. The code must be compatible with the iOS platform. Thus it must be implemented in Kotlin (no Java and its ecosystem of libraries).
     
    ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/kmmLibraries.png)
 
@@ -51,7 +51,7 @@ Another solution of **RocketApp** is now available, utilizing the new framework 
     - **iosMain** - code only used in iOS apps
     - **commonMain** - code that is being reused on both platforms
     
-    Some functionalities are highly coupled with the specific platform and thus need to have separate implementations. Those implementations are available in the platform specific directories. Those functionalities are then unified by an extra layer of abstraction (interface) and exposed via the common package.
+    Some functionalities are highly coupled with the specific platform and thus need to have separate implementations. Those implementations are available in the platform specific directories. Those functionalities are then unified by an extra layer of abstraction (interface) and exposed via the **common package**.
     
     e.g: The **commonMain** has `expect fun`, that means you need to provide specific function to both **androidMain** and **iosMain**.
     
@@ -148,18 +148,18 @@ Let's dive into the details and explore the two different approaches of utilizin
       ),
     ```
 ### Version 2 - Remote Package
-- In this version a custom plugin it used that creates the Swift Package by one simple command in terminal. 
+- In this version a custom plugin is used that creates the Swift Package by one simple command in terminal. 
 
 For more details, please refer to the following link:
-[KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)
+[KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage).
 
 Before delving into the plugin's description, let's take a moment to understand the project structure.
 
-- Within the entire project structure, there are two main files where you manage dependencies and plugins, similar to the `Package` file in Xcode. These files are named `build.gradle.kts`. One resides inside the KMM module, while the other is located in the root directory.
+- Within the entire project structure, there are two main files where you manage dependencies and plugins, similar to the `Package` file in Xcode. These files are named `build.gradle.kts`. One resides inside the KMM module (`fetchRockets`), while the other is located in the root directory.
     
     ![](https://github.com/Qase/mobile-assignment/blob/00448a9e026150a1364bbf7c5b291d003f028cd5/Solution/iOS/Docs/KMM/Images/entireProjectStruct.png)
     
-- The key distinction is that the root project does not contain any source code. It is used to store global configurations in its `build.gradle.kts` file. On the other hand, the **KMM module's** `build.gradle.kts` file is where code-specific dependencies and plugins are added. Consequently, the *gradle* file in the **KMM module** tends to be more complex.
+- The key distinction is that the root project does not contain any source code. It is used to store global configurations in its `build.gradle.kts` file. On the other hand, the **KMM module's** `build.gradle.kts` (`fetchRockets`) file is where code-specific dependencies and plugins are added. Consequently, the *gradle* file in the **KMM module** (`fetchRockets`) tends to be more complex.
     - Quick tip: If you are uncertain about where to place the plugin, consider including it in both *gradle* files.
 
    ### Lets start with the plugin
@@ -314,7 +314,7 @@ data class RocketKMM(
     val photos: List<String>
 )
 ```
-*Class RocketKMM, that is Serializable ( Codable ) and supports Json serialization.*
+*Class RocketKMM, that is Serializable ( Codable ) and supports Json serialization*
 
   ### Swift
 ```swift
@@ -386,7 +386,7 @@ public extension RocketExceptionConverter {
    
  A naive option is to use `@MainActor` to make sure, the function execution is performed on the main thread. However, there is a better solution.
 And that is by adding new library - `KMP-NativeCoroutines`:
- [Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
+ [Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines).
 
  - **Note** - This library needs to be added both into **KMM library** and in **Xcode project**.
  - First, we need to implement the library in our KMM project. To do that, we will use these two plugins:
@@ -491,8 +491,8 @@ And that is by adding new library - `KMP-NativeCoroutines`:
 	```
 
 - And that solves the problems with main thread.
-- **Its all in the README**
-  ### Problems with running the commands on creating package
+- **Its all in the README**.
+### Problems with running the commands on creating package
  - There is a big possibility that the error has to do something with **command line tools** from Xcode.
         - First of all, install command line tools:
             
@@ -580,18 +580,18 @@ There is problem with Swift handling thrown errors from Kotlin. There are few so
 
 ## Useful links
 
-[Share KMM module with iOS via SPM](https://www.notion.so/Share-KMM-module-with-iOS-via-SPM-8580006dce61414980216a10a647e9f4?pvs=21)
+- [Share KMM module with iOS via SPM](https://www.notion.so/Share-KMM-module-with-iOS-via-SPM-8580006dce61414980216a10a647e9f4?pvs=21)
 
-[Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
+- [Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
 
-[KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)
+- [KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)
 
-[Android/iOS Kotlin Multiplatform — Api and threading](https://medium.com/@carlosdmp/android-ios-kotlin-multiplatform-api-and-threading-17b17e84992f)
+- [Android/iOS Kotlin Multiplatform — Api and threading](https://medium.com/@carlosdmp/android-ios-kotlin-multiplatform-api-and-threading-17b17e84992f)
 
-[Get started with Kotlin Multiplatform for mobile | Kotlin](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
+- [Get started with Kotlin Multiplatform for mobile | Kotlin](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
 
-[Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/mobile-assignment-kmm)
+- [Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/mobile-assignment-kmm)
 
-[r/SpaceX API Docs](https://docs.spacexdata.com/)
+- [r/SpaceX API Docs](https://docs.spacexdata.com/)
 
-[Ktor documentation](https://ktor.io/docs/welcome.html)
+- [Ktor documentation](https://ktor.io/docs/welcome.html)

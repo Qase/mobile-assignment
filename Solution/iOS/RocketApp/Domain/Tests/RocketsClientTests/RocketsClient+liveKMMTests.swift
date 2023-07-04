@@ -20,6 +20,7 @@ final class RocketsClientLiveKMMTests: XCTestCase {
       $0.weightScaleKMMConverter = .live
       $0.stageKMMConverter = .live
       $0.rocketKMMConverter = .live
+      $0.rocketExceptionConverter = .live
     } operation: {
       @Dependency(\.rocketKMMConverter) var rocketKMMConverter
       
@@ -30,7 +31,8 @@ final class RocketsClientLiveKMMTests: XCTestCase {
 
   func test_rocket_request_failure() async {
     
-    await withDependencies { _ in
+    await withDependencies {
+      $0.rocketExceptionConverter = .live
     } operation: {
       do {
         _ = try await RocketsClient.liveKMM.getRocket("")
@@ -52,6 +54,7 @@ final class RocketsClientLiveKMMTests: XCTestCase {
       $0.weightScaleKMMConverter = .live
       $0.stageKMMConverter = .live
       $0.rocketKMMConverter = .live
+      $0.rocketExceptionConverter = .live
     } operation: {
       do {
         let _: RocketDetail? = try await RocketsClient.liveKMM.getRocket("")

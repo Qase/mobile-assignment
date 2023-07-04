@@ -13,6 +13,7 @@ public extension RocketsClient {
   static var liveKMM: Self {
     @Dependency(\.rocketKMMConverter) var rocketKMMConverter
     @Dependency(\.rocketsKMMConverter) var rocketsKMMConverter
+    @Dependency(\.rocketExceptionConverter) var rocketExceptionConverter
     
     //MARK: KMM Rocket library integration
     let rocketApi = RocketApi()
@@ -31,8 +32,11 @@ public extension RocketsClient {
             return result
             
           case let failure as RocketResult<RocketException>:
-            throw errorFromRocketFailure(failure)
+            guard let error = rocketExceptionConverter.domainModel(fromExternal: failure) else {
+              throw RocketsClientAsyncError.modelConversionError
+            }
             
+            throw error
           default:
             throw RocketsClientAsyncError.undefinedError
           }
@@ -53,7 +57,11 @@ public extension RocketsClient {
             return result
             
           case let failure as RocketResult<RocketException>:
-            throw errorFromRocketFailure(failure)
+            guard let error = rocketExceptionConverter.domainModel(fromExternal: failure) else {
+              throw RocketsClientAsyncError.modelConversionError
+            }
+            
+            throw error
             
           default:
             throw RocketsClientAsyncError.undefinedError

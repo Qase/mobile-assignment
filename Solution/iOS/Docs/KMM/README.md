@@ -14,7 +14,7 @@ Another solution of **RocketApp** is now available, utilizing the new framework 
 - [Preview of code](#preview-of-code)
     - [Kotlin](#kotlin)
     - [Swift](#swift)
-- [Trouble shooting](#trouble-shooting) 
+- [Troubleshooting](#troubleshooting) 
     - [Suspending function must only run on DispatchQueue.main](#suspending-function-must-only-run-on-dispatchqueuemain)
     - [Problems with running the commands](#problems-with-running-the-commands-on-creating-package)
     - [Error hadling](#error-handling) 
@@ -148,7 +148,7 @@ Let's dive into the details and explore the two different approaches of utilizin
       ),
     ```
 ### Version 2 - Remote Package
-- In this version a custom plugin it used that creates the Swift Package by one simple command in terminal. 
+- In this version a custom plugin is used that creates the Swift Package by one simple command in terminal. 
 
 For more details, please refer to the following link:
 [KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)

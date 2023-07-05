@@ -2,7 +2,7 @@
 Another solution of **RocketApp** is now available, utilizing the new framework KMM (Kotlin Multiplatform Mobile). We have prepared a comprehensive guide to help you work with and gain a better understanding of the cross-platform development approach for building mobile apps. This guide provides step-by-step instructions for integrating KMM into your project and addresses common issues you may encounter along the way.
 
  You can find the repository for this app and its showcase here:
-  [Mobile-Assignment-KMM repository](https://github.com/Qase/mobile-assignment-kmm)
+  [Mobile-Assignment-KMM repository](https://github.com/Qase/mobile-assignment-kmm).
  
 ## Table of contents
 
@@ -386,7 +386,7 @@ public extension RocketExceptionConverter {
    
  A naive option is to use `@MainActor` to make sure, the function execution is performed on the main thread. However, there is a better solution.
 And that is by adding new library - `KMP-NativeCoroutines`:
- [Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
+ [Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines).
 
  - **Note** - This library needs to be added both into **KMM library** and in **Xcode project**.
  - First, we need to implement the library in our KMM project. To do that, we will use these two plugins:
@@ -492,7 +492,7 @@ And that is by adding new library - `KMP-NativeCoroutines`:
 
 - And that solves the problems with main thread.
 - **Its all in the README**.
-  ### Problems with running the commands on creating package
+### Problems with running the commands on creating package
  - There is a big possibility that the error has to do something with **command line tools** from Xcode.
         - First of all, install command line tools:
             
@@ -580,18 +580,18 @@ There is problem with Swift handling thrown errors from Kotlin. There are few so
 
 ## Useful links
 
-[Share KMM module with iOS via SPM](https://www.notion.so/Share-KMM-module-with-iOS-via-SPM-8580006dce61414980216a10a647e9f4?pvs=21)
+- [Share KMM module with iOS via SPM](https://www.notion.so/Share-KMM-module-with-iOS-via-SPM-8580006dce61414980216a10a647e9f4?pvs=21)
 
-[Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
+- [Native Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
 
-[KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)
+- [KMM package plugin](https://github.com/ge-org/multiplatform-swiftpackage)
 
-[Android/iOS Kotlin Multiplatform — Api and threading](https://medium.com/@carlosdmp/android-ios-kotlin-multiplatform-api-and-threading-17b17e84992f)
+- [Android/iOS Kotlin Multiplatform — Api and threading](https://medium.com/@carlosdmp/android-ios-kotlin-multiplatform-api-and-threading-17b17e84992f)
 
-[Get started with Kotlin Multiplatform for mobile | Kotlin](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
+- [Get started with Kotlin Multiplatform for mobile | Kotlin](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
 
-[Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/mobile-assignment-kmm)
+- [Fetch Rockets repository](https://github.com/yOoZZyOzzbourne/mobile-assignment-kmm)
 
-[r/SpaceX API Docs](https://docs.spacexdata.com/)
+- [r/SpaceX API Docs](https://docs.spacexdata.com/)
 
-[Ktor documentation](https://ktor.io/docs/welcome.html)
+- [Ktor documentation](https://ktor.io/docs/welcome.html)

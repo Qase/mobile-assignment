@@ -4,7 +4,7 @@
 
 - [Architecture](#architecture)
 - [Clean Architecture principles](#clean-architecture-principles)
-- [Kotlin Multiplatform Mobile](./Docs/KMM/README.md)
+- [Kotlin Multiplatform Mobile](#kotlin-multiplatform-mobile)
 
 ## Architecture
 
@@ -23,6 +23,20 @@ The `Presentation` part contains the actual application features and thus depend
 <!--
 @startuml iosArchitecture
 
+frame "Shared module (KMM)" {
+   package "Use cases" {
+      node "Fetch single rocket use case"
+      node "Fetch all rockets use case"
+   }
+
+   package "Repositories" {
+      node "Rockets repository"
+   }
+
+   "Fetch single rocket use case" ..> "Rockets repository" : uses
+   "Fetch all rockets use case" ..> "Rockets repository" : uses
+}
+
 frame "Domain layer" {
    package "Infrastructure package" #Implementation {
       node Networking
@@ -40,6 +54,9 @@ frame "Domain layer" {
    "Rocket client" ..> Networking: uses
    "Other domain specific client" ..> Networking : uses
    "Other domain specific client" ..> Database : uses
+
+   "Rocket client" ..> "Fetch single rocket use case" : uses
+   "Rocket client" ..> "Fetch all rockets use case" : uses
 }
 
 frame "Presentation layer" {
@@ -88,3 +105,8 @@ Here is how those layers relate to the application:
 - `Use Cases` == functions of clients within the `Domain` package
 - `Gateways / Controllers / Presenters` == tools interfaces within the `Infrastructure` package, `reducers` (TCA) within the `Feature` package 
 - `Devices / DB / External Interfaces / Web / UI` == tools implementations within the `Infrastructure` package, `Views` within the `Feature` package
+
+
+## Kotlin Multiplatform Mobile
+
+The architecture presented enables to integrate platform shared KMM functionality. Such functionality is usually provided via `use cases`, since Kotlin development is built on the Clean Architecture principles. The `uses cases` can be integrated to individual `clients` in the `Domain` package of the iOS architecture. More on the KMM integration can be found [here](./Docs/KMM/README.md).

@@ -18,6 +18,7 @@ public struct RocketDetailCore: ReducerProtocol {
     case rocketLaunchTapped
     case setToUSMetrics
     case rocketLaunch(PresentationAction<RocketLaunchCore.Action>)
+    case rocketLaunchDismiss
   }
 
   public init() {}
@@ -34,6 +35,12 @@ public struct RocketDetailCore: ReducerProtocol {
         return .none
       
       case .rocketLaunch:
+        return .none
+        
+      case .rocketLaunchDismiss:
+        if state.rocketLaunch != nil {
+          return .send(.rocketLaunch(.presented(.onDisappear)))
+        }
         return .none
       }
     }

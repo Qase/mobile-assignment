@@ -9,7 +9,7 @@ struct RocketApp: App {
       RocketListView(
         store: Store(
           initialState: RocketListCore.State(),
-          reducer: RocketListCore()
+          reducer: RocketListCore()._printChanges()
         )
       )
     }

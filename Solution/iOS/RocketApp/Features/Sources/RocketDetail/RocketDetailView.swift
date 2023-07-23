@@ -96,6 +96,7 @@ public struct RocketDetailView: View {
       }
     }
     .padding(.horizontal)
+    .onAppear { viewStore.send(.rocketLaunch(.presented(.onDisappear))) }
     .navigationTitle(viewStore.rocketData.name)
     .navigationBarItems(trailing: Button(.launch) { viewStore.send(.rocketLaunchTapped) })
     .navigationDestination(

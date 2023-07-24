@@ -41,6 +41,7 @@ public struct RocketDetailCore: ReducerProtocol {
         if state.rocketLaunch != nil {
           return .send(.rocketLaunch(.presented(.onDisappear)))
         }
+        
         return .none
       }
     }

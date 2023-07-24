@@ -43,17 +43,17 @@ public struct RocketLaunchCore: ReducerProtocol {
 
   public var body: some ReducerProtocol<State, Action> {
     Reduce { state, action in
-      struct MotionManagerId: Hashable {}
+      struct MotionManagerID: Hashable {}
 
       switch action {
       case .onAppear:
         return .concatenate(
           motionManager
-            .create(id: MotionManagerId())
+            .create(id: MotionManagerID())
             .fireAndForget(),
 
           motionManager
-            .startDeviceMotionUpdates(id: MotionManagerId(), using: .xArbitraryZVertical, to: .main)
+            .startDeviceMotionUpdates(id: MotionManagerID(), using: .xArbitraryZVertical, to: .main)
             .mapError { $0 as NSError }
             .catchToEffect(RocketLaunchCore.Action.updateMotionData)
         )
@@ -98,11 +98,11 @@ public struct RocketLaunchCore: ReducerProtocol {
       case .onDisappear:
         return .concatenate(
           motionManager
-            .stopDeviceMotionUpdates(id: MotionManagerId())
+            .stopDeviceMotionUpdates(id: MotionManagerID())
             .fireAndForget(),
 
           motionManager
-            .destroy(id: MotionManagerId())
+            .destroy(id: MotionManagerID())
             .fireAndForget()
         )
       }

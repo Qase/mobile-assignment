@@ -13,6 +13,7 @@
 		165B20552999449B0047F70A /* Infrastructure in Resources */ = {isa = PBXBuildFile; fileRef = 165B20532999449B0047F70A /* Infrastructure */; };
 		16BC7FFC29CC9AE5002AAE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BC7FFB29CC9AE5002AAE15 /* Assets.xcassets */; };
 		635FE7B12A20CDD40018A585 /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = 635FE7B02A20CDD40018A585 /* RocketList */; };
+		E55944B42C97328A00594002 /* UIToolkit in Frameworks */ = {isa = PBXBuildFile; productRef = E55944B32C97328A00594002 /* UIToolkit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55944B42C97328A00594002 /* UIToolkit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,7 @@
 			);
 			name = RocketAppUITests;
 			packageProductDependencies = (
+				E55944B32C97328A00594002 /* UIToolkit */,
 			);
 			productName = RocketAppUITests;
 			productReference = E5A6B6F42C97216000376970 /* RocketAppUITests.xctest */;
@@ -536,6 +539,10 @@
 		635FE7B02A20CDD40018A585 /* RocketList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RocketList;
+		};
+		E55944B32C97328A00594002 /* UIToolkit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIToolkit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

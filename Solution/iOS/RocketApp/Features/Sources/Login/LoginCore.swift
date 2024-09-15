@@ -45,5 +45,10 @@ public struct LoginCore: ReducerProtocol {
 }
 
 func isValid(username: String, password: String) -> Bool {
-  return false
+  let validPairs: [String: String] = [
+    "username1": "test1234",
+    "astronaut1": "space"
+  ]
+  
+  return validPairs[username] == password
 }

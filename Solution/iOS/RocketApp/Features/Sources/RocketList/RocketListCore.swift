@@ -19,6 +19,7 @@ public struct RocketListCore: ReducerProtocol {
     case fetchData
     case dataFetched(TaskResult<[RocketDetail]>)
     case rocketDetail(PresentationAction<RocketDetailCore.Action>)
+    case logoutTapped
   }
 
   public init() {}
@@ -58,7 +59,7 @@ public struct RocketListCore: ReducerProtocol {
         state.loadingStatus = .failure(RocketsClientAsyncError(from: error))
         return .none
      
-      case .rocketDetail:
+      case .rocketDetail, .logoutTapped:
         return .none
       }
     }

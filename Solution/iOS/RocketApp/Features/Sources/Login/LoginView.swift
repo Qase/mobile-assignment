@@ -1,5 +1,6 @@
 import ComposableArchitecture
 import SwiftUI
+import UIToolkit
 
 public struct LoginView: View {
   let store: StoreOf<LoginCore>
@@ -15,7 +16,7 @@ public struct LoginView: View {
           .foregroundStyle(.white)
           .frame(maxWidth: .infinity)
           .padding()
-          .background(Color.pink)
+          .background(Color.quanti)
           .transition(.opacity)
           .opacity(viewStore.isAuthFailedMessageDisplayed ? 1 : 0)
           .accessibilityHidden(!viewStore.isAuthFailedMessageDisplayed)
@@ -38,6 +39,7 @@ public struct LoginView: View {
 
         TextField("Username", text: viewStore.binding(\.$username))
           .textFieldStyle(.roundedBorder)
+          .autocapitalization(.none)
 
         SecureField("Password", text: viewStore.binding(\.$password))
           .textFieldStyle(.roundedBorder)
@@ -48,13 +50,18 @@ public struct LoginView: View {
           viewStore.send(.loginTapped)
         }
         .buttonStyle(.borderedProminent)
-        .tint(.pink)
+        .tint(.quanti)
       }
       .padding(.horizontal, 20)
     }
   }
 }
 
-//#Preview {
-//    LoginView()
-//}
+#Preview {
+  LoginView(
+    store: Store(
+      initialState: LoginCore.State(),
+      reducer: LoginCore()
+    )
+  )
+}

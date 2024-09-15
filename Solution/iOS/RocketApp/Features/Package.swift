@@ -9,6 +9,10 @@ let package = Package(
 
   products: [
     .library(
+      name: "App",
+      targets: ["App"]
+    ),
+    .library(
       name: "Login",
       targets: ["Login"]
     ),
@@ -40,8 +44,17 @@ let package = Package(
 
   targets: [
     .target(
+      name: "App",
+      dependencies: [
+        "Login",
+        "RocketList",
+        .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+      ]
+    ),
+    .target(
       name: "Login",
       dependencies: [
+        .product(name: "UIToolkit", package: "Infrastructure"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     ),

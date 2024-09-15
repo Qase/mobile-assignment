@@ -49,8 +49,7 @@ public struct LoginView: View {
         Button("Login") {
           viewStore.send(.loginTapped)
         }
-        .buttonStyle(.borderedProminent)
-        .tint(.quanti)
+        .buttonStyle(QuantiButtonStyle())
       }
       .padding(.horizontal, 20)
     }

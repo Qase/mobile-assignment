@@ -43,8 +43,7 @@ public struct RocketListView: View {
         Button("Logout") {
           viewStore.send(.logoutTapped)
         }
-        .buttonStyle(.borderedProminent)
-        .tint(.quanti)
+        .buttonStyle(QuantiButtonStyle())
       }
       .navigationTitle(.rockets)
     }

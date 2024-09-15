@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,16 @@
 		635FE7B12A20CDD40018A585 /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = 635FE7B02A20CDD40018A585 /* RocketList */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E5A6B6FA2C97216000376970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 160CA40528A506E4004A274A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 160CA40C28A506E4004A274A;
+			remoteInfo = RocketApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1607AECC28D21C240030F1DF /* AllTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllTests.xctestplan; sourceTree = "<group>"; };
 		1607AECD28D21D040030F1DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -24,7 +34,12 @@
 		165B20522999449B0047F70A /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		165B20532999449B0047F70A /* Infrastructure */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Infrastructure; sourceTree = "<group>"; };
 		16BC7FFB29CC9AE5002AAE15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5A6B6F42C97216000376970 /* RocketAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E5A6B6F52C97216000376970 /* RocketAppUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RocketAppUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		160CA40A28A506E4004A274A /* Frameworks */ = {
@@ -32,6 +47,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				635FE7B12A20CDD40018A585 /* RocketList in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5A6B6F12C97216000376970 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +74,7 @@
 			children = (
 				1607AECD28D21D040030F1DF /* README.md */,
 				163E0EBC28C7988100CECFD8 /* RocketApp */,
+				E5A6B6F52C97216000376970 /* RocketAppUITests */,
 				160CA40E28A506E4004A274A /* Products */,
 				163E0F2D28D093BD00CECFD8 /* Frameworks */,
 			);
@@ -61,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				160CA40D28A506E4004A274A /* RocketApp.app */,
+				E5A6B6F42C97216000376970 /* RocketAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +132,29 @@
 			productReference = 160CA40D28A506E4004A274A /* RocketApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E5A6B6F32C97216000376970 /* RocketAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5A6B6FE2C97216000376970 /* Build configuration list for PBXNativeTarget "RocketAppUITests" */;
+			buildPhases = (
+				E5A6B6F02C97216000376970 /* Sources */,
+				E5A6B6F12C97216000376970 /* Frameworks */,
+				E5A6B6F22C97216000376970 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5A6B6FB2C97216000376970 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E5A6B6F52C97216000376970 /* RocketAppUITests */,
+			);
+			name = RocketAppUITests;
+			packageProductDependencies = (
+			);
+			productName = RocketAppUITests;
+			productReference = E5A6B6F42C97216000376970 /* RocketAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -115,12 +162,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					160CA40C28A506E4004A274A = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
+					};
+					E5A6B6F32C97216000376970 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 160CA40C28A506E4004A274A;
 					};
 				};
 			};
@@ -142,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				160CA40C28A506E4004A274A /* RocketApp */,
+				E5A6B6F32C97216000376970 /* RocketAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +207,13 @@
 				165B20552999449B0047F70A /* Infrastructure in Resources */,
 				16BC7FFC29CC9AE5002AAE15 /* Assets.xcassets in Resources */,
 				165B20542999449B0047F70A /* Features in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5A6B6F22C97216000376970 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +250,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5A6B6F02C97216000376970 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5A6B6FB2C97216000376970 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 160CA40C28A506E4004A274A /* RocketApp */;
+			targetProxy = E5A6B6FA2C97216000376970 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		160CA42F28A506E6004A274A /* Debug */ = {
@@ -379,6 +453,53 @@
 			};
 			name = Release;
 		};
+		E5A6B6FC2C97216000376970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L4GD77D338;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.quanti.RocketAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RocketApp;
+			};
+			name = Debug;
+		};
+		E5A6B6FD2C97216000376970 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L4GD77D338;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.quanti.RocketAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RocketApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -396,6 +517,15 @@
 			buildConfigurations = (
 				160CA43228A506E6004A274A /* Debug */,
 				160CA43328A506E6004A274A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5A6B6FE2C97216000376970 /* Build configuration list for PBXNativeTarget "RocketAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5A6B6FC2C97216000376970 /* Debug */,
+				E5A6B6FD2C97216000376970 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

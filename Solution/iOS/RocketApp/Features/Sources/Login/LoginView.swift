@@ -34,6 +34,7 @@ public struct LoginView: View {
           .font(.largeTitle)
           .fontWeight(.bold)
           .padding(.top, 20)
+          .accessibilityIdentifier(AccessibilityKeys.Login.title)
 
         Spacer()
 

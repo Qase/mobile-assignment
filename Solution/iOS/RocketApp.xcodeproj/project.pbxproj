@@ -13,10 +13,11 @@
 		165B20552999449B0047F70A /* Infrastructure in Resources */ = {isa = PBXBuildFile; fileRef = 165B20532999449B0047F70A /* Infrastructure */; };
 		16BC7FFC29CC9AE5002AAE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BC7FFB29CC9AE5002AAE15 /* Assets.xcassets */; };
 		635FE7B12A20CDD40018A585 /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = 635FE7B02A20CDD40018A585 /* RocketList */; };
-		E50DF9542C9751A700BE1B5D /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = E50DF9532C9751A700BE1B5D /* RocketList */; };
-		E55944B42C97328A00594002 /* UIToolkit in Frameworks */ = {isa = PBXBuildFile; productRef = E55944B32C97328A00594002 /* UIToolkit */; };
 		6E3F7D202C972CFD00554BA3 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F7D1F2C972CFD00554BA3 /* App */; };
 		6EA6ACB52C96F40A00EA0B8A /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA6ACB42C96F40A00EA0B8A /* Login */; };
+		E50818DC2CE2A31A00B9AE68 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = E50818DB2CE2A31A00B9AE68 /* Login */; };
+		E50DF9542C9751A700BE1B5D /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = E50DF9532C9751A700BE1B5D /* RocketList */; };
+		E55944B42C97328A00594002 /* UIToolkit in Frameworks */ = {isa = PBXBuildFile; productRef = E55944B32C97328A00594002 /* UIToolkit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E50818DC2CE2A31A00B9AE68 /* Login in Frameworks */,
 				E50DF9542C9751A700BE1B5D /* RocketList in Frameworks */,
 				E55944B42C97328A00594002 /* UIToolkit in Frameworks */,
 			);
@@ -162,6 +164,7 @@
 			packageProductDependencies = (
 				E55944B32C97328A00594002 /* UIToolkit */,
 				E50DF9532C9751A700BE1B5D /* RocketList */,
+				E50818DB2CE2A31A00B9AE68 /* Login */,
 			);
 			productName = RocketAppUITests;
 			productReference = E5A6B6F42C97216000376970 /* RocketAppUITests.xctest */;
@@ -549,14 +552,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = RocketList;
 		};
-		E50DF9532C9751A700BE1B5D /* RocketList */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RocketList;
-		};
-		E55944B32C97328A00594002 /* UIToolkit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIToolkit;
-		};
 		6E3F7D1F2C972CFD00554BA3 /* App */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = App;
@@ -564,6 +559,18 @@
 		6EA6ACB42C96F40A00EA0B8A /* Login */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Login;
+		};
+		E50818DB2CE2A31A00B9AE68 /* Login */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Login;
+		};
+		E50DF9532C9751A700BE1B5D /* RocketList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RocketList;
+		};
+		E55944B32C97328A00594002 /* UIToolkit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIToolkit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -37,9 +37,9 @@ public struct RocketListView: View {
             loadingView
           }
         }
-        
+          
         Spacer()
-        
+          
         Button("Logout") {
           viewStore.send(.logoutTapped)
         }
@@ -62,7 +62,6 @@ public struct RocketListView: View {
         RocketListCellView(store: $0)
       }
     }
-    .accessibilityIdentifier(AccessibilityKeys.RocketList.list)
     .listStyle(.sidebar)
     .navigationDestination(
       store: self.store.scope(

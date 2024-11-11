@@ -556,6 +556,7 @@
 		E55944B32C97328A00594002 /* UIToolkit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIToolkit;
+		};
 		6E3F7D1F2C972CFD00554BA3 /* App */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = App;

@@ -1,15 +1,15 @@
 import ComposableArchitecture
-import RocketList
+import App
 import SwiftUI
 
 @main
 struct RocketApp: App {
   var body: some Scene {
     WindowGroup {
-      RocketListView(
+      AppView(
         store: Store(
-          initialState: RocketListCore.State(),
-          reducer: RocketListCore()._printChanges()
+          initialState: AppCore.State(),
+          reducer: AppCore()
         )
       )
     }

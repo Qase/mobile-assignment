@@ -26,15 +26,24 @@ public struct RocketListView: View {
 
   public var body: some View {
     NavigationStack {
-      Group {
-        switch viewStore.loadingStatus {
-        case let .success(data):
-          rocketsListView(rocketData: data)
-        case let .failure(error):
-          errorView(error: error)
-        default:
-          loadingView
+      VStack {
+        Group {
+          switch viewStore.loadingStatus {
+          case let .success(data):
+            rocketsListView(rocketData: data)
+          case let .failure(error):
+            errorView(error: error)
+          default:
+            loadingView
+          }
         }
+        
+        Spacer()
+        
+        Button("Logout") {
+          viewStore.send(.logoutTapped)
+        }
+        .buttonStyle(QuantiButtonStyle())
       }
       .navigationTitle(.rockets)
     }

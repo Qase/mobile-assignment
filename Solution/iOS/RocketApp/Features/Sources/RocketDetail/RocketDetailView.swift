@@ -130,7 +130,7 @@ public struct RocketDetailView: View {
     }
   }
 
-  private func paramWindow(type: RocketDetail.RocketParameters, backgroundColor: Color = .pink) -> some View {
+  private func paramWindow(type: RocketDetail.RocketParameters, backgroundColor: Color = .quanti) -> some View {
     VStack(spacing: 4) {
       Text(
         type.detail(

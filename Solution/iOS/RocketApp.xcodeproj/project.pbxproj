@@ -13,6 +13,8 @@
 		165B20552999449B0047F70A /* Infrastructure in Resources */ = {isa = PBXBuildFile; fileRef = 165B20532999449B0047F70A /* Infrastructure */; };
 		16BC7FFC29CC9AE5002AAE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BC7FFB29CC9AE5002AAE15 /* Assets.xcassets */; };
 		635FE7B12A20CDD40018A585 /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = 635FE7B02A20CDD40018A585 /* RocketList */; };
+		6E3F7D202C972CFD00554BA3 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F7D1F2C972CFD00554BA3 /* App */; };
+		6EA6ACB52C96F40A00EA0B8A /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA6ACB42C96F40A00EA0B8A /* Login */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3F7D202C972CFD00554BA3 /* App in Frameworks */,
+				6EA6ACB52C96F40A00EA0B8A /* Login in Frameworks */,
 				635FE7B12A20CDD40018A585 /* RocketList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +107,8 @@
 			name = RocketApp;
 			packageProductDependencies = (
 				635FE7B02A20CDD40018A585 /* RocketList */,
+				6EA6ACB42C96F40A00EA0B8A /* Login */,
+				6E3F7D1F2C972CFD00554BA3 /* App */,
 			);
 			productName = RocketApp;
 			productReference = 160CA40D28A506E4004A274A /* RocketApp.app */;
@@ -406,6 +412,14 @@
 		635FE7B02A20CDD40018A585 /* RocketList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RocketList;
+		};
+		6E3F7D1F2C972CFD00554BA3 /* App */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = App;
+		};
+		6EA6ACB42C96F40A00EA0B8A /* Login */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Login;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

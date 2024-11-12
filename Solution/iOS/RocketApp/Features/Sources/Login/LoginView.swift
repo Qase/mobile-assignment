@@ -12,7 +12,7 @@ public struct LoginView: View {
   public var body: some View {
     WithViewStore(self.store) { viewStore in
       VStack {
-        Text("Shiiiiiiiiiit, your credentials are not valid")
+        Text("Sorry, your credentials are not valid")
           .foregroundStyle(.white)
           .frame(maxWidth: .infinity)
           .padding()
@@ -34,6 +34,7 @@ public struct LoginView: View {
           .font(.largeTitle)
           .fontWeight(.bold)
           .padding(.top, 20)
+          .accessibilityIdentifier(AccessibilityKeys.Login.title)
 
         Spacer()
 

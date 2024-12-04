@@ -41,9 +41,11 @@ public struct LoginView: View {
         TextField("Username", text: viewStore.binding(\.$username))
           .textFieldStyle(.roundedBorder)
           .autocapitalization(.none)
+          .accessibilityIdentifier(AccessibilityKeys.Login.username)
 
         SecureField("Password", text: viewStore.binding(\.$password))
           .textFieldStyle(.roundedBorder)
+          .accessibilityIdentifier(AccessibilityKeys.Login.password)
 
         Spacer()
 
@@ -51,6 +53,7 @@ public struct LoginView: View {
           viewStore.send(.loginTapped)
         }
         .buttonStyle(QuantiButtonStyle())
+        .accessibilityIdentifier(AccessibilityKeys.Login.loginButton)
       }
       .padding(.horizontal, 20)
     }

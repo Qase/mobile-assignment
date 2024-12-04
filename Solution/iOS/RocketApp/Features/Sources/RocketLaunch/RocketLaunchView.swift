@@ -104,6 +104,7 @@ public struct RocketLaunchView: View {
 
   private var flyingRocket: some View {
     Image.rocketFlying
+      .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.rocketImage)
       .scaleEffect(rocketScale)
       .overlay(alignment: .bottom) {
         Group {

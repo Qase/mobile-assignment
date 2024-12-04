@@ -1,0 +1,32 @@
+import Login
+import RocketList
+import UIToolkit
+import XCTest
+
+struct RocketDetailScreen: Screen {
+  let app: XCUIApplication
+  
+  private let rocketTitle: XCUIElement
+  private let launchButton: XCUIElement
+  
+  init(app: XCUIApplication) {
+    self.app = app
+    rocketTitle = app.navigationBars.staticTexts[AccessibilityKeys.RocketDetail.rocketTitle]
+    launchButton = app.buttons[AccessibilityKeys.RocketDetail.launchButton]
+  }
+  
+  @discardableResult
+  func checkRocketTitle() -> Self {
+    XCTAssert(rocketTitle.waitForExistence(timeout: 5))
+    return self
+  }
+  @discardableResult
+  func tapLaunchButton() -> Self {
+    launchButton.tap()
+    return self
+  }
+  
+  
+  
+
+}

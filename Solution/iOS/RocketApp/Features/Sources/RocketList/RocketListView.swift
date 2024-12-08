@@ -43,7 +43,6 @@ public struct RocketListView: View {
           viewStore.send(.logoutTapped)
         }
         .buttonStyle(QuantiButtonStyle())
-        .accessibilityIdentifier(AccessibilityKeys.RocketList.logoutButton)
       }
       .navigationTitle(.rockets)
     }
@@ -60,7 +59,7 @@ public struct RocketListView: View {
         )
       ) {
         RocketListCellView(store: $0)
-        .accessibilityIdentifier(AccessibilityKeys.RocketList.rocketCell)
+          .accessibilityIdentifier(AccessibilityKeys.RocketList.rocketCells)
       }
     }
     .listStyle(.sidebar)

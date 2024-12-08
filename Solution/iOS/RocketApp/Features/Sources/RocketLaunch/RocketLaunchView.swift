@@ -57,6 +57,8 @@ public struct RocketLaunchView: View {
           flyingRocket
         } else {
           Image.rocketIdle
+          .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.rocketImage)
+
         }
 
         Spacer()
@@ -104,7 +106,6 @@ public struct RocketLaunchView: View {
 
   private var flyingRocket: some View {
     Image.rocketFlying
-      .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.rocketImage)
       .scaleEffect(rocketScale)
       .overlay(alignment: .bottom) {
         Group {

@@ -16,7 +16,7 @@ struct RocketLaunchScreen: Screen {
   
   @discardableResult
   func checkRocketImage() -> Self {
-    XCTAssert(rocketImage.waitForExistence(timeout: 5))
+    XCTAssert(rocketImage.waitForExistence(timeout: 5), "Rocket image did not appear within the timeout.")
     return self
   }
 }

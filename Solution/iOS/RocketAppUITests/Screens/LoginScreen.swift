@@ -21,7 +21,7 @@ struct LoginScreen: Screen {
 
   @discardableResult
   func checkLoginTitle() -> Self {
-    XCTAssert(loginTitle.waitForExistence(timeout: 5))
+    XCTAssert(loginTitle.waitForExistence(timeout: 5), "Login title did not appear within the timeout.")
     return self
   }
   

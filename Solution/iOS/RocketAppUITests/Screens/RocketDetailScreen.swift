@@ -17,7 +17,7 @@ struct RocketDetailScreen: Screen {
   
   @discardableResult
   func checkRocketTitle() -> Self {
-    XCTAssert(rocketTitle.waitForExistence(timeout: 5))
+    XCTAssert(rocketTitle.waitForExistence(timeout: 5), "Rocket title did not appear within the timeout.")
     return self
   }
   @discardableResult

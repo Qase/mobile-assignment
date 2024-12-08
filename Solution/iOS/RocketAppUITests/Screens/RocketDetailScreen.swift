@@ -11,8 +11,8 @@ struct RocketDetailScreen: Screen {
   
   init(app: XCUIApplication) {
     self.app = app
-    rocketTitle = app.navigationBars.staticTexts[AccessibilityKeys.RocketDetail.rocketTitle]
-    launchButton = app.buttons[AccessibilityKeys.RocketDetail.launchButton]
+    rocketTitle = app.staticTexts[AccessibilityKeys.RocketDetail.rocketTitle]
+    launchButton = app.navigationBars.buttons[AccessibilityKeys.RocketDetail.launchButton]
   }
   
   @discardableResult

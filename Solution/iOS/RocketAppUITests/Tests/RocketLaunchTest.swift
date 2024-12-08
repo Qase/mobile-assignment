@@ -1,10 +1,3 @@
-//
-//  Test 2.swift
-//  RocketApp
-//
-//  Created by Cyril Colombier on 30.11.2024.
-//
-
 import XCTest
 
 final class TestRocketLaunch: BaseTestCase {
@@ -18,7 +11,7 @@ final class TestRocketLaunch: BaseTestCase {
       .enterPassword(password)
       .tapLoginButton()
     RocketListScreen(app: app)
-      .checkLogoutButton()
+      .countRocketCells()
       .tapFirstRocketCell()
     RocketDetailScreen(app: app)
       .checkRocketTitle()

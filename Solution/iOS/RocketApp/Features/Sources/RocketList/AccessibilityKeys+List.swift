@@ -2,6 +2,6 @@ import UIToolkit
 
 extension AccessibilityKeys {
   public enum RocketList {
-    public static let rocketCells = "rocketCellsID"
+    public static let rocketCell = "rocketCellID"
   }
 }

@@ -44,5 +44,4 @@ struct LoginScreen: Screen {
     loginButton.tap()
     return self
   }
-
 }

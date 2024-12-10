@@ -20,13 +20,10 @@ struct RocketDetailScreen: Screen {
     XCTAssert(rocketTitle.waitForExistence(timeout: 5), "Rocket title did not appear within the timeout.")
     return self
   }
+  
   @discardableResult
   func tapLaunchButton() -> Self {
     launchButton.tap()
     return self
   }
-  
-  
-  
-
 }

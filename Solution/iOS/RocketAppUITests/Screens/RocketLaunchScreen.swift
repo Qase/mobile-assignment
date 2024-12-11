@@ -11,7 +11,6 @@ struct RocketLaunchScreen: Screen {
   init(app: XCUIApplication) {
     self.app = app
     rocketImage = app.images[AccessibilityKeys.RocketLaunch.rocketImage]
-
   }
   
   @discardableResult

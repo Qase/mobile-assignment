@@ -12,6 +12,7 @@ final class TestRocketLaunch: BaseTestCase {
       .tapLoginButton()
     RocketListScreen(app: app)
       .countRocketCells()
+      .checkRocketNames()
       .tapFirstRocketCell()
     RocketDetailScreen(app: app)
       .checkRocketTitle()

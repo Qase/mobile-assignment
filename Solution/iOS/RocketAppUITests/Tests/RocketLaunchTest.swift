@@ -2,17 +2,15 @@ import XCTest
 
 final class TestRocketLaunch: BaseTestCase {
   func testRocketLaunchTest() {
-    let username = "astronaut1"
-    let password = "space"
-    
+
     LoginScreen(app: app)
       .checkLoginTitle()
-      .enterUsername(username)
-      .enterPassword(password)
+      .enterUsername(TestConstants.LoginDetails.username)
+      .enterPassword(TestConstants.LoginDetails.password)
       .tapLoginButton()
     RocketListScreen(app: app)
       .countRocketCells()
-      .checkRocketNames()
+      .checkRocketNames(TestConstants.Rockets.rocketNames)
       .tapFirstRocketCell()
     RocketDetailScreen(app: app)
       .checkRocketTitle()

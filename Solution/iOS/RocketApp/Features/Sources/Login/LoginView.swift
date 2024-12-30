@@ -34,19 +34,18 @@ public struct LoginView: View {
           .font(.largeTitle)
           .fontWeight(.bold)
           .padding(.top, 20)
-          .accessibilityIdentifier(AccessibilityKeys.Login.title)
+          .accessibilityIdentifier(AccessibilityKeys.Login.titleText)
 
         Spacer()
 
         TextField("Username", text: viewStore.binding(\.$username))
           .textFieldStyle(.roundedBorder)
           .autocapitalization(.none)
-          .accessibilityIdentifier(AccessibilityKeys.Login.username)
+          .accessibilityIdentifier(AccessibilityKeys.Login.usernameTextField)
 
         SecureField("Password", text: viewStore.binding(\.$password))
           .textFieldStyle(.roundedBorder)
-          .accessibilityIdentifier(AccessibilityKeys.Login.password)
-
+          .accessibilityIdentifier(AccessibilityKeys.Login.passwordSecureField)
         Spacer()
 
         Button("Login") {

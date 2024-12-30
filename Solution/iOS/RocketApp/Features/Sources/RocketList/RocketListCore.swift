@@ -10,7 +10,7 @@ public struct RocketListCore: ReducerProtocol {
   public struct State: Equatable {
     var loadingStatus: Loadable<IdentifiedArrayOf<RocketListCellCore.State>, RocketsClientAsyncError> = .notRequested
     @PresentationState var rocketDetail: RocketDetailCore.State?
-   
+
     public init() {}
   }
 
@@ -58,7 +58,7 @@ public struct RocketListCore: ReducerProtocol {
       case let .dataFetched(.failure(error)):
         state.loadingStatus = .failure(RocketsClientAsyncError(from: error))
         return .none
-     
+
       case .rocketDetail, .logoutTapped:
         return .none
       }

@@ -23,7 +23,6 @@ public struct RocketListCellView: View {
           VStack(alignment: .leading, spacing: 4) {
             Text(viewStore.rocketData.name)
               .font(.title2.bold())
-              .accessibilityIdentifier(AccessibilityKeys.RocketListCell.rocketNameLabel)
 
             Text("First flight: \(viewStore.rocketData.firstFlight)")
               .font(.callout)
@@ -35,7 +34,7 @@ public struct RocketListCellView: View {
           Image.linkArrow
             .resizable()
             .frame(width: 32, height: 32)
-            .accessibilityIdentifier(AccessibilityKeys.RocketListCell.rocketCellArrow)
+            .accessibilityIdentifier(AccessibilityKeys.RocketListCell.rocketArrowImage)
         }
       }
     }

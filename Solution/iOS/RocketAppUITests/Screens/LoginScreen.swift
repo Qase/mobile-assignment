@@ -13,34 +13,37 @@ struct LoginScreen: Screen {
 
   init(app: XCUIApplication) {
     self.app = app
-    loginTitle = app.staticTexts[AccessibilityKeys.Login.title]
-    usernameField = app.textFields[AccessibilityKeys.Login.username]
-    passwordField = app.secureTextFields[AccessibilityKeys.Login.password]
+    loginTitle = app.staticTexts[AccessibilityKeys.Login.titleText]
+    usernameField = app.textFields[AccessibilityKeys.Login.usernameTextField]
+    passwordField = app.secureTextFields[AccessibilityKeys.Login.passwordSecureField]
     loginButton = app.buttons[AccessibilityKeys.Login.loginButton]
   }
 
   @discardableResult
   func checkLoginTitle() -> Self {
-    XCTAssert(loginTitle.waitForExistence(timeout: 5), "Login title did not appear within the timeout.")
+    XCTAssert(loginTitle.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
     return self
   }
-  
+
   @discardableResult
-  func enterUsername(_ username: String) -> Self {
+  func enter(username: String) -> Self {
+    XCTAssert(usernameField.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
     usernameField.tap()
     usernameField.typeText(username)
     return self
   }
-  
+
   @discardableResult
-  func enterPassword(_ password: String) -> Self {
+  func enter(password: String) -> Self {
+    XCTAssert(passwordField.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
     passwordField.tap()
     passwordField.typeText(password)
     return self
   }
-  
+
   @discardableResult
   func tapLoginButton() -> Self {
+    XCTAssert(loginButton.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
     loginButton.tap()
     return self
   }

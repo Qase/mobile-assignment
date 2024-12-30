@@ -5,17 +5,15 @@ final class TestRocketLaunch: BaseTestCase {
 
     LoginScreen(app: app)
       .checkLoginTitle()
-      .enterUsername(TestConstants.LoginDetails.username)
-      .enterPassword(TestConstants.LoginDetails.password)
+      .enter(username: TestConstants.LoginCredentials.username)
+      .enter(password: TestConstants.LoginCredentials.password)
       .tapLoginButton()
     RocketListScreen(app: app)
-      .countRocketCells()
-      .checkRocketNames(TestConstants.Rockets.rocketNames)
-      .tapFirstRocketCell()
+      .goToRocket(atIndex: 0)
     RocketDetailScreen(app: app)
       .checkRocketTitle()
       .tapLaunchButton()
     RocketLaunchScreen(app: app)
-      .checkRocketImage()
+      .checkRocketLaunchText()
   }
 }

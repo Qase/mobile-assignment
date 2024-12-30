@@ -57,8 +57,6 @@ public struct RocketLaunchView: View {
           flyingRocket
         } else {
           Image.rocketIdle
-          .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.rocketImage)
-
         }
 
         Spacer()
@@ -218,6 +216,7 @@ public struct RocketLaunchView: View {
       .font(.headline)
       .bold()
       .foregroundColor(viewStore.textColor)
+      .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.rocketLaunchText)
   }
 
   private var flash: some View {

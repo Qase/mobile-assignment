@@ -5,17 +5,18 @@ import XCTest
 
 struct RocketLaunchScreen: Screen {
   let app: XCUIApplication
-  
-  private let rocketImage: XCUIElement
-  
+
+  private let rocketLaunchText: XCUIElement
+
   init(app: XCUIApplication) {
     self.app = app
-    rocketImage = app.images[AccessibilityKeys.RocketLaunch.rocketImage]
+    
+    rocketLaunchText = app.staticTexts[AccessibilityKeys.RocketLaunch.rocketLaunchText]
   }
-  
+
   @discardableResult
-  func checkRocketImage() -> Self {
-    XCTAssert(rocketImage.waitForExistence(timeout: 5), "Rocket image did not appear within the timeout.")
+  func checkRocketLaunchText() -> Self {
+    XCTAssert(rocketLaunchText.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
     return self
   }
 }

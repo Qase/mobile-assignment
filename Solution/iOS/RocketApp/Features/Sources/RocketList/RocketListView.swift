@@ -59,7 +59,6 @@ public struct RocketListView: View {
         )
       ) {
         RocketListCellView(store: $0)
-          .accessibilityIdentifier(AccessibilityKeys.RocketList.rocketCell)
       }
     }
     .listStyle(.sidebar)

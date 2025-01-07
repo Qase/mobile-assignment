@@ -9,7 +9,7 @@ final class TestRocketLaunch: BaseTestCase {
       .enter(password: TestConstants.LoginCredentials.password)
       .tapLoginButton()
     RocketListScreen(app: app)
-      .goToRocket(atIndex: 0)
+      .goToRocketDetail(index: 0)
     RocketDetailScreen(app: app)
       .checkRocketTitle()
       .tapLaunchButton()

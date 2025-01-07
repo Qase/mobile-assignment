@@ -15,10 +15,10 @@ struct RocketListScreen: Screen {
   }
 
   @discardableResult
-  func goToRocket(atIndex index: Int) -> Self {
-    let firstRocketCell = rocketCellArrows.element(boundBy: index)
-    XCTAssert(firstRocketCell.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
-    firstRocketCell.tap()
+  func goToRocketDetail(index: Int) -> Self {
+    let rocketArrow = rocketCellArrows.element(boundBy: index)
+    XCTAssert(rocketArrow.waitForExistence(timeout: Timeouts.defaultTimeout))
+    rocketArrow.tap()
     return self
   }
 }

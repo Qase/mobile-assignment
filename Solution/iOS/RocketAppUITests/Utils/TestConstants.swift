@@ -5,8 +5,4 @@ enum TestConstants {
     static let username = "astronaut1"
     static let password = "space"
   }
-
-  enum Timeouts {
-    static let defaultTimeout: Double = 5
-  }
 }

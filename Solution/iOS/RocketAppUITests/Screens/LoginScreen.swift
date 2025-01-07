@@ -7,43 +7,43 @@ struct LoginScreen: Screen {
   let app: XCUIApplication
 
   private let loginTitle: XCUIElement
-  private let usernameField: XCUIElement
-  private let passwordField: XCUIElement
+  private let usernameTextField: XCUIElement
+  private let passwordSecureTextField: XCUIElement
   private let loginButton: XCUIElement
 
   init(app: XCUIApplication) {
     self.app = app
-    loginTitle = app.staticTexts[AccessibilityKeys.Login.titleText]
-    usernameField = app.textFields[AccessibilityKeys.Login.usernameTextField]
-    passwordField = app.secureTextFields[AccessibilityKeys.Login.passwordSecureField]
+    loginTitle = app.staticTexts[AccessibilityKeys.Login.titleStaticText]
+    usernameTextField = app.textFields[AccessibilityKeys.Login.usernameTextField]
+    passwordSecureTextField = app.secureTextFields[AccessibilityKeys.Login.passwordSecureField]
     loginButton = app.buttons[AccessibilityKeys.Login.loginButton]
   }
 
   @discardableResult
   func checkLoginTitle() -> Self {
-    XCTAssert(loginTitle.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
+    XCTAssert(loginTitle.waitForExistence(timeout: Timeouts.defaultTimeout))
     return self
   }
 
   @discardableResult
   func enter(username: String) -> Self {
-    XCTAssert(usernameField.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
-    usernameField.tap()
-    usernameField.typeText(username)
+    XCTAssert(usernameTextField.waitForExistence(timeout: Timeouts.defaultTimeout))
+    usernameTextField.tap()
+    usernameTextField.typeText(username)
     return self
   }
 
   @discardableResult
   func enter(password: String) -> Self {
-    XCTAssert(passwordField.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
-    passwordField.tap()
-    passwordField.typeText(password)
+    XCTAssert(passwordSecureTextField.waitForExistence(timeout: Timeouts.defaultTimeout))
+    passwordSecureTextField.tap()
+    passwordSecureTextField.typeText(password)
     return self
   }
 
   @discardableResult
   func tapLoginButton() -> Self {
-    XCTAssert(loginButton.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
+    XCTAssert(loginButton.waitForExistence(timeout: Timeouts.defaultTimeout))
     loginButton.tap()
     return self
   }

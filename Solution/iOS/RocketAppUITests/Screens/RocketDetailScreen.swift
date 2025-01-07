@@ -17,13 +17,13 @@ struct RocketDetailScreen: Screen {
 
   @discardableResult
   func checkRocketTitle() -> Self {
-    XCTAssert(rocketTitle.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
+    XCTAssert(rocketTitle.waitForExistence(timeout: Timeouts.defaultTimeout))
     return self
   }
 
   @discardableResult
   func tapLaunchButton() -> Self {
-    XCTAssert(launchButton.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
+    XCTAssert(launchButton.waitForExistence(timeout: Timeouts.defaultTimeout))
     launchButton.tap()
     return self
   }

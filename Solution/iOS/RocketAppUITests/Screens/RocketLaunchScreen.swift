@@ -10,13 +10,13 @@ struct RocketLaunchScreen: Screen {
 
   init(app: XCUIApplication) {
     self.app = app
-    
+
     rocketLaunchText = app.staticTexts[AccessibilityKeys.RocketLaunch.rocketLaunchText]
   }
 
   @discardableResult
   func checkRocketLaunchText() -> Self {
-    XCTAssert(rocketLaunchText.waitForExistence(timeout: TestConstants.Timeouts.defaultTimeout))
+    XCTAssert(rocketLaunchText.waitForExistence(timeout: Timeouts.defaultTimeout))
     return self
   }
 }

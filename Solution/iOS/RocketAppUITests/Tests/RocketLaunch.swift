@@ -1,7 +1,7 @@
 import XCTest
 
-final class TestRocketLaunch: BaseTestCase {
-  func testRocketLaunchTest() {
+final class RocketLaunch: BaseTestCase {
+  func testRocketLaunch() {
 
     LoginScreen(app: app)
       .checkLoginTitle()

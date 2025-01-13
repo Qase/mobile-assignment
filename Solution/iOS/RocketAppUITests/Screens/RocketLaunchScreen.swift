@@ -17,7 +17,6 @@ struct RocketLaunchScreen: Screen {
   @discardableResult
   func checkRocketLaunchText() -> Self {
     XCTAssert(titleStaticText.waitForExistence(timeout: Timeouts.defaultTimeout))
-    print(app.debugDescription)
     return self
   }
 }

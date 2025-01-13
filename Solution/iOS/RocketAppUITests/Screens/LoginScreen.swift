@@ -6,22 +6,22 @@ import XCTest
 struct LoginScreen: Screen {
   let app: XCUIApplication
 
-  private let loginTitle: XCUIElement
+  private let titleStaticText: XCUIElement
   private let usernameTextField: XCUIElement
-  private let passwordSecureTextField: XCUIElement
+  private let passwordSecureField: XCUIElement
   private let loginButton: XCUIElement
 
   init(app: XCUIApplication) {
     self.app = app
-    loginTitle = app.staticTexts[AccessibilityKeys.Login.titleStaticText]
+    titleStaticText = app.staticTexts[AccessibilityKeys.Login.titleStaticText]
     usernameTextField = app.textFields[AccessibilityKeys.Login.usernameTextField]
-    passwordSecureTextField = app.secureTextFields[AccessibilityKeys.Login.passwordSecureField]
+    passwordSecureField = app.secureTextFields[AccessibilityKeys.Login.passwordSecureField]
     loginButton = app.buttons[AccessibilityKeys.Login.loginButton]
   }
 
   @discardableResult
   func checkLoginTitle() -> Self {
-    XCTAssert(loginTitle.waitForExistence(timeout: Timeouts.defaultTimeout))
+    XCTAssert(titleStaticText.waitForExistence(timeout: Timeouts.defaultTimeout))
     return self
   }
 
@@ -35,9 +35,9 @@ struct LoginScreen: Screen {
 
   @discardableResult
   func enter(password: String) -> Self {
-    XCTAssert(passwordSecureTextField.waitForExistence(timeout: Timeouts.defaultTimeout))
-    passwordSecureTextField.tap()
-    passwordSecureTextField.typeText(password)
+    XCTAssert(passwordSecureField.waitForExistence(timeout: Timeouts.defaultTimeout))
+    passwordSecureField.tap()
+    passwordSecureField.typeText(password)
     return self
   }
 

@@ -57,7 +57,7 @@ public struct RocketDetailView: View {
         section(.overview) {
           Text(viewStore.rocketData.overview)
             .font(.body)
-            .accessibilityIdentifier(AccessibilityKeys.RocketDetail.rocketTitleText)
+            .accessibilityIdentifier(AccessibilityKeys.RocketDetail.titleStaticText)
         }
         .padding(.bottom)
 

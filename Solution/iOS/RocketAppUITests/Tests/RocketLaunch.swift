@@ -2,7 +2,6 @@ import XCTest
 
 final class RocketLaunch: BaseTestCase {
   func testRocketLaunch() {
-
     LoginScreen(app: app)
       .checkLoginTitle()
       .enter(username: TestConstants.LoginCredentials.username)

@@ -6,17 +6,17 @@ import XCTest
 struct RocketListScreen: Screen {
   let app: XCUIApplication
 
-  private let arrowImage: XCUIElementQuery
+  private let arrowImages: XCUIElementQuery
 
   init(app: XCUIApplication) {
     self.app = app
 
-    arrowImage = app.images.matching(identifier: AccessibilityKeys.RocketListCell.arrowImage)
+    arrowImages = app.images.matching(identifier: AccessibilityKeys.RocketListCell.arrowImage)
   }
 
   @discardableResult
   func goToRocketDetail(index: Int) -> Self {
-    let rocket = arrowImage.element(boundBy: index)
+    let rocket = arrowImages.element(boundBy: index)
     XCTAssert(rocket.waitForExistence(timeout: Timeouts.defaultTimeout))
     rocket.tap()
     return self

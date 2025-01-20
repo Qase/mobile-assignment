@@ -6,17 +6,17 @@ import XCTest
 struct RocketLaunchScreen: Screen {
   let app: XCUIApplication
 
-  private let distanceToLaunchText: XCUIElement
+  private let     launchDistanceText: XCUIElement
 
   init(app: XCUIApplication) {
     self.app = app
 
-    distanceToLaunchText = app.staticTexts[AccessibilityKeys.RocketLaunch.distanceToLaunchStaticText]
+    launchDistanceText = app.staticTexts[AccessibilityKeys.RocketLaunch.launchDistanceStaticText]
   }
 
   @discardableResult
-  func checkRocketLaunchText() -> Self {
-    XCTAssert(distanceToLaunchText.waitForExistence(timeout: Timeouts.defaultTimeout))
+  func checkLaunchDistanceText() -> Self {
+    XCTAssert(launchDistanceText.waitForExistence(timeout: Timeouts.defaultTimeout))
     return self
   }
 }

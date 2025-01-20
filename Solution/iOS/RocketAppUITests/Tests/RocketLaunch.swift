@@ -10,9 +10,9 @@ final class RocketLaunch: BaseTestCase {
     RocketListScreen(app: app)
       .goToRocketDetail(index: 0)
     RocketDetailScreen(app: app)
-      .checkRocketTitle()
+      .checkRocketOverview()
       .tapLaunchButton()
     RocketLaunchScreen(app: app)
-      .checkRocketLaunchText()
+      .checkLaunchDistanceText()
   }
 }

@@ -6,19 +6,19 @@ import XCTest
 struct RocketDetailScreen: Screen {
   let app: XCUIApplication
 
-  private let title: XCUIElement
+  private let rocketOverview: XCUIElement
   private let launchButton: XCUIElement
 
   init(app: XCUIApplication) {
     self.app = app
 
-    title = app.staticTexts[AccessibilityKeys.RocketDetail.titleStaticText]
+    rocketOverview = app.staticTexts[AccessibilityKeys.RocketDetail.overviewStaticText]
     launchButton = app.navigationBars.buttons[AccessibilityKeys.RocketDetail.launchButton]
   }
 
   @discardableResult
-  func checkRocketTitle() -> Self {
-    XCTAssert(title.waitForExistence(timeout: Timeouts.defaultTimeout))
+  func checkRocketOverview() -> Self {
+    XCTAssert(rocketOverview.waitForExistence(timeout: Timeouts.defaultTimeout))
     return self
   }
 

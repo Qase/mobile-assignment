@@ -11,6 +11,7 @@ struct RocketDetailScreen: Screen {
 
   init(app: XCUIApplication) {
     self.app = app
+
     title = app.staticTexts[AccessibilityKeys.RocketDetail.titleStaticText]
     launchButton = app.navigationBars.buttons[AccessibilityKeys.RocketDetail.launchButton]
   }

@@ -216,7 +216,7 @@ public struct RocketLaunchView: View {
       .font(.headline)
       .bold()
       .foregroundColor(viewStore.textColor)
-      .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.titleStaticText)
+      .accessibilityIdentifier(AccessibilityKeys.RocketLaunch.distanceToLaunchStaticText)
   }
 
   private var flash: some View {

@@ -13,6 +13,7 @@ struct LoginScreen: Screen {
 
   init(app: XCUIApplication) {
     self.app = app
+
     title = app.staticTexts[AccessibilityKeys.Login.titleStaticText]
     usernameField = app.textFields[AccessibilityKeys.Login.usernameTextField]
     passwordField = app.secureTextFields[AccessibilityKeys.Login.passwordSecureField]

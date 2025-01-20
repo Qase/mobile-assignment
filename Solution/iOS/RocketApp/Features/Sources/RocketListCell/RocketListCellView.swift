@@ -35,6 +35,7 @@ public struct RocketListCellView: View {
             .resizable()
             .frame(width: 32, height: 32)
             .accessibilityIdentifier(AccessibilityKeys.RocketListCell.arrowImage)
+            .accessibilityElement(children: .contain)
         }
       }
     }

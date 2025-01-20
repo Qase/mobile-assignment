@@ -104,6 +104,7 @@ public struct RocketDetailView: View {
                 viewStore.send(.rocketLaunchTapped)
             }
             .accessibilityIdentifier(AccessibilityKeys.RocketDetail.launchButton)
+            .accessibilityElement(children: .contain)
         )
     .navigationDestination(
       store: self.store.scope(
@@ -114,7 +115,7 @@ public struct RocketDetailView: View {
       RocketLaunchView(store: store)
     }
   }
-  
+
   @ViewBuilder
   private func section<V: View>(_ caption: LocalizedStringKey, _ content: @escaping () -> V) -> some View {
     VStack(alignment: .leading, spacing: 8) {

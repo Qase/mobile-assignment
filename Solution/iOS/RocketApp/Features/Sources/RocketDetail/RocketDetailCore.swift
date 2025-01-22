@@ -33,15 +33,15 @@ public struct RocketDetailCore: ReducerProtocol {
       case .setToUSMetrics:
         state.isUSMetrics.toggle()
         return .none
-      
+
       case .rocketLaunch:
         return .none
-        
+
       case .rocketLaunchDismiss:
         if state.rocketLaunch != nil {
           return .send(.rocketLaunch(.presented(.onDisappear)))
         }
-        
+
         return .none
       }
     }

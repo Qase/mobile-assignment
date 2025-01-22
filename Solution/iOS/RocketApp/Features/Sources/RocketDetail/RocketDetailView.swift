@@ -57,6 +57,7 @@ public struct RocketDetailView: View {
         section(.overview) {
           Text(viewStore.rocketData.overview)
             .font(.body)
+            .accessibilityIdentifier(AccessibilityKeys.RocketDetail.overviewStaticText)
         }
         .padding(.bottom)
 
@@ -98,7 +99,13 @@ public struct RocketDetailView: View {
     .padding(.horizontal)
     .navigationTitle(viewStore.rocketData.name)
     .onAppear { viewStore.send(.rocketLaunchDismiss) }
-    .navigationBarItems(trailing: Button(.launch) { viewStore.send(.rocketLaunchTapped) })
+    .navigationBarItems(
+      trailing: Button(.launch) {
+        viewStore.send(.rocketLaunchTapped)
+      }
+      .accessibilityIdentifier(AccessibilityKeys.RocketDetail.launchButton)
+      .accessibilityElement(children: .contain)
+    )
     .navigationDestination(
       store: self.store.scope(
         state: \.$rocketLaunch,
@@ -108,7 +115,7 @@ public struct RocketDetailView: View {
       RocketLaunchView(store: store)
     }
   }
-  
+
   @ViewBuilder
   private func section<V: View>(_ caption: LocalizedStringKey, _ content: @escaping () -> V) -> some View {
     VStack(alignment: .leading, spacing: 8) {

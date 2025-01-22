@@ -46,6 +46,7 @@ public struct LoginView: View {
         SecureField("Password", text: viewStore.binding(\.$password))
           .textFieldStyle(.roundedBorder)
           .accessibilityIdentifier(AccessibilityKeys.Login.passwordSecureField)
+
         Spacer()
 
         Button("Login") {

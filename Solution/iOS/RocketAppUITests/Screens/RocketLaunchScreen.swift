@@ -6,7 +6,7 @@ import XCTest
 struct RocketLaunchScreen: Screen {
   let app: XCUIApplication
 
-  private let     launchDistanceText: XCUIElement
+  private let launchDistanceText: XCUIElement
 
   init(app: XCUIApplication) {
     self.app = app

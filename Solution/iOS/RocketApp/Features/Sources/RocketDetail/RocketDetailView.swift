@@ -100,12 +100,12 @@ public struct RocketDetailView: View {
     .navigationTitle(viewStore.rocketData.name)
     .onAppear { viewStore.send(.rocketLaunchDismiss) }
     .navigationBarItems(
-            trailing: Button(.launch) {
-                viewStore.send(.rocketLaunchTapped)
-            }
-            .accessibilityIdentifier(AccessibilityKeys.RocketDetail.launchButton)
-            .accessibilityElement(children: .contain)
-        )
+      trailing: Button(.launch) {
+        viewStore.send(.rocketLaunchTapped)
+      }
+      .accessibilityIdentifier(AccessibilityKeys.RocketDetail.launchButton)
+      .accessibilityElement(children: .contain)
+    )
     .navigationDestination(
       store: self.store.scope(
         state: \.$rocketLaunch,

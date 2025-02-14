@@ -21,6 +21,7 @@ class MainViewModel: ObservableObject {
     func downloadRocketsData(completion: (()->())? = nil) {
         apiClient.getAllRockets() { allRockets, error in
             self.rocketModel.rocketList = allRockets
+            
         }
     }
     

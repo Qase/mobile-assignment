@@ -20,7 +20,7 @@ struct MainView: View {
     var body: some View {
         ZStack(alignment: .leading) {
           // Show initial page
-            ContentView(viewModel: viewModel)
+            RocketListView(viewModel: viewModel)
         }
     }
 }

@@ -27,7 +27,7 @@ extension Result where Success == String, Failure == Error {
         return nil
     }
 
-    // MARK: - Initialisation
+    //ws MARK: - Initialisation
 
     init(string: String?, error: Error?) {
         if let string = string {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RocketListView: View {
     
     @ObservedObject var viewModel: MainViewModel
     
@@ -20,7 +20,7 @@ struct ContentView: View {
                     NavigationView {
                         List(rocketList) { rocketList in
                             NavigationLink {
-                                RocketDetailView(rocketList: rocketList )
+                                RocketDetailView(rocketList: rocketList)
                             } label: {
                                 MenukRow(shipname: rocketList.name, firstFlight: rocketList.first_flight ?? "unkown")
                             }
@@ -58,6 +58,5 @@ struct MenukRow: View {
 }
 
 #Preview {
-//    ContentView()
-    // TODO: Mock API
+    RocketListView(viewModel: MainViewModel(apiClient: MockAPIClient()))
 }

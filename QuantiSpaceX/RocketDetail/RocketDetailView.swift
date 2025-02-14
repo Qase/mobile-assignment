@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RocketDetailView: View {
-    var rocketList: RocketList
+    @State var rocketList: RocketList
     
-    var body: some View {
+        var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
                 HStack (alignment: .top){
@@ -79,7 +79,6 @@ struct RocketDetailView: View {
                                         
                                     }
                                     .clipShape(.rect(cornerRadius: 15))
-                                    
                                 }
                             }
                             
@@ -89,17 +88,7 @@ struct RocketDetailView: View {
             }
             .padding(30)
         }
-        .navigationBarItems(
-                              trailing:
-                                  Button(action: {        print("clicked on launch")
-                                     }, label: {
-                       NavigationLink {
-                           LaunchView()
-                                         } label: {                    Text("Launch")
-                         }
-                   
-                                              })
-                                              )
+        .navigationBarItems(trailing:Button(action: {print("clicked on launch")}, label: { NavigationLink {LaunchView() } label: {Text("Launch")}}))
         .navigationTitle(rocketList.name)
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -171,5 +160,5 @@ struct StageList: View {
 }
 
 #Preview {
-//    RocketDetailView()
+//
 }

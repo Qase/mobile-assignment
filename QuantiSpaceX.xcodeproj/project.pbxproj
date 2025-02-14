@@ -14,9 +14,22 @@
 		70092BF72D1E065500774A37 /* QuantiSpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantiSpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		70D368992D5F9E230027F78E /* Exceptions for "QuantiSpaceX" folder in "QuantiSpaceX" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 70092BF62D1E065500774A37 /* QuantiSpaceX */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		70092BF92D1E065500774A37 /* QuantiSpaceX */ = {
+		70D3685F2D52AD4F0027F78E /* QuantiSpaceX */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				70D368992D5F9E230027F78E /* Exceptions for "QuantiSpaceX" folder in "QuantiSpaceX" target */,
+			);
 			path = QuantiSpaceX;
 			sourceTree = "<group>";
 		};
@@ -37,7 +50,7 @@
 		70092BEE2D1E065500774A37 = {
 			isa = PBXGroup;
 			children = (
-				70092BF92D1E065500774A37 /* QuantiSpaceX */,
+				70D3685F2D52AD4F0027F78E /* QuantiSpaceX */,
 				70092BF82D1E065500774A37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +79,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				70092BF92D1E065500774A37 /* QuantiSpaceX */,
+				70D3685F2D52AD4F0027F78E /* QuantiSpaceX */,
 			);
 			name = QuantiSpaceX;
 			packageProductDependencies = (
@@ -97,6 +110,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 70092BEE2D1E065500774A37;
 			minimizedProjectReferenceProxies = 1;
@@ -193,6 +207,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -249,6 +264,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -264,6 +280,7 @@
 				DEVELOPMENT_TEAM = 5Q8R423CHJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuantiSpaceX/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = QuantiSpaceX;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,6 +312,7 @@
 				DEVELOPMENT_TEAM = 5Q8R423CHJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuantiSpaceX/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = QuantiSpaceX;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

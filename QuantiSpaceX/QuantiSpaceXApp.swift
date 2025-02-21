@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct QuantiSpaceXApp: App {
+    @StateObject var navigationStateViewModel = NavigationStateViewModel()
     let viewModel = MainViewModel(apiClient: APIClient())
     
     var body: some Scene {
         WindowGroup {
-            MainView(viewModel: viewModel)
+            NavigationView(viewModel: viewModel)
+                .environmentObject(navigationStateViewModel)
         }
     }
 }

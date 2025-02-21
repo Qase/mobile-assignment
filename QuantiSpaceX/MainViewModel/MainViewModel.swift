@@ -10,6 +10,7 @@ import Foundation
 class MainViewModel: ObservableObject {
     
     @Published var rocketModel = RocketModel()
+    @Published var currentRocketDetailList: RocketList?
     
     var apiClient: APIClientProtocol
     

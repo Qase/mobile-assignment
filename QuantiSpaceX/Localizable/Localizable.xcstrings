@@ -19,6 +19,12 @@
     },
     "%@ ton%@ of fuel" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ tun paliva"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -29,6 +35,12 @@
     },
     "%lld engine%@" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld motor%2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -45,7 +57,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Start"
+            "value" : "Odpal"
           }
         }
       }
@@ -55,22 +67,50 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Start byl úspěšný!"
+            "value" : "Odpálení bylo úspěšné!"
           }
         }
       }
     },
     "Move your phone up\nto launch the rocket" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohněte s telefonem nahoru, aby raketa odletěla"
+          }
+        }
+      }
     },
     "Overview" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přehled"
+          }
+        }
+      }
     },
     "Parameters" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parametry"
+          }
+        }
+      }
     },
     "Photos" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografie"
+          }
+        }
+      }
     },
     "Rockets" : {
 

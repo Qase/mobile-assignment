@@ -8,25 +8,35 @@
 import SwiftUI
 
 struct RocketListView: View {
-    
+    @EnvironmentObject var navigationStateViewModel: NavigationStateViewModel
     @ObservedObject var viewModel: MainViewModel
     
     var body: some View {
         ZStack {
-            Color.init(.lightGray)
+            Color.init(.systemGray6)
                 .edgesIgnoringSafeArea(.all)
-            HStack {
-                if let rocketList = viewModel.rocketModel.rocketList {
-                    NavigationView {
-                        List(rocketList) { rocketList in
-                            NavigationLink {
-                                RocketDetailView(rocketList: rocketList)
-                            } label: {
-                                MenukRow(shipname: rocketList.name, firstFlight: rocketList.first_flight ?? "unkown")
-                            }
-                        }
-                        .navigationTitle("Rockets")
-                    } 
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Rockets")
+                        .font(.system(size: 40).weight(.heavy))
+                        .padding(.leading, 20)
+                        
+                    Spacer()
+                }.padding(.top, 20)
+                NavigationStack {
+                    if let rocketList = viewModel.rocketModel.rocketList {
+                                        List(rocketList) { rocketList in
+                                            VStack {
+                                                RocketListItem(rocketList: rocketList)
+                                            }.contentShape(Rectangle())
+                                            .onTapGesture {
+                                                // Setup current list
+                                                viewModel.currentRocketDetailList = rocketList
+                                                // Change view
+                                                navigationStateViewModel.onViewChanged(newView: .DetailView)
+                                            }
+                                        }
+                    }
                 }
                 
             }
@@ -34,28 +44,7 @@ struct RocketListView: View {
     }
 }
 
-struct MenukRow: View {
-    var shipname: String
-    var firstFlight: String
 
-    var body: some View {
-        HStack {
-            
-            Image("Rocket")
-                .resizable()
-                .frame(width: 30, height: 30)
-            VStack (alignment: .leading){
-                Text(shipname)
-                Text("first flight: \(firstFlight)")
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                    
-            }.padding(.leading, 10)
-
-            Spacer()
-        }
-    }
-}
 
 #Preview {
     RocketListView(viewModel: MainViewModel(apiClient: MockAPIClient()))

@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct LaunchView: View {
+struct RocketLaunchView: View {
     @State private var isRocketInMove: Bool = false
     @State var imageName = "Rocket Idle"
     
     var body: some View {
         VStack {
+            Header(headerTitle: "Launch", backToView: .DetailView, showLaunchButton: false)
             VStack {
                 Spacer()
                 if !isRocketInMove{
@@ -56,5 +57,5 @@ struct LaunchView: View {
 
 
 #Preview {
-    LaunchView()
+    RocketLaunchView()
 }

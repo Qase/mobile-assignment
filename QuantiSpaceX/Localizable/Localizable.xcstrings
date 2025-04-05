@@ -1,0 +1,120 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ second%@ burn time" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ sekund čas spalování"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ second%2$@ burn time"
+          }
+        }
+      }
+    },
+    "%@ ton%@ of fuel" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ tun paliva"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ ton%2$@ of fuel"
+          }
+        }
+      }
+    },
+    "%lld engine%@" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld motor%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld engine%2$@"
+          }
+        }
+      }
+    },
+    "first flight: %@" : {
+
+    },
+    "Launch" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyslat"
+          }
+        }
+      }
+    },
+    "Launch succesful!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odpálení bylo úspěšné!"
+          }
+        }
+      }
+    },
+    "Move your phone up\nto launch the rocket" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohněte s telefonem nahoru, aby raketa odletěla"
+          }
+        }
+      }
+    },
+    "Overview" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přehled"
+          }
+        }
+      }
+    },
+    "Parameters" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parametry"
+          }
+        }
+      }
+    },
+    "Photos" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografie"
+          }
+        }
+      }
+    },
+    "Rockets" : {
+
+    }
+  },
+  "version" : "1.0"
+}

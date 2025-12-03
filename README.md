@@ -15,12 +15,11 @@ Cílem je vytvořit aplikaci, která zobrazí seznam všech SpaceX raket. Aplika
 2. Detail rakety
 3. Simulátor letu
 
- * Aplikace je napojena na [API SpaceX](https://docs.spacexdata.com). 
+ * Aplikace je napojena na [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs). 
  * Grafické podklady jsou v tomto repozitáři
  * Co se týká závislostí, tak použijte ty, které Vám davájí smysl, jiny limit není
  * Vypracovaní by nemělo zabrat déle než týden práce
  * Průběžne commitujte do vašeho forku od tohoto repozitáře
- * Pokud umíte tak využijte principy FRP 
 
 #### Seznam všech raket
 Tato obrazovka je poměrně jasná ze grafického návrhu 
@@ -44,12 +43,11 @@ The goal is to create an app that displays a list of all SpaceX rockets. The app
 2. Rocket detail
 3. Flight Simulator
 
- * The application is connected to the [SpaceX API](https://docs.spacexdata.com). 
+ * The application is connected to the [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs). 
  * The graphics are in this repository
  * As for dependencies, use the ones that make sense to you, there is no other limit
- * It shouldn't take more than a week to develop
+ * It shouldn't take more than a three days to develop
  * Commit continuously to your fork from this repository
- * Use FRP principles if you can 
 
 #### List of all rockets
 This screen is fairly clear from the graphic design 

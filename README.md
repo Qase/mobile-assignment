@@ -18,7 +18,7 @@ Cílem je vytvořit aplikaci, která zobrazí seznam všech SpaceX raket. Aplika
  * Aplikace je napojena na [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs). 
  * Grafické podklady jsou v tomto repozitáři
  * Co se týká závislostí, tak použijte ty, které Vám davájí smysl, jiny limit není
- * Vypracovaní by nemělo zabrat déle než týden práce
+ * Vypracovaní by nemělo zabrat déle než tři dny práce
  * Průběžne commitujte do vašeho forku od tohoto repozitáře
 
 #### Seznam všech raket
